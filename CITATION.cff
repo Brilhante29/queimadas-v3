@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use FireCast in academic work, please cite it as below."
+title: "FireCast — monthly wildfire focus forecasting (Chapada do Araripe / CE-PE-PI)"
+abstract: >-
+  Glass-box machine-learning system that forecasts monthly active-fire focus
+  counts per municipality (INPE target, IBGE geocode) for the Chapada do
+  Araripe operational region, with a fail-closed serving API and exact
+  (verifiable) explainability.
+type: software
+authors:
+  - family-names: Brilhante
+    given-names: Guilherme
+repository-code: "https://github.com/Brilhante29/queimadas-v3"
+url: "https://github.com/Brilhante29/queimadas-v3"
+license: Apache-2.0
+version: "3.0.0"
+date-released: "2026-07-26"
+keywords:
+  - wildfire
+  - queimadas
+  - forecasting
+  - time-series
+  - geospatial
+  - explainable-ai
+  - mlops
+  - brazil

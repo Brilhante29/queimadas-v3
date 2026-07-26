@@ -3,6 +3,7 @@
 [![CI](https://github.com/Brilhante29/queimadas-v3/actions/workflows/ci.yml/badge.svg)](https://github.com/Brilhante29/queimadas-v3/actions/workflows/ci.yml)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
+[![Release](https://img.shields.io/github/v/release/Brilhante29/queimadas-v3?include_prereleases)](https://github.com/Brilhante29/queimadas-v3/releases)
 
 FireCast e um pacote de pesquisa e producao para prever focos mensais de queimadas por municipio na regiao operacional Chapada do Araripe / CE-PE-PI. A entrega contem codigo, dados, testes, API, container, artefato champion, resultados e documentacao suficiente para um colega auditar, executar e continuar o trabalho sem depender do historico privado de desenvolvimento.
 
