@@ -1,0 +1,17 @@
+{
+  "snapshot_name": "enso_cpc_v1",
+  "source": "https://www.cpc.ncep.noaa.gov/data/indices/sstoi.indices",
+  "source_name": "NOAA CPC OISST Nino regions index (live fetch, not the buggy hardcoded fallback)",
+  "retrieved_at": "2026-07-08T23:35:15.595538+00:00",
+  "column_used_for_anomaly": "ANOM.3 (Nino3.4 SST anomaly vs 1971-2000 base period per NOAA convention)",
+  "rows": 534,
+  "year_range": [
+    1982,
+    2026
+  ],
+  "sha256": "d2e0112b4cbc48d8c0c559438ff74be57d1ee808517fbd32a97f9b57c4ffd372",
+  "known_bugs_fixed_before_this_snapshot": [
+    "skiprows=1 caused live fetch to always silently fail column check and fall back to a fabricated hardcoded table",
+    "wrong column NINO3.4 (absolute SST) was used instead of ANOM.3 (actual anomaly), which would have classified every month as el_nino"
+  ]
+}

@@ -63,3 +63,5 @@ data/**
 !data/snapshots/
 !data/snapshots/inpe_local_v2/
 !data/snapshots/inpe_local_v2/**
+!data/snapshots/enso_cpc_v1/
+!data/snapshots/enso_cpc_v1/**
