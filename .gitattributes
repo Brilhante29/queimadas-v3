@@ -1,0 +1,14 @@
+# Normalize line endings: LF in the repo, auto-convert on checkout per OS.
+* text=auto eol=lf
+
+# Binary assets — never touch line endings.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.zip binary
+*.gz binary
+*.parquet binary
+*.joblib binary
+*.pkl binary
