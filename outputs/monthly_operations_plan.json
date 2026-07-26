@@ -1,0 +1,60 @@
+{
+  "created_at": "2026-07-12T03:05:15.673304+00:00",
+  "months": [
+    "202608"
+  ],
+  "target_path": "data/snapshots/inpe_monthly_public_v3/events_target_region.csv",
+  "target_satellite": "AQUA_M-T",
+  "retraining_policy": "Do not retrain only because a new month arrived. Retrain only after a documented trigger: shadow degradation, source/schema change, annual review, new as-of feature block, or human-approved contract revision.",
+  "commands": [
+    {
+      "step": "01_ingest_public_target",
+      "gate_or_contract": "G1",
+      "purpose": "Fetch the additive public INPE monthly files and keep the event-level sensor field.",
+      "command": "python src/data/ingest_inpe_monthly_public_v3.py --months 202608",
+      "expected_artifact": "data/snapshots/inpe_monthly_public_v3/manifest.json"
+    },
+    {
+      "step": "02_validate_data_contracts",
+      "gate_or_contract": "G0/G1",
+      "purpose": "Check that every ingestor and snapshot has the expected manifest/status.",
+      "command": "python scripts/check_data_ingestors.py",
+      "expected_artifact": "terminal OK plus unchanged source manifests"
+    },
+    {
+      "step": "03_reality_score_holdout",
+      "gate_or_contract": "G2/G3 reality check",
+      "purpose": "Score frozen 2025/2026 reality windows without changing model parameters.",
+      "command": "python src/experiments/exp27_reality_volume_2025_2026.py",
+      "expected_artifact": "outputs/exp27_reality_volume_2025_2026/run_manifest.json"
+    },
+    {
+      "step": "04_shadow_score",
+      "gate_or_contract": "G7",
+      "purpose": "Score committed shadow predictions against the sensor-aligned public target.",
+      "command": "python -m src.production.shadow_monitor score --target-path data/snapshots/inpe_monthly_public_v3/events_target_region.csv --target-satellite AQUA_M-T",
+      "expected_artifact": "outputs/shadow_monitor/shadow_scores.jsonl"
+    },
+    {
+      "step": "05_shadow_report",
+      "gate_or_contract": "G7",
+      "purpose": "Emit delayed-performance, freshness and rollback report for the same target definition.",
+      "command": "python -m src.production.shadow_monitor report --target-path data/snapshots/inpe_monthly_public_v3/events_target_region.csv --target-satellite AQUA_M-T",
+      "expected_artifact": "outputs/shadow_monitor/monitoring_report.md"
+    },
+    {
+      "step": "06_api_contract_smoke",
+      "gate_or_contract": "G6",
+      "purpose": "Verify that the API still loads the approved artifact and exposes the champion summary.",
+      "command": "python -m pytest tests/test_serving_api.py tests/test_g6_serving_contract.py -q",
+      "expected_artifact": "passing tests"
+    },
+    {
+      "step": "07_publish_results_registry",
+      "gate_or_contract": "G0/G7",
+      "purpose": "Refresh the public release plan and results registry for reviewers.",
+      "command": "python python src/mlops/contracts.py --out outputs/production_ml_plan.json",
+      "expected_artifact": "outputs/production_ml_plan.json and outputs/public_results_summary.json valid"
+    }
+  ]
+}

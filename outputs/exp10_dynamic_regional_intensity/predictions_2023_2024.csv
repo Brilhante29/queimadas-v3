@@ -1,0 +1,1375 @@
+geocodigo,municipio_ibge,uf,ano,mes,fire_count,target_source,model,y_pred,cut
+2300101,Abaiara,CE,2023,1,0.0,inpe_bdq_legacy,climatology_municipal,0.0526315789473684,2023-01
+2300200,Acaraú,CE,2023,1,0.0,inpe_bdq_aqua_ref,climatology_municipal,5.315789473684211,2023-01
+2301307,Araripe,CE,2023,1,1.0,inpe_bdq_legacy,climatology_municipal,1.368421052631579,2023-01
+2301604,Assaré,CE,2023,1,0.0,inpe_bdq_legacy,climatology_municipal,1.947368421052632,2023-01
+2301901,Barbalha,CE,2023,1,1.0,inpe_bdq_aqua_ref,climatology_municipal,0.4210526315789473,2023-01
+2302503,Brejo Santo,CE,2023,1,0.0,inpe_bdq_legacy,climatology_municipal,0.3684210526315789,2023-01
+2302701,Campos Sales,CE,2023,1,1.0,inpe_bdq_aqua_ref,climatology_municipal,0.3684210526315789,2023-01
+2304103,Crateús,CE,2023,1,4.0,inpe_bdq_aqua_ref,climatology_municipal,3.5789473684210527,2023-01
+2304202,Crato,CE,2023,1,0.0,inpe_bdq_legacy,climatology_municipal,0.7894736842105263,2023-01
+2304400,Fortaleza,CE,2023,1,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1052631578947368,2023-01
+2305100,Guaramiranga,CE,2023,1,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-01
+2305506,Iguatu,CE,2023,1,0.0,inpe_bdq_aqua_ref,climatology_municipal,1.1578947368421053,2023-01
+2306405,Itapipoca,CE,2023,1,4.0,inpe_bdq_aqua_ref,climatology_municipal,7.052631578947368,2023-01
+2306900,Jaguaribe,CE,2023,1,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.7894736842105263,2023-01
+2307007,Jaguaruana,CE,2023,1,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.5789473684210527,2023-01
+2307106,Jardim,CE,2023,1,0.0,inpe_bdq_legacy,climatology_municipal,0.4736842105263157,2023-01
+2307205,Jati,CE,2023,1,0.0,inpe_bdq_legacy,climatology_municipal,0.3684210526315789,2023-01
+2307304,Juazeiro do Norte,CE,2023,1,0.0,inpe_bdq_legacy,climatology_municipal,0.1578947368421052,2023-01
+2308401,Missão Velha,CE,2023,1,1.0,inpe_bdq_legacy,climatology_municipal,1.105263157894737,2023-01
+2308708,Morada Nova,CE,2023,1,0.0,inpe_bdq_aqua_ref,climatology_municipal,1.6842105263157894,2023-01
+2309201,Nova Olinda,CE,2023,1,0.0,inpe_bdq_legacy,climatology_municipal,0.2631578947368421,2023-01
+2310605,Penaforte,CE,2023,1,0.0,inpe_bdq_legacy,climatology_municipal,0.0526315789473684,2023-01
+2311108,Porteiras,CE,2023,1,0.0,inpe_bdq_legacy,climatology_municipal,0.2105263157894736,2023-01
+2311207,Potengi,CE,2023,1,0.0,inpe_bdq_legacy,climatology_municipal,0.7368421052631579,2023-01
+2311306,Quixadá,CE,2023,1,2.0,inpe_bdq_aqua_ref,climatology_municipal,2.0,2023-01
+2311405,Quixeramobim,CE,2023,1,2.0,inpe_bdq_aqua_ref,climatology_municipal,5.684210526315789,2023-01
+2311959,Salitre,CE,2023,1,0.0,inpe_bdq_legacy,climatology_municipal,0.5263157894736842,2023-01
+2312106,Santana do Cariri,CE,2023,1,0.0,inpe_bdq_legacy,climatology_municipal,3.5789473684210527,2023-01
+2312908,Sobral,CE,2023,1,1.0,inpe_bdq_aqua_ref,climatology_municipal,2.263157894736842,2023-01
+2313302,Tauá,CE,2023,1,0.0,inpe_bdq_aqua_ref,climatology_municipal,1.1578947368421053,2023-01
+2313401,Tianguá,CE,2023,1,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.7368421052631579,2023-01
+2300101,Abaiara,CE,2023,1,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0459701469305742,2023-01
+2300200,Acaraú,CE,2023,1,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,4.642984839987999,2023-01
+2301307,Araripe,CE,2023,1,1.0,inpe_bdq_legacy,climatology_regional_intensity12,1.1952238201949306,2023-01
+2301604,Assaré,CE,2023,1,0.0,inpe_bdq_legacy,climatology_regional_intensity12,1.7008954364312474,2023-01
+2301901,Barbalha,CE,2023,1,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.367761175444594,2023-01
+2302503,Brejo Santo,CE,2023,1,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.3217910285140197,2023-01
+2302701,Campos Sales,CE,2023,1,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.3217910285140197,2023-01
+2304103,Crateús,CE,2023,1,4.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,3.125969991279049,2023-01
+2304202,Crato,CE,2023,1,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.6895522039586138,2023-01
+2304400,Fortaleza,CE,2023,1,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0919402938611485,2023-01
+2305100,Guaramiranga,CE,2023,1,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-01
+2305506,Iguatu,CE,2023,1,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.0113432324726337,2023-01
+2306405,Itapipoca,CE,2023,1,4.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,6.15999968869695,2023-01
+2306900,Jaguaribe,CE,2023,1,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.6895522039586138,2023-01
+2307007,Jaguaruana,CE,2023,1,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.5056716162363168,2023-01
+2307106,Jardim,CE,2023,1,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.4137313223751682,2023-01
+2307205,Jati,CE,2023,1,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.3217910285140197,2023-01
+2307304,Juazeiro do Norte,CE,2023,1,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1379104407917227,2023-01
+2308401,Missão Velha,CE,2023,1,1.0,inpe_bdq_legacy,climatology_regional_intensity12,0.9653730855420594,2023-01
+2308708,Morada Nova,CE,2023,1,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.471044701778376,2023-01
+2309201,Nova Olinda,CE,2023,1,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2298507346528712,2023-01
+2310605,Penaforte,CE,2023,1,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0459701469305742,2023-01
+2311108,Porteiras,CE,2023,1,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.183880587722297,2023-01
+2311207,Potengi,CE,2023,1,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.6435820570280395,2023-01
+2311306,Quixadá,CE,2023,1,2.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.7468655833618216,2023-01
+2311405,Quixeramobim,CE,2023,1,2.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,4.964775868502019,2023-01
+2311959,Salitre,CE,2023,1,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.4597014693057425,2023-01
+2312106,Santana do Cariri,CE,2023,1,0.0,inpe_bdq_legacy,climatology_regional_intensity12,3.125969991279049,2023-01
+2312908,Sobral,CE,2023,1,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.976716318014693,2023-01
+2313302,Tauá,CE,2023,1,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.0113432324726337,2023-01
+2313401,Tianguá,CE,2023,1,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.6435820570280395,2023-01
+2300101,Abaiara,CE,2023,2,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-02
+2300200,Acaraú,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.631578947368421,2023-02
+2301307,Araripe,CE,2023,2,1.0,inpe_bdq_legacy,climatology_municipal,0.1052631578947368,2023-02
+2301604,Assaré,CE,2023,2,0.0,inpe_bdq_legacy,climatology_municipal,0.2631578947368421,2023-02
+2301901,Barbalha,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1578947368421052,2023-02
+2302503,Brejo Santo,CE,2023,2,1.0,inpe_bdq_legacy,climatology_municipal,0.0526315789473684,2023-02
+2302701,Campos Sales,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0526315789473684,2023-02
+2304103,Crateús,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1578947368421052,2023-02
+2304202,Crato,CE,2023,2,1.0,inpe_bdq_legacy,climatology_municipal,0.2631578947368421,2023-02
+2304400,Fortaleza,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1052631578947368,2023-02
+2305100,Guaramiranga,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-02
+2305506,Iguatu,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1052631578947368,2023-02
+2306405,Itapipoca,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.2105263157894736,2023-02
+2306900,Jaguaribe,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.2105263157894736,2023-02
+2307007,Jaguaruana,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.2631578947368421,2023-02
+2307106,Jardim,CE,2023,2,0.0,inpe_bdq_legacy,climatology_municipal,0.1052631578947368,2023-02
+2307205,Jati,CE,2023,2,0.0,inpe_bdq_legacy,climatology_municipal,0.1578947368421052,2023-02
+2307304,Juazeiro do Norte,CE,2023,2,1.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-02
+2308401,Missão Velha,CE,2023,2,2.0,inpe_bdq_legacy,climatology_municipal,0.1052631578947368,2023-02
+2308708,Morada Nova,CE,2023,2,2.0,inpe_bdq_aqua_ref,climatology_municipal,0.5789473684210527,2023-02
+2309201,Nova Olinda,CE,2023,2,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-02
+2310605,Penaforte,CE,2023,2,0.0,inpe_bdq_legacy,climatology_municipal,0.1052631578947368,2023-02
+2311108,Porteiras,CE,2023,2,0.0,inpe_bdq_legacy,climatology_municipal,0.1052631578947368,2023-02
+2311207,Potengi,CE,2023,2,0.0,inpe_bdq_legacy,climatology_municipal,0.3157894736842105,2023-02
+2311306,Quixadá,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.2105263157894736,2023-02
+2311405,Quixeramobim,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_municipal,1.105263157894737,2023-02
+2311959,Salitre,CE,2023,2,0.0,inpe_bdq_legacy,climatology_municipal,0.0526315789473684,2023-02
+2312106,Santana do Cariri,CE,2023,2,0.0,inpe_bdq_legacy,climatology_municipal,0.2631578947368421,2023-02
+2312908,Sobral,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1578947368421052,2023-02
+2313302,Tauá,CE,2023,2,1.0,inpe_bdq_aqua_ref,climatology_municipal,0.2631578947368421,2023-02
+2313401,Tianguá,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.2105263157894736,2023-02
+2300101,Abaiara,CE,2023,2,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-02
+2300200,Acaraú,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.5576333659208915,2023-02
+2301307,Araripe,CE,2023,2,1.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0929388943201485,2023-02
+2301604,Assaré,CE,2023,2,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2323472358003714,2023-02
+2301901,Barbalha,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1394083414802228,2023-02
+2302503,Brejo Santo,CE,2023,2,1.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0464694471600742,2023-02
+2302701,Campos Sales,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0464694471600742,2023-02
+2304103,Crateús,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1394083414802228,2023-02
+2304202,Crato,CE,2023,2,1.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2323472358003714,2023-02
+2304400,Fortaleza,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0929388943201485,2023-02
+2305100,Guaramiranga,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-02
+2305506,Iguatu,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0929388943201485,2023-02
+2306405,Itapipoca,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1858777886402971,2023-02
+2306900,Jaguaribe,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1858777886402971,2023-02
+2307007,Jaguaruana,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2323472358003714,2023-02
+2307106,Jardim,CE,2023,2,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0929388943201485,2023-02
+2307205,Jati,CE,2023,2,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1394083414802228,2023-02
+2307304,Juazeiro do Norte,CE,2023,2,1.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-02
+2308401,Missão Velha,CE,2023,2,2.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0929388943201485,2023-02
+2308708,Morada Nova,CE,2023,2,2.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.5111639187608172,2023-02
+2309201,Nova Olinda,CE,2023,2,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-02
+2310605,Penaforte,CE,2023,2,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0929388943201485,2023-02
+2311108,Porteiras,CE,2023,2,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0929388943201485,2023-02
+2311207,Potengi,CE,2023,2,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2788166829604457,2023-02
+2311306,Quixadá,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1858777886402971,2023-02
+2311405,Quixeramobim,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.9758583903615604,2023-02
+2311959,Salitre,CE,2023,2,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0464694471600742,2023-02
+2312106,Santana do Cariri,CE,2023,2,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2323472358003714,2023-02
+2312908,Sobral,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1394083414802228,2023-02
+2313302,Tauá,CE,2023,2,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2323472358003714,2023-02
+2313401,Tianguá,CE,2023,2,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1858777886402971,2023-02
+2300101,Abaiara,CE,2023,3,1.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-03
+2300200,Acaraú,CE,2023,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.5789473684210527,2023-03
+2301307,Araripe,CE,2023,3,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-03
+2301604,Assaré,CE,2023,3,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-03
+2301901,Barbalha,CE,2023,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-03
+2302503,Brejo Santo,CE,2023,3,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-03
+2302701,Campos Sales,CE,2023,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-03
+2304103,Crateús,CE,2023,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1052631578947368,2023-03
+2304202,Crato,CE,2023,3,1.0,inpe_bdq_legacy,climatology_municipal,0.1052631578947368,2023-03
+2304400,Fortaleza,CE,2023,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-03
+2305100,Guaramiranga,CE,2023,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-03
+2305506,Iguatu,CE,2023,3,1.0,inpe_bdq_aqua_ref,climatology_municipal,0.2105263157894736,2023-03
+2306405,Itapipoca,CE,2023,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0526315789473684,2023-03
+2306900,Jaguaribe,CE,2023,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0526315789473684,2023-03
+2307007,Jaguaruana,CE,2023,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0526315789473684,2023-03
+2307106,Jardim,CE,2023,3,0.0,inpe_bdq_legacy,climatology_municipal,0.0526315789473684,2023-03
+2307205,Jati,CE,2023,3,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-03
+2307304,Juazeiro do Norte,CE,2023,3,0.0,inpe_bdq_legacy,climatology_municipal,0.1052631578947368,2023-03
+2308401,Missão Velha,CE,2023,3,0.0,inpe_bdq_legacy,climatology_municipal,0.3157894736842105,2023-03
+2308708,Morada Nova,CE,2023,3,1.0,inpe_bdq_aqua_ref,climatology_municipal,0.1052631578947368,2023-03
+2309201,Nova Olinda,CE,2023,3,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-03
+2310605,Penaforte,CE,2023,3,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-03
+2311108,Porteiras,CE,2023,3,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-03
+2311207,Potengi,CE,2023,3,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-03
+2311306,Quixadá,CE,2023,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1052631578947368,2023-03
+2311405,Quixeramobim,CE,2023,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.3684210526315789,2023-03
+2311959,Salitre,CE,2023,3,0.0,inpe_bdq_legacy,climatology_municipal,0.0526315789473684,2023-03
+2312106,Santana do Cariri,CE,2023,3,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-03
+2312908,Sobral,CE,2023,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0526315789473684,2023-03
+2313302,Tauá,CE,2023,3,1.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-03
+2313401,Tianguá,CE,2023,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-03
+2300101,Abaiara,CE,2023,3,1.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-03
+2300200,Acaraú,CE,2023,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.515399710542171,2023-03
+2301307,Araripe,CE,2023,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-03
+2301604,Assaré,CE,2023,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-03
+2301901,Barbalha,CE,2023,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-03
+2302503,Brejo Santo,CE,2023,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-03
+2302701,Campos Sales,CE,2023,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-03
+2304103,Crateús,CE,2023,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0937090382803947,2023-03
+2304202,Crato,CE,2023,3,1.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0937090382803947,2023-03
+2304400,Fortaleza,CE,2023,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-03
+2305100,Guaramiranga,CE,2023,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-03
+2305506,Iguatu,CE,2023,3,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1874180765607894,2023-03
+2306405,Itapipoca,CE,2023,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0468545191401973,2023-03
+2306900,Jaguaribe,CE,2023,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0468545191401973,2023-03
+2307007,Jaguaruana,CE,2023,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0468545191401973,2023-03
+2307106,Jardim,CE,2023,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0468545191401973,2023-03
+2307205,Jati,CE,2023,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-03
+2307304,Juazeiro do Norte,CE,2023,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0937090382803947,2023-03
+2308401,Missão Velha,CE,2023,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2811271148411841,2023-03
+2308708,Morada Nova,CE,2023,3,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0937090382803947,2023-03
+2309201,Nova Olinda,CE,2023,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-03
+2310605,Penaforte,CE,2023,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-03
+2311108,Porteiras,CE,2023,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-03
+2311207,Potengi,CE,2023,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-03
+2311306,Quixadá,CE,2023,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0937090382803947,2023-03
+2311405,Quixeramobim,CE,2023,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.3279816339813815,2023-03
+2311959,Salitre,CE,2023,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0468545191401973,2023-03
+2312106,Santana do Cariri,CE,2023,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-03
+2312908,Sobral,CE,2023,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0468545191401973,2023-03
+2313302,Tauá,CE,2023,3,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-03
+2313401,Tianguá,CE,2023,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-03
+2300101,Abaiara,CE,2023,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-04
+2300200,Acaraú,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-04
+2301307,Araripe,CE,2023,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-04
+2301604,Assaré,CE,2023,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-04
+2301901,Barbalha,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-04
+2302503,Brejo Santo,CE,2023,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-04
+2302701,Campos Sales,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-04
+2304103,Crateús,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1052631578947368,2023-04
+2304202,Crato,CE,2023,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-04
+2304400,Fortaleza,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-04
+2305100,Guaramiranga,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-04
+2305506,Iguatu,CE,2023,4,2.0,inpe_bdq_aqua_ref,climatology_municipal,0.0526315789473684,2023-04
+2306405,Itapipoca,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-04
+2306900,Jaguaribe,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1052631578947368,2023-04
+2307007,Jaguaruana,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-04
+2307106,Jardim,CE,2023,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-04
+2307205,Jati,CE,2023,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-04
+2307304,Juazeiro do Norte,CE,2023,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-04
+2308401,Missão Velha,CE,2023,4,0.0,inpe_bdq_legacy,climatology_municipal,0.2105263157894736,2023-04
+2308708,Morada Nova,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0526315789473684,2023-04
+2309201,Nova Olinda,CE,2023,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-04
+2310605,Penaforte,CE,2023,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-04
+2311108,Porteiras,CE,2023,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-04
+2311207,Potengi,CE,2023,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-04
+2311306,Quixadá,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1052631578947368,2023-04
+2311405,Quixeramobim,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0526315789473684,2023-04
+2311959,Salitre,CE,2023,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0526315789473684,2023-04
+2312106,Santana do Cariri,CE,2023,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-04
+2312908,Sobral,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-04
+2313302,Tauá,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0526315789473684,2023-04
+2313401,Tianguá,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-04
+2300101,Abaiara,CE,2023,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-04
+2300200,Acaraú,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-04
+2301307,Araripe,CE,2023,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-04
+2301604,Assaré,CE,2023,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-04
+2301901,Barbalha,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-04
+2302503,Brejo Santo,CE,2023,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-04
+2302701,Campos Sales,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-04
+2304103,Crateús,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0939904743854149,2023-04
+2304202,Crato,CE,2023,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-04
+2304400,Fortaleza,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-04
+2305100,Guaramiranga,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-04
+2305506,Iguatu,CE,2023,4,2.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0469952371927074,2023-04
+2306405,Itapipoca,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-04
+2306900,Jaguaribe,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0939904743854149,2023-04
+2307007,Jaguaruana,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-04
+2307106,Jardim,CE,2023,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-04
+2307205,Jati,CE,2023,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-04
+2307304,Juazeiro do Norte,CE,2023,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-04
+2308401,Missão Velha,CE,2023,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1879809487708299,2023-04
+2308708,Morada Nova,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0469952371927074,2023-04
+2309201,Nova Olinda,CE,2023,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-04
+2310605,Penaforte,CE,2023,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-04
+2311108,Porteiras,CE,2023,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-04
+2311207,Potengi,CE,2023,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-04
+2311306,Quixadá,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0939904743854149,2023-04
+2311405,Quixeramobim,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0469952371927074,2023-04
+2311959,Salitre,CE,2023,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0469952371927074,2023-04
+2312106,Santana do Cariri,CE,2023,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-04
+2312908,Sobral,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-04
+2313302,Tauá,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0469952371927074,2023-04
+2313401,Tianguá,CE,2023,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-04
+2300101,Abaiara,CE,2023,5,0.0,inpe_bdq_legacy,climatology_municipal,0.0526315789473684,2023-05
+2300200,Acaraú,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1052631578947368,2023-05
+2301307,Araripe,CE,2023,5,0.0,inpe_bdq_legacy,climatology_municipal,0.2631578947368421,2023-05
+2301604,Assaré,CE,2023,5,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-05
+2301901,Barbalha,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-05
+2302503,Brejo Santo,CE,2023,5,0.0,inpe_bdq_legacy,climatology_municipal,0.1052631578947368,2023-05
+2302701,Campos Sales,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-05
+2304103,Crateús,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-05
+2304202,Crato,CE,2023,5,0.0,inpe_bdq_legacy,climatology_municipal,0.0526315789473684,2023-05
+2304400,Fortaleza,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-05
+2305100,Guaramiranga,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-05
+2305506,Iguatu,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-05
+2306405,Itapipoca,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1052631578947368,2023-05
+2306900,Jaguaribe,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-05
+2307007,Jaguaruana,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0526315789473684,2023-05
+2307106,Jardim,CE,2023,5,0.0,inpe_bdq_legacy,climatology_municipal,0.1578947368421052,2023-05
+2307205,Jati,CE,2023,5,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-05
+2307304,Juazeiro do Norte,CE,2023,5,0.0,inpe_bdq_legacy,climatology_municipal,0.0526315789473684,2023-05
+2308401,Missão Velha,CE,2023,5,1.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-05
+2308708,Morada Nova,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.2105263157894736,2023-05
+2309201,Nova Olinda,CE,2023,5,0.0,inpe_bdq_legacy,climatology_municipal,0.1578947368421052,2023-05
+2310605,Penaforte,CE,2023,5,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-05
+2311108,Porteiras,CE,2023,5,0.0,inpe_bdq_legacy,climatology_municipal,0.0526315789473684,2023-05
+2311207,Potengi,CE,2023,5,0.0,inpe_bdq_legacy,climatology_municipal,0.0526315789473684,2023-05
+2311306,Quixadá,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1578947368421052,2023-05
+2311405,Quixeramobim,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-05
+2311959,Salitre,CE,2023,5,0.0,inpe_bdq_legacy,climatology_municipal,0.0526315789473684,2023-05
+2312106,Santana do Cariri,CE,2023,5,2.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-05
+2312908,Sobral,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-05
+2313302,Tauá,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1052631578947368,2023-05
+2313401,Tianguá,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0526315789473684,2023-05
+2300101,Abaiara,CE,2023,5,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0470902948869601,2023-05
+2300200,Acaraú,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0941805897739203,2023-05
+2301307,Araripe,CE,2023,5,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2354514744348008,2023-05
+2301604,Assaré,CE,2023,5,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-05
+2301901,Barbalha,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-05
+2302503,Brejo Santo,CE,2023,5,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0941805897739203,2023-05
+2302701,Campos Sales,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-05
+2304103,Crateús,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-05
+2304202,Crato,CE,2023,5,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0470902948869601,2023-05
+2304400,Fortaleza,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-05
+2305100,Guaramiranga,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-05
+2305506,Iguatu,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-05
+2306405,Itapipoca,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0941805897739203,2023-05
+2306900,Jaguaribe,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-05
+2307007,Jaguaruana,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0470902948869601,2023-05
+2307106,Jardim,CE,2023,5,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1412708846608804,2023-05
+2307205,Jati,CE,2023,5,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-05
+2307304,Juazeiro do Norte,CE,2023,5,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0470902948869601,2023-05
+2308401,Missão Velha,CE,2023,5,1.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-05
+2308708,Morada Nova,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1883611795478406,2023-05
+2309201,Nova Olinda,CE,2023,5,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1412708846608804,2023-05
+2310605,Penaforte,CE,2023,5,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-05
+2311108,Porteiras,CE,2023,5,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0470902948869601,2023-05
+2311207,Potengi,CE,2023,5,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0470902948869601,2023-05
+2311306,Quixadá,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1412708846608804,2023-05
+2311405,Quixeramobim,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-05
+2311959,Salitre,CE,2023,5,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0470902948869601,2023-05
+2312106,Santana do Cariri,CE,2023,5,2.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-05
+2312908,Sobral,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-05
+2313302,Tauá,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0941805897739203,2023-05
+2313401,Tianguá,CE,2023,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0470902948869601,2023-05
+2300101,Abaiara,CE,2023,6,0.0,inpe_bdq_legacy,climatology_municipal,0.1578947368421052,2023-06
+2300200,Acaraú,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.4736842105263157,2023-06
+2301307,Araripe,CE,2023,6,0.0,inpe_bdq_legacy,climatology_municipal,0.1578947368421052,2023-06
+2301604,Assaré,CE,2023,6,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-06
+2301901,Barbalha,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1578947368421052,2023-06
+2302503,Brejo Santo,CE,2023,6,1.0,inpe_bdq_legacy,climatology_municipal,0.2631578947368421,2023-06
+2302701,Campos Sales,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-06
+2304103,Crateús,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.5263157894736842,2023-06
+2304202,Crato,CE,2023,6,0.0,inpe_bdq_legacy,climatology_municipal,0.0526315789473684,2023-06
+2304400,Fortaleza,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-06
+2305100,Guaramiranga,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-06
+2305506,Iguatu,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.2631578947368421,2023-06
+2306405,Itapipoca,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.631578947368421,2023-06
+2306900,Jaguaribe,CE,2023,6,1.0,inpe_bdq_aqua_ref,climatology_municipal,0.1052631578947368,2023-06
+2307007,Jaguaruana,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-06
+2307106,Jardim,CE,2023,6,0.0,inpe_bdq_legacy,climatology_municipal,0.0526315789473684,2023-06
+2307205,Jati,CE,2023,6,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-06
+2307304,Juazeiro do Norte,CE,2023,6,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-06
+2308401,Missão Velha,CE,2023,6,0.0,inpe_bdq_legacy,climatology_municipal,0.1052631578947368,2023-06
+2308708,Morada Nova,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1578947368421052,2023-06
+2309201,Nova Olinda,CE,2023,6,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-06
+2310605,Penaforte,CE,2023,6,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-06
+2311108,Porteiras,CE,2023,6,0.0,inpe_bdq_legacy,climatology_municipal,0.0526315789473684,2023-06
+2311207,Potengi,CE,2023,6,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-06
+2311306,Quixadá,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1052631578947368,2023-06
+2311405,Quixeramobim,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.2105263157894736,2023-06
+2311959,Salitre,CE,2023,6,0.0,inpe_bdq_legacy,climatology_municipal,0.1052631578947368,2023-06
+2312106,Santana do Cariri,CE,2023,6,2.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-06
+2312908,Sobral,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.2105263157894736,2023-06
+2313302,Tauá,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1052631578947368,2023-06
+2313401,Tianguá,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.2105263157894736,2023-06
+2300101,Abaiara,CE,2023,6,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1414094873766807,2023-06
+2300200,Acaraú,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.4242284621300421,2023-06
+2301307,Araripe,CE,2023,6,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1414094873766807,2023-06
+2301604,Assaré,CE,2023,6,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-06
+2301901,Barbalha,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1414094873766807,2023-06
+2302503,Brejo Santo,CE,2023,6,1.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2356824789611345,2023-06
+2302701,Campos Sales,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-06
+2304103,Crateús,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.471364957922269,2023-06
+2304202,Crato,CE,2023,6,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0471364957922269,2023-06
+2304400,Fortaleza,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-06
+2305100,Guaramiranga,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-06
+2305506,Iguatu,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2356824789611345,2023-06
+2306405,Itapipoca,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.5656379495067229,2023-06
+2306900,Jaguaribe,CE,2023,6,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0942729915844538,2023-06
+2307007,Jaguaruana,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-06
+2307106,Jardim,CE,2023,6,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0471364957922269,2023-06
+2307205,Jati,CE,2023,6,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-06
+2307304,Juazeiro do Norte,CE,2023,6,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-06
+2308401,Missão Velha,CE,2023,6,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0942729915844538,2023-06
+2308708,Morada Nova,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1414094873766807,2023-06
+2309201,Nova Olinda,CE,2023,6,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-06
+2310605,Penaforte,CE,2023,6,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-06
+2311108,Porteiras,CE,2023,6,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0471364957922269,2023-06
+2311207,Potengi,CE,2023,6,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-06
+2311306,Quixadá,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0942729915844538,2023-06
+2311405,Quixeramobim,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1885459831689076,2023-06
+2311959,Salitre,CE,2023,6,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0942729915844538,2023-06
+2312106,Santana do Cariri,CE,2023,6,2.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-06
+2312908,Sobral,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1885459831689076,2023-06
+2313302,Tauá,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0942729915844538,2023-06
+2313401,Tianguá,CE,2023,6,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1885459831689076,2023-06
+2300101,Abaiara,CE,2023,7,0.0,inpe_bdq_legacy,climatology_municipal,0.1578947368421052,2023-07
+2300200,Acaraú,CE,2023,7,1.0,inpe_bdq_aqua_ref,climatology_municipal,1.368421052631579,2023-07
+2301307,Araripe,CE,2023,7,1.0,inpe_bdq_legacy,climatology_municipal,0.3157894736842105,2023-07
+2301604,Assaré,CE,2023,7,0.0,inpe_bdq_legacy,climatology_municipal,0.0526315789473684,2023-07
+2301901,Barbalha,CE,2023,7,1.0,inpe_bdq_aqua_ref,climatology_municipal,0.3,2023-07
+2302503,Brejo Santo,CE,2023,7,0.0,inpe_bdq_legacy,climatology_municipal,0.2105263157894736,2023-07
+2302701,Campos Sales,CE,2023,7,4.0,inpe_bdq_aqua_ref,climatology_municipal,0.0526315789473684,2023-07
+2304103,Crateús,CE,2023,7,1.0,inpe_bdq_aqua_ref,climatology_municipal,0.5789473684210527,2023-07
+2304202,Crato,CE,2023,7,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-07
+2304400,Fortaleza,CE,2023,7,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0526315789473684,2023-07
+2305100,Guaramiranga,CE,2023,7,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-07
+2305506,Iguatu,CE,2023,7,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.8947368421052632,2023-07
+2306405,Itapipoca,CE,2023,7,16.0,inpe_bdq_aqua_ref,climatology_municipal,0.8421052631578947,2023-07
+2306900,Jaguaribe,CE,2023,7,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1578947368421052,2023-07
+2307007,Jaguaruana,CE,2023,7,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.2105263157894736,2023-07
+2307106,Jardim,CE,2023,7,0.0,inpe_bdq_legacy,climatology_municipal,0.0526315789473684,2023-07
+2307205,Jati,CE,2023,7,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-07
+2307304,Juazeiro do Norte,CE,2023,7,0.0,inpe_bdq_legacy,climatology_municipal,0.2631578947368421,2023-07
+2308401,Missão Velha,CE,2023,7,1.0,inpe_bdq_legacy,climatology_municipal,0.1052631578947368,2023-07
+2308708,Morada Nova,CE,2023,7,2.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-07
+2309201,Nova Olinda,CE,2023,7,0.0,inpe_bdq_legacy,climatology_municipal,0.4210526315789473,2023-07
+2310605,Penaforte,CE,2023,7,1.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-07
+2311108,Porteiras,CE,2023,7,0.0,inpe_bdq_legacy,climatology_municipal,0.1578947368421052,2023-07
+2311207,Potengi,CE,2023,7,1.0,inpe_bdq_legacy,climatology_municipal,0.1052631578947368,2023-07
+2311306,Quixadá,CE,2023,7,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.4210526315789473,2023-07
+2311405,Quixeramobim,CE,2023,7,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.3157894736842105,2023-07
+2311959,Salitre,CE,2023,7,4.0,inpe_bdq_legacy,climatology_municipal,0.2105263157894736,2023-07
+2312106,Santana do Cariri,CE,2023,7,0.0,inpe_bdq_legacy,climatology_municipal,0.4736842105263157,2023-07
+2312908,Sobral,CE,2023,7,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.6842105263157895,2023-07
+2313302,Tauá,CE,2023,7,2.0,inpe_bdq_aqua_ref,climatology_municipal,0.2105263157894736,2023-07
+2313401,Tianguá,CE,2023,7,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.7368421052631579,2023-07
+2300101,Abaiara,CE,2023,7,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1405309438423431,2023-07
+2300200,Acaraú,CE,2023,7,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.2179348466336406,2023-07
+2301307,Araripe,CE,2023,7,1.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2810618876846862,2023-07
+2301604,Assaré,CE,2023,7,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0468436479474477,2023-07
+2301901,Barbalha,CE,2023,7,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2670087933004519,2023-07
+2302503,Brejo Santo,CE,2023,7,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1873745917897908,2023-07
+2302701,Campos Sales,CE,2023,7,4.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0468436479474477,2023-07
+2304103,Crateús,CE,2023,7,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.5152801274219249,2023-07
+2304202,Crato,CE,2023,7,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-07
+2304400,Fortaleza,CE,2023,7,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0468436479474477,2023-07
+2305100,Guaramiranga,CE,2023,7,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-07
+2305506,Iguatu,CE,2023,7,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.7963420151066112,2023-07
+2306405,Itapipoca,CE,2023,7,16.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.7494983671591634,2023-07
+2306900,Jaguaribe,CE,2023,7,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1405309438423431,2023-07
+2307007,Jaguaruana,CE,2023,7,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1873745917897908,2023-07
+2307106,Jardim,CE,2023,7,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0468436479474477,2023-07
+2307205,Jati,CE,2023,7,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-07
+2307304,Juazeiro do Norte,CE,2023,7,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2342182397372385,2023-07
+2308401,Missão Velha,CE,2023,7,1.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0936872958948954,2023-07
+2308708,Morada Nova,CE,2023,7,2.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-07
+2309201,Nova Olinda,CE,2023,7,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.3747491835795817,2023-07
+2310605,Penaforte,CE,2023,7,1.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-07
+2311108,Porteiras,CE,2023,7,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1405309438423431,2023-07
+2311207,Potengi,CE,2023,7,1.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0936872958948954,2023-07
+2311306,Quixadá,CE,2023,7,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.3747491835795817,2023-07
+2311405,Quixeramobim,CE,2023,7,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2810618876846862,2023-07
+2311959,Salitre,CE,2023,7,4.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1873745917897908,2023-07
+2312106,Santana do Cariri,CE,2023,7,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.4215928315270294,2023-07
+2312908,Sobral,CE,2023,7,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.6089674233168203,2023-07
+2313302,Tauá,CE,2023,7,2.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1873745917897908,2023-07
+2313401,Tianguá,CE,2023,7,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.655811071264268,2023-07
+2300101,Abaiara,CE,2023,8,0.0,inpe_bdq_legacy,climatology_municipal,0.3684210526315789,2023-08
+2300200,Acaraú,CE,2023,8,5.0,inpe_bdq_aqua_ref,climatology_municipal,1.5789473684210529,2023-08
+2301307,Araripe,CE,2023,8,0.0,inpe_bdq_legacy,climatology_municipal,0.95,2023-08
+2301604,Assaré,CE,2023,8,0.0,inpe_bdq_legacy,climatology_municipal,0.9473684210526316,2023-08
+2301901,Barbalha,CE,2023,8,6.0,inpe_bdq_aqua_ref,climatology_municipal,1.1,2023-08
+2302503,Brejo Santo,CE,2023,8,1.0,inpe_bdq_legacy,climatology_municipal,0.1578947368421052,2023-08
+2302701,Campos Sales,CE,2023,8,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.3157894736842105,2023-08
+2304103,Crateús,CE,2023,8,3.0,inpe_bdq_aqua_ref,climatology_municipal,2.473684210526316,2023-08
+2304202,Crato,CE,2023,8,0.0,inpe_bdq_legacy,climatology_municipal,1.65,2023-08
+2304400,Fortaleza,CE,2023,8,2.0,inpe_bdq_aqua_ref,climatology_municipal,0.3529411764705882,2023-08
+2305100,Guaramiranga,CE,2023,8,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-08
+2305506,Iguatu,CE,2023,8,4.0,inpe_bdq_aqua_ref,climatology_municipal,1.8421052631578947,2023-08
+2306405,Itapipoca,CE,2023,8,7.0,inpe_bdq_aqua_ref,climatology_municipal,2.8947368421052637,2023-08
+2306900,Jaguaribe,CE,2023,8,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.7894736842105263,2023-08
+2307106,Jardim,CE,2023,8,0.0,inpe_bdq_legacy,climatology_municipal,0.1578947368421052,2023-08
+2307205,Jati,CE,2023,8,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-08
+2307304,Juazeiro do Norte,CE,2023,8,1.0,inpe_bdq_legacy,climatology_municipal,0.7222222222222222,2023-08
+2308401,Missão Velha,CE,2023,8,3.0,inpe_bdq_legacy,climatology_municipal,0.7368421052631579,2023-08
+2308708,Morada Nova,CE,2023,8,1.0,inpe_bdq_aqua_ref,climatology_municipal,1.4210526315789471,2023-08
+2309201,Nova Olinda,CE,2023,8,0.0,inpe_bdq_legacy,climatology_municipal,0.2105263157894736,2023-08
+2310605,Penaforte,CE,2023,8,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-08
+2311108,Porteiras,CE,2023,8,0.0,inpe_bdq_legacy,climatology_municipal,0.1764705882352941,2023-08
+2311207,Potengi,CE,2023,8,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-08
+2311306,Quixadá,CE,2023,8,2.0,inpe_bdq_aqua_ref,climatology_municipal,1.0526315789473684,2023-08
+2311405,Quixeramobim,CE,2023,8,0.0,inpe_bdq_aqua_ref,climatology_municipal,1.105263157894737,2023-08
+2311959,Salitre,CE,2023,8,6.0,inpe_bdq_legacy,climatology_municipal,0.35,2023-08
+2312106,Santana do Cariri,CE,2023,8,1.0,inpe_bdq_legacy,climatology_municipal,0.8,2023-08
+2312908,Sobral,CE,2023,8,6.0,inpe_bdq_aqua_ref,climatology_municipal,6.421052631578948,2023-08
+2313302,Tauá,CE,2023,8,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.631578947368421,2023-08
+2313401,Tianguá,CE,2023,8,2.0,inpe_bdq_aqua_ref,climatology_municipal,0.8947368421052632,2023-08
+2300101,Abaiara,CE,2023,8,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.3346881403472073,2023-08
+2300200,Acaraú,CE,2023,8,5.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.4343777443451744,2023-08
+2301307,Araripe,CE,2023,8,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.8630172761810132,2023-08
+2301604,Assaré,CE,2023,8,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.8606266466071045,2023-08
+2301901,Barbalha,CE,2023,8,6.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.9992831618938048,2023-08
+2302503,Brejo Santo,CE,2023,8,1.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1434377744345174,2023-08
+2302701,Campos Sales,CE,2023,8,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2868755488690348,2023-08
+2304103,Crateús,CE,2023,8,3.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,2.2471917994741064,2023-08
+2304202,Crato,CE,2023,8,0.0,inpe_bdq_legacy,climatology_regional_intensity12,1.498924742840707,2023-08
+2304400,Fortaleza,CE,2023,8,2.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.3206256134418625,2023-08
+2305100,Guaramiranga,CE,2023,8,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-08
+2305506,Iguatu,CE,2023,8,4.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.6734407017360369,2023-08
+2306405,Itapipoca,CE,2023,8,7.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,2.629692531299486,2023-08
+2306900,Jaguaribe,CE,2023,8,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.7171888721725872,2023-08
+2307106,Jardim,CE,2023,8,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1434377744345174,2023-08
+2307205,Jati,CE,2023,8,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-08
+2307304,Juazeiro do Norte,CE,2023,8,1.0,inpe_bdq_legacy,climatology_regional_intensity12,0.6560950052838112,2023-08
+2308401,Missão Velha,CE,2023,8,3.0,inpe_bdq_legacy,climatology_regional_intensity12,0.6693762806944147,2023-08
+2308708,Morada Nova,CE,2023,8,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.2909399699106567,2023-08
+2309201,Nova Olinda,CE,2023,8,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1912503659126899,2023-08
+2310605,Penaforte,CE,2023,8,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-08
+2311108,Porteiras,CE,2023,8,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1603128067209312,2023-08
+2311207,Potengi,CE,2023,8,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-08
+2311306,Quixadá,CE,2023,8,2.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.9562518295634496,2023-08
+2311405,Quixeramobim,CE,2023,8,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.004064421041622,2023-08
+2311959,Salitre,CE,2023,8,6.0,inpe_bdq_legacy,climatology_regional_intensity12,0.3179537333298469,2023-08
+2312106,Santana do Cariri,CE,2023,8,1.0,inpe_bdq_legacy,climatology_regional_intensity12,0.7267513904682217,2023-08
+2312908,Sobral,CE,2023,8,6.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,5.833136160337043,2023-08
+2313302,Tauá,CE,2023,8,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.5737510977380696,2023-08
+2313401,Tianguá,CE,2023,8,2.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.8128140551289321,2023-08
+2300101,Abaiara,CE,2023,9,3.0,inpe_bdq_legacy,climatology_municipal,0.3684210526315789,2023-09
+2300200,Acaraú,CE,2023,9,1.0,inpe_bdq_aqua_ref,climatology_municipal,1.7894736842105263,2023-09
+2301307,Araripe,CE,2023,9,10.0,inpe_bdq_legacy,climatology_municipal,7.45,2023-09
+2301604,Assaré,CE,2023,9,17.0,inpe_bdq_legacy,climatology_municipal,1.25,2023-09
+2301901,Barbalha,CE,2023,9,5.0,inpe_bdq_aqua_ref,climatology_municipal,2.9,2023-09
+2302503,Brejo Santo,CE,2023,9,12.0,inpe_bdq_legacy,climatology_municipal,1.55,2023-09
+2302701,Campos Sales,CE,2023,9,6.0,inpe_bdq_aqua_ref,climatology_municipal,1.4,2023-09
+2304103,Crateús,CE,2023,9,3.0,inpe_bdq_aqua_ref,climatology_municipal,3.684210526315789,2023-09
+2304202,Crato,CE,2023,9,7.0,inpe_bdq_legacy,climatology_municipal,3.95,2023-09
+2304400,Fortaleza,CE,2023,9,1.0,inpe_bdq_aqua_ref,climatology_municipal,0.7647058823529411,2023-09
+2305100,Guaramiranga,CE,2023,9,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2023-09
+2305506,Iguatu,CE,2023,9,4.0,inpe_bdq_aqua_ref,climatology_municipal,4.578947368421052,2023-09
+2306405,Itapipoca,CE,2023,9,8.0,inpe_bdq_aqua_ref,climatology_municipal,3.3684210526315788,2023-09
+2306900,Jaguaribe,CE,2023,9,1.0,inpe_bdq_aqua_ref,climatology_municipal,1.0526315789473684,2023-09
+2307106,Jardim,CE,2023,9,3.0,inpe_bdq_legacy,climatology_municipal,1.631578947368421,2023-09
+2307205,Jati,CE,2023,9,1.0,inpe_bdq_legacy,climatology_municipal,0.5,2023-09
+2307304,Juazeiro do Norte,CE,2023,9,2.0,inpe_bdq_legacy,climatology_municipal,1.1111111111111112,2023-09
+2308401,Missão Velha,CE,2023,9,3.0,inpe_bdq_legacy,climatology_municipal,3.2,2023-09
+2308708,Morada Nova,CE,2023,9,0.0,inpe_bdq_aqua_ref,climatology_municipal,1.631578947368421,2023-09
+2309201,Nova Olinda,CE,2023,9,0.0,inpe_bdq_legacy,climatology_municipal,0.7894736842105263,2023-09
+2310605,Penaforte,CE,2023,9,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2023-09
+2311108,Porteiras,CE,2023,9,0.0,inpe_bdq_legacy,climatology_municipal,0.9411764705882352,2023-09
+2311207,Potengi,CE,2023,9,7.0,inpe_bdq_legacy,climatology_municipal,1.35,2023-09
+2311306,Quixadá,CE,2023,9,2.0,inpe_bdq_aqua_ref,climatology_municipal,3.526315789473684,2023-09
+2311405,Quixeramobim,CE,2023,9,5.0,inpe_bdq_aqua_ref,climatology_municipal,3.0526315789473686,2023-09
+2311959,Salitre,CE,2023,9,12.0,inpe_bdq_legacy,climatology_municipal,1.65,2023-09
+2312106,Santana do Cariri,CE,2023,9,13.0,inpe_bdq_legacy,climatology_municipal,3.5,2023-09
+2312908,Sobral,CE,2023,9,24.0,inpe_bdq_aqua_ref,climatology_municipal,10.526315789473683,2023-09
+2313302,Tauá,CE,2023,9,6.0,inpe_bdq_aqua_ref,climatology_municipal,2.0526315789473686,2023-09
+2313401,Tianguá,CE,2023,9,1.0,inpe_bdq_aqua_ref,climatology_municipal,1.368421052631579,2023-09
+2300101,Abaiara,CE,2023,9,3.0,inpe_bdq_legacy,climatology_regional_intensity12,0.3374825229195666,2023-09
+2300200,Acaraú,CE,2023,9,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.6392008256093236,2023-09
+2301307,Araripe,CE,2023,9,10.0,inpe_bdq_legacy,climatology_regional_intensity12,6.824378731323522,2023-09
+2301604,Assaré,CE,2023,9,17.0,inpe_bdq_legacy,climatology_regional_intensity12,1.1450299884771011,2023-09
+2301901,Barbalha,CE,2023,9,5.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,2.6564695732668744,2023-09
+2302503,Brejo Santo,CE,2023,9,12.0,inpe_bdq_legacy,climatology_regional_intensity12,1.4198371857116054,2023-09
+2302701,Campos Sales,CE,2023,9,6.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.282433587094353,2023-09
+2304103,Crateús,CE,2023,9,3.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,3.374825229195666,2023-09
+2304202,Crato,CE,2023,9,7.0,inpe_bdq_legacy,climatology_regional_intensity12,3.61829476358764,2023-09
+2304400,Fortaleza,CE,2023,9,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.7004889341271676,2023-09
+2305100,Guaramiranga,CE,2023,9,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2023-09
+2305506,Iguatu,CE,2023,9,4.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,4.194425642000327,2023-09
+2306405,Itapipoca,CE,2023,9,8.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,3.085554495264609,2023-09
+2306900,Jaguaribe,CE,2023,9,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.9642357797701904,2023-09
+2307106,Jardim,CE,2023,9,3.0,inpe_bdq_legacy,climatology_regional_intensity12,1.494565458643795,2023-09
+2307205,Jati,CE,2023,9,1.0,inpe_bdq_legacy,climatology_regional_intensity12,0.4580119953908404,2023-09
+2307304,Juazeiro do Norte,CE,2023,9,2.0,inpe_bdq_legacy,climatology_regional_intensity12,1.0178044342018675,2023-09
+2308401,Missão Velha,CE,2023,9,3.0,inpe_bdq_legacy,climatology_regional_intensity12,2.9312767705013787,2023-09
+2308708,Morada Nova,CE,2023,9,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.494565458643795,2023-09
+2309201,Nova Olinda,CE,2023,9,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.7231768348276428,2023-09
+2310605,Penaforte,CE,2023,9,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2023-09
+2311108,Porteiras,CE,2023,9,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.8621402266180526,2023-09
+2311207,Potengi,CE,2023,9,7.0,inpe_bdq_legacy,climatology_regional_intensity12,1.2366323875552692,2023-09
+2311306,Quixadá,CE,2023,9,2.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,3.2301898622301377,2023-09
+2311405,Quixeramobim,CE,2023,9,5.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,2.796283761333552,2023-09
+2311959,Salitre,CE,2023,9,12.0,inpe_bdq_legacy,climatology_regional_intensity12,1.5114395847897732,2023-09
+2312106,Santana do Cariri,CE,2023,9,13.0,inpe_bdq_legacy,climatology_regional_intensity12,3.206083967735883,2023-09
+2312908,Sobral,CE,2023,9,24.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,9.642357797701903,2023-09
+2313302,Tauá,CE,2023,9,6.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.8802597705518715,2023-09
+2313401,Tianguá,CE,2023,9,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.2535065137012475,2023-09
+2300101,Abaiara,CE,2023,10,10.0,inpe_bdq_legacy,climatology_municipal,1.4,2023-10
+2300200,Acaraú,CE,2023,10,2.0,inpe_bdq_aqua_ref,climatology_municipal,1.631578947368421,2023-10
+2301307,Araripe,CE,2023,10,33.0,inpe_bdq_legacy,climatology_municipal,11.95,2023-10
+2301604,Assaré,CE,2023,10,15.0,inpe_bdq_legacy,climatology_municipal,3.55,2023-10
+2301901,Barbalha,CE,2023,10,19.0,inpe_bdq_aqua_ref,climatology_municipal,3.4,2023-10
+2302503,Brejo Santo,CE,2023,10,1.0,inpe_bdq_legacy,climatology_municipal,2.85,2023-10
+2302701,Campos Sales,CE,2023,10,4.0,inpe_bdq_aqua_ref,climatology_municipal,2.9,2023-10
+2304103,Crateús,CE,2023,10,100.0,inpe_bdq_aqua_ref,climatology_municipal,42.526315789473685,2023-10
+2304202,Crato,CE,2023,10,13.0,inpe_bdq_legacy,climatology_municipal,9.1,2023-10
+2304400,Fortaleza,CE,2023,10,1.0,inpe_bdq_aqua_ref,climatology_municipal,1.0,2023-10
+2305100,Guaramiranga,CE,2023,10,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0588235294117647,2023-10
+2305506,Iguatu,CE,2023,10,18.0,inpe_bdq_aqua_ref,climatology_municipal,4.842105263157895,2023-10
+2306405,Itapipoca,CE,2023,10,15.0,inpe_bdq_aqua_ref,climatology_municipal,3.1052631578947367,2023-10
+2306900,Jaguaribe,CE,2023,10,0.0,inpe_bdq_aqua_ref,climatology_municipal,3.3157894736842106,2023-10
+2307106,Jardim,CE,2023,10,1.0,inpe_bdq_legacy,climatology_municipal,2.85,2023-10
+2307205,Jati,CE,2023,10,2.0,inpe_bdq_legacy,climatology_municipal,3.0,2023-10
+2307304,Juazeiro do Norte,CE,2023,10,5.0,inpe_bdq_legacy,climatology_municipal,2.611111111111111,2023-10
+2308401,Missão Velha,CE,2023,10,30.0,inpe_bdq_legacy,climatology_municipal,5.3,2023-10
+2308708,Morada Nova,CE,2023,10,2.0,inpe_bdq_aqua_ref,climatology_municipal,4.2631578947368425,2023-10
+2309201,Nova Olinda,CE,2023,10,0.0,inpe_bdq_legacy,climatology_municipal,1.0,2023-10
+2310605,Penaforte,CE,2023,10,0.0,inpe_bdq_legacy,climatology_municipal,0.1764705882352941,2023-10
+2311108,Porteiras,CE,2023,10,0.0,inpe_bdq_legacy,climatology_municipal,0.8888888888888888,2023-10
+2311207,Potengi,CE,2023,10,0.0,inpe_bdq_legacy,climatology_municipal,1.95,2023-10
+2311306,Quixadá,CE,2023,10,12.0,inpe_bdq_aqua_ref,climatology_municipal,17.68421052631579,2023-10
+2311405,Quixeramobim,CE,2023,10,47.0,inpe_bdq_aqua_ref,climatology_municipal,34.0,2023-10
+2311959,Salitre,CE,2023,10,15.0,inpe_bdq_legacy,climatology_municipal,4.6,2023-10
+2312106,Santana do Cariri,CE,2023,10,14.0,inpe_bdq_legacy,climatology_municipal,6.8,2023-10
+2312908,Sobral,CE,2023,10,4.0,inpe_bdq_aqua_ref,climatology_municipal,16.210526315789473,2023-10
+2313302,Tauá,CE,2023,10,41.0,inpe_bdq_aqua_ref,climatology_municipal,8.105263157894736,2023-10
+2313401,Tianguá,CE,2023,10,3.0,inpe_bdq_aqua_ref,climatology_municipal,4.157894736842105,2023-10
+2300101,Abaiara,CE,2023,10,10.0,inpe_bdq_legacy,climatology_regional_intensity12,1.3770957474102914,2023-10
+2300200,Acaraú,CE,2023,10,2.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.6048860214180087,2023-10
+2301307,Araripe,CE,2023,10,33.0,inpe_bdq_legacy,climatology_regional_intensity12,11.754495843966415,2023-10
+2301604,Assaré,CE,2023,10,15.0,inpe_bdq_legacy,climatology_regional_intensity12,3.4919213595046674,2023-10
+2301901,Barbalha,CE,2023,10,19.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,3.3443753865678505,2023-10
+2302503,Brejo Santo,CE,2023,10,1.0,inpe_bdq_legacy,climatology_regional_intensity12,2.8033734857995216,2023-10
+2302701,Campos Sales,CE,2023,10,4.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,2.8525554767784604,2023-10
+2304103,Crateús,CE,2023,10,100.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,41.8305775905081,2023-10
+2304202,Crato,CE,2023,10,13.0,inpe_bdq_legacy,climatology_regional_intensity12,8.951122358166893,2023-10
+2304400,Fortaleza,CE,2023,10,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.9836398195787796,2023-10
+2305100,Guaramiranga,CE,2023,10,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0578611658575752,2023-10
+2305506,Iguatu,CE,2023,10,18.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,4.76288754743409,2023-10
+2306405,Itapipoca,CE,2023,10,15.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,3.05446049237621,2023-10
+2306900,Jaguaribe,CE,2023,10,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,3.261542559655953,2023-10
+2307106,Jardim,CE,2023,10,1.0,inpe_bdq_legacy,climatology_regional_intensity12,2.8033734857995216,2023-10
+2307205,Jati,CE,2023,10,2.0,inpe_bdq_legacy,climatology_regional_intensity12,2.9509194587363385,2023-10
+2307304,Juazeiro do Norte,CE,2023,10,5.0,inpe_bdq_legacy,climatology_regional_intensity12,2.56839286223348,2023-10
+2308401,Missão Velha,CE,2023,10,30.0,inpe_bdq_legacy,climatology_regional_intensity12,5.213291043767532,2023-10
+2308708,Morada Nova,CE,2023,10,2.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,4.193411862414798,2023-10
+2309201,Nova Olinda,CE,2023,10,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.9836398195787796,2023-10
+2310605,Penaforte,CE,2023,10,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1735834975727258,2023-10
+2311108,Porteiras,CE,2023,10,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.8743465062922484,2023-10
+2311207,Potengi,CE,2023,10,0.0,inpe_bdq_legacy,climatology_regional_intensity12,1.91809764817862,2023-10
+2311306,Quixadá,CE,2023,10,12.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,17.394893651498418,2023-10
+2311405,Quixeramobim,CE,2023,10,47.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,33.4437538656785,2023-10
+2311959,Salitre,CE,2023,10,15.0,inpe_bdq_legacy,climatology_regional_intensity12,4.5247431700623855,2023-10
+2312106,Santana do Cariri,CE,2023,10,14.0,inpe_bdq_legacy,climatology_regional_intensity12,6.688750773135701,2023-10
+2312908,Sobral,CE,2023,10,4.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,15.945319180540215,2023-10
+2313302,Tauá,CE,2023,10,41.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,7.972659590270108,2023-10
+2313401,Tianguá,CE,2023,10,3.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,4.0898708287749255,2023-10
+2300101,Abaiara,CE,2023,11,9.0,inpe_bdq_legacy,climatology_municipal,2.85,2023-11
+2300200,Acaraú,CE,2023,11,9.0,inpe_bdq_aqua_ref,climatology_municipal,8.210526315789474,2023-11
+2301307,Araripe,CE,2023,11,24.0,inpe_bdq_legacy,climatology_municipal,13.2,2023-11
+2301604,Assaré,CE,2023,11,5.0,inpe_bdq_legacy,climatology_municipal,4.95,2023-11
+2301901,Barbalha,CE,2023,11,2.0,inpe_bdq_aqua_ref,climatology_municipal,4.7,2023-11
+2302503,Brejo Santo,CE,2023,11,6.0,inpe_bdq_legacy,climatology_municipal,4.8,2023-11
+2302701,Campos Sales,CE,2023,11,1.0,inpe_bdq_aqua_ref,climatology_municipal,2.7,2023-11
+2304103,Crateús,CE,2023,11,76.0,inpe_bdq_aqua_ref,climatology_municipal,59.89473684210526,2023-11
+2304202,Crato,CE,2023,11,9.0,inpe_bdq_legacy,climatology_municipal,9.95,2023-11
+2304400,Fortaleza,CE,2023,11,0.0,inpe_bdq_aqua_ref,climatology_municipal,1.1176470588235294,2023-11
+2305100,Guaramiranga,CE,2023,11,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.4117647058823529,2023-11
+2305506,Iguatu,CE,2023,11,12.0,inpe_bdq_aqua_ref,climatology_municipal,7.736842105263157,2023-11
+2306405,Itapipoca,CE,2023,11,21.0,inpe_bdq_aqua_ref,climatology_municipal,22.157894736842103,2023-11
+2306900,Jaguaribe,CE,2023,11,3.0,inpe_bdq_aqua_ref,climatology_municipal,3.8947368421052633,2023-11
+2307106,Jardim,CE,2023,11,6.0,inpe_bdq_legacy,climatology_municipal,3.4,2023-11
+2307205,Jati,CE,2023,11,2.0,inpe_bdq_legacy,climatology_municipal,2.35,2023-11
+2307304,Juazeiro do Norte,CE,2023,11,4.0,inpe_bdq_legacy,climatology_municipal,3.2222222222222223,2023-11
+2308401,Missão Velha,CE,2023,11,8.0,inpe_bdq_legacy,climatology_municipal,10.5,2023-11
+2308708,Morada Nova,CE,2023,11,8.0,inpe_bdq_aqua_ref,climatology_municipal,4.7368421052631575,2023-11
+2309201,Nova Olinda,CE,2023,11,4.0,inpe_bdq_legacy,climatology_municipal,4.2,2023-11
+2310605,Penaforte,CE,2023,11,0.0,inpe_bdq_legacy,climatology_municipal,0.2777777777777778,2023-11
+2311108,Porteiras,CE,2023,11,2.0,inpe_bdq_legacy,climatology_municipal,2.1666666666666665,2023-11
+2311207,Potengi,CE,2023,11,0.0,inpe_bdq_legacy,climatology_municipal,2.8,2023-11
+2311306,Quixadá,CE,2023,11,10.0,inpe_bdq_aqua_ref,climatology_municipal,23.42105263157895,2023-11
+2311405,Quixeramobim,CE,2023,11,33.0,inpe_bdq_aqua_ref,climatology_municipal,49.42105263157895,2023-11
+2311959,Salitre,CE,2023,11,9.0,inpe_bdq_legacy,climatology_municipal,8.75,2023-11
+2312106,Santana do Cariri,CE,2023,11,14.0,inpe_bdq_legacy,climatology_municipal,12.25,2023-11
+2312908,Sobral,CE,2023,11,26.0,inpe_bdq_aqua_ref,climatology_municipal,30.789473684210527,2023-11
+2313302,Tauá,CE,2023,11,28.0,inpe_bdq_aqua_ref,climatology_municipal,13.421052631578949,2023-11
+2313401,Tianguá,CE,2023,11,6.0,inpe_bdq_aqua_ref,climatology_municipal,9.63157894736842,2023-11
+2300101,Abaiara,CE,2023,11,9.0,inpe_bdq_legacy,climatology_regional_intensity12,3.212009659869347,2023-11
+2300200,Acaraú,CE,2023,11,9.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,9.253435031202551,2023-11
+2301307,Araripe,CE,2023,11,24.0,inpe_bdq_legacy,climatology_regional_intensity12,14.876676319394868,2023-11
+2301604,Assaré,CE,2023,11,5.0,inpe_bdq_legacy,climatology_regional_intensity12,5.578753619773076,2023-11
+2301901,Barbalha,CE,2023,11,2.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,5.296998386451204,2023-11
+2302503,Brejo Santo,CE,2023,11,6.0,inpe_bdq_legacy,climatology_regional_intensity12,5.409700479779953,2023-11
+2302701,Campos Sales,CE,2023,11,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,3.042956519876224,2023-11
+2304103,Crateús,CE,2023,11,76.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,67.50262221479808,2023-11
+2304202,Crato,CE,2023,11,9.0,inpe_bdq_legacy,climatology_regional_intensity12,11.213858286210526,2023-11
+2304400,Fortaleza,CE,2023,11,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.2596116313213124,2023-11
+2305100,Guaramiranga,CE,2023,11,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.4640674431183783,2023-11
+2305506,Iguatu,CE,2023,11,12.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,8.719583010171634,2023-11
+2306405,Itapipoca,CE,2023,11,21.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,24.972411206001755,2023-11
+2306900,Jaguaribe,CE,2023,11,3.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,4.389449950698646,2023-11
+2307106,Jardim,CE,2023,11,6.0,inpe_bdq_legacy,climatology_regional_intensity12,3.831871173177466,2023-11
+2307205,Jati,CE,2023,11,2.0,inpe_bdq_legacy,climatology_regional_intensity12,2.648499193225602,2023-11
+2307304,Juazeiro do Norte,CE,2023,11,4.0,inpe_bdq_legacy,climatology_regional_intensity12,3.63151189614858,2023-11
+2308401,Missão Velha,CE,2023,11,8.0,inpe_bdq_legacy,climatology_regional_intensity12,11.833719799518644,2023-11
+2308708,Morada Nova,CE,2023,11,8.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,5.338520210309163,2023-11
+2309201,Nova Olinda,CE,2023,11,4.0,inpe_bdq_legacy,climatology_regional_intensity12,4.733487919807459,2023-11
+2310605,Penaforte,CE,2023,11,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.3130613703576361,2023-11
+2311108,Porteiras,CE,2023,11,2.0,inpe_bdq_legacy,climatology_regional_intensity12,2.441878688789562,2023-11
+2311207,Potengi,CE,2023,11,0.0,inpe_bdq_legacy,climatology_regional_intensity12,3.155658613204972,2023-11
+2311306,Quixadá,CE,2023,11,10.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,26.39601659541753,2023-11
+2311405,Quixeramobim,CE,2023,11,33.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,55.69856086089227,2023-11
+2311959,Salitre,CE,2023,11,9.0,inpe_bdq_legacy,climatology_regional_intensity12,9.861433166265538,2023-11
+2312106,Santana do Cariri,CE,2023,11,14.0,inpe_bdq_legacy,climatology_regional_intensity12,13.806006432771754,2023-11
+2312908,Sobral,CE,2023,11,26.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,34.70038136700956,2023-11
+2313302,Tauá,CE,2023,11,28.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,15.12580726254263,2023-11
+2313401,Tianguá,CE,2023,11,6.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,10.8549910942953,2023-11
+2300101,Abaiara,CE,2023,12,4.0,inpe_bdq_legacy,climatology_municipal,1.8,2023-12
+2300200,Acaraú,CE,2023,12,27.0,inpe_bdq_aqua_ref,climatology_municipal,32.26315789473684,2023-12
+2301307,Araripe,CE,2023,12,15.0,inpe_bdq_legacy,climatology_municipal,6.25,2023-12
+2301604,Assaré,CE,2023,12,4.0,inpe_bdq_legacy,climatology_municipal,5.15,2023-12
+2301901,Barbalha,CE,2023,12,1.0,inpe_bdq_aqua_ref,climatology_municipal,2.15,2023-12
+2302503,Brejo Santo,CE,2023,12,6.0,inpe_bdq_legacy,climatology_municipal,2.25,2023-12
+2302701,Campos Sales,CE,2023,12,2.0,inpe_bdq_aqua_ref,climatology_municipal,1.45,2023-12
+2304103,Crateús,CE,2023,12,35.0,inpe_bdq_aqua_ref,climatology_municipal,26.84210526315789,2023-12
+2304202,Crato,CE,2023,12,1.0,inpe_bdq_legacy,climatology_municipal,5.9,2023-12
+2304400,Fortaleza,CE,2023,12,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1764705882352941,2023-12
+2305100,Guaramiranga,CE,2023,12,2.0,inpe_bdq_aqua_ref,climatology_municipal,0.0588235294117647,2023-12
+2305506,Iguatu,CE,2023,12,6.0,inpe_bdq_aqua_ref,climatology_municipal,4.0,2023-12
+2306405,Itapipoca,CE,2023,12,66.0,inpe_bdq_aqua_ref,climatology_municipal,62.31578947368421,2023-12
+2306900,Jaguaribe,CE,2023,12,5.0,inpe_bdq_aqua_ref,climatology_municipal,2.1578947368421053,2023-12
+2307106,Jardim,CE,2023,12,5.0,inpe_bdq_legacy,climatology_municipal,3.45,2023-12
+2307205,Jati,CE,2023,12,2.0,inpe_bdq_legacy,climatology_municipal,0.95,2023-12
+2307304,Juazeiro do Norte,CE,2023,12,1.0,inpe_bdq_legacy,climatology_municipal,1.1111111111111112,2023-12
+2308401,Missão Velha,CE,2023,12,10.0,inpe_bdq_legacy,climatology_municipal,6.95,2023-12
+2308708,Morada Nova,CE,2023,12,4.0,inpe_bdq_aqua_ref,climatology_municipal,4.7368421052631575,2023-12
+2309201,Nova Olinda,CE,2023,12,3.0,inpe_bdq_legacy,climatology_municipal,2.8,2023-12
+2310605,Penaforte,CE,2023,12,1.0,inpe_bdq_legacy,climatology_municipal,0.3888888888888889,2023-12
+2311108,Porteiras,CE,2023,12,1.0,inpe_bdq_legacy,climatology_municipal,1.8888888888888888,2023-12
+2311207,Potengi,CE,2023,12,0.0,inpe_bdq_legacy,climatology_municipal,1.3,2023-12
+2311306,Quixadá,CE,2023,12,8.0,inpe_bdq_aqua_ref,climatology_municipal,13.0,2023-12
+2311405,Quixeramobim,CE,2023,12,23.0,inpe_bdq_aqua_ref,climatology_municipal,30.94736842105263,2023-12
+2311959,Salitre,CE,2023,12,4.0,inpe_bdq_legacy,climatology_municipal,3.5,2023-12
+2312106,Santana do Cariri,CE,2023,12,2.0,inpe_bdq_legacy,climatology_municipal,10.5,2023-12
+2312908,Sobral,CE,2023,12,30.0,inpe_bdq_aqua_ref,climatology_municipal,19.26315789473684,2023-12
+2313302,Tauá,CE,2023,12,20.0,inpe_bdq_aqua_ref,climatology_municipal,9.105263157894736,2023-12
+2313401,Tianguá,CE,2023,12,23.0,inpe_bdq_aqua_ref,climatology_municipal,12.105263157894736,2023-12
+2300101,Abaiara,CE,2023,12,4.0,inpe_bdq_legacy,climatology_regional_intensity12,2.204193455560012,2023-12
+2300200,Acaraú,CE,2023,12,27.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,39.50791193737682,2023-12
+2301307,Araripe,CE,2023,12,15.0,inpe_bdq_legacy,climatology_regional_intensity12,7.653449498472263,2023-12
+2301604,Assaré,CE,2023,12,4.0,inpe_bdq_legacy,climatology_regional_intensity12,6.306442386741145,2023-12
+2301901,Barbalha,CE,2023,12,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,2.6327866274744585,2023-12
+2302503,Brejo Santo,CE,2023,12,6.0,inpe_bdq_legacy,climatology_regional_intensity12,2.755241819450015,2023-12
+2302701,Campos Sales,CE,2023,12,2.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.775600283645565,2023-12
+2304103,Crateús,CE,2023,12,35.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,32.86955153028087,2023-12
+2304202,Crato,CE,2023,12,1.0,inpe_bdq_legacy,climatology_regional_intensity12,7.224856326557817,2023-12
+2304400,Fortaleza,CE,2023,12,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2160973976039227,2023-12
+2305100,Guaramiranga,CE,2023,12,2.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0720324658679742,2023-12
+2305506,Iguatu,CE,2023,12,6.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,4.898207679022248,2023-12
+2306405,Itapipoca,CE,2023,12,66.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,76.30891963108346,2023-12
+2306900,Jaguaribe,CE,2023,12,5.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,2.6424541426304238,2023-12
+2307106,Jardim,CE,2023,12,5.0,inpe_bdq_legacy,climatology_regional_intensity12,4.224704123156689,2023-12
+2307205,Jati,CE,2023,12,2.0,inpe_bdq_legacy,climatology_regional_intensity12,1.163324323767784,2023-12
+2307304,Juazeiro do Norte,CE,2023,12,1.0,inpe_bdq_legacy,climatology_regional_intensity12,1.360613244172847,2023-12
+2308401,Missão Velha,CE,2023,12,10.0,inpe_bdq_legacy,climatology_regional_intensity12,8.510635842301157,2023-12
+2308708,Morada Nova,CE,2023,12,4.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,5.800509093578978,2023-12
+2309201,Nova Olinda,CE,2023,12,3.0,inpe_bdq_legacy,climatology_regional_intensity12,3.428745375315574,2023-12
+2310605,Penaforte,CE,2023,12,1.0,inpe_bdq_legacy,climatology_regional_intensity12,0.4762146354604963,2023-12
+2311108,Porteiras,CE,2023,12,1.0,inpe_bdq_legacy,climatology_regional_intensity12,2.3130425150938394,2023-12
+2311207,Potengi,CE,2023,12,0.0,inpe_bdq_legacy,climatology_regional_intensity12,1.5919174956822308,2023-12
+2311306,Quixadá,CE,2023,12,8.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,15.919174956822308,2023-12
+2311405,Quixeramobim,CE,2023,12,23.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,37.89665941138266,2023-12
+2311959,Salitre,CE,2023,12,4.0,inpe_bdq_legacy,climatology_regional_intensity12,4.285931719144467,2023-12
+2312106,Santana do Cariri,CE,2023,12,2.0,inpe_bdq_legacy,climatology_regional_intensity12,12.857795157433404,2023-12
+2312908,Sobral,CE,2023,12,30.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,23.58873698055451,2023-12
+2313302,Tauá,CE,2023,12,20.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,11.14986747987959,2023-12
+2313401,Tianguá,CE,2023,12,23.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,14.823523239146278,2023-12
+2300101,Abaiara,CE,2024,1,0.0,inpe_bdq_legacy,climatology_municipal,0.05,2024-01
+2300200,Acaraú,CE,2024,1,5.0,inpe_bdq_aqua_ref,climatology_municipal,5.05,2024-01
+2301307,Araripe,CE,2024,1,6.0,inpe_bdq_legacy,climatology_municipal,1.35,2024-01
+2301604,Assaré,CE,2024,1,1.0,inpe_bdq_legacy,climatology_municipal,1.85,2024-01
+2301901,Barbalha,CE,2024,1,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.45,2024-01
+2302503,Brejo Santo,CE,2024,1,0.0,inpe_bdq_legacy,climatology_municipal,0.35,2024-01
+2302701,Campos Sales,CE,2024,1,1.0,inpe_bdq_aqua_ref,climatology_municipal,0.4,2024-01
+2304103,Crateús,CE,2024,1,9.0,inpe_bdq_aqua_ref,climatology_municipal,3.6,2024-01
+2304202,Crato,CE,2024,1,0.0,inpe_bdq_legacy,climatology_municipal,0.75,2024-01
+2304400,Fortaleza,CE,2024,1,1.0,inpe_bdq_aqua_ref,climatology_municipal,0.1,2024-01
+2305506,Iguatu,CE,2024,1,4.0,inpe_bdq_aqua_ref,climatology_municipal,1.1,2024-01
+2306405,Itapipoca,CE,2024,1,8.0,inpe_bdq_aqua_ref,climatology_municipal,6.9,2024-01
+2306900,Jaguaribe,CE,2024,1,2.0,inpe_bdq_aqua_ref,climatology_municipal,0.75,2024-01
+2307007,Jaguaruana,CE,2024,1,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.55,2024-01
+2307106,Jardim,CE,2024,1,1.0,inpe_bdq_legacy,climatology_municipal,0.45,2024-01
+2307205,Jati,CE,2024,1,0.0,inpe_bdq_legacy,climatology_municipal,0.35,2024-01
+2307304,Juazeiro do Norte,CE,2024,1,0.0,inpe_bdq_legacy,climatology_municipal,0.15,2024-01
+2308401,Missão Velha,CE,2024,1,5.0,inpe_bdq_legacy,climatology_municipal,1.1,2024-01
+2308708,Morada Nova,CE,2024,1,4.0,inpe_bdq_aqua_ref,climatology_municipal,1.6,2024-01
+2309201,Nova Olinda,CE,2024,1,0.0,inpe_bdq_legacy,climatology_municipal,0.25,2024-01
+2310605,Penaforte,CE,2024,1,1.0,inpe_bdq_legacy,climatology_municipal,0.05,2024-01
+2311108,Porteiras,CE,2024,1,0.0,inpe_bdq_legacy,climatology_municipal,0.2,2024-01
+2311207,Potengi,CE,2024,1,0.0,inpe_bdq_legacy,climatology_municipal,0.7,2024-01
+2311306,Quixadá,CE,2024,1,0.0,inpe_bdq_aqua_ref,climatology_municipal,2.0,2024-01
+2311405,Quixeramobim,CE,2024,1,10.0,inpe_bdq_aqua_ref,climatology_municipal,5.5,2024-01
+2311959,Salitre,CE,2024,1,0.0,inpe_bdq_legacy,climatology_municipal,0.5,2024-01
+2312106,Santana do Cariri,CE,2024,1,4.0,inpe_bdq_legacy,climatology_municipal,3.4,2024-01
+2312908,Sobral,CE,2024,1,0.0,inpe_bdq_aqua_ref,climatology_municipal,2.2,2024-01
+2313302,Tauá,CE,2024,1,7.0,inpe_bdq_aqua_ref,climatology_municipal,1.1,2024-01
+2313401,Tianguá,CE,2024,1,4.0,inpe_bdq_aqua_ref,climatology_municipal,0.7,2024-01
+2300101,Abaiara,CE,2024,1,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0655456362433145,2024-01
+2300200,Acaraú,CE,2024,1,5.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,6.620109260574771,2024-01
+2301307,Araripe,CE,2024,1,6.0,inpe_bdq_legacy,climatology_regional_intensity12,1.7697321785694933,2024-01
+2301604,Assaré,CE,2024,1,1.0,inpe_bdq_legacy,climatology_regional_intensity12,2.425188541002639,2024-01
+2301901,Barbalha,CE,2024,1,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.5899107261898311,2024-01
+2302503,Brejo Santo,CE,2024,1,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.4588194537032019,2024-01
+2302701,Campos Sales,CE,2024,1,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.5243650899465165,2024-01
+2304103,Crateús,CE,2024,1,9.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,4.719285809518649,2024-01
+2304202,Crato,CE,2024,1,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.9831845436497184,2024-01
+2304400,Fortaleza,CE,2024,1,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1310912724866291,2024-01
+2305506,Iguatu,CE,2024,1,4.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.4420039973529206,2024-01
+2306405,Itapipoca,CE,2024,1,8.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,9.04529780157741,2024-01
+2306900,Jaguaribe,CE,2024,1,2.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.9831845436497184,2024-01
+2307007,Jaguaruana,CE,2024,1,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.7210019986764603,2024-01
+2307106,Jardim,CE,2024,1,1.0,inpe_bdq_legacy,climatology_regional_intensity12,0.5899107261898311,2024-01
+2307205,Jati,CE,2024,1,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.4588194537032019,2024-01
+2307304,Juazeiro do Norte,CE,2024,1,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1966369087299437,2024-01
+2308401,Missão Velha,CE,2024,1,5.0,inpe_bdq_legacy,climatology_regional_intensity12,1.4420039973529206,2024-01
+2308708,Morada Nova,CE,2024,1,4.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,2.097460359786066,2024-01
+2309201,Nova Olinda,CE,2024,1,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.3277281812165728,2024-01
+2310605,Penaforte,CE,2024,1,1.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0655456362433145,2024-01
+2311108,Porteiras,CE,2024,1,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2621825449732582,2024-01
+2311207,Potengi,CE,2024,1,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.917638907406404,2024-01
+2311306,Quixadá,CE,2024,1,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,2.6218254497325826,2024-01
+2311405,Quixeramobim,CE,2024,1,10.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,7.210019986764602,2024-01
+2311959,Salitre,CE,2024,1,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.6554563624331456,2024-01
+2312106,Santana do Cariri,CE,2024,1,4.0,inpe_bdq_legacy,climatology_regional_intensity12,4.45710326454539,2024-01
+2312908,Sobral,CE,2024,1,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,2.884007994705841,2024-01
+2313302,Tauá,CE,2024,1,7.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.4420039973529206,2024-01
+2313401,Tianguá,CE,2024,1,4.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.917638907406404,2024-01
+2300101,Abaiara,CE,2024,2,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-02
+2300200,Acaraú,CE,2024,2,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.6,2024-02
+2301307,Araripe,CE,2024,2,0.0,inpe_bdq_legacy,climatology_municipal,0.15,2024-02
+2301604,Assaré,CE,2024,2,2.0,inpe_bdq_legacy,climatology_municipal,0.25,2024-02
+2301901,Barbalha,CE,2024,2,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.15,2024-02
+2302503,Brejo Santo,CE,2024,2,0.0,inpe_bdq_legacy,climatology_municipal,0.1,2024-02
+2302701,Campos Sales,CE,2024,2,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.05,2024-02
+2304103,Crateús,CE,2024,2,2.0,inpe_bdq_aqua_ref,climatology_municipal,0.15,2024-02
+2304202,Crato,CE,2024,2,0.0,inpe_bdq_legacy,climatology_municipal,0.3,2024-02
+2304400,Fortaleza,CE,2024,2,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1,2024-02
+2305506,Iguatu,CE,2024,2,1.0,inpe_bdq_aqua_ref,climatology_municipal,0.1,2024-02
+2306405,Itapipoca,CE,2024,2,1.0,inpe_bdq_aqua_ref,climatology_municipal,0.2,2024-02
+2306900,Jaguaribe,CE,2024,2,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.2,2024-02
+2307007,Jaguaruana,CE,2024,2,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.25,2024-02
+2307106,Jardim,CE,2024,2,0.0,inpe_bdq_legacy,climatology_municipal,0.1,2024-02
+2307205,Jati,CE,2024,2,0.0,inpe_bdq_legacy,climatology_municipal,0.15,2024-02
+2307304,Juazeiro do Norte,CE,2024,2,0.0,inpe_bdq_legacy,climatology_municipal,0.05,2024-02
+2308401,Missão Velha,CE,2024,2,1.0,inpe_bdq_legacy,climatology_municipal,0.2,2024-02
+2308708,Morada Nova,CE,2024,2,2.0,inpe_bdq_aqua_ref,climatology_municipal,0.65,2024-02
+2309201,Nova Olinda,CE,2024,2,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-02
+2310605,Penaforte,CE,2024,2,0.0,inpe_bdq_legacy,climatology_municipal,0.1,2024-02
+2311108,Porteiras,CE,2024,2,0.0,inpe_bdq_legacy,climatology_municipal,0.1,2024-02
+2311207,Potengi,CE,2024,2,0.0,inpe_bdq_legacy,climatology_municipal,0.3,2024-02
+2311306,Quixadá,CE,2024,2,1.0,inpe_bdq_aqua_ref,climatology_municipal,0.2,2024-02
+2311405,Quixeramobim,CE,2024,2,0.0,inpe_bdq_aqua_ref,climatology_municipal,1.05,2024-02
+2311959,Salitre,CE,2024,2,0.0,inpe_bdq_legacy,climatology_municipal,0.05,2024-02
+2312106,Santana do Cariri,CE,2024,2,0.0,inpe_bdq_legacy,climatology_municipal,0.25,2024-02
+2312908,Sobral,CE,2024,2,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.15,2024-02
+2313302,Tauá,CE,2024,2,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.3,2024-02
+2313401,Tianguá,CE,2024,2,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.2,2024-02
+2300101,Abaiara,CE,2024,2,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-02
+2300200,Acaraú,CE,2024,2,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.8160510281631324,2024-02
+2301307,Araripe,CE,2024,2,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2040127570407831,2024-02
+2301604,Assaré,CE,2024,2,2.0,inpe_bdq_legacy,climatology_regional_intensity12,0.3400212617346385,2024-02
+2301901,Barbalha,CE,2024,2,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2040127570407831,2024-02
+2302503,Brejo Santo,CE,2024,2,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1360085046938554,2024-02
+2302701,Campos Sales,CE,2024,2,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0680042523469277,2024-02
+2304103,Crateús,CE,2024,2,2.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2040127570407831,2024-02
+2304202,Crato,CE,2024,2,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.4080255140815662,2024-02
+2304400,Fortaleza,CE,2024,2,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1360085046938554,2024-02
+2305506,Iguatu,CE,2024,2,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1360085046938554,2024-02
+2306405,Itapipoca,CE,2024,2,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2720170093877108,2024-02
+2306900,Jaguaribe,CE,2024,2,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2720170093877108,2024-02
+2307007,Jaguaruana,CE,2024,2,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.3400212617346385,2024-02
+2307106,Jardim,CE,2024,2,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1360085046938554,2024-02
+2307205,Jati,CE,2024,2,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2040127570407831,2024-02
+2307304,Juazeiro do Norte,CE,2024,2,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0680042523469277,2024-02
+2308401,Missão Velha,CE,2024,2,1.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2720170093877108,2024-02
+2308708,Morada Nova,CE,2024,2,2.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.8840552805100601,2024-02
+2309201,Nova Olinda,CE,2024,2,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-02
+2310605,Penaforte,CE,2024,2,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1360085046938554,2024-02
+2311108,Porteiras,CE,2024,2,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1360085046938554,2024-02
+2311207,Potengi,CE,2024,2,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.4080255140815662,2024-02
+2311306,Quixadá,CE,2024,2,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2720170093877108,2024-02
+2311405,Quixeramobim,CE,2024,2,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.4280892992854817,2024-02
+2311959,Salitre,CE,2024,2,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0680042523469277,2024-02
+2312106,Santana do Cariri,CE,2024,2,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.3400212617346385,2024-02
+2312908,Sobral,CE,2024,2,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2040127570407831,2024-02
+2313302,Tauá,CE,2024,2,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.4080255140815662,2024-02
+2313401,Tianguá,CE,2024,2,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2720170093877108,2024-02
+2300101,Abaiara,CE,2024,3,0.0,inpe_bdq_legacy,climatology_municipal,0.05,2024-03
+2300200,Acaraú,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.55,2024-03
+2301307,Araripe,CE,2024,3,1.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-03
+2301604,Assaré,CE,2024,3,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-03
+2301901,Barbalha,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2024-03
+2302503,Brejo Santo,CE,2024,3,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-03
+2302701,Campos Sales,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2024-03
+2304103,Crateús,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1,2024-03
+2304202,Crato,CE,2024,3,0.0,inpe_bdq_legacy,climatology_municipal,0.15,2024-03
+2304400,Fortaleza,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2024-03
+2305506,Iguatu,CE,2024,3,3.0,inpe_bdq_aqua_ref,climatology_municipal,0.25,2024-03
+2306405,Itapipoca,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.05,2024-03
+2306900,Jaguaribe,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.05,2024-03
+2307007,Jaguaruana,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.05,2024-03
+2307106,Jardim,CE,2024,3,0.0,inpe_bdq_legacy,climatology_municipal,0.05,2024-03
+2307205,Jati,CE,2024,3,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-03
+2307304,Juazeiro do Norte,CE,2024,3,0.0,inpe_bdq_legacy,climatology_municipal,0.1,2024-03
+2308401,Missão Velha,CE,2024,3,0.0,inpe_bdq_legacy,climatology_municipal,0.3,2024-03
+2308708,Morada Nova,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.15,2024-03
+2309201,Nova Olinda,CE,2024,3,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-03
+2310605,Penaforte,CE,2024,3,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-03
+2311108,Porteiras,CE,2024,3,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-03
+2311207,Potengi,CE,2024,3,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-03
+2311306,Quixadá,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1,2024-03
+2311405,Quixeramobim,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.35,2024-03
+2311959,Salitre,CE,2024,3,0.0,inpe_bdq_legacy,climatology_municipal,0.05,2024-03
+2312106,Santana do Cariri,CE,2024,3,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-03
+2312908,Sobral,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.05,2024-03
+2313302,Tauá,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.05,2024-03
+2313401,Tianguá,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2024-03
+2300101,Abaiara,CE,2024,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0680392061097231,2024-03
+2300200,Acaraú,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.7484312672069551,2024-03
+2301307,Araripe,CE,2024,3,1.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-03
+2301604,Assaré,CE,2024,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-03
+2301901,Barbalha,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2024-03
+2302503,Brejo Santo,CE,2024,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-03
+2302701,Campos Sales,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2024-03
+2304103,Crateús,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1360784122194463,2024-03
+2304202,Crato,CE,2024,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2041176183291695,2024-03
+2304400,Fortaleza,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2024-03
+2305506,Iguatu,CE,2024,3,3.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.3401960305486159,2024-03
+2306405,Itapipoca,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0680392061097231,2024-03
+2306900,Jaguaribe,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0680392061097231,2024-03
+2307007,Jaguaruana,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0680392061097231,2024-03
+2307106,Jardim,CE,2024,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0680392061097231,2024-03
+2307205,Jati,CE,2024,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-03
+2307304,Juazeiro do Norte,CE,2024,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1360784122194463,2024-03
+2308401,Missão Velha,CE,2024,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.4082352366583391,2024-03
+2308708,Morada Nova,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2041176183291695,2024-03
+2309201,Nova Olinda,CE,2024,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-03
+2310605,Penaforte,CE,2024,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-03
+2311108,Porteiras,CE,2024,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-03
+2311207,Potengi,CE,2024,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-03
+2311306,Quixadá,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1360784122194463,2024-03
+2311405,Quixeramobim,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.4762744427680622,2024-03
+2311959,Salitre,CE,2024,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0680392061097231,2024-03
+2312106,Santana do Cariri,CE,2024,3,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-03
+2312908,Sobral,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0680392061097231,2024-03
+2313302,Tauá,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0680392061097231,2024-03
+2313401,Tianguá,CE,2024,3,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2024-03
+2300101,Abaiara,CE,2024,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-04
+2300200,Acaraú,CE,2024,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2024-04
+2301307,Araripe,CE,2024,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-04
+2301604,Assaré,CE,2024,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-04
+2301901,Barbalha,CE,2024,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2024-04
+2302503,Brejo Santo,CE,2024,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-04
+2302701,Campos Sales,CE,2024,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2024-04
+2304103,Crateús,CE,2024,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1,2024-04
+2304202,Crato,CE,2024,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-04
+2304400,Fortaleza,CE,2024,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2024-04
+2305506,Iguatu,CE,2024,4,4.0,inpe_bdq_aqua_ref,climatology_municipal,0.15,2024-04
+2306405,Itapipoca,CE,2024,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2024-04
+2306900,Jaguaribe,CE,2024,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1,2024-04
+2307007,Jaguaruana,CE,2024,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2024-04
+2307106,Jardim,CE,2024,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-04
+2307205,Jati,CE,2024,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-04
+2307304,Juazeiro do Norte,CE,2024,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-04
+2308401,Missão Velha,CE,2024,4,0.0,inpe_bdq_legacy,climatology_municipal,0.2,2024-04
+2308708,Morada Nova,CE,2024,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.05,2024-04
+2309201,Nova Olinda,CE,2024,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-04
+2310605,Penaforte,CE,2024,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-04
+2311108,Porteiras,CE,2024,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-04
+2311207,Potengi,CE,2024,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-04
+2311306,Quixadá,CE,2024,4,1.0,inpe_bdq_aqua_ref,climatology_municipal,0.1,2024-04
+2311405,Quixeramobim,CE,2024,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.05,2024-04
+2311959,Salitre,CE,2024,4,0.0,inpe_bdq_legacy,climatology_municipal,0.05,2024-04
+2312106,Santana do Cariri,CE,2024,4,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-04
+2312908,Sobral,CE,2024,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2024-04
+2313302,Tauá,CE,2024,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.05,2024-04
+2313401,Tianguá,CE,2024,4,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2024-04
+2300101,Abaiara,CE,2024,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-04
+2300200,Acaraú,CE,2024,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2024-04
+2301307,Araripe,CE,2024,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-04
+2301604,Assaré,CE,2024,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-04
+2301901,Barbalha,CE,2024,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2024-04
+2302503,Brejo Santo,CE,2024,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-04
+2302701,Campos Sales,CE,2024,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2024-04
+2304103,Crateús,CE,2024,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1359785216686937,2024-04
+2304202,Crato,CE,2024,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-04
+2304400,Fortaleza,CE,2024,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2024-04
+2305506,Iguatu,CE,2024,4,4.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2039677825030406,2024-04
+2306405,Itapipoca,CE,2024,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2024-04
+2306900,Jaguaribe,CE,2024,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1359785216686937,2024-04
+2307007,Jaguaruana,CE,2024,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2024-04
+2307106,Jardim,CE,2024,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-04
+2307205,Jati,CE,2024,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-04
+2307304,Juazeiro do Norte,CE,2024,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-04
+2308401,Missão Velha,CE,2024,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2719570433373875,2024-04
+2308708,Morada Nova,CE,2024,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0679892608343468,2024-04
+2309201,Nova Olinda,CE,2024,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-04
+2310605,Penaforte,CE,2024,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-04
+2311108,Porteiras,CE,2024,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-04
+2311207,Potengi,CE,2024,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-04
+2311306,Quixadá,CE,2024,4,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1359785216686937,2024-04
+2311405,Quixeramobim,CE,2024,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0679892608343468,2024-04
+2311959,Salitre,CE,2024,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0679892608343468,2024-04
+2312106,Santana do Cariri,CE,2024,4,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-04
+2312908,Sobral,CE,2024,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2024-04
+2313302,Tauá,CE,2024,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0679892608343468,2024-04
+2313401,Tianguá,CE,2024,4,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2024-04
+2300101,Abaiara,CE,2024,5,0.0,inpe_bdq_legacy,climatology_municipal,0.05,2024-05
+2300200,Acaraú,CE,2024,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1,2024-05
+2301307,Araripe,CE,2024,5,5.0,inpe_bdq_legacy,climatology_municipal,0.25,2024-05
+2301604,Assaré,CE,2024,5,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-05
+2301901,Barbalha,CE,2024,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2024-05
+2302503,Brejo Santo,CE,2024,5,0.0,inpe_bdq_legacy,climatology_municipal,0.1,2024-05
+2302701,Campos Sales,CE,2024,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2024-05
+2304103,Crateús,CE,2024,5,1.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2024-05
+2304202,Crato,CE,2024,5,0.0,inpe_bdq_legacy,climatology_municipal,0.05,2024-05
+2304400,Fortaleza,CE,2024,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2024-05
+2305506,Iguatu,CE,2024,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2024-05
+2306405,Itapipoca,CE,2024,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1,2024-05
+2306900,Jaguaribe,CE,2024,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2024-05
+2307007,Jaguaruana,CE,2024,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.05,2024-05
+2307106,Jardim,CE,2024,5,0.0,inpe_bdq_legacy,climatology_municipal,0.15,2024-05
+2307205,Jati,CE,2024,5,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-05
+2307304,Juazeiro do Norte,CE,2024,5,0.0,inpe_bdq_legacy,climatology_municipal,0.05,2024-05
+2308401,Missão Velha,CE,2024,5,3.0,inpe_bdq_legacy,climatology_municipal,0.05,2024-05
+2308708,Morada Nova,CE,2024,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.2,2024-05
+2309201,Nova Olinda,CE,2024,5,0.0,inpe_bdq_legacy,climatology_municipal,0.15,2024-05
+2310605,Penaforte,CE,2024,5,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-05
+2311108,Porteiras,CE,2024,5,0.0,inpe_bdq_legacy,climatology_municipal,0.05,2024-05
+2311207,Potengi,CE,2024,5,0.0,inpe_bdq_legacy,climatology_municipal,0.05,2024-05
+2311306,Quixadá,CE,2024,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.15,2024-05
+2311405,Quixeramobim,CE,2024,5,2.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2024-05
+2311959,Salitre,CE,2024,5,0.0,inpe_bdq_legacy,climatology_municipal,0.05,2024-05
+2312106,Santana do Cariri,CE,2024,5,0.0,inpe_bdq_legacy,climatology_municipal,0.1,2024-05
+2312908,Sobral,CE,2024,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2024-05
+2313302,Tauá,CE,2024,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1,2024-05
+2313401,Tianguá,CE,2024,5,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.05,2024-05
+2300101,Abaiara,CE,2024,5,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0681132023827946,2024-05
+2300200,Acaraú,CE,2024,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1362264047655892,2024-05
+2301307,Araripe,CE,2024,5,5.0,inpe_bdq_legacy,climatology_regional_intensity12,0.3405660119139732,2024-05
+2301604,Assaré,CE,2024,5,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-05
+2301901,Barbalha,CE,2024,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2024-05
+2302503,Brejo Santo,CE,2024,5,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1362264047655892,2024-05
+2302701,Campos Sales,CE,2024,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2024-05
+2304103,Crateús,CE,2024,5,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2024-05
+2304202,Crato,CE,2024,5,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0681132023827946,2024-05
+2304400,Fortaleza,CE,2024,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2024-05
+2305506,Iguatu,CE,2024,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2024-05
+2306405,Itapipoca,CE,2024,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1362264047655892,2024-05
+2306900,Jaguaribe,CE,2024,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2024-05
+2307007,Jaguaruana,CE,2024,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0681132023827946,2024-05
+2307106,Jardim,CE,2024,5,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2043396071483839,2024-05
+2307205,Jati,CE,2024,5,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-05
+2307304,Juazeiro do Norte,CE,2024,5,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0681132023827946,2024-05
+2308401,Missão Velha,CE,2024,5,3.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0681132023827946,2024-05
+2308708,Morada Nova,CE,2024,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2724528095311785,2024-05
+2309201,Nova Olinda,CE,2024,5,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2043396071483839,2024-05
+2310605,Penaforte,CE,2024,5,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-05
+2311108,Porteiras,CE,2024,5,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0681132023827946,2024-05
+2311207,Potengi,CE,2024,5,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0681132023827946,2024-05
+2311306,Quixadá,CE,2024,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2043396071483839,2024-05
+2311405,Quixeramobim,CE,2024,5,2.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2024-05
+2311959,Salitre,CE,2024,5,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0681132023827946,2024-05
+2312106,Santana do Cariri,CE,2024,5,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1362264047655892,2024-05
+2312908,Sobral,CE,2024,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2024-05
+2313302,Tauá,CE,2024,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1362264047655892,2024-05
+2313401,Tianguá,CE,2024,5,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0681132023827946,2024-05
+2300101,Abaiara,CE,2024,6,0.0,inpe_bdq_legacy,climatology_municipal,0.15,2024-06
+2300200,Acaraú,CE,2024,6,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.45,2024-06
+2301307,Araripe,CE,2024,6,4.0,inpe_bdq_legacy,climatology_municipal,0.15,2024-06
+2301604,Assaré,CE,2024,6,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-06
+2301901,Barbalha,CE,2024,6,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.15,2024-06
+2302503,Brejo Santo,CE,2024,6,0.0,inpe_bdq_legacy,climatology_municipal,0.3,2024-06
+2302701,Campos Sales,CE,2024,6,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2024-06
+2304103,Crateús,CE,2024,6,5.0,inpe_bdq_aqua_ref,climatology_municipal,0.5,2024-06
+2304202,Crato,CE,2024,6,0.0,inpe_bdq_legacy,climatology_municipal,0.05,2024-06
+2304400,Fortaleza,CE,2024,6,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2024-06
+2305506,Iguatu,CE,2024,6,1.0,inpe_bdq_aqua_ref,climatology_municipal,0.25,2024-06
+2306405,Itapipoca,CE,2024,6,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.6,2024-06
+2306900,Jaguaribe,CE,2024,6,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.15,2024-06
+2307007,Jaguaruana,CE,2024,6,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.0,2024-06
+2307106,Jardim,CE,2024,6,0.0,inpe_bdq_legacy,climatology_municipal,0.05,2024-06
+2307205,Jati,CE,2024,6,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-06
+2307304,Juazeiro do Norte,CE,2024,6,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-06
+2308401,Missão Velha,CE,2024,6,1.0,inpe_bdq_legacy,climatology_municipal,0.1,2024-06
+2308708,Morada Nova,CE,2024,6,1.0,inpe_bdq_aqua_ref,climatology_municipal,0.15,2024-06
+2309201,Nova Olinda,CE,2024,6,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-06
+2310605,Penaforte,CE,2024,6,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-06
+2311108,Porteiras,CE,2024,6,0.0,inpe_bdq_legacy,climatology_municipal,0.05,2024-06
+2311207,Potengi,CE,2024,6,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-06
+2311306,Quixadá,CE,2024,6,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1,2024-06
+2311405,Quixeramobim,CE,2024,6,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.2,2024-06
+2311959,Salitre,CE,2024,6,0.0,inpe_bdq_legacy,climatology_municipal,0.1,2024-06
+2312106,Santana do Cariri,CE,2024,6,3.0,inpe_bdq_legacy,climatology_municipal,0.1,2024-06
+2312908,Sobral,CE,2024,6,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.2,2024-06
+2313302,Tauá,CE,2024,6,1.0,inpe_bdq_aqua_ref,climatology_municipal,0.1,2024-06
+2313401,Tianguá,CE,2024,6,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.2,2024-06
+2300101,Abaiara,CE,2024,6,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2053474893810883,2024-06
+2300200,Acaraú,CE,2024,6,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.6160424681432651,2024-06
+2301307,Araripe,CE,2024,6,4.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2053474893810883,2024-06
+2301604,Assaré,CE,2024,6,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-06
+2301901,Barbalha,CE,2024,6,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2053474893810883,2024-06
+2302503,Brejo Santo,CE,2024,6,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.4106949787621767,2024-06
+2302701,Campos Sales,CE,2024,6,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2024-06
+2304103,Crateús,CE,2024,6,5.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.6844916312702946,2024-06
+2304202,Crato,CE,2024,6,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0684491631270294,2024-06
+2304400,Fortaleza,CE,2024,6,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2024-06
+2305506,Iguatu,CE,2024,6,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.3422458156351473,2024-06
+2306405,Itapipoca,CE,2024,6,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.8213899575243534,2024-06
+2306900,Jaguaribe,CE,2024,6,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2053474893810883,2024-06
+2307007,Jaguaruana,CE,2024,6,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0,2024-06
+2307106,Jardim,CE,2024,6,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0684491631270294,2024-06
+2307205,Jati,CE,2024,6,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-06
+2307304,Juazeiro do Norte,CE,2024,6,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-06
+2308401,Missão Velha,CE,2024,6,1.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1368983262540589,2024-06
+2308708,Morada Nova,CE,2024,6,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2053474893810883,2024-06
+2309201,Nova Olinda,CE,2024,6,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-06
+2310605,Penaforte,CE,2024,6,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-06
+2311108,Porteiras,CE,2024,6,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0684491631270294,2024-06
+2311207,Potengi,CE,2024,6,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-06
+2311306,Quixadá,CE,2024,6,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1368983262540589,2024-06
+2311405,Quixeramobim,CE,2024,6,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2737966525081178,2024-06
+2311959,Salitre,CE,2024,6,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1368983262540589,2024-06
+2312106,Santana do Cariri,CE,2024,6,3.0,inpe_bdq_legacy,climatology_regional_intensity12,0.1368983262540589,2024-06
+2312908,Sobral,CE,2024,6,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2737966525081178,2024-06
+2313302,Tauá,CE,2024,6,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1368983262540589,2024-06
+2313401,Tianguá,CE,2024,6,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2737966525081178,2024-06
+2300101,Abaiara,CE,2024,7,0.0,inpe_bdq_legacy,climatology_municipal,0.15,2024-07
+2300200,Acaraú,CE,2024,7,1.0,inpe_bdq_aqua_ref,climatology_municipal,1.35,2024-07
+2301307,Araripe,CE,2024,7,1.0,inpe_bdq_legacy,climatology_municipal,0.35,2024-07
+2301604,Assaré,CE,2024,7,0.0,inpe_bdq_legacy,climatology_municipal,0.05,2024-07
+2301901,Barbalha,CE,2024,7,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.3333333333333333,2024-07
+2302503,Brejo Santo,CE,2024,7,0.0,inpe_bdq_legacy,climatology_municipal,0.2,2024-07
+2302701,Campos Sales,CE,2024,7,1.0,inpe_bdq_aqua_ref,climatology_municipal,0.25,2024-07
+2304103,Crateús,CE,2024,7,1.0,inpe_bdq_aqua_ref,climatology_municipal,0.6,2024-07
+2304202,Crato,CE,2024,7,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-07
+2304400,Fortaleza,CE,2024,7,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.05,2024-07
+2305506,Iguatu,CE,2024,7,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.85,2024-07
+2306405,Itapipoca,CE,2024,7,0.0,inpe_bdq_aqua_ref,climatology_municipal,1.6,2024-07
+2306900,Jaguaribe,CE,2024,7,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.15,2024-07
+2307007,Jaguaruana,CE,2024,7,1.0,inpe_bdq_aqua_ref,climatology_municipal,0.2,2024-07
+2307106,Jardim,CE,2024,7,0.0,inpe_bdq_legacy,climatology_municipal,0.05,2024-07
+2307205,Jati,CE,2024,7,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-07
+2307304,Juazeiro do Norte,CE,2024,7,0.0,inpe_bdq_legacy,climatology_municipal,0.25,2024-07
+2308401,Missão Velha,CE,2024,7,0.0,inpe_bdq_legacy,climatology_municipal,0.15,2024-07
+2308708,Morada Nova,CE,2024,7,1.0,inpe_bdq_aqua_ref,climatology_municipal,0.1,2024-07
+2309201,Nova Olinda,CE,2024,7,0.0,inpe_bdq_legacy,climatology_municipal,0.4,2024-07
+2310605,Penaforte,CE,2024,7,0.0,inpe_bdq_legacy,climatology_municipal,0.05,2024-07
+2311108,Porteiras,CE,2024,7,0.0,inpe_bdq_legacy,climatology_municipal,0.15,2024-07
+2311207,Potengi,CE,2024,7,0.0,inpe_bdq_legacy,climatology_municipal,0.15,2024-07
+2311306,Quixadá,CE,2024,7,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.4,2024-07
+2311405,Quixeramobim,CE,2024,7,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.3,2024-07
+2311959,Salitre,CE,2024,7,0.0,inpe_bdq_legacy,climatology_municipal,0.4,2024-07
+2312106,Santana do Cariri,CE,2024,7,6.0,inpe_bdq_legacy,climatology_municipal,0.45,2024-07
+2312908,Sobral,CE,2024,7,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.65,2024-07
+2313302,Tauá,CE,2024,7,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.3,2024-07
+2313401,Tianguá,CE,2024,7,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.7,2024-07
+2300101,Abaiara,CE,2024,7,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2068741201220403,2024-07
+2300200,Acaraú,CE,2024,7,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.8618670810983629,2024-07
+2301307,Araripe,CE,2024,7,1.0,inpe_bdq_legacy,climatology_regional_intensity12,0.4827062802847607,2024-07
+2301604,Assaré,CE,2024,7,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0689580400406801,2024-07
+2301901,Barbalha,CE,2024,7,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.4597202669378673,2024-07
+2302503,Brejo Santo,CE,2024,7,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2758321601627204,2024-07
+2302701,Campos Sales,CE,2024,7,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.3447902002034005,2024-07
+2304103,Crateús,CE,2024,7,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.8274964804881612,2024-07
+2304202,Crato,CE,2024,7,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-07
+2304400,Fortaleza,CE,2024,7,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.0689580400406801,2024-07
+2305506,Iguatu,CE,2024,7,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.1722866806915615,2024-07
+2306405,Itapipoca,CE,2024,7,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,2.2066572813017635,2024-07
+2306900,Jaguaribe,CE,2024,7,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2068741201220403,2024-07
+2307007,Jaguaruana,CE,2024,7,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2758321601627204,2024-07
+2307106,Jardim,CE,2024,7,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0689580400406801,2024-07
+2307205,Jati,CE,2024,7,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-07
+2307304,Juazeiro do Norte,CE,2024,7,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.3447902002034005,2024-07
+2308401,Missão Velha,CE,2024,7,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2068741201220403,2024-07
+2308708,Morada Nova,CE,2024,7,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.1379160800813602,2024-07
+2309201,Nova Olinda,CE,2024,7,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.5516643203254409,2024-07
+2310605,Penaforte,CE,2024,7,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0689580400406801,2024-07
+2311108,Porteiras,CE,2024,7,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2068741201220403,2024-07
+2311207,Potengi,CE,2024,7,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2068741201220403,2024-07
+2311306,Quixadá,CE,2024,7,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.5516643203254409,2024-07
+2311405,Quixeramobim,CE,2024,7,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.4137482402440806,2024-07
+2311959,Salitre,CE,2024,7,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.5516643203254409,2024-07
+2312106,Santana do Cariri,CE,2024,7,6.0,inpe_bdq_legacy,climatology_regional_intensity12,0.620622360366121,2024-07
+2312908,Sobral,CE,2024,7,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.8964545205288413,2024-07
+2313302,Tauá,CE,2024,7,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.4137482402440806,2024-07
+2313401,Tianguá,CE,2024,7,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.9654125605695214,2024-07
+2300101,Abaiara,CE,2024,8,0.0,inpe_bdq_legacy,climatology_municipal,0.35,2024-08
+2300200,Acaraú,CE,2024,8,1.0,inpe_bdq_aqua_ref,climatology_municipal,1.75,2024-08
+2301307,Araripe,CE,2024,8,5.0,inpe_bdq_legacy,climatology_municipal,0.9047619047619048,2024-08
+2301604,Assaré,CE,2024,8,1.0,inpe_bdq_legacy,climatology_municipal,0.9,2024-08
+2301901,Barbalha,CE,2024,8,1.0,inpe_bdq_aqua_ref,climatology_municipal,1.3333333333333333,2024-08
+2302701,Campos Sales,CE,2024,8,4.0,inpe_bdq_aqua_ref,climatology_municipal,0.3,2024-08
+2304103,Crateús,CE,2024,8,7.0,inpe_bdq_aqua_ref,climatology_municipal,2.5,2024-08
+2304400,Fortaleza,CE,2024,8,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.4444444444444444,2024-08
+2305506,Iguatu,CE,2024,8,2.0,inpe_bdq_aqua_ref,climatology_municipal,1.95,2024-08
+2306405,Itapipoca,CE,2024,8,0.0,inpe_bdq_aqua_ref,climatology_municipal,3.1,2024-08
+2306900,Jaguaribe,CE,2024,8,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.75,2024-08
+2307007,Jaguaruana,CE,2024,8,1.0,inpe_bdq_aqua_ref,climatology_municipal,1.0,2024-08
+2307106,Jardim,CE,2024,8,0.0,inpe_bdq_legacy,climatology_municipal,0.15,2024-08
+2308401,Missão Velha,CE,2024,8,6.0,inpe_bdq_legacy,climatology_municipal,0.85,2024-08
+2308708,Morada Nova,CE,2024,8,3.0,inpe_bdq_aqua_ref,climatology_municipal,1.4,2024-08
+2310605,Penaforte,CE,2024,8,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-08
+2311306,Quixadá,CE,2024,8,5.0,inpe_bdq_aqua_ref,climatology_municipal,1.1,2024-08
+2311405,Quixeramobim,CE,2024,8,1.0,inpe_bdq_aqua_ref,climatology_municipal,1.05,2024-08
+2312106,Santana do Cariri,CE,2024,8,6.0,inpe_bdq_legacy,climatology_municipal,0.8095238095238095,2024-08
+2312908,Sobral,CE,2024,8,14.0,inpe_bdq_aqua_ref,climatology_municipal,6.4,2024-08
+2313302,Tauá,CE,2024,8,5.0,inpe_bdq_aqua_ref,climatology_municipal,0.6,2024-08
+2313401,Tianguá,CE,2024,8,1.0,inpe_bdq_aqua_ref,climatology_municipal,0.95,2024-08
+2300101,Abaiara,CE,2024,8,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.4753786109596448,2024-08
+2300200,Acaraú,CE,2024,8,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,2.376893054798224,2024-08
+2301307,Araripe,CE,2024,8,5.0,inpe_bdq_legacy,climatology_regional_intensity12,1.228869878671191,2024-08
+2301604,Assaré,CE,2024,8,1.0,inpe_bdq_legacy,climatology_regional_intensity12,1.222402142467658,2024-08
+2301901,Barbalha,CE,2024,8,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.810966136989123,2024-08
+2302701,Campos Sales,CE,2024,8,4.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.4074673808225527,2024-08
+2304103,Crateús,CE,2024,8,7.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,3.3955615068546057,2024-08
+2304400,Fortaleza,CE,2024,8,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.6036553789963743,2024-08
+2305506,Iguatu,CE,2024,8,2.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,2.6485379753465925,2024-08
+2306405,Itapipoca,CE,2024,8,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,4.210496268499711,2024-08
+2306900,Jaguaribe,CE,2024,8,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.0186684520563818,2024-08
+2307007,Jaguaruana,CE,2024,8,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.3582246027418423,2024-08
+2307106,Jardim,CE,2024,8,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2037336904112763,2024-08
+2308401,Missão Velha,CE,2024,8,6.0,inpe_bdq_legacy,climatology_regional_intensity12,1.154490912330566,2024-08
+2308708,Morada Nova,CE,2024,8,3.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.9015144438385791,2024-08
+2310605,Penaforte,CE,2024,8,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-08
+2311306,Quixadá,CE,2024,8,5.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.4940470630160267,2024-08
+2311405,Quixeramobim,CE,2024,8,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.4261358328789344,2024-08
+2312106,Santana do Cariri,CE,2024,8,6.0,inpe_bdq_legacy,climatology_regional_intensity12,1.099515154600539,2024-08
+2312908,Sobral,CE,2024,8,14.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,8.692637457547791,2024-08
+2313302,Tauá,CE,2024,8,5.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.8149347616451054,2024-08
+2313401,Tianguá,CE,2024,8,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.2903133726047502,2024-08
+2300101,Abaiara,CE,2024,9,2.0,inpe_bdq_legacy,climatology_municipal,0.5,2024-09
+2300200,Acaraú,CE,2024,9,2.0,inpe_bdq_aqua_ref,climatology_municipal,1.75,2024-09
+2301307,Araripe,CE,2024,9,8.0,inpe_bdq_legacy,climatology_municipal,7.571428571428571,2024-09
+2301604,Assaré,CE,2024,9,0.0,inpe_bdq_legacy,climatology_municipal,2.0,2024-09
+2301901,Barbalha,CE,2024,9,1.0,inpe_bdq_aqua_ref,climatology_municipal,3.0,2024-09
+2302701,Campos Sales,CE,2024,9,0.0,inpe_bdq_aqua_ref,climatology_municipal,1.619047619047619,2024-09
+2304103,Crateús,CE,2024,9,1.0,inpe_bdq_aqua_ref,climatology_municipal,3.65,2024-09
+2304400,Fortaleza,CE,2024,9,2.0,inpe_bdq_aqua_ref,climatology_municipal,0.7777777777777778,2024-09
+2305506,Iguatu,CE,2024,9,6.0,inpe_bdq_aqua_ref,climatology_municipal,4.55,2024-09
+2306405,Itapipoca,CE,2024,9,8.0,inpe_bdq_aqua_ref,climatology_municipal,3.6,2024-09
+2306900,Jaguaribe,CE,2024,9,15.0,inpe_bdq_aqua_ref,climatology_municipal,1.05,2024-09
+2307007,Jaguaruana,CE,2024,9,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.8571428571428571,2024-09
+2307106,Jardim,CE,2024,9,0.0,inpe_bdq_legacy,climatology_municipal,1.7,2024-09
+2308401,Missão Velha,CE,2024,9,3.0,inpe_bdq_legacy,climatology_municipal,3.1904761904761907,2024-09
+2308708,Morada Nova,CE,2024,9,6.0,inpe_bdq_aqua_ref,climatology_municipal,1.55,2024-09
+2310605,Penaforte,CE,2024,9,0.0,inpe_bdq_legacy,climatology_municipal,0.0,2024-09
+2311306,Quixadá,CE,2024,9,2.0,inpe_bdq_aqua_ref,climatology_municipal,3.45,2024-09
+2311405,Quixeramobim,CE,2024,9,6.0,inpe_bdq_aqua_ref,climatology_municipal,3.15,2024-09
+2312106,Santana do Cariri,CE,2024,9,13.0,inpe_bdq_legacy,climatology_municipal,3.952380952380953,2024-09
+2312908,Sobral,CE,2024,9,14.0,inpe_bdq_aqua_ref,climatology_municipal,11.2,2024-09
+2313302,Tauá,CE,2024,9,6.0,inpe_bdq_aqua_ref,climatology_municipal,2.25,2024-09
+2313401,Tianguá,CE,2024,9,13.0,inpe_bdq_aqua_ref,climatology_municipal,1.35,2024-09
+2300101,Abaiara,CE,2024,9,2.0,inpe_bdq_legacy,climatology_regional_intensity12,0.6861736441998044,2024-09
+2300200,Acaraú,CE,2024,9,2.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,2.4016077546993158,2024-09
+2301307,Araripe,CE,2024,9,8.0,inpe_bdq_legacy,climatology_regional_intensity12,10.390629469311325,2024-09
+2301604,Assaré,CE,2024,9,0.0,inpe_bdq_legacy,climatology_regional_intensity12,2.7446945767992177,2024-09
+2301901,Barbalha,CE,2024,9,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,4.117041865198827,2024-09
+2302701,Campos Sales,CE,2024,9,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,2.221895609789843,2024-09
+2304103,Crateús,CE,2024,9,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,5.009067602658572,2024-09
+2304400,Fortaleza,CE,2024,9,2.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.067381224310807,2024-09
+2305506,Iguatu,CE,2024,9,6.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,6.24418016221822,2024-09
+2306405,Itapipoca,CE,2024,9,8.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,4.940450238238592,2024-09
+2306900,Jaguaribe,CE,2024,9,15.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.4409646528195894,2024-09
+2307007,Jaguaruana,CE,2024,9,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.1762976757710932,2024-09
+2307106,Jardim,CE,2024,9,0.0,inpe_bdq_legacy,climatology_regional_intensity12,2.332990390279335,2024-09
+2308401,Missão Velha,CE,2024,9,3.0,inpe_bdq_legacy,climatology_regional_intensity12,4.3784413487035145,2024-09
+2308708,Morada Nova,CE,2024,9,6.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,2.127138297019394,2024-09
+2310605,Penaforte,CE,2024,9,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.0,2024-09
+2311306,Quixadá,CE,2024,9,2.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,4.7345981449786505,2024-09
+2311405,Quixeramobim,CE,2024,9,6.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,4.322893958458768,2024-09
+2312106,Santana do Cariri,CE,2024,9,13.0,inpe_bdq_legacy,climatology_regional_intensity12,5.424039282722264,2024-09
+2312908,Sobral,CE,2024,9,14.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,15.370289630075618,2024-09
+2313302,Tauá,CE,2024,9,6.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,3.08778139889912,2024-09
+2313401,Tianguá,CE,2024,9,13.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.852668839339472,2024-09
+2300101,Abaiara,CE,2024,10,0.0,inpe_bdq_legacy,climatology_municipal,1.809523809523809,2024-10
+2300200,Acaraú,CE,2024,10,0.0,inpe_bdq_aqua_ref,climatology_municipal,1.65,2024-10
+2301307,Araripe,CE,2024,10,16.0,inpe_bdq_legacy,climatology_municipal,12.952380952380953,2024-10
+2301604,Assaré,CE,2024,10,7.0,inpe_bdq_legacy,climatology_municipal,4.095238095238095,2024-10
+2301901,Barbalha,CE,2024,10,8.0,inpe_bdq_aqua_ref,climatology_municipal,4.142857142857143,2024-10
+2302701,Campos Sales,CE,2024,10,17.0,inpe_bdq_aqua_ref,climatology_municipal,2.952380952380953,2024-10
+2304103,Crateús,CE,2024,10,70.0,inpe_bdq_aqua_ref,climatology_municipal,45.4,2024-10
+2304400,Fortaleza,CE,2024,10,1.0,inpe_bdq_aqua_ref,climatology_municipal,1.0,2024-10
+2305506,Iguatu,CE,2024,10,3.0,inpe_bdq_aqua_ref,climatology_municipal,5.5,2024-10
+2306405,Itapipoca,CE,2024,10,5.0,inpe_bdq_aqua_ref,climatology_municipal,3.7,2024-10
+2306900,Jaguaribe,CE,2024,10,7.0,inpe_bdq_aqua_ref,climatology_municipal,3.15,2024-10
+2307007,Jaguaruana,CE,2024,10,0.0,inpe_bdq_aqua_ref,climatology_municipal,1.0714285714285714,2024-10
+2307106,Jardim,CE,2024,10,3.0,inpe_bdq_legacy,climatology_municipal,2.761904761904762,2024-10
+2308401,Missão Velha,CE,2024,10,12.0,inpe_bdq_legacy,climatology_municipal,6.476190476190476,2024-10
+2308708,Morada Nova,CE,2024,10,1.0,inpe_bdq_aqua_ref,climatology_municipal,4.15,2024-10
+2310605,Penaforte,CE,2024,10,2.0,inpe_bdq_legacy,climatology_municipal,0.1666666666666666,2024-10
+2311306,Quixadá,CE,2024,10,9.0,inpe_bdq_aqua_ref,climatology_municipal,17.4,2024-10
+2311405,Quixeramobim,CE,2024,10,23.0,inpe_bdq_aqua_ref,climatology_municipal,34.65,2024-10
+2312106,Santana do Cariri,CE,2024,10,30.0,inpe_bdq_legacy,climatology_municipal,7.142857142857143,2024-10
+2312908,Sobral,CE,2024,10,20.0,inpe_bdq_aqua_ref,climatology_municipal,15.6,2024-10
+2313302,Tauá,CE,2024,10,33.0,inpe_bdq_aqua_ref,climatology_municipal,9.75,2024-10
+2313401,Tianguá,CE,2024,10,4.0,inpe_bdq_aqua_ref,climatology_municipal,4.1,2024-10
+2300101,Abaiara,CE,2024,10,0.0,inpe_bdq_legacy,climatology_regional_intensity12,2.4255460357688574,2024-10
+2300200,Acaraú,CE,2024,10,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,2.2117150036681816,2024-10
+2301307,Araripe,CE,2024,10,16.0,inpe_bdq_legacy,climatology_regional_intensity12,17.361803203398136,2024-10
+2301604,Assaré,CE,2024,10,7.0,inpe_bdq_legacy,climatology_regional_intensity12,5.48939365989794,2024-10
+2301901,Barbalha,CE,2024,10,8.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,5.553223818733963,2024-10
+2302701,Campos Sales,CE,2024,10,17.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,3.957469847833399,2024-10
+2304103,Crateús,CE,2024,10,70.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,60.85567343426391,2024-10
+2304400,Fortaleza,CE,2024,10,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.3404333355564737,2024-10
+2305506,Iguatu,CE,2024,10,3.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,7.372383345560605,2024-10
+2306405,Itapipoca,CE,2024,10,5.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,4.959603341558953,2024-10
+2306900,Jaguaribe,CE,2024,10,7.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,4.222365007002892,2024-10
+2307007,Jaguaruana,CE,2024,10,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.4361785738105075,2024-10
+2307106,Jardim,CE,2024,10,3.0,inpe_bdq_legacy,climatology_regional_intensity12,3.702149212489308,2024-10
+2308401,Missão Velha,CE,2024,10,12.0,inpe_bdq_legacy,climatology_regional_intensity12,8.680901601699068,2024-10
+2308708,Morada Nova,CE,2024,10,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,5.562798342559367,2024-10
+2310605,Penaforte,CE,2024,10,2.0,inpe_bdq_legacy,climatology_regional_intensity12,0.2234055559260789,2024-10
+2311306,Quixadá,CE,2024,10,9.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,23.32354003868264,2024-10
+2311405,Quixeramobim,CE,2024,10,23.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,46.44601507703181,2024-10
+2312106,Santana do Cariri,CE,2024,10,30.0,inpe_bdq_legacy,climatology_regional_intensity12,9.574523825403384,2024-10
+2312908,Sobral,CE,2024,10,20.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,20.91076003468099,2024-10
+2313302,Tauá,CE,2024,10,33.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,13.06922502167562,2024-10
+2313401,Tianguá,CE,2024,10,4.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,5.495776675781542,2024-10
+2300101,Abaiara,CE,2024,11,9.0,inpe_bdq_legacy,climatology_municipal,3.142857142857143,2024-11
+2300200,Acaraú,CE,2024,11,2.0,inpe_bdq_aqua_ref,climatology_municipal,8.25,2024-11
+2301307,Araripe,CE,2024,11,25.0,inpe_bdq_legacy,climatology_municipal,13.714285714285714,2024-11
+2301604,Assaré,CE,2024,11,17.0,inpe_bdq_legacy,climatology_municipal,4.9523809523809526,2024-11
+2301901,Barbalha,CE,2024,11,9.0,inpe_bdq_aqua_ref,climatology_municipal,4.571428571428571,2024-11
+2302701,Campos Sales,CE,2024,11,2.0,inpe_bdq_aqua_ref,climatology_municipal,2.619047619047619,2024-11
+2304103,Crateús,CE,2024,11,100.0,inpe_bdq_aqua_ref,climatology_municipal,60.7,2024-11
+2304400,Fortaleza,CE,2024,11,0.0,inpe_bdq_aqua_ref,climatology_municipal,1.0555555555555556,2024-11
+2305506,Iguatu,CE,2024,11,8.0,inpe_bdq_aqua_ref,climatology_municipal,7.95,2024-11
+2306405,Itapipoca,CE,2024,11,15.0,inpe_bdq_aqua_ref,climatology_municipal,22.1,2024-11
+2306900,Jaguaribe,CE,2024,11,6.0,inpe_bdq_aqua_ref,climatology_municipal,3.85,2024-11
+2307007,Jaguaruana,CE,2024,11,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.4285714285714285,2024-11
+2307106,Jardim,CE,2024,11,4.0,inpe_bdq_legacy,climatology_municipal,3.523809523809524,2024-11
+2308401,Missão Velha,CE,2024,11,19.0,inpe_bdq_legacy,climatology_municipal,10.38095238095238,2024-11
+2308708,Morada Nova,CE,2024,11,9.0,inpe_bdq_aqua_ref,climatology_municipal,4.9,2024-11
+2310605,Penaforte,CE,2024,11,2.0,inpe_bdq_legacy,climatology_municipal,0.2631578947368421,2024-11
+2311306,Quixadá,CE,2024,11,24.0,inpe_bdq_aqua_ref,climatology_municipal,22.75,2024-11
+2311405,Quixeramobim,CE,2024,11,74.0,inpe_bdq_aqua_ref,climatology_municipal,48.6,2024-11
+2312106,Santana do Cariri,CE,2024,11,11.0,inpe_bdq_legacy,climatology_municipal,12.333333333333334,2024-11
+2312908,Sobral,CE,2024,11,16.0,inpe_bdq_aqua_ref,climatology_municipal,30.55,2024-11
+2313302,Tauá,CE,2024,11,72.0,inpe_bdq_aqua_ref,climatology_municipal,14.15,2024-11
+2313401,Tianguá,CE,2024,11,5.0,inpe_bdq_aqua_ref,climatology_municipal,9.45,2024-11
+2300101,Abaiara,CE,2024,11,9.0,inpe_bdq_legacy,climatology_regional_intensity12,3.890428974677207,2024-11
+2300200,Acaraú,CE,2024,11,2.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,10.212376058527669,2024-11
+2301307,Araripe,CE,2024,11,25.0,inpe_bdq_legacy,climatology_regional_intensity12,16.97641734404599,2024-11
+2301604,Assaré,CE,2024,11,17.0,inpe_bdq_legacy,climatology_regional_intensity12,6.130372929794387,2024-11
+2301901,Barbalha,CE,2024,11,9.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,5.658805781348664,2024-11
+2302701,Campos Sales,CE,2024,11,2.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,3.242024145564339,2024-11
+2304103,Crateús,CE,2024,11,100.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,75.13833051547024,2024-11
+2304400,Fortaleza,CE,2024,11,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,1.3066339738183548,2024-11
+2305506,Iguatu,CE,2024,11,8.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,9.841016929126662,2024-11
+2306405,Itapipoca,CE,2024,11,15.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,27.35678919920745,2024-11
+2306900,Jaguaribe,CE,2024,11,6.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,4.765775493979579,2024-11
+2307007,Jaguaruana,CE,2024,11,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.5305130420014372,2024-11
+2307106,Jardim,CE,2024,11,4.0,inpe_bdq_legacy,climatology_regional_intensity12,4.361996123122929,2024-11
+2308401,Missão Velha,CE,2024,11,19.0,inpe_bdq_legacy,climatology_regional_intensity12,12.850204795145926,2024-11
+2308708,Morada Nova,CE,2024,11,9.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,6.0655324468831004,2024-11
+2310605,Penaforte,CE,2024,11,2.0,inpe_bdq_legacy,climatology_regional_intensity12,0.3257536222815843,2024-11
+2311306,Quixadá,CE,2024,11,24.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,28.161400646242964,2024-11
+2311405,Quixeramobim,CE,2024,11,74.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,60.16017896296299,2024-11
+2312106,Santana do Cariri,CE,2024,11,11.0,inpe_bdq_legacy,climatology_regional_intensity12,15.266986430930253,2024-11
+2312908,Sobral,CE,2024,11,16.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,37.81673801066912,2024-11
+2313302,Tauá,CE,2024,11,72.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,17.515772270080788,2024-11
+2313401,Tianguá,CE,2024,11,5.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,11.69781257613169,2024-11
+2300101,Abaiara,CE,2024,12,0.0,inpe_bdq_legacy,climatology_municipal,1.9047619047619049,2024-12
+2300200,Acaraú,CE,2024,12,19.0,inpe_bdq_aqua_ref,climatology_municipal,32.0,2024-12
+2301307,Araripe,CE,2024,12,23.0,inpe_bdq_legacy,climatology_municipal,6.666666666666667,2024-12
+2301604,Assaré,CE,2024,12,8.0,inpe_bdq_legacy,climatology_municipal,5.095238095238095,2024-12
+2301901,Barbalha,CE,2024,12,2.0,inpe_bdq_aqua_ref,climatology_municipal,2.095238095238096,2024-12
+2302701,Campos Sales,CE,2024,12,5.0,inpe_bdq_aqua_ref,climatology_municipal,1.4761904761904765,2024-12
+2304103,Crateús,CE,2024,12,52.0,inpe_bdq_aqua_ref,climatology_municipal,27.25,2024-12
+2304400,Fortaleza,CE,2024,12,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.1666666666666666,2024-12
+2305506,Iguatu,CE,2024,12,35.0,inpe_bdq_aqua_ref,climatology_municipal,4.1,2024-12
+2306405,Itapipoca,CE,2024,12,58.0,inpe_bdq_aqua_ref,climatology_municipal,62.5,2024-12
+2306900,Jaguaribe,CE,2024,12,1.0,inpe_bdq_aqua_ref,climatology_municipal,2.3,2024-12
+2307007,Jaguaruana,CE,2024,12,0.0,inpe_bdq_aqua_ref,climatology_municipal,0.6428571428571429,2024-12
+2307106,Jardim,CE,2024,12,6.0,inpe_bdq_legacy,climatology_municipal,3.523809523809524,2024-12
+2308401,Missão Velha,CE,2024,12,10.0,inpe_bdq_legacy,climatology_municipal,7.095238095238095,2024-12
+2308708,Morada Nova,CE,2024,12,5.0,inpe_bdq_aqua_ref,climatology_municipal,4.7,2024-12
+2310605,Penaforte,CE,2024,12,0.0,inpe_bdq_legacy,climatology_municipal,0.4210526315789473,2024-12
+2311306,Quixadá,CE,2024,12,10.0,inpe_bdq_aqua_ref,climatology_municipal,12.75,2024-12
+2311405,Quixeramobim,CE,2024,12,35.0,inpe_bdq_aqua_ref,climatology_municipal,30.55,2024-12
+2312106,Santana do Cariri,CE,2024,12,17.0,inpe_bdq_legacy,climatology_municipal,10.095238095238097,2024-12
+2312908,Sobral,CE,2024,12,39.0,inpe_bdq_aqua_ref,climatology_municipal,19.8,2024-12
+2313302,Tauá,CE,2024,12,32.0,inpe_bdq_aqua_ref,climatology_municipal,9.65,2024-12
+2313401,Tianguá,CE,2024,12,26.0,inpe_bdq_aqua_ref,climatology_municipal,12.65,2024-12
+2300101,Abaiara,CE,2024,12,0.0,inpe_bdq_legacy,climatology_regional_intensity12,2.600044501078267,2024-12
+2300200,Acaraú,CE,2024,12,19.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,43.680747618114886,2024-12
+2301307,Araripe,CE,2024,12,23.0,inpe_bdq_legacy,climatology_regional_intensity12,9.100155753773937,2024-12
+2301604,Assaré,CE,2024,12,8.0,inpe_bdq_legacy,climatology_regional_intensity12,6.955119040384364,2024-12
+2301901,Barbalha,CE,2024,12,2.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,2.860048951186094,2024-12
+2302701,Campos Sales,CE,2024,12,5.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,2.015034488335657,2024-12
+2304103,Crateús,CE,2024,12,52.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,37.19688664355096,2024-12
+2304400,Fortaleza,CE,2024,12,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.2275038938443483,2024-12
+2305506,Iguatu,CE,2024,12,35.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,5.596595788570969,2024-12
+2306405,Itapipoca,CE,2024,12,58.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,85.31396019163064,2024-12
+2306900,Jaguaribe,CE,2024,12,1.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,3.139553735052007,2024-12
+2307007,Jaguaruana,CE,2024,12,0.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,0.8775150191139152,2024-12
+2307106,Jardim,CE,2024,12,6.0,inpe_bdq_legacy,climatology_regional_intensity12,4.810082326994793,2024-12
+2308401,Missão Velha,CE,2024,12,10.0,inpe_bdq_legacy,climatology_regional_intensity12,9.685165766516544,2024-12
+2308708,Morada Nova,CE,2024,12,5.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,6.415609806410624,2024-12
+2310605,Penaforte,CE,2024,12,0.0,inpe_bdq_legacy,climatology_regional_intensity12,0.5747466791857222,2024-12
+2311306,Quixadá,CE,2024,12,10.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,17.40404787909265,2024-12
+2311405,Quixeramobim,CE,2024,12,35.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,41.70146374166906,2024-12
+2312106,Santana do Cariri,CE,2024,12,17.0,inpe_bdq_legacy,climatology_regional_intensity12,13.780235855714814,2024-12
+2312908,Sobral,CE,2024,12,39.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,27.027462588708588,2024-12
+2313302,Tauá,CE,2024,12,32.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,13.17247545358777,2024-12
+2313401,Tianguá,CE,2024,12,26.0,inpe_bdq_aqua_ref,climatology_regional_intensity12,17.267545542786042,2024-12

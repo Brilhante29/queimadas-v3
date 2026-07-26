@@ -1,0 +1,35 @@
+{
+  "source_name": "NASA LP DAAC / Google Earth Engine",
+  "dataset_name": "MOD13Q1.061 Terra Vegetation Indices 16-Day Global 250m",
+  "dataset_id": "MODIS/061/MOD13Q1",
+  "doi": "10.5067/MODIS/MOD13Q1.061",
+  "official_urls": [
+    "https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD13Q1",
+    "https://www.earthdata.nasa.gov/data/catalog/lpcloud-mod13q1-061"
+  ],
+  "license": "NASA Earthdata / LP DAAC terms; verify before redistribution",
+  "temporal_resolution": "16-day composite",
+  "spatial_resolution_m": 250,
+  "crs": "MODIS sinusoidal grid; aggregate to municipal polygons before modeling",
+  "coverage_start": "2000-02-18",
+  "coverage_end_policy": "catalog rolling; pin retrieval date and image collection IDs in snapshot manifest",
+  "required_bands": {
+    "NDVI": {"scale": 0.0001, "valid_range_scaled": [-0.2, 1.0]},
+    "EVI": {"scale": 0.0001, "valid_range_scaled": [-0.2, 1.0]},
+    "SummaryQA": {"use": "mask low-quality pixels; accepted values must be declared"},
+    "DetailedQA": {"use": "audit VI quality, usefulness, aerosol, cloud and BRDF flags"}
+  },
+  "keys": ["geocodigo", "ano", "mes"],
+  "aggregation_required": "zonal statistics by IBGE municipal polygon; do not use city names as keys",
+  "monthly_aggregation": "area-weighted median/p10/p90/valid_pixel_fraction from 16-day composites available before forecast cutoff",
+  "available_at_rule": "each composite must carry system time_start plus provider/catalog publish lag; monthly features may only use composites with available_at <= forecast_cutoff",
+  "quality_rules": [
+    "reject snapshot without SummaryQA or DetailedQA",
+    "record valid_pixel_fraction per municipality-month",
+    "record image IDs and checksums/manifests for reproducibility",
+    "fail closed when geocodigo mapping or municipal geometry is missing",
+    "do not promote CSV exports without QA, product version and available_at"
+  ],
+  "current_local_csv_status": "EXPLORATORY_ONLY",
+  "current_local_csv_reason": "NDVI_Ceara_Municipios_Mensal_FINAL.csv has broad target coverage but lacks QA bands, product version, zonal geometry metadata, published_at and available_at."
+}

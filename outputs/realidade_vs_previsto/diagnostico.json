@@ -1,0 +1,64 @@
+{
+  "source": "C:\\Users\\Guilherme\\Desktop\\queimadas\\firecast\\outputs\\real_backtest_v2\\predictions.csv",
+  "champion": "climatology_municipal",
+  "n_predictions": 687,
+  "overall_wape": 0.5501080574540038,
+  "pearson_correlation_real_vs_previsto": 0.8616348675192547,
+  "spearman_rank_correlation_real_vs_previsto": 0.7334625346175022,
+  "mean_bias_previsto_minus_real": -1.2300778060400595,
+  "high_volume_predictions_share": 0.09898107714701601,
+  "high_volume_error_share": 0.6198629859151644,
+  "by_volume_band": [
+    {
+      "band": "0",
+      "n": 394,
+      "actual_sum": 0.0,
+      "pred_sum": 111.3140866873065,
+      "mean_bias": -0.2825230626581383,
+      "abs_err_sum": 111.3140866873065,
+      "wape_share_of_total_error": 0.07433853537922737,
+      "pred_vs_actual_ratio": NaN
+    },
+    {
+      "band": "1-3",
+      "n": 131,
+      "actual_sum": 202.0,
+      "pred_sum": 173.83348813209494,
+      "mean_bias": 0.21501154097637448,
+      "abs_err_sum": 151.87077251953414,
+      "wape_share_of_total_error": 0.10142337894509625,
+      "pred_vs_actual_ratio": 0.8605618224361136
+    },
+    {
+      "band": "4-10",
+      "n": 94,
+      "actual_sum": 582.0,
+      "pred_sum": 395.1751879699248,
+      "mean_bias": 1.9874980003199487,
+      "abs_err_sum": 306.03007518796994,
+      "wape_share_of_total_error": 0.2043750997605117,
+      "pred_vs_actual_ratio": 0.6789951683332042
+    },
+    {
+      "band": "11-30",
+      "n": 49,
+      "actual_sum": 907.0,
+      "pred_sum": 569.1085213032582,
+      "mean_bias": 6.895744463198813,
+      "abs_err_sum": 482.84235588972433,
+      "wape_share_of_total_error": 0.3224550874385501,
+      "pred_vs_actual_ratio": 0.6274625372693033
+    },
+    {
+      "band": "30+",
+      "n": 19,
+      "actual_sum": 1031.0,
+      "pred_sum": 627.5052631578948,
+      "mean_bias": 21.236565096952905,
+      "abs_err_sum": 445.33684210526314,
+      "wape_share_of_total_error": 0.2974078984766143,
+      "pred_vs_actual_ratio": 0.6086375006381133
+    }
+  ],
+  "interpretation": "Correlacao de Pearson 0.862 e Spearman 0.733 indicam que o modelo captura o padrao/ranking real de risco relativamente bem, mesmo com WAPE de 0.550. Isso acontece porque 9.9% das previsoes (meses de volume alto/extremo) respondem por 62.0% do erro absoluto total do WAPE. O WAPE penaliza fortemente a magnitude absoluta do erro nesses poucos meses extremos, mesmo quando a maioria das previsoes (meses de baixo/medio volume) tem vies pequeno."
+}

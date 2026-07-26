@@ -1,0 +1,64 @@
+{
+  "source": "outputs\\exp07_climatology_upper_quantile\\predictions.csv",
+  "champion": "climatology_municipal_p65",
+  "n_predictions": 687,
+  "overall_wape": 0.5331925055106539,
+  "pearson_correlation_real_vs_previsto": 0.8548400885914559,
+  "spearman_rank_correlation_real_vs_previsto": 0.7709956439285168,
+  "mean_bias_previsto_minus_real": -1.0550946142649198,
+  "high_volume_predictions_share": 0.09898107714701601,
+  "high_volume_error_share": 0.6175629586247287,
+  "by_volume_band": [
+    {
+      "band": "0",
+      "n": 394,
+      "actual_sum": 0.0,
+      "pred_sum": 68.10000000000001,
+      "mean_bias": -0.17284263959390866,
+      "abs_err_sum": 68.10000000000001,
+      "wape_share_of_total_error": 0.046921831398353264,
+      "pred_vs_actual_ratio": NaN
+    },
+    {
+      "band": "1-3",
+      "n": 131,
+      "actual_sum": 202.0,
+      "pred_sum": 171.65,
+      "mean_bias": 0.23167938931297705,
+      "abs_err_sum": 173.65,
+      "wape_share_of_total_error": 0.11964722499741622,
+      "pred_vs_actual_ratio": 0.8497524752475247
+    },
+    {
+      "band": "4-10",
+      "n": 94,
+      "actual_sum": 582.0,
+      "pred_sum": 437.1,
+      "mean_bias": 1.5414893617021275,
+      "abs_err_sum": 313.3,
+      "wape_share_of_total_error": 0.21586798497950185,
+      "pred_vs_actual_ratio": 0.7510309278350515
+    },
+    {
+      "band": "11-30",
+      "n": 49,
+      "actual_sum": 907.0,
+      "pred_sum": 612.3000000000001,
+      "mean_bias": 6.014285714285714,
+      "abs_err_sum": 464.8,
+      "wape_share_of_total_error": 0.32025355703310715,
+      "pred_vs_actual_ratio": 0.6750826901874312
+    },
+    {
+      "band": "30+",
+      "n": 19,
+      "actual_sum": 1031.0,
+      "pred_sum": 708.0,
+      "mean_bias": 16.999999999999996,
+      "abs_err_sum": 431.49999999999994,
+      "wape_share_of_total_error": 0.29730940159162156,
+      "pred_vs_actual_ratio": 0.6867119301648884
+    }
+  ],
+  "interpretation": "Correlacao de Pearson 0.855 e Spearman 0.771 indicam que o modelo captura o padrao/ranking real de risco relativamente bem, mesmo com WAPE de 0.533. Isso acontece porque 9.9% das previsoes (meses de volume alto/extremo) respondem por 61.8% do erro absoluto total do WAPE. O WAPE penaliza fortemente a magnitude absoluta do erro nesses poucos meses extremos, mesmo quando a maioria das previsoes (meses de baixo/medio volume) tem vies pequeno."
+}

@@ -1,0 +1,32 @@
+{
+  "source": "outputs\\exp10_dynamic_regional_intensity\\predictions_2023_2024.csv",
+  "champion": "climatology_regional_intensity12",
+  "overall_wape": 0.5501380793384631,
+  "overall_mae": 2.1797319533614217,
+  "n_municipios": 31,
+  "n_municipios_flagged": 0,
+  "municipio_flag_criteria": "wape > 2.0x overall AND volume_real >= 10",
+  "dry_season_wape": 0.5078434384864173,
+  "wet_season_wape": 1.0667075763469451,
+  "regime_violation": false,
+  "regime_criteria": "dry_wape - overall_wape > 0.1",
+  "by_volume_band": [
+    {
+      "faixa": "baixo (<=5)",
+      "n": 566,
+      "wape": 1.0425467636409722
+    },
+    {
+      "faixa": "medio (6-10)",
+      "n": 53,
+      "wape": 0.4988876279019794
+    },
+    {
+      "faixa": "alto (>10)",
+      "n": 68,
+      "wape": 0.463149042084815
+    }
+  ],
+  "failure_cases": [],
+  "gate_G4": "PASS"
+}

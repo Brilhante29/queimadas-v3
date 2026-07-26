@@ -1,0 +1,6003 @@
+{
+  "schema_version": "1.0",
+  "model_name": "climatology_regional_intensity12",
+  "model_type": "municipal_month_climatology_with_regional_trailing_intensity",
+  "status": "release_candidate_not_production_approved",
+  "created_at": "2026-07-09T20:32:19.424017+00:00",
+  "training_data": {
+    "snapshot": "inpe_local_v2/inpe_monthly_merged.csv",
+    "sha256": "06640e40c9ab64cc27aef222bd4d10ba65e18582e0762482bb4a82020154bbfb",
+    "train_end": "2024-12",
+    "rows": 8162,
+    "municipalities": 31
+  },
+  "metrics": {
+    "model": "climatology_regional_intensity12",
+    "all_wape": 0.6429838793696906,
+    "all_mae": 1.505199031832079,
+    "all_n": 3628,
+    "all_y_total": 8493.0,
+    "outnov_wape": 0.5418575926425169,
+    "outnov_mae": 4.247016933459181,
+    "outnov_n": 586,
+    "outnov_y_total": 4593.0,
+    "dry_wape": 0.5982683082565942,
+    "high_volume_wape": 0.4446466607666158,
+    "baseline_model": "climatology_municipal",
+    "baseline_extended_wape": 0.7905503029462198,
+    "baseline_extended_outnov_wape": 0.6923199337268331,
+    "backtest_protocol": "walk-forward estendido 120 cortes mensais 2015-2024, h=1, 2025+ congelado",
+    "gate_window_protocol": "walk-forward 24 cortes mensais 2023-2024, h=1, inpe_local_v2",
+    "gate_window_all_wape": 0.5501380793384631,
+    "gate_window_outnov_wape": 0.49931133936979377,
+    "prediction_rows": 3628,
+    "residual_abs_error_p50": 0.23547152601366417,
+    "residual_abs_error_p90": 3.921694158644965,
+    "residual_abs_error_p95": 6.992591856020486,
+    "backtest_summary_sha256": "4d4e0a787f4ceae666b1a4648b68256fca539fe7925671bd762946718abc4532",
+    "backtest_predictions_sha256": "caf84ea927e6c4c4093bf2dde5648b77cf00904515ac4c06a572de9b7d424403",
+    "backtest_manifest_sha256": "efa70a3d0035b2bf88e379c0149d13fe0d20dbd2cc4946f5589ef97af6fbfed0"
+  },
+  "intensity_parameters": {
+    "trailing_months": 12,
+    "shrink_fire_count": 100.0,
+    "ratio_clip": [
+      0.5,
+      2.0
+    ],
+    "future_policy": "use latest available training-window regional ratio when requested forecast period is beyond target history"
+  },
+  "fail_closed_contract": {
+    "required_inputs": [
+      "geocodigo",
+      "ano",
+      "mes"
+    ],
+    "missing_municipality_or_month": "raise ValueError; never fabricate zero/random prediction",
+    "prediction_semantics": "municipal-month climatology scaled by regional trailing-12-month fire intensity",
+    "interval_semantics": "global empirical absolute-error interval from EXP-10 extended walk-forward residuals"
+  },
+  "climatology": [
+    {
+      "geocodigo": 2300101,
+      "municipio_ibge": "Abaiara",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2300101,
+      "municipio_ibge": "Abaiara",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2300101,
+      "municipio_ibge": "Abaiara",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2300101,
+      "municipio_ibge": "Abaiara",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2300101,
+      "municipio_ibge": "Abaiara",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2300101,
+      "municipio_ibge": "Abaiara",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.13636363636363635,
+      "train_months": 22,
+      "train_total": 3.0
+    },
+    {
+      "geocodigo": 2300101,
+      "municipio_ibge": "Abaiara",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.13636363636363635,
+      "train_months": 22,
+      "train_total": 3.0
+    },
+    {
+      "geocodigo": 2300101,
+      "municipio_ibge": "Abaiara",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 0.36363636363636365,
+      "train_months": 22,
+      "train_total": 8.0
+    },
+    {
+      "geocodigo": 2300101,
+      "municipio_ibge": "Abaiara",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 0.5454545454545454,
+      "train_months": 22,
+      "train_total": 12.0
+    },
+    {
+      "geocodigo": 2300101,
+      "municipio_ibge": "Abaiara",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 1.9565217391304348,
+      "train_months": 23,
+      "train_total": 45.0
+    },
+    {
+      "geocodigo": 2300101,
+      "municipio_ibge": "Abaiara",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 3.5217391304347827,
+      "train_months": 23,
+      "train_total": 81.0
+    },
+    {
+      "geocodigo": 2300101,
+      "municipio_ibge": "Abaiara",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 1.8695652173913044,
+      "train_months": 23,
+      "train_total": 43.0
+    },
+    {
+      "geocodigo": 2300200,
+      "municipio_ibge": "Acaraú",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 5.2727272727272725,
+      "train_months": 22,
+      "train_total": 116.0
+    },
+    {
+      "geocodigo": 2300200,
+      "municipio_ibge": "Acaraú",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.5454545454545454,
+      "train_months": 22,
+      "train_total": 12.0
+    },
+    {
+      "geocodigo": 2300200,
+      "municipio_ibge": "Acaraú",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.5,
+      "train_months": 22,
+      "train_total": 11.0
+    },
+    {
+      "geocodigo": 2300200,
+      "municipio_ibge": "Acaraú",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2300200,
+      "municipio_ibge": "Acaraú",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.09090909090909091,
+      "train_months": 22,
+      "train_total": 2.0
+    },
+    {
+      "geocodigo": 2300200,
+      "municipio_ibge": "Acaraú",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.4090909090909091,
+      "train_months": 22,
+      "train_total": 9.0
+    },
+    {
+      "geocodigo": 2300200,
+      "municipio_ibge": "Acaraú",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 1.4545454545454546,
+      "train_months": 22,
+      "train_total": 32.0
+    },
+    {
+      "geocodigo": 2300200,
+      "municipio_ibge": "Acaraú",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 1.7272727272727273,
+      "train_months": 22,
+      "train_total": 38.0
+    },
+    {
+      "geocodigo": 2300200,
+      "municipio_ibge": "Acaraú",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 1.8636363636363635,
+      "train_months": 22,
+      "train_total": 41.0
+    },
+    {
+      "geocodigo": 2300200,
+      "municipio_ibge": "Acaraú",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 1.6363636363636365,
+      "train_months": 22,
+      "train_total": 36.0
+    },
+    {
+      "geocodigo": 2300200,
+      "municipio_ibge": "Acaraú",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 9.045454545454545,
+      "train_months": 22,
+      "train_total": 199.0
+    },
+    {
+      "geocodigo": 2300200,
+      "municipio_ibge": "Acaraú",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 34.5,
+      "train_months": 22,
+      "train_total": 759.0
+    },
+    {
+      "geocodigo": 2301307,
+      "municipio_ibge": "Araripe",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 1.5,
+      "train_months": 22,
+      "train_total": 33.0
+    },
+    {
+      "geocodigo": 2301307,
+      "municipio_ibge": "Araripe",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.13636363636363635,
+      "train_months": 22,
+      "train_total": 3.0
+    },
+    {
+      "geocodigo": 2301307,
+      "municipio_ibge": "Araripe",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2301307,
+      "municipio_ibge": "Araripe",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2301307,
+      "municipio_ibge": "Araripe",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.45454545454545453,
+      "train_months": 22,
+      "train_total": 10.0
+    },
+    {
+      "geocodigo": 2301307,
+      "municipio_ibge": "Araripe",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.3181818181818182,
+      "train_months": 22,
+      "train_total": 7.0
+    },
+    {
+      "geocodigo": 2301307,
+      "municipio_ibge": "Araripe",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.36363636363636365,
+      "train_months": 22,
+      "train_total": 8.0
+    },
+    {
+      "geocodigo": 2301307,
+      "municipio_ibge": "Araripe",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 1.1304347826086956,
+      "train_months": 23,
+      "train_total": 26.0
+    },
+    {
+      "geocodigo": 2301307,
+      "municipio_ibge": "Araripe",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 7.478260869565218,
+      "train_months": 23,
+      "train_total": 172.0
+    },
+    {
+      "geocodigo": 2301307,
+      "municipio_ibge": "Araripe",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 13.521739130434783,
+      "train_months": 23,
+      "train_total": 311.0
+    },
+    {
+      "geocodigo": 2301307,
+      "municipio_ibge": "Araripe",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 14.08695652173913,
+      "train_months": 23,
+      "train_total": 324.0
+    },
+    {
+      "geocodigo": 2301307,
+      "municipio_ibge": "Araripe",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 7.260869565217392,
+      "train_months": 23,
+      "train_total": 167.0
+    },
+    {
+      "geocodigo": 2301604,
+      "municipio_ibge": "Assaré",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 1.7727272727272727,
+      "train_months": 22,
+      "train_total": 39.0
+    },
+    {
+      "geocodigo": 2301604,
+      "municipio_ibge": "Assaré",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.3181818181818182,
+      "train_months": 22,
+      "train_total": 7.0
+    },
+    {
+      "geocodigo": 2301604,
+      "municipio_ibge": "Assaré",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2301604,
+      "municipio_ibge": "Assaré",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2301604,
+      "municipio_ibge": "Assaré",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2301604,
+      "municipio_ibge": "Assaré",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2301604,
+      "municipio_ibge": "Assaré",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2301604,
+      "municipio_ibge": "Assaré",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 0.8636363636363636,
+      "train_months": 22,
+      "train_total": 19.0
+    },
+    {
+      "geocodigo": 2301604,
+      "municipio_ibge": "Assaré",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 1.8695652173913044,
+      "train_months": 23,
+      "train_total": 43.0
+    },
+    {
+      "geocodigo": 2301604,
+      "municipio_ibge": "Assaré",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 4.434782608695652,
+      "train_months": 23,
+      "train_total": 102.0
+    },
+    {
+      "geocodigo": 2301604,
+      "municipio_ibge": "Assaré",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 5.3478260869565215,
+      "train_months": 23,
+      "train_total": 123.0
+    },
+    {
+      "geocodigo": 2301604,
+      "municipio_ibge": "Assaré",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 5.130434782608695,
+      "train_months": 23,
+      "train_total": 118.0
+    },
+    {
+      "geocodigo": 2301901,
+      "municipio_ibge": "Barbalha",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 0.4090909090909091,
+      "train_months": 22,
+      "train_total": 9.0
+    },
+    {
+      "geocodigo": 2301901,
+      "municipio_ibge": "Barbalha",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.13636363636363635,
+      "train_months": 22,
+      "train_total": 3.0
+    },
+    {
+      "geocodigo": 2301901,
+      "municipio_ibge": "Barbalha",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2301901,
+      "municipio_ibge": "Barbalha",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2301901,
+      "municipio_ibge": "Barbalha",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2301901,
+      "municipio_ibge": "Barbalha",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.13636363636363635,
+      "train_months": 22,
+      "train_total": 3.0
+    },
+    {
+      "geocodigo": 2301901,
+      "municipio_ibge": "Barbalha",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.391304347826087,
+      "train_months": 23,
+      "train_total": 9.0
+    },
+    {
+      "geocodigo": 2301901,
+      "municipio_ibge": "Barbalha",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 1.2608695652173914,
+      "train_months": 23,
+      "train_total": 29.0
+    },
+    {
+      "geocodigo": 2301901,
+      "municipio_ibge": "Barbalha",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 2.869565217391304,
+      "train_months": 23,
+      "train_total": 66.0
+    },
+    {
+      "geocodigo": 2301901,
+      "municipio_ibge": "Barbalha",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 4.6521739130434785,
+      "train_months": 23,
+      "train_total": 107.0
+    },
+    {
+      "geocodigo": 2301901,
+      "municipio_ibge": "Barbalha",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 4.826086956521739,
+      "train_months": 23,
+      "train_total": 111.0
+    },
+    {
+      "geocodigo": 2301901,
+      "municipio_ibge": "Barbalha",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 2.0,
+      "train_months": 23,
+      "train_total": 46.0
+    },
+    {
+      "geocodigo": 2302503,
+      "municipio_ibge": "Brejo Santo",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 0.45454545454545453,
+      "train_months": 22,
+      "train_total": 10.0
+    },
+    {
+      "geocodigo": 2302503,
+      "municipio_ibge": "Brejo Santo",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.09090909090909091,
+      "train_months": 22,
+      "train_total": 2.0
+    },
+    {
+      "geocodigo": 2302503,
+      "municipio_ibge": "Brejo Santo",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2302503,
+      "municipio_ibge": "Brejo Santo",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2302503,
+      "municipio_ibge": "Brejo Santo",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.09090909090909091,
+      "train_months": 22,
+      "train_total": 2.0
+    },
+    {
+      "geocodigo": 2302503,
+      "municipio_ibge": "Brejo Santo",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.3181818181818182,
+      "train_months": 22,
+      "train_total": 7.0
+    },
+    {
+      "geocodigo": 2302503,
+      "municipio_ibge": "Brejo Santo",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.18181818181818182,
+      "train_months": 22,
+      "train_total": 4.0
+    },
+    {
+      "geocodigo": 2302503,
+      "municipio_ibge": "Brejo Santo",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 0.19047619047619047,
+      "train_months": 21,
+      "train_total": 4.0
+    },
+    {
+      "geocodigo": 2302503,
+      "municipio_ibge": "Brejo Santo",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 2.0,
+      "train_months": 22,
+      "train_total": 44.0
+    },
+    {
+      "geocodigo": 2302503,
+      "municipio_ibge": "Brejo Santo",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 3.272727272727273,
+      "train_months": 22,
+      "train_total": 72.0
+    },
+    {
+      "geocodigo": 2302503,
+      "municipio_ibge": "Brejo Santo",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 4.818181818181818,
+      "train_months": 22,
+      "train_total": 106.0
+    },
+    {
+      "geocodigo": 2302503,
+      "municipio_ibge": "Brejo Santo",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 2.4545454545454546,
+      "train_months": 22,
+      "train_total": 54.0
+    },
+    {
+      "geocodigo": 2302701,
+      "municipio_ibge": "Campos Sales",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 0.4090909090909091,
+      "train_months": 22,
+      "train_total": 9.0
+    },
+    {
+      "geocodigo": 2302701,
+      "municipio_ibge": "Campos Sales",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2302701,
+      "municipio_ibge": "Campos Sales",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2302701,
+      "municipio_ibge": "Campos Sales",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2302701,
+      "municipio_ibge": "Campos Sales",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2302701,
+      "municipio_ibge": "Campos Sales",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2302701,
+      "municipio_ibge": "Campos Sales",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.2727272727272727,
+      "train_months": 22,
+      "train_total": 6.0
+    },
+    {
+      "geocodigo": 2302701,
+      "municipio_ibge": "Campos Sales",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 0.5,
+      "train_months": 22,
+      "train_total": 11.0
+    },
+    {
+      "geocodigo": 2302701,
+      "municipio_ibge": "Campos Sales",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 1.5217391304347827,
+      "train_months": 23,
+      "train_total": 35.0
+    },
+    {
+      "geocodigo": 2302701,
+      "municipio_ibge": "Campos Sales",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 3.5217391304347827,
+      "train_months": 23,
+      "train_total": 81.0
+    },
+    {
+      "geocodigo": 2302701,
+      "municipio_ibge": "Campos Sales",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 2.5217391304347827,
+      "train_months": 23,
+      "train_total": 58.0
+    },
+    {
+      "geocodigo": 2302701,
+      "municipio_ibge": "Campos Sales",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 1.7391304347826086,
+      "train_months": 23,
+      "train_total": 40.0
+    },
+    {
+      "geocodigo": 2304103,
+      "municipio_ibge": "Crateús",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 3.9545454545454546,
+      "train_months": 22,
+      "train_total": 87.0
+    },
+    {
+      "geocodigo": 2304103,
+      "municipio_ibge": "Crateús",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.22727272727272727,
+      "train_months": 22,
+      "train_total": 5.0
+    },
+    {
+      "geocodigo": 2304103,
+      "municipio_ibge": "Crateús",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.09090909090909091,
+      "train_months": 22,
+      "train_total": 2.0
+    },
+    {
+      "geocodigo": 2304103,
+      "municipio_ibge": "Crateús",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.09090909090909091,
+      "train_months": 22,
+      "train_total": 2.0
+    },
+    {
+      "geocodigo": 2304103,
+      "municipio_ibge": "Crateús",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2304103,
+      "municipio_ibge": "Crateús",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.6818181818181818,
+      "train_months": 22,
+      "train_total": 15.0
+    },
+    {
+      "geocodigo": 2304103,
+      "municipio_ibge": "Crateús",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.5909090909090909,
+      "train_months": 22,
+      "train_total": 13.0
+    },
+    {
+      "geocodigo": 2304103,
+      "municipio_ibge": "Crateús",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 2.6363636363636362,
+      "train_months": 22,
+      "train_total": 58.0
+    },
+    {
+      "geocodigo": 2304103,
+      "municipio_ibge": "Crateús",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 3.5,
+      "train_months": 22,
+      "train_total": 77.0
+    },
+    {
+      "geocodigo": 2304103,
+      "municipio_ibge": "Crateús",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 49.0,
+      "train_months": 22,
+      "train_total": 1078.0
+    },
+    {
+      "geocodigo": 2304103,
+      "municipio_ibge": "Crateús",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 64.27272727272727,
+      "train_months": 22,
+      "train_total": 1414.0
+    },
+    {
+      "geocodigo": 2304103,
+      "municipio_ibge": "Crateús",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 28.227272727272727,
+      "train_months": 22,
+      "train_total": 621.0
+    },
+    {
+      "geocodigo": 2304202,
+      "municipio_ibge": "Crato",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 0.7727272727272727,
+      "train_months": 22,
+      "train_total": 17.0
+    },
+    {
+      "geocodigo": 2304202,
+      "municipio_ibge": "Crato",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.2727272727272727,
+      "train_months": 22,
+      "train_total": 6.0
+    },
+    {
+      "geocodigo": 2304202,
+      "municipio_ibge": "Crato",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.13636363636363635,
+      "train_months": 22,
+      "train_total": 3.0
+    },
+    {
+      "geocodigo": 2304202,
+      "municipio_ibge": "Crato",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2304202,
+      "municipio_ibge": "Crato",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2304202,
+      "municipio_ibge": "Crato",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2304202,
+      "municipio_ibge": "Crato",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2304202,
+      "municipio_ibge": "Crato",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 1.5454545454545454,
+      "train_months": 22,
+      "train_total": 34.0
+    },
+    {
+      "geocodigo": 2304202,
+      "municipio_ibge": "Crato",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 4.181818181818182,
+      "train_months": 22,
+      "train_total": 92.0
+    },
+    {
+      "geocodigo": 2304202,
+      "municipio_ibge": "Crato",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 9.409090909090908,
+      "train_months": 22,
+      "train_total": 207.0
+    },
+    {
+      "geocodigo": 2304202,
+      "municipio_ibge": "Crato",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 10.954545454545455,
+      "train_months": 22,
+      "train_total": 241.0
+    },
+    {
+      "geocodigo": 2304202,
+      "municipio_ibge": "Crato",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 5.954545454545454,
+      "train_months": 22,
+      "train_total": 131.0
+    },
+    {
+      "geocodigo": 2304400,
+      "municipio_ibge": "Fortaleza",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 0.13636363636363635,
+      "train_months": 22,
+      "train_total": 3.0
+    },
+    {
+      "geocodigo": 2304400,
+      "municipio_ibge": "Fortaleza",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.09090909090909091,
+      "train_months": 22,
+      "train_total": 2.0
+    },
+    {
+      "geocodigo": 2304400,
+      "municipio_ibge": "Fortaleza",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2304400,
+      "municipio_ibge": "Fortaleza",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2304400,
+      "municipio_ibge": "Fortaleza",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2304400,
+      "municipio_ibge": "Fortaleza",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2304400,
+      "municipio_ibge": "Fortaleza",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2304400,
+      "municipio_ibge": "Fortaleza",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 0.38095238095238093,
+      "train_months": 21,
+      "train_total": 8.0
+    },
+    {
+      "geocodigo": 2304400,
+      "municipio_ibge": "Fortaleza",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 0.8571428571428571,
+      "train_months": 21,
+      "train_total": 18.0
+    },
+    {
+      "geocodigo": 2304400,
+      "municipio_ibge": "Fortaleza",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 0.9523809523809523,
+      "train_months": 21,
+      "train_total": 20.0
+    },
+    {
+      "geocodigo": 2304400,
+      "municipio_ibge": "Fortaleza",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 0.9523809523809523,
+      "train_months": 21,
+      "train_total": 20.0
+    },
+    {
+      "geocodigo": 2304400,
+      "municipio_ibge": "Fortaleza",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 0.23809523809523808,
+      "train_months": 21,
+      "train_total": 5.0
+    },
+    {
+      "geocodigo": 2305100,
+      "municipio_ibge": "Guaramiranga",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 0.0,
+      "train_months": 21,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2305100,
+      "municipio_ibge": "Guaramiranga",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.0,
+      "train_months": 21,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2305100,
+      "municipio_ibge": "Guaramiranga",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.0,
+      "train_months": 21,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2305100,
+      "municipio_ibge": "Guaramiranga",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.0,
+      "train_months": 21,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2305100,
+      "municipio_ibge": "Guaramiranga",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.0,
+      "train_months": 21,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2305100,
+      "municipio_ibge": "Guaramiranga",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.0,
+      "train_months": 21,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2305100,
+      "municipio_ibge": "Guaramiranga",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.0,
+      "train_months": 21,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2305100,
+      "municipio_ibge": "Guaramiranga",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 0.0,
+      "train_months": 20,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2305100,
+      "municipio_ibge": "Guaramiranga",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 0.0,
+      "train_months": 20,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2305100,
+      "municipio_ibge": "Guaramiranga",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 0.1,
+      "train_months": 20,
+      "train_total": 2.0
+    },
+    {
+      "geocodigo": 2305100,
+      "municipio_ibge": "Guaramiranga",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 0.4,
+      "train_months": 20,
+      "train_total": 8.0
+    },
+    {
+      "geocodigo": 2305100,
+      "municipio_ibge": "Guaramiranga",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 0.15,
+      "train_months": 20,
+      "train_total": 3.0
+    },
+    {
+      "geocodigo": 2305506,
+      "municipio_ibge": "Iguatu",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 1.3636363636363635,
+      "train_months": 22,
+      "train_total": 30.0
+    },
+    {
+      "geocodigo": 2305506,
+      "municipio_ibge": "Iguatu",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.13636363636363635,
+      "train_months": 22,
+      "train_total": 3.0
+    },
+    {
+      "geocodigo": 2305506,
+      "municipio_ibge": "Iguatu",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.36363636363636365,
+      "train_months": 22,
+      "train_total": 8.0
+    },
+    {
+      "geocodigo": 2305506,
+      "municipio_ibge": "Iguatu",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.3181818181818182,
+      "train_months": 22,
+      "train_total": 7.0
+    },
+    {
+      "geocodigo": 2305506,
+      "municipio_ibge": "Iguatu",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2305506,
+      "municipio_ibge": "Iguatu",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.2727272727272727,
+      "train_months": 22,
+      "train_total": 6.0
+    },
+    {
+      "geocodigo": 2305506,
+      "municipio_ibge": "Iguatu",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.8181818181818182,
+      "train_months": 22,
+      "train_total": 18.0
+    },
+    {
+      "geocodigo": 2305506,
+      "municipio_ibge": "Iguatu",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 1.8636363636363635,
+      "train_months": 22,
+      "train_total": 41.0
+    },
+    {
+      "geocodigo": 2305506,
+      "municipio_ibge": "Iguatu",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 4.636363636363637,
+      "train_months": 22,
+      "train_total": 102.0
+    },
+    {
+      "geocodigo": 2305506,
+      "municipio_ibge": "Iguatu",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 5.7727272727272725,
+      "train_months": 22,
+      "train_total": 127.0
+    },
+    {
+      "geocodigo": 2305506,
+      "municipio_ibge": "Iguatu",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 8.090909090909092,
+      "train_months": 22,
+      "train_total": 178.0
+    },
+    {
+      "geocodigo": 2305506,
+      "municipio_ibge": "Iguatu",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 5.590909090909091,
+      "train_months": 22,
+      "train_total": 123.0
+    },
+    {
+      "geocodigo": 2306405,
+      "municipio_ibge": "Itapipoca",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 7.5,
+      "train_months": 22,
+      "train_total": 165.0
+    },
+    {
+      "geocodigo": 2306405,
+      "municipio_ibge": "Itapipoca",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.22727272727272727,
+      "train_months": 22,
+      "train_total": 5.0
+    },
+    {
+      "geocodigo": 2306405,
+      "municipio_ibge": "Itapipoca",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2306405,
+      "municipio_ibge": "Itapipoca",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2306405,
+      "municipio_ibge": "Itapipoca",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.09090909090909091,
+      "train_months": 22,
+      "train_total": 2.0
+    },
+    {
+      "geocodigo": 2306405,
+      "municipio_ibge": "Itapipoca",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.5454545454545454,
+      "train_months": 22,
+      "train_total": 12.0
+    },
+    {
+      "geocodigo": 2306405,
+      "municipio_ibge": "Itapipoca",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 1.4545454545454546,
+      "train_months": 22,
+      "train_total": 32.0
+    },
+    {
+      "geocodigo": 2306405,
+      "municipio_ibge": "Itapipoca",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 2.909090909090909,
+      "train_months": 22,
+      "train_total": 64.0
+    },
+    {
+      "geocodigo": 2306405,
+      "municipio_ibge": "Itapipoca",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 3.6363636363636362,
+      "train_months": 22,
+      "train_total": 80.0
+    },
+    {
+      "geocodigo": 2306405,
+      "municipio_ibge": "Itapipoca",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 3.8181818181818183,
+      "train_months": 22,
+      "train_total": 84.0
+    },
+    {
+      "geocodigo": 2306405,
+      "municipio_ibge": "Itapipoca",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 24.363636363636363,
+      "train_months": 22,
+      "train_total": 536.0
+    },
+    {
+      "geocodigo": 2306405,
+      "municipio_ibge": "Itapipoca",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 64.0,
+      "train_months": 22,
+      "train_total": 1408.0
+    },
+    {
+      "geocodigo": 2306900,
+      "municipio_ibge": "Jaguaribe",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 0.8636363636363636,
+      "train_months": 22,
+      "train_total": 19.0
+    },
+    {
+      "geocodigo": 2306900,
+      "municipio_ibge": "Jaguaribe",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.18181818181818182,
+      "train_months": 22,
+      "train_total": 4.0
+    },
+    {
+      "geocodigo": 2306900,
+      "municipio_ibge": "Jaguaribe",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2306900,
+      "municipio_ibge": "Jaguaribe",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.09090909090909091,
+      "train_months": 22,
+      "train_total": 2.0
+    },
+    {
+      "geocodigo": 2306900,
+      "municipio_ibge": "Jaguaribe",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2306900,
+      "municipio_ibge": "Jaguaribe",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.13636363636363635,
+      "train_months": 22,
+      "train_total": 3.0
+    },
+    {
+      "geocodigo": 2306900,
+      "municipio_ibge": "Jaguaribe",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.13636363636363635,
+      "train_months": 22,
+      "train_total": 3.0
+    },
+    {
+      "geocodigo": 2306900,
+      "municipio_ibge": "Jaguaribe",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 0.6818181818181818,
+      "train_months": 22,
+      "train_total": 15.0
+    },
+    {
+      "geocodigo": 2306900,
+      "municipio_ibge": "Jaguaribe",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 1.6363636363636365,
+      "train_months": 22,
+      "train_total": 36.0
+    },
+    {
+      "geocodigo": 2306900,
+      "municipio_ibge": "Jaguaribe",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 3.9545454545454546,
+      "train_months": 22,
+      "train_total": 87.0
+    },
+    {
+      "geocodigo": 2306900,
+      "municipio_ibge": "Jaguaribe",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 4.136363636363637,
+      "train_months": 22,
+      "train_total": 91.0
+    },
+    {
+      "geocodigo": 2306900,
+      "municipio_ibge": "Jaguaribe",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 2.727272727272727,
+      "train_months": 22,
+      "train_total": 60.0
+    },
+    {
+      "geocodigo": 2307007,
+      "municipio_ibge": "Jaguaruana",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 0.5454545454545454,
+      "train_months": 22,
+      "train_total": 12.0
+    },
+    {
+      "geocodigo": 2307007,
+      "municipio_ibge": "Jaguaruana",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.2727272727272727,
+      "train_months": 22,
+      "train_total": 6.0
+    },
+    {
+      "geocodigo": 2307007,
+      "municipio_ibge": "Jaguaruana",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2307007,
+      "municipio_ibge": "Jaguaruana",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2307007,
+      "municipio_ibge": "Jaguaruana",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.09090909090909091,
+      "train_months": 22,
+      "train_total": 2.0
+    },
+    {
+      "geocodigo": 2307007,
+      "municipio_ibge": "Jaguaruana",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2307007,
+      "municipio_ibge": "Jaguaruana",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.22727272727272727,
+      "train_months": 22,
+      "train_total": 5.0
+    },
+    {
+      "geocodigo": 2307007,
+      "municipio_ibge": "Jaguaruana",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 0.9473684210526315,
+      "train_months": 19,
+      "train_total": 18.0
+    },
+    {
+      "geocodigo": 2307007,
+      "municipio_ibge": "Jaguaruana",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 0.9473684210526315,
+      "train_months": 19,
+      "train_total": 18.0
+    },
+    {
+      "geocodigo": 2307007,
+      "municipio_ibge": "Jaguaruana",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 1.3157894736842106,
+      "train_months": 19,
+      "train_total": 25.0
+    },
+    {
+      "geocodigo": 2307007,
+      "municipio_ibge": "Jaguaruana",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 0.5789473684210527,
+      "train_months": 19,
+      "train_total": 11.0
+    },
+    {
+      "geocodigo": 2307007,
+      "municipio_ibge": "Jaguaruana",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 0.6842105263157895,
+      "train_months": 19,
+      "train_total": 13.0
+    },
+    {
+      "geocodigo": 2307106,
+      "municipio_ibge": "Jardim",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 0.5454545454545454,
+      "train_months": 22,
+      "train_total": 12.0
+    },
+    {
+      "geocodigo": 2307106,
+      "municipio_ibge": "Jardim",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.09090909090909091,
+      "train_months": 22,
+      "train_total": 2.0
+    },
+    {
+      "geocodigo": 2307106,
+      "municipio_ibge": "Jardim",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2307106,
+      "municipio_ibge": "Jardim",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2307106,
+      "municipio_ibge": "Jardim",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.13636363636363635,
+      "train_months": 22,
+      "train_total": 3.0
+    },
+    {
+      "geocodigo": 2307106,
+      "municipio_ibge": "Jardim",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2307106,
+      "municipio_ibge": "Jardim",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2307106,
+      "municipio_ibge": "Jardim",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 0.13636363636363635,
+      "train_months": 22,
+      "train_total": 3.0
+    },
+    {
+      "geocodigo": 2307106,
+      "municipio_ibge": "Jardim",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 1.8181818181818181,
+      "train_months": 22,
+      "train_total": 40.0
+    },
+    {
+      "geocodigo": 2307106,
+      "municipio_ibge": "Jardim",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 3.0869565217391304,
+      "train_months": 23,
+      "train_total": 71.0
+    },
+    {
+      "geocodigo": 2307106,
+      "municipio_ibge": "Jardim",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 3.8260869565217392,
+      "train_months": 23,
+      "train_total": 88.0
+    },
+    {
+      "geocodigo": 2307106,
+      "municipio_ibge": "Jardim",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 3.652173913043478,
+      "train_months": 23,
+      "train_total": 84.0
+    },
+    {
+      "geocodigo": 2307205,
+      "municipio_ibge": "Jati",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 0.45454545454545453,
+      "train_months": 22,
+      "train_total": 10.0
+    },
+    {
+      "geocodigo": 2307205,
+      "municipio_ibge": "Jati",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.13636363636363635,
+      "train_months": 22,
+      "train_total": 3.0
+    },
+    {
+      "geocodigo": 2307205,
+      "municipio_ibge": "Jati",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2307205,
+      "municipio_ibge": "Jati",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2307205,
+      "municipio_ibge": "Jati",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2307205,
+      "municipio_ibge": "Jati",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2307205,
+      "municipio_ibge": "Jati",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2307205,
+      "municipio_ibge": "Jati",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2307205,
+      "municipio_ibge": "Jati",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 0.5454545454545454,
+      "train_months": 22,
+      "train_total": 12.0
+    },
+    {
+      "geocodigo": 2307205,
+      "municipio_ibge": "Jati",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 3.0454545454545454,
+      "train_months": 22,
+      "train_total": 67.0
+    },
+    {
+      "geocodigo": 2307205,
+      "municipio_ibge": "Jati",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 2.272727272727273,
+      "train_months": 22,
+      "train_total": 50.0
+    },
+    {
+      "geocodigo": 2307205,
+      "municipio_ibge": "Jati",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 1.0909090909090908,
+      "train_months": 22,
+      "train_total": 24.0
+    },
+    {
+      "geocodigo": 2307304,
+      "municipio_ibge": "Juazeiro do Norte",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 0.13636363636363635,
+      "train_months": 22,
+      "train_total": 3.0
+    },
+    {
+      "geocodigo": 2307304,
+      "municipio_ibge": "Juazeiro do Norte",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2307304,
+      "municipio_ibge": "Juazeiro do Norte",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.09090909090909091,
+      "train_months": 22,
+      "train_total": 2.0
+    },
+    {
+      "geocodigo": 2307304,
+      "municipio_ibge": "Juazeiro do Norte",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2307304,
+      "municipio_ibge": "Juazeiro do Norte",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2307304,
+      "municipio_ibge": "Juazeiro do Norte",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2307304,
+      "municipio_ibge": "Juazeiro do Norte",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.22727272727272727,
+      "train_months": 22,
+      "train_total": 5.0
+    },
+    {
+      "geocodigo": 2307304,
+      "municipio_ibge": "Juazeiro do Norte",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 0.7619047619047619,
+      "train_months": 21,
+      "train_total": 16.0
+    },
+    {
+      "geocodigo": 2307304,
+      "municipio_ibge": "Juazeiro do Norte",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 1.0952380952380953,
+      "train_months": 21,
+      "train_total": 23.0
+    },
+    {
+      "geocodigo": 2307304,
+      "municipio_ibge": "Juazeiro do Norte",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 3.0476190476190474,
+      "train_months": 21,
+      "train_total": 64.0
+    },
+    {
+      "geocodigo": 2307304,
+      "municipio_ibge": "Juazeiro do Norte",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 2.9523809523809526,
+      "train_months": 21,
+      "train_total": 62.0
+    },
+    {
+      "geocodigo": 2307304,
+      "municipio_ibge": "Juazeiro do Norte",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 1.0,
+      "train_months": 21,
+      "train_total": 21.0
+    },
+    {
+      "geocodigo": 2308401,
+      "municipio_ibge": "Missão Velha",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 1.2272727272727273,
+      "train_months": 22,
+      "train_total": 27.0
+    },
+    {
+      "geocodigo": 2308401,
+      "municipio_ibge": "Missão Velha",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.22727272727272727,
+      "train_months": 22,
+      "train_total": 5.0
+    },
+    {
+      "geocodigo": 2308401,
+      "municipio_ibge": "Missão Velha",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.3181818181818182,
+      "train_months": 22,
+      "train_total": 7.0
+    },
+    {
+      "geocodigo": 2308401,
+      "municipio_ibge": "Missão Velha",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.18181818181818182,
+      "train_months": 22,
+      "train_total": 4.0
+    },
+    {
+      "geocodigo": 2308401,
+      "municipio_ibge": "Missão Velha",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.18181818181818182,
+      "train_months": 22,
+      "train_total": 4.0
+    },
+    {
+      "geocodigo": 2308401,
+      "municipio_ibge": "Missão Velha",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.13636363636363635,
+      "train_months": 22,
+      "train_total": 3.0
+    },
+    {
+      "geocodigo": 2308401,
+      "municipio_ibge": "Missão Velha",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.13636363636363635,
+      "train_months": 22,
+      "train_total": 3.0
+    },
+    {
+      "geocodigo": 2308401,
+      "municipio_ibge": "Missão Velha",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 1.0454545454545454,
+      "train_months": 22,
+      "train_total": 23.0
+    },
+    {
+      "geocodigo": 2308401,
+      "municipio_ibge": "Missão Velha",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 3.217391304347826,
+      "train_months": 23,
+      "train_total": 74.0
+    },
+    {
+      "geocodigo": 2308401,
+      "municipio_ibge": "Missão Velha",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 7.3478260869565215,
+      "train_months": 23,
+      "train_total": 169.0
+    },
+    {
+      "geocodigo": 2308401,
+      "municipio_ibge": "Missão Velha",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 11.826086956521738,
+      "train_months": 23,
+      "train_total": 272.0
+    },
+    {
+      "geocodigo": 2308401,
+      "municipio_ibge": "Missão Velha",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 7.478260869565218,
+      "train_months": 23,
+      "train_total": 172.0
+    },
+    {
+      "geocodigo": 2308708,
+      "municipio_ibge": "Morada Nova",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 1.8181818181818181,
+      "train_months": 22,
+      "train_total": 40.0
+    },
+    {
+      "geocodigo": 2308708,
+      "municipio_ibge": "Morada Nova",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.6818181818181818,
+      "train_months": 22,
+      "train_total": 15.0
+    },
+    {
+      "geocodigo": 2308708,
+      "municipio_ibge": "Morada Nova",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.13636363636363635,
+      "train_months": 22,
+      "train_total": 3.0
+    },
+    {
+      "geocodigo": 2308708,
+      "municipio_ibge": "Morada Nova",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2308708,
+      "municipio_ibge": "Morada Nova",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.18181818181818182,
+      "train_months": 22,
+      "train_total": 4.0
+    },
+    {
+      "geocodigo": 2308708,
+      "municipio_ibge": "Morada Nova",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.18181818181818182,
+      "train_months": 22,
+      "train_total": 4.0
+    },
+    {
+      "geocodigo": 2308708,
+      "municipio_ibge": "Morada Nova",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.18181818181818182,
+      "train_months": 22,
+      "train_total": 4.0
+    },
+    {
+      "geocodigo": 2308708,
+      "municipio_ibge": "Morada Nova",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 1.4090909090909092,
+      "train_months": 22,
+      "train_total": 31.0
+    },
+    {
+      "geocodigo": 2308708,
+      "municipio_ibge": "Morada Nova",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 1.8181818181818181,
+      "train_months": 22,
+      "train_total": 40.0
+    },
+    {
+      "geocodigo": 2308708,
+      "municipio_ibge": "Morada Nova",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 4.409090909090909,
+      "train_months": 22,
+      "train_total": 97.0
+    },
+    {
+      "geocodigo": 2308708,
+      "municipio_ibge": "Morada Nova",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 5.818181818181818,
+      "train_months": 22,
+      "train_total": 128.0
+    },
+    {
+      "geocodigo": 2308708,
+      "municipio_ibge": "Morada Nova",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 4.863636363636363,
+      "train_months": 22,
+      "train_total": 107.0
+    },
+    {
+      "geocodigo": 2309201,
+      "municipio_ibge": "Nova Olinda",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 0.22727272727272727,
+      "train_months": 22,
+      "train_total": 5.0
+    },
+    {
+      "geocodigo": 2309201,
+      "municipio_ibge": "Nova Olinda",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2309201,
+      "municipio_ibge": "Nova Olinda",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2309201,
+      "municipio_ibge": "Nova Olinda",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2309201,
+      "municipio_ibge": "Nova Olinda",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.13636363636363635,
+      "train_months": 22,
+      "train_total": 3.0
+    },
+    {
+      "geocodigo": 2309201,
+      "municipio_ibge": "Nova Olinda",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2309201,
+      "municipio_ibge": "Nova Olinda",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.36363636363636365,
+      "train_months": 22,
+      "train_total": 8.0
+    },
+    {
+      "geocodigo": 2309201,
+      "municipio_ibge": "Nova Olinda",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 0.19047619047619047,
+      "train_months": 21,
+      "train_total": 4.0
+    },
+    {
+      "geocodigo": 2309201,
+      "municipio_ibge": "Nova Olinda",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 0.8095238095238095,
+      "train_months": 21,
+      "train_total": 17.0
+    },
+    {
+      "geocodigo": 2309201,
+      "municipio_ibge": "Nova Olinda",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 1.2727272727272727,
+      "train_months": 22,
+      "train_total": 28.0
+    },
+    {
+      "geocodigo": 2309201,
+      "municipio_ibge": "Nova Olinda",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 4.090909090909091,
+      "train_months": 22,
+      "train_total": 90.0
+    },
+    {
+      "geocodigo": 2309201,
+      "municipio_ibge": "Nova Olinda",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 2.772727272727273,
+      "train_months": 22,
+      "train_total": 61.0
+    },
+    {
+      "geocodigo": 2310605,
+      "municipio_ibge": "Penaforte",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 0.09090909090909091,
+      "train_months": 22,
+      "train_total": 2.0
+    },
+    {
+      "geocodigo": 2310605,
+      "municipio_ibge": "Penaforte",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.09090909090909091,
+      "train_months": 22,
+      "train_total": 2.0
+    },
+    {
+      "geocodigo": 2310605,
+      "municipio_ibge": "Penaforte",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2310605,
+      "municipio_ibge": "Penaforte",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2310605,
+      "municipio_ibge": "Penaforte",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2310605,
+      "municipio_ibge": "Penaforte",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2310605,
+      "municipio_ibge": "Penaforte",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2310605,
+      "municipio_ibge": "Penaforte",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 0.0,
+      "train_months": 21,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2310605,
+      "municipio_ibge": "Penaforte",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 0.0,
+      "train_months": 21,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2310605,
+      "municipio_ibge": "Penaforte",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 0.2857142857142857,
+      "train_months": 21,
+      "train_total": 6.0
+    },
+    {
+      "geocodigo": 2310605,
+      "municipio_ibge": "Penaforte",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 0.36363636363636365,
+      "train_months": 22,
+      "train_total": 8.0
+    },
+    {
+      "geocodigo": 2310605,
+      "municipio_ibge": "Penaforte",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 0.45454545454545453,
+      "train_months": 22,
+      "train_total": 10.0
+    },
+    {
+      "geocodigo": 2311108,
+      "municipio_ibge": "Porteiras",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 0.18181818181818182,
+      "train_months": 22,
+      "train_total": 4.0
+    },
+    {
+      "geocodigo": 2311108,
+      "municipio_ibge": "Porteiras",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.09090909090909091,
+      "train_months": 22,
+      "train_total": 2.0
+    },
+    {
+      "geocodigo": 2311108,
+      "municipio_ibge": "Porteiras",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2311108,
+      "municipio_ibge": "Porteiras",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2311108,
+      "municipio_ibge": "Porteiras",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2311108,
+      "municipio_ibge": "Porteiras",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2311108,
+      "municipio_ibge": "Porteiras",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.13636363636363635,
+      "train_months": 22,
+      "train_total": 3.0
+    },
+    {
+      "geocodigo": 2311108,
+      "municipio_ibge": "Porteiras",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 0.15,
+      "train_months": 20,
+      "train_total": 3.0
+    },
+    {
+      "geocodigo": 2311108,
+      "municipio_ibge": "Porteiras",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 1.0,
+      "train_months": 20,
+      "train_total": 20.0
+    },
+    {
+      "geocodigo": 2311108,
+      "municipio_ibge": "Porteiras",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 0.8571428571428571,
+      "train_months": 21,
+      "train_total": 18.0
+    },
+    {
+      "geocodigo": 2311108,
+      "municipio_ibge": "Porteiras",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 2.0476190476190474,
+      "train_months": 21,
+      "train_total": 43.0
+    },
+    {
+      "geocodigo": 2311108,
+      "municipio_ibge": "Porteiras",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 1.7619047619047619,
+      "train_months": 21,
+      "train_total": 37.0
+    },
+    {
+      "geocodigo": 2311207,
+      "municipio_ibge": "Potengi",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 0.6363636363636364,
+      "train_months": 22,
+      "train_total": 14.0
+    },
+    {
+      "geocodigo": 2311207,
+      "municipio_ibge": "Potengi",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.2727272727272727,
+      "train_months": 22,
+      "train_total": 6.0
+    },
+    {
+      "geocodigo": 2311207,
+      "municipio_ibge": "Potengi",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2311207,
+      "municipio_ibge": "Potengi",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2311207,
+      "municipio_ibge": "Potengi",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2311207,
+      "municipio_ibge": "Potengi",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2311207,
+      "municipio_ibge": "Potengi",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.13636363636363635,
+      "train_months": 22,
+      "train_total": 3.0
+    },
+    {
+      "geocodigo": 2311207,
+      "municipio_ibge": "Potengi",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 0.0,
+      "train_months": 21,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2311207,
+      "municipio_ibge": "Potengi",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 1.5909090909090908,
+      "train_months": 22,
+      "train_total": 35.0
+    },
+    {
+      "geocodigo": 2311207,
+      "municipio_ibge": "Potengi",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 1.7727272727272727,
+      "train_months": 22,
+      "train_total": 39.0
+    },
+    {
+      "geocodigo": 2311207,
+      "municipio_ibge": "Potengi",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 2.6818181818181817,
+      "train_months": 22,
+      "train_total": 59.0
+    },
+    {
+      "geocodigo": 2311207,
+      "municipio_ibge": "Potengi",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 1.2727272727272727,
+      "train_months": 22,
+      "train_total": 28.0
+    },
+    {
+      "geocodigo": 2311306,
+      "municipio_ibge": "Quixadá",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 1.9090909090909092,
+      "train_months": 22,
+      "train_total": 42.0
+    },
+    {
+      "geocodigo": 2311306,
+      "municipio_ibge": "Quixadá",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.22727272727272727,
+      "train_months": 22,
+      "train_total": 5.0
+    },
+    {
+      "geocodigo": 2311306,
+      "municipio_ibge": "Quixadá",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.09090909090909091,
+      "train_months": 22,
+      "train_total": 2.0
+    },
+    {
+      "geocodigo": 2311306,
+      "municipio_ibge": "Quixadá",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.13636363636363635,
+      "train_months": 22,
+      "train_total": 3.0
+    },
+    {
+      "geocodigo": 2311306,
+      "municipio_ibge": "Quixadá",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.13636363636363635,
+      "train_months": 22,
+      "train_total": 3.0
+    },
+    {
+      "geocodigo": 2311306,
+      "municipio_ibge": "Quixadá",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.09090909090909091,
+      "train_months": 22,
+      "train_total": 2.0
+    },
+    {
+      "geocodigo": 2311306,
+      "municipio_ibge": "Quixadá",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.5,
+      "train_months": 22,
+      "train_total": 11.0
+    },
+    {
+      "geocodigo": 2311306,
+      "municipio_ibge": "Quixadá",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 1.3181818181818181,
+      "train_months": 22,
+      "train_total": 29.0
+    },
+    {
+      "geocodigo": 2311306,
+      "municipio_ibge": "Quixadá",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 3.5,
+      "train_months": 22,
+      "train_total": 77.0
+    },
+    {
+      "geocodigo": 2311306,
+      "municipio_ibge": "Quixadá",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 18.363636363636363,
+      "train_months": 22,
+      "train_total": 404.0
+    },
+    {
+      "geocodigo": 2311306,
+      "municipio_ibge": "Quixadá",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 24.318181818181817,
+      "train_months": 22,
+      "train_total": 535.0
+    },
+    {
+      "geocodigo": 2311306,
+      "municipio_ibge": "Quixadá",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 14.318181818181818,
+      "train_months": 22,
+      "train_total": 315.0
+    },
+    {
+      "geocodigo": 2311405,
+      "municipio_ibge": "Quixeramobim",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 5.863636363636363,
+      "train_months": 22,
+      "train_total": 129.0
+    },
+    {
+      "geocodigo": 2311405,
+      "municipio_ibge": "Quixeramobim",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.9545454545454546,
+      "train_months": 22,
+      "train_total": 21.0
+    },
+    {
+      "geocodigo": 2311405,
+      "municipio_ibge": "Quixeramobim",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.3181818181818182,
+      "train_months": 22,
+      "train_total": 7.0
+    },
+    {
+      "geocodigo": 2311405,
+      "municipio_ibge": "Quixeramobim",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2311405,
+      "municipio_ibge": "Quixeramobim",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.09090909090909091,
+      "train_months": 22,
+      "train_total": 2.0
+    },
+    {
+      "geocodigo": 2311405,
+      "municipio_ibge": "Quixeramobim",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.18181818181818182,
+      "train_months": 22,
+      "train_total": 4.0
+    },
+    {
+      "geocodigo": 2311405,
+      "municipio_ibge": "Quixeramobim",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.2727272727272727,
+      "train_months": 22,
+      "train_total": 6.0
+    },
+    {
+      "geocodigo": 2311405,
+      "municipio_ibge": "Quixeramobim",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 1.2272727272727273,
+      "train_months": 22,
+      "train_total": 27.0
+    },
+    {
+      "geocodigo": 2311405,
+      "municipio_ibge": "Quixeramobim",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 3.590909090909091,
+      "train_months": 22,
+      "train_total": 79.0
+    },
+    {
+      "geocodigo": 2311405,
+      "municipio_ibge": "Quixeramobim",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 37.09090909090909,
+      "train_months": 22,
+      "train_total": 816.0
+    },
+    {
+      "geocodigo": 2311405,
+      "municipio_ibge": "Quixeramobim",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 52.09090909090909,
+      "train_months": 22,
+      "train_total": 1146.0
+    },
+    {
+      "geocodigo": 2311405,
+      "municipio_ibge": "Quixeramobim",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 32.63636363636363,
+      "train_months": 22,
+      "train_total": 718.0
+    },
+    {
+      "geocodigo": 2311959,
+      "municipio_ibge": "Salitre",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 0.45454545454545453,
+      "train_months": 22,
+      "train_total": 10.0
+    },
+    {
+      "geocodigo": 2311959,
+      "municipio_ibge": "Salitre",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2311959,
+      "municipio_ibge": "Salitre",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2311959,
+      "municipio_ibge": "Salitre",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2311959,
+      "municipio_ibge": "Salitre",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2311959,
+      "municipio_ibge": "Salitre",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.09090909090909091,
+      "train_months": 22,
+      "train_total": 2.0
+    },
+    {
+      "geocodigo": 2311959,
+      "municipio_ibge": "Salitre",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.36363636363636365,
+      "train_months": 22,
+      "train_total": 8.0
+    },
+    {
+      "geocodigo": 2311959,
+      "municipio_ibge": "Salitre",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 0.7727272727272727,
+      "train_months": 22,
+      "train_total": 17.0
+    },
+    {
+      "geocodigo": 2311959,
+      "municipio_ibge": "Salitre",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 2.409090909090909,
+      "train_months": 22,
+      "train_total": 53.0
+    },
+    {
+      "geocodigo": 2311959,
+      "municipio_ibge": "Salitre",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 6.2272727272727275,
+      "train_months": 22,
+      "train_total": 137.0
+    },
+    {
+      "geocodigo": 2311959,
+      "municipio_ibge": "Salitre",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 8.545454545454545,
+      "train_months": 22,
+      "train_total": 188.0
+    },
+    {
+      "geocodigo": 2311959,
+      "municipio_ibge": "Salitre",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 3.5,
+      "train_months": 22,
+      "train_total": 77.0
+    },
+    {
+      "geocodigo": 2312106,
+      "municipio_ibge": "Santana do Cariri",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 3.272727272727273,
+      "train_months": 22,
+      "train_total": 72.0
+    },
+    {
+      "geocodigo": 2312106,
+      "municipio_ibge": "Santana do Cariri",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.22727272727272727,
+      "train_months": 22,
+      "train_total": 5.0
+    },
+    {
+      "geocodigo": 2312106,
+      "municipio_ibge": "Santana do Cariri",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2312106,
+      "municipio_ibge": "Santana do Cariri",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2312106,
+      "municipio_ibge": "Santana do Cariri",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.09090909090909091,
+      "train_months": 22,
+      "train_total": 2.0
+    },
+    {
+      "geocodigo": 2312106,
+      "municipio_ibge": "Santana do Cariri",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.22727272727272727,
+      "train_months": 22,
+      "train_total": 5.0
+    },
+    {
+      "geocodigo": 2312106,
+      "municipio_ibge": "Santana do Cariri",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.6818181818181818,
+      "train_months": 22,
+      "train_total": 15.0
+    },
+    {
+      "geocodigo": 2312106,
+      "municipio_ibge": "Santana do Cariri",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 1.0434782608695652,
+      "train_months": 23,
+      "train_total": 24.0
+    },
+    {
+      "geocodigo": 2312106,
+      "municipio_ibge": "Santana do Cariri",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 4.521739130434782,
+      "train_months": 23,
+      "train_total": 104.0
+    },
+    {
+      "geocodigo": 2312106,
+      "municipio_ibge": "Santana do Cariri",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 8.434782608695652,
+      "train_months": 23,
+      "train_total": 194.0
+    },
+    {
+      "geocodigo": 2312106,
+      "municipio_ibge": "Santana do Cariri",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 12.782608695652174,
+      "train_months": 23,
+      "train_total": 294.0
+    },
+    {
+      "geocodigo": 2312106,
+      "municipio_ibge": "Santana do Cariri",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 10.26086956521739,
+      "train_months": 23,
+      "train_total": 236.0
+    },
+    {
+      "geocodigo": 2312908,
+      "municipio_ibge": "Sobral",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 2.0454545454545454,
+      "train_months": 22,
+      "train_total": 45.0
+    },
+    {
+      "geocodigo": 2312908,
+      "municipio_ibge": "Sobral",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.13636363636363635,
+      "train_months": 22,
+      "train_total": 3.0
+    },
+    {
+      "geocodigo": 2312908,
+      "municipio_ibge": "Sobral",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2312908,
+      "municipio_ibge": "Sobral",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2312908,
+      "municipio_ibge": "Sobral",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2312908,
+      "municipio_ibge": "Sobral",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.18181818181818182,
+      "train_months": 22,
+      "train_total": 4.0
+    },
+    {
+      "geocodigo": 2312908,
+      "municipio_ibge": "Sobral",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.7272727272727273,
+      "train_months": 22,
+      "train_total": 16.0
+    },
+    {
+      "geocodigo": 2312908,
+      "municipio_ibge": "Sobral",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 7.0,
+      "train_months": 22,
+      "train_total": 154.0
+    },
+    {
+      "geocodigo": 2312908,
+      "municipio_ibge": "Sobral",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 12.272727272727273,
+      "train_months": 22,
+      "train_total": 270.0
+    },
+    {
+      "geocodigo": 2312908,
+      "municipio_ibge": "Sobral",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 16.272727272727273,
+      "train_months": 22,
+      "train_total": 358.0
+    },
+    {
+      "geocodigo": 2312908,
+      "municipio_ibge": "Sobral",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 32.95454545454545,
+      "train_months": 22,
+      "train_total": 725.0
+    },
+    {
+      "geocodigo": 2312908,
+      "municipio_ibge": "Sobral",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 23.045454545454547,
+      "train_months": 22,
+      "train_total": 507.0
+    },
+    {
+      "geocodigo": 2313302,
+      "municipio_ibge": "Tauá",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 1.4090909090909092,
+      "train_months": 22,
+      "train_total": 31.0
+    },
+    {
+      "geocodigo": 2313302,
+      "municipio_ibge": "Tauá",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.2727272727272727,
+      "train_months": 22,
+      "train_total": 6.0
+    },
+    {
+      "geocodigo": 2313302,
+      "municipio_ibge": "Tauá",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2313302,
+      "municipio_ibge": "Tauá",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2313302,
+      "municipio_ibge": "Tauá",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.09090909090909091,
+      "train_months": 22,
+      "train_total": 2.0
+    },
+    {
+      "geocodigo": 2313302,
+      "municipio_ibge": "Tauá",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.13636363636363635,
+      "train_months": 22,
+      "train_total": 3.0
+    },
+    {
+      "geocodigo": 2313302,
+      "municipio_ibge": "Tauá",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.2727272727272727,
+      "train_months": 22,
+      "train_total": 6.0
+    },
+    {
+      "geocodigo": 2313302,
+      "municipio_ibge": "Tauá",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 0.7727272727272727,
+      "train_months": 22,
+      "train_total": 17.0
+    },
+    {
+      "geocodigo": 2313302,
+      "municipio_ibge": "Tauá",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 2.5454545454545454,
+      "train_months": 22,
+      "train_total": 56.0
+    },
+    {
+      "geocodigo": 2313302,
+      "municipio_ibge": "Tauá",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 11.863636363636363,
+      "train_months": 22,
+      "train_total": 261.0
+    },
+    {
+      "geocodigo": 2313302,
+      "municipio_ibge": "Tauá",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 18.59090909090909,
+      "train_months": 22,
+      "train_total": 409.0
+    },
+    {
+      "geocodigo": 2313302,
+      "municipio_ibge": "Tauá",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 10.5,
+      "train_months": 22,
+      "train_total": 231.0
+    },
+    {
+      "geocodigo": 2313401,
+      "municipio_ibge": "Tianguá",
+      "uf": "CE",
+      "mes": 1,
+      "prediction": 0.8636363636363636,
+      "train_months": 22,
+      "train_total": 19.0
+    },
+    {
+      "geocodigo": 2313401,
+      "municipio_ibge": "Tianguá",
+      "uf": "CE",
+      "mes": 2,
+      "prediction": 0.18181818181818182,
+      "train_months": 22,
+      "train_total": 4.0
+    },
+    {
+      "geocodigo": 2313401,
+      "municipio_ibge": "Tianguá",
+      "uf": "CE",
+      "mes": 3,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2313401,
+      "municipio_ibge": "Tianguá",
+      "uf": "CE",
+      "mes": 4,
+      "prediction": 0.0,
+      "train_months": 22,
+      "train_total": 0.0
+    },
+    {
+      "geocodigo": 2313401,
+      "municipio_ibge": "Tianguá",
+      "uf": "CE",
+      "mes": 5,
+      "prediction": 0.045454545454545456,
+      "train_months": 22,
+      "train_total": 1.0
+    },
+    {
+      "geocodigo": 2313401,
+      "municipio_ibge": "Tianguá",
+      "uf": "CE",
+      "mes": 6,
+      "prediction": 0.18181818181818182,
+      "train_months": 22,
+      "train_total": 4.0
+    },
+    {
+      "geocodigo": 2313401,
+      "municipio_ibge": "Tianguá",
+      "uf": "CE",
+      "mes": 7,
+      "prediction": 0.7272727272727273,
+      "train_months": 22,
+      "train_total": 16.0
+    },
+    {
+      "geocodigo": 2313401,
+      "municipio_ibge": "Tianguá",
+      "uf": "CE",
+      "mes": 8,
+      "prediction": 0.9545454545454546,
+      "train_months": 22,
+      "train_total": 21.0
+    },
+    {
+      "geocodigo": 2313401,
+      "municipio_ibge": "Tianguá",
+      "uf": "CE",
+      "mes": 9,
+      "prediction": 2.0,
+      "train_months": 22,
+      "train_total": 44.0
+    },
+    {
+      "geocodigo": 2313401,
+      "municipio_ibge": "Tianguá",
+      "uf": "CE",
+      "mes": 10,
+      "prediction": 4.136363636363637,
+      "train_months": 22,
+      "train_total": 91.0
+    },
+    {
+      "geocodigo": 2313401,
+      "municipio_ibge": "Tianguá",
+      "uf": "CE",
+      "mes": 11,
+      "prediction": 10.772727272727273,
+      "train_months": 22,
+      "train_total": 237.0
+    },
+    {
+      "geocodigo": 2313401,
+      "municipio_ibge": "Tianguá",
+      "uf": "CE",
+      "mes": 12,
+      "prediction": 13.454545454545455,
+      "train_months": 22,
+      "train_total": 296.0
+    }
+  ],
+  "regional_intensity": [
+    {
+      "forecast_period": "2003-07",
+      "source_window_start": "2002-07",
+      "source_window_end": "2003-06",
+      "observed_trailing_12m": 516.0,
+      "expected_trailing_12m": 336.0060229625446,
+      "raw_ratio": 1.4128245197496225,
+      "applied_ratio": 1.4128245197496225,
+      "n_rows": 256
+    },
+    {
+      "forecast_period": "2003-08",
+      "source_window_start": "2002-08",
+      "source_window_end": "2003-07",
+      "observed_trailing_12m": 529.0,
+      "expected_trailing_12m": 346.59693205345354,
+      "raw_ratio": 1.4084288423296076,
+      "applied_ratio": 1.4084288423296076,
+      "n_rows": 286
+    },
+    {
+      "forecast_period": "2003-09",
+      "source_window_start": "2002-09",
+      "source_window_end": "2003-08",
+      "observed_trailing_12m": 553.0,
+      "expected_trailing_12m": 373.86529614550165,
+      "raw_ratio": 1.3780287463792127,
+      "applied_ratio": 1.3780287463792127,
+      "n_rows": 310
+    },
+    {
+      "forecast_period": "2003-10",
+      "source_window_start": "2002-10",
+      "source_window_end": "2003-09",
+      "observed_trailing_12m": 670.0,
+      "expected_trailing_12m": 420.8429675968573,
+      "raw_ratio": 1.4783726533790797,
+      "applied_ratio": 1.4783726533790797,
+      "n_rows": 329
+    },
+    {
+      "forecast_period": "2003-11",
+      "source_window_start": "2002-11",
+      "source_window_end": "2003-10",
+      "observed_trailing_12m": 1010.0,
+      "expected_trailing_12m": 579.8150341268184,
+      "raw_ratio": 1.6327970760836854,
+      "applied_ratio": 1.6327970760836854,
+      "n_rows": 344
+    },
+    {
+      "forecast_period": "2003-12",
+      "source_window_start": "2002-12",
+      "source_window_end": "2003-11",
+      "observed_trailing_12m": 1678.0,
+      "expected_trailing_12m": 836.2009079021658,
+      "raw_ratio": 1.899165002930977,
+      "applied_ratio": 1.899165002930977,
+      "n_rows": 358
+    },
+    {
+      "forecast_period": "2004-01",
+      "source_window_start": "2003-01",
+      "source_window_end": "2003-12",
+      "observed_trailing_12m": 2130.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.9041327236372678,
+      "applied_ratio": 1.9041327236372678,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2004-02",
+      "source_window_start": "2003-02",
+      "source_window_end": "2004-01",
+      "observed_trailing_12m": 2091.0,
+      "expected_trailing_12m": 1071.1368500302133,
+      "raw_ratio": 1.8708317477530283,
+      "applied_ratio": 1.8708317477530283,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2004-03",
+      "source_window_start": "2003-03",
+      "source_window_end": "2004-02",
+      "observed_trailing_12m": 2092.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.8716856189295474,
+      "applied_ratio": 1.8716856189295474,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2004-04",
+      "source_window_start": "2003-04",
+      "source_window_end": "2004-03",
+      "observed_trailing_12m": 2091.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.8708317477530285,
+      "applied_ratio": 1.8708317477530285,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2004-05",
+      "source_window_start": "2003-05",
+      "source_window_end": "2004-04",
+      "observed_trailing_12m": 2089.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.8691240053999907,
+      "applied_ratio": 1.8691240053999907,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2004-06",
+      "source_window_start": "2003-06",
+      "source_window_end": "2004-05",
+      "observed_trailing_12m": 2088.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.8682701342234718,
+      "applied_ratio": 1.8682701342234718,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2004-07",
+      "source_window_start": "2003-07",
+      "source_window_end": "2004-06",
+      "observed_trailing_12m": 2091.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.8708317477530285,
+      "applied_ratio": 1.8708317477530285,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2004-08",
+      "source_window_start": "2003-08",
+      "source_window_end": "2004-07",
+      "observed_trailing_12m": 2081.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.8622930359878391,
+      "applied_ratio": 1.8622930359878391,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2004-09",
+      "source_window_start": "2003-09",
+      "source_window_end": "2004-08",
+      "observed_trailing_12m": 2069.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.8520465818696117,
+      "applied_ratio": 1.8520465818696117,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2004-10",
+      "source_window_start": "2003-10",
+      "source_window_end": "2004-09",
+      "observed_trailing_12m": 1972.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.769221077747273,
+      "applied_ratio": 1.769221077747273,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2004-11",
+      "source_window_start": "2003-11",
+      "source_window_end": "2004-10",
+      "observed_trailing_12m": 1835.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.6522407265641763,
+      "applied_ratio": 1.6522407265641763,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2004-12",
+      "source_window_start": "2003-12",
+      "source_window_end": "2004-11",
+      "observed_trailing_12m": 1658.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.5011055283203214,
+      "applied_ratio": 1.5011055283203214,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2005-01",
+      "source_window_start": "2004-01",
+      "source_window_end": "2004-12",
+      "observed_trailing_12m": 1817.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.6368710453868351,
+      "applied_ratio": 1.6368710453868351,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2005-02",
+      "source_window_start": "2004-02",
+      "source_window_end": "2005-01",
+      "observed_trailing_12m": 1877.0,
+      "expected_trailing_12m": 1071.1368500302133,
+      "raw_ratio": 1.6881033159779721,
+      "applied_ratio": 1.6881033159779721,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2005-03",
+      "source_window_start": "2004-03",
+      "source_window_end": "2005-02",
+      "observed_trailing_12m": 1880.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.6906649295075293,
+      "applied_ratio": 1.6906649295075293,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2005-04",
+      "source_window_start": "2004-04",
+      "source_window_end": "2005-03",
+      "observed_trailing_12m": 1880.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.6906649295075293,
+      "applied_ratio": 1.6906649295075293,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2005-05",
+      "source_window_start": "2004-05",
+      "source_window_end": "2005-04",
+      "observed_trailing_12m": 1881.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.6915188006840483,
+      "applied_ratio": 1.6915188006840483,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2005-06",
+      "source_window_start": "2004-06",
+      "source_window_end": "2005-05",
+      "observed_trailing_12m": 1881.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.6915188006840483,
+      "applied_ratio": 1.6915188006840483,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2005-07",
+      "source_window_start": "2004-07",
+      "source_window_end": "2005-06",
+      "observed_trailing_12m": 1879.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.6898110583310102,
+      "applied_ratio": 1.6898110583310102,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2005-08",
+      "source_window_start": "2004-08",
+      "source_window_end": "2005-07",
+      "observed_trailing_12m": 1888.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.697495898919681,
+      "applied_ratio": 1.697495898919681,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2005-09",
+      "source_window_start": "2004-09",
+      "source_window_end": "2005-08",
+      "observed_trailing_12m": 1877.0,
+      "expected_trailing_12m": 1070.1894816091603,
+      "raw_ratio": 1.6894699799227146,
+      "applied_ratio": 1.6894699799227146,
+      "n_rows": 370
+    },
+    {
+      "forecast_period": "2005-10",
+      "source_window_start": "2004-10",
+      "source_window_end": "2005-09",
+      "observed_trailing_12m": 1865.0,
+      "expected_trailing_12m": 1069.2421131881079,
+      "raw_ratio": 1.6805758002011604,
+      "applied_ratio": 1.6805758002011604,
+      "n_rows": 368
+    },
+    {
+      "forecast_period": "2005-11",
+      "source_window_start": "2004-11",
+      "source_window_end": "2005-10",
+      "observed_trailing_12m": 1795.0,
+      "expected_trailing_12m": 1067.8263237144238,
+      "raw_ratio": 1.6226727909101293,
+      "applied_ratio": 1.6226727909101293,
+      "n_rows": 366
+    },
+    {
+      "forecast_period": "2005-12",
+      "source_window_start": "2004-12",
+      "source_window_end": "2005-11",
+      "observed_trailing_12m": 1723.0,
+      "expected_trailing_12m": 1066.8473763460026,
+      "raw_ratio": 1.562329433099252,
+      "applied_ratio": 1.562329433099252,
+      "n_rows": 364
+    },
+    {
+      "forecast_period": "2006-01",
+      "source_window_start": "2005-01",
+      "source_window_end": "2005-12",
+      "observed_trailing_12m": 1516.0,
+      "expected_trailing_12m": 1066.013165819687,
+      "raw_ratio": 1.3859191708731524,
+      "applied_ratio": 1.3859191708731524,
+      "n_rows": 362
+    },
+    {
+      "forecast_period": "2006-02",
+      "source_window_start": "2005-02",
+      "source_window_end": "2006-01",
+      "observed_trailing_12m": 1496.0,
+      "expected_trailing_12m": 1066.013165819687,
+      "raw_ratio": 1.3687667058870985,
+      "applied_ratio": 1.3687667058870985,
+      "n_rows": 362
+    },
+    {
+      "forecast_period": "2006-03",
+      "source_window_start": "2005-03",
+      "source_window_end": "2006-02",
+      "observed_trailing_12m": 1496.0,
+      "expected_trailing_12m": 1066.013165819687,
+      "raw_ratio": 1.3687667058870985,
+      "applied_ratio": 1.3687667058870985,
+      "n_rows": 362
+    },
+    {
+      "forecast_period": "2006-04",
+      "source_window_start": "2005-04",
+      "source_window_end": "2006-03",
+      "observed_trailing_12m": 1500.0,
+      "expected_trailing_12m": 1066.0131658196867,
+      "raw_ratio": 1.3721971988843096,
+      "applied_ratio": 1.3721971988843096,
+      "n_rows": 362
+    },
+    {
+      "forecast_period": "2006-05",
+      "source_window_start": "2005-05",
+      "source_window_end": "2006-04",
+      "observed_trailing_12m": 1499.0,
+      "expected_trailing_12m": 1066.0131658196867,
+      "raw_ratio": 1.3713395756350069,
+      "applied_ratio": 1.3713395756350069,
+      "n_rows": 362
+    },
+    {
+      "forecast_period": "2006-06",
+      "source_window_start": "2005-06",
+      "source_window_end": "2006-05",
+      "observed_trailing_12m": 1499.0,
+      "expected_trailing_12m": 1066.0131658196867,
+      "raw_ratio": 1.3713395756350069,
+      "applied_ratio": 1.3713395756350069,
+      "n_rows": 362
+    },
+    {
+      "forecast_period": "2006-07",
+      "source_window_start": "2005-07",
+      "source_window_end": "2006-06",
+      "observed_trailing_12m": 1497.0,
+      "expected_trailing_12m": 1066.013165819687,
+      "raw_ratio": 1.3696243291364012,
+      "applied_ratio": 1.3696243291364012,
+      "n_rows": 362
+    },
+    {
+      "forecast_period": "2006-08",
+      "source_window_start": "2005-08",
+      "source_window_end": "2006-07",
+      "observed_trailing_12m": 1489.0,
+      "expected_trailing_12m": 1066.0131658196867,
+      "raw_ratio": 1.3627633431419799,
+      "applied_ratio": 1.3627633431419799,
+      "n_rows": 362
+    },
+    {
+      "forecast_period": "2006-09",
+      "source_window_start": "2005-09",
+      "source_window_end": "2006-08",
+      "observed_trailing_12m": 1494.0,
+      "expected_trailing_12m": 1066.9605342407394,
+      "raw_ratio": 1.3659416520346215,
+      "applied_ratio": 1.3659416520346215,
+      "n_rows": 364
+    },
+    {
+      "forecast_period": "2006-10",
+      "source_window_start": "2005-10",
+      "source_window_end": "2006-09",
+      "observed_trailing_12m": 1529.0,
+      "expected_trailing_12m": 1067.907902661792,
+      "raw_ratio": 1.3948017615835357,
+      "applied_ratio": 1.3948017615835357,
+      "n_rows": 366
+    },
+    {
+      "forecast_period": "2006-11",
+      "source_window_start": "2005-11",
+      "source_window_end": "2006-10",
+      "observed_trailing_12m": 1462.0,
+      "expected_trailing_12m": 1069.3236921354762,
+      "raw_ratio": 1.3358148906975442,
+      "applied_ratio": 1.3358148906975442,
+      "n_rows": 368
+    },
+    {
+      "forecast_period": "2006-12",
+      "source_window_start": "2005-12",
+      "source_window_end": "2006-11",
+      "observed_trailing_12m": 1384.0,
+      "expected_trailing_12m": 1070.3026395038974,
+      "raw_ratio": 1.2680480671470433,
+      "applied_ratio": 1.2680480671470433,
+      "n_rows": 370
+    },
+    {
+      "forecast_period": "2007-01",
+      "source_window_start": "2006-01",
+      "source_window_end": "2006-12",
+      "observed_trailing_12m": 1346.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.2346977212464076,
+      "applied_ratio": 1.2346977212464076,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2007-02",
+      "source_window_start": "2006-02",
+      "source_window_end": "2007-01",
+      "observed_trailing_12m": 1384.0,
+      "expected_trailing_12m": 1071.1368500302133,
+      "raw_ratio": 1.2671448259541278,
+      "applied_ratio": 1.2671448259541278,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2007-03",
+      "source_window_start": "2006-03",
+      "source_window_end": "2007-02",
+      "observed_trailing_12m": 1381.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.264583212424571,
+      "applied_ratio": 1.264583212424571,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2007-04",
+      "source_window_start": "2006-04",
+      "source_window_end": "2007-03",
+      "observed_trailing_12m": 1377.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.2611677277184954,
+      "applied_ratio": 1.2611677277184954,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2007-05",
+      "source_window_start": "2006-05",
+      "source_window_end": "2007-04",
+      "observed_trailing_12m": 1377.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.2611677277184954,
+      "applied_ratio": 1.2611677277184954,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2007-06",
+      "source_window_start": "2006-06",
+      "source_window_end": "2007-05",
+      "observed_trailing_12m": 1378.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.2620215988950143,
+      "applied_ratio": 1.2620215988950143,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2007-07",
+      "source_window_start": "2006-07",
+      "source_window_end": "2007-06",
+      "observed_trailing_12m": 1379.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.2628754700715332,
+      "applied_ratio": 1.2628754700715332,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2007-08",
+      "source_window_start": "2006-08",
+      "source_window_end": "2007-07",
+      "observed_trailing_12m": 1385.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.267998697130647,
+      "applied_ratio": 1.267998697130647,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2007-09",
+      "source_window_start": "2006-09",
+      "source_window_end": "2007-08",
+      "observed_trailing_12m": 1427.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.303861286544443,
+      "applied_ratio": 1.303861286544443,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2007-10",
+      "source_window_start": "2006-10",
+      "source_window_end": "2007-09",
+      "observed_trailing_12m": 1424.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.3012996730148862,
+      "applied_ratio": 1.3012996730148862,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2007-11",
+      "source_window_start": "2006-11",
+      "source_window_end": "2007-10",
+      "observed_trailing_12m": 1553.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.4114490547858312,
+      "applied_ratio": 1.4114490547858312,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2007-12",
+      "source_window_start": "2006-12",
+      "source_window_end": "2007-11",
+      "observed_trailing_12m": 1592.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.4447500306700705,
+      "applied_ratio": 1.4447500306700705,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2008-01",
+      "source_window_start": "2007-01",
+      "source_window_end": "2007-12",
+      "observed_trailing_12m": 1556.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.4140106683153881,
+      "applied_ratio": 1.4140106683153881,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2008-02",
+      "source_window_start": "2007-02",
+      "source_window_end": "2008-01",
+      "observed_trailing_12m": 1485.0,
+      "expected_trailing_12m": 1071.1368500302133,
+      "raw_ratio": 1.3533858147825422,
+      "applied_ratio": 1.3533858147825422,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2008-03",
+      "source_window_start": "2007-03",
+      "source_window_end": "2008-02",
+      "observed_trailing_12m": 1495.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.361924526547732,
+      "applied_ratio": 1.361924526547732,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2008-04",
+      "source_window_start": "2007-04",
+      "source_window_end": "2008-03",
+      "observed_trailing_12m": 1495.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.361924526547732,
+      "applied_ratio": 1.361924526547732,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2008-05",
+      "source_window_start": "2007-05",
+      "source_window_end": "2008-04",
+      "observed_trailing_12m": 1495.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.361924526547732,
+      "applied_ratio": 1.361924526547732,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2008-06",
+      "source_window_start": "2007-06",
+      "source_window_end": "2008-05",
+      "observed_trailing_12m": 1494.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.3610706553712129,
+      "applied_ratio": 1.3610706553712129,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2008-07",
+      "source_window_start": "2007-07",
+      "source_window_end": "2008-06",
+      "observed_trailing_12m": 1495.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.361924526547732,
+      "applied_ratio": 1.361924526547732,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2008-08",
+      "source_window_start": "2007-08",
+      "source_window_end": "2008-07",
+      "observed_trailing_12m": 1488.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.3559474283120991,
+      "applied_ratio": 1.3559474283120991,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2008-09",
+      "source_window_start": "2007-09",
+      "source_window_end": "2008-08",
+      "observed_trailing_12m": 1449.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.32264645242786,
+      "applied_ratio": 1.32264645242786,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2008-10",
+      "source_window_start": "2007-10",
+      "source_window_end": "2008-09",
+      "observed_trailing_12m": 1423.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.300445801838367,
+      "applied_ratio": 1.300445801838367,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2008-11",
+      "source_window_start": "2007-11",
+      "source_window_end": "2008-10",
+      "observed_trailing_12m": 1265.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.1655341559483725,
+      "applied_ratio": 1.1655341559483725,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2008-12",
+      "source_window_start": "2007-12",
+      "source_window_end": "2008-11",
+      "observed_trailing_12m": 1260.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.1612648000657777,
+      "applied_ratio": 1.1612648000657777,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2009-01",
+      "source_window_start": "2008-01",
+      "source_window_end": "2008-12",
+      "observed_trailing_12m": 1476.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.3457009741938717,
+      "applied_ratio": 1.3457009741938717,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2009-02",
+      "source_window_start": "2008-02",
+      "source_window_end": "2009-01",
+      "observed_trailing_12m": 1523.0,
+      "expected_trailing_12m": 1071.1368500302133,
+      "raw_ratio": 1.3858329194902623,
+      "applied_ratio": 1.3858329194902623,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2009-03",
+      "source_window_start": "2008-03",
+      "source_window_end": "2009-02",
+      "observed_trailing_12m": 1516.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.37985582125463,
+      "applied_ratio": 1.37985582125463,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2009-04",
+      "source_window_start": "2008-04",
+      "source_window_end": "2009-03",
+      "observed_trailing_12m": 1516.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.37985582125463,
+      "applied_ratio": 1.37985582125463,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2009-05",
+      "source_window_start": "2008-05",
+      "source_window_end": "2009-04",
+      "observed_trailing_12m": 1516.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.37985582125463,
+      "applied_ratio": 1.37985582125463,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2009-06",
+      "source_window_start": "2008-06",
+      "source_window_end": "2009-05",
+      "observed_trailing_12m": 1517.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.3807096924311488,
+      "applied_ratio": 1.3807096924311488,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2009-07",
+      "source_window_start": "2008-07",
+      "source_window_end": "2009-06",
+      "observed_trailing_12m": 1515.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.379001950078111,
+      "applied_ratio": 1.379001950078111,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2009-08",
+      "source_window_start": "2008-08",
+      "source_window_end": "2009-07",
+      "observed_trailing_12m": 1514.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.378148078901592,
+      "applied_ratio": 1.378148078901592,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2009-09",
+      "source_window_start": "2008-09",
+      "source_window_end": "2009-08",
+      "observed_trailing_12m": 1504.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.3696093671364025,
+      "applied_ratio": 1.3696093671364025,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2009-10",
+      "source_window_start": "2008-10",
+      "source_window_end": "2009-09",
+      "observed_trailing_12m": 1473.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.343139360664315,
+      "applied_ratio": 1.343139360664315,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2009-11",
+      "source_window_start": "2008-11",
+      "source_window_end": "2009-10",
+      "observed_trailing_12m": 1383.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.2662909547776091,
+      "applied_ratio": 1.2662909547776091,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2009-12",
+      "source_window_start": "2008-12",
+      "source_window_end": "2009-11",
+      "observed_trailing_12m": 1265.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.1655341559483725,
+      "applied_ratio": 1.1655341559483725,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2010-01",
+      "source_window_start": "2009-01",
+      "source_window_end": "2009-12",
+      "observed_trailing_12m": 1097.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.022083798293188,
+      "applied_ratio": 1.022083798293188,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2010-02",
+      "source_window_start": "2009-02",
+      "source_window_end": "2010-01",
+      "observed_trailing_12m": 1083.0,
+      "expected_trailing_12m": 1071.1368500302133,
+      "raw_ratio": 1.0101296018219226,
+      "applied_ratio": 1.0101296018219226,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2010-03",
+      "source_window_start": "2009-03",
+      "source_window_end": "2010-02",
+      "observed_trailing_12m": 1098.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.022937669469707,
+      "applied_ratio": 1.022937669469707,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2010-04",
+      "source_window_start": "2009-04",
+      "source_window_end": "2010-03",
+      "observed_trailing_12m": 1111.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.0340379947644536,
+      "applied_ratio": 1.0340379947644536,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2010-05",
+      "source_window_start": "2009-05",
+      "source_window_end": "2010-04",
+      "observed_trailing_12m": 1114.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.0365996082940103,
+      "applied_ratio": 1.0365996082940103,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2010-06",
+      "source_window_start": "2009-06",
+      "source_window_end": "2010-05",
+      "observed_trailing_12m": 1117.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.0391612218235673,
+      "applied_ratio": 1.0391612218235673,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2010-07",
+      "source_window_start": "2009-07",
+      "source_window_end": "2010-06",
+      "observed_trailing_12m": 1127.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.0476999335887567,
+      "applied_ratio": 1.0476999335887567,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2010-08",
+      "source_window_start": "2009-08",
+      "source_window_end": "2010-07",
+      "observed_trailing_12m": 1142.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.060508001236541,
+      "applied_ratio": 1.060508001236541,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2010-09",
+      "source_window_start": "2009-09",
+      "source_window_end": "2010-08",
+      "observed_trailing_12m": 1169.0,
+      "expected_trailing_12m": 1070.3749452683082,
+      "raw_ratio": 1.0842679135694262,
+      "applied_ratio": 1.0842679135694262,
+      "n_rows": 371
+    },
+    {
+      "forecast_period": "2010-10",
+      "source_window_start": "2009-10",
+      "source_window_end": "2010-09",
+      "observed_trailing_12m": 1228.0,
+      "expected_trailing_12m": 1069.2797071730702,
+      "raw_ratio": 1.1357419374109063,
+      "applied_ratio": 1.1357419374109063,
+      "n_rows": 370
+    },
+    {
+      "forecast_period": "2010-11",
+      "source_window_start": "2009-11",
+      "source_window_end": "2010-10",
+      "observed_trailing_12m": 1235.0,
+      "expected_trailing_12m": 1066.2320881254511,
+      "raw_ratio": 1.1447121148465558,
+      "applied_ratio": 1.1447121148465558,
+      "n_rows": 369
+    },
+    {
+      "forecast_period": "2010-12",
+      "source_window_start": "2009-12",
+      "source_window_end": "2010-11",
+      "observed_trailing_12m": 1340.0,
+      "expected_trailing_12m": 1063.2797071730702,
+      "raw_ratio": 1.2378794120800045,
+      "applied_ratio": 1.2378794120800045,
+      "n_rows": 368
+    },
+    {
+      "forecast_period": "2011-01",
+      "source_window_start": "2010-01",
+      "source_window_end": "2010-12",
+      "observed_trailing_12m": 1054.0,
+      "expected_trailing_12m": 1062.2797071730702,
+      "raw_ratio": 0.992876321317518,
+      "applied_ratio": 0.992876321317518,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2011-02",
+      "source_window_start": "2010-02",
+      "source_window_end": "2011-01",
+      "observed_trailing_12m": 998.0,
+      "expected_trailing_12m": 1062.2797071730704,
+      "raw_ratio": 0.9446951480126816,
+      "applied_ratio": 0.9446951480126816,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2011-03",
+      "source_window_start": "2010-03",
+      "source_window_end": "2011-02",
+      "observed_trailing_12m": 979.0,
+      "expected_trailing_12m": 1062.2797071730704,
+      "raw_ratio": 0.9283479642128265,
+      "applied_ratio": 0.9283479642128265,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2011-04",
+      "source_window_start": "2010-04",
+      "source_window_end": "2011-03",
+      "observed_trailing_12m": 969.0,
+      "expected_trailing_12m": 1062.2797071730704,
+      "raw_ratio": 0.9197441832655343,
+      "applied_ratio": 0.9197441832655343,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2011-05",
+      "source_window_start": "2010-05",
+      "source_window_end": "2011-04",
+      "observed_trailing_12m": 966.0,
+      "expected_trailing_12m": 1062.2797071730704,
+      "raw_ratio": 0.9171630489813466,
+      "applied_ratio": 0.9171630489813466,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2011-06",
+      "source_window_start": "2010-06",
+      "source_window_end": "2011-05",
+      "observed_trailing_12m": 963.0,
+      "expected_trailing_12m": 1062.2797071730702,
+      "raw_ratio": 0.9145819146971592,
+      "applied_ratio": 0.9145819146971592,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2011-07",
+      "source_window_start": "2010-07",
+      "source_window_end": "2011-06",
+      "observed_trailing_12m": 954.0,
+      "expected_trailing_12m": 1062.2797071730702,
+      "raw_ratio": 0.9068385118445962,
+      "applied_ratio": 0.9068385118445962,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2011-08",
+      "source_window_start": "2010-08",
+      "source_window_end": "2011-07",
+      "observed_trailing_12m": 943.0,
+      "expected_trailing_12m": 1062.2797071730704,
+      "raw_ratio": 0.8973743528025746,
+      "applied_ratio": 0.8973743528025746,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2011-09",
+      "source_window_start": "2010-09",
+      "source_window_end": "2011-08",
+      "observed_trailing_12m": 920.0,
+      "expected_trailing_12m": 1062.0942435139223,
+      "raw_ratio": 0.8777257143239433,
+      "applied_ratio": 0.8777257143239433,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2011-10",
+      "source_window_start": "2010-10",
+      "source_window_end": "2011-09",
+      "observed_trailing_12m": 898.0,
+      "expected_trailing_12m": 1062.2421131881079,
+      "raw_ratio": 0.8586851127450711,
+      "applied_ratio": 0.8586851127450711,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2011-11",
+      "source_window_start": "2010-11",
+      "source_window_end": "2011-10",
+      "observed_trailing_12m": 903.0,
+      "expected_trailing_12m": 1063.9739427620427,
+      "raw_ratio": 0.8617031388348257,
+      "applied_ratio": 0.8617031388348257,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2011-12",
+      "source_window_start": "2010-12",
+      "source_window_end": "2011-11",
+      "observed_trailing_12m": 756.0,
+      "expected_trailing_12m": 1066.3473763460026,
+      "raw_ratio": 0.7339151417150901,
+      "applied_ratio": 0.7339151417150901,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2012-01",
+      "source_window_start": "2011-01",
+      "source_window_end": "2011-12",
+      "observed_trailing_12m": 912.0,
+      "expected_trailing_12m": 1066.663165819687,
+      "raw_ratio": 0.8674311743518344,
+      "applied_ratio": 0.8674311743518344,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2012-02",
+      "source_window_start": "2011-02",
+      "source_window_end": "2012-01",
+      "observed_trailing_12m": 954.0,
+      "expected_trailing_12m": 1066.663165819687,
+      "raw_ratio": 0.903431282378294,
+      "applied_ratio": 0.903431282378294,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2012-03",
+      "source_window_start": "2011-03",
+      "source_window_end": "2012-02",
+      "observed_trailing_12m": 965.0,
+      "expected_trailing_12m": 1066.6631658196868,
+      "raw_ratio": 0.9128598820995096,
+      "applied_ratio": 0.9128598820995096,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2012-04",
+      "source_window_start": "2011-04",
+      "source_window_end": "2012-03",
+      "observed_trailing_12m": 968.0,
+      "expected_trailing_12m": 1066.6631658196868,
+      "raw_ratio": 0.9154313183871139,
+      "applied_ratio": 0.9154313183871139,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2012-05",
+      "source_window_start": "2011-05",
+      "source_window_end": "2012-04",
+      "observed_trailing_12m": 970.0,
+      "expected_trailing_12m": 1066.6631658196868,
+      "raw_ratio": 0.9171456092455168,
+      "applied_ratio": 0.9171456092455168,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2012-06",
+      "source_window_start": "2011-06",
+      "source_window_end": "2012-05",
+      "observed_trailing_12m": 975.0,
+      "expected_trailing_12m": 1066.6631658196868,
+      "raw_ratio": 0.9214313363915239,
+      "applied_ratio": 0.9214313363915239,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2012-07",
+      "source_window_start": "2011-07",
+      "source_window_end": "2012-06",
+      "observed_trailing_12m": 986.0,
+      "expected_trailing_12m": 1066.663165819687,
+      "raw_ratio": 0.9308599361127392,
+      "applied_ratio": 0.9308599361127392,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2012-08",
+      "source_window_start": "2011-08",
+      "source_window_end": "2012-07",
+      "observed_trailing_12m": 1000.0,
+      "expected_trailing_12m": 1066.6631658196868,
+      "raw_ratio": 0.9428599721215593,
+      "applied_ratio": 0.9428599721215593,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2012-09",
+      "source_window_start": "2011-09",
+      "source_window_end": "2012-08",
+      "observed_trailing_12m": 1036.0,
+      "expected_trailing_12m": 1067.6105342407395,
+      "raw_ratio": 0.9729271590879446,
+      "applied_ratio": 0.9729271590879446,
+      "n_rows": 368
+    },
+    {
+      "forecast_period": "2012-10",
+      "source_window_start": "2011-10",
+      "source_window_end": "2012-09",
+      "observed_trailing_12m": 1114.0,
+      "expected_trailing_12m": 1068.557902661792,
+      "raw_ratio": 1.0388873304734818,
+      "applied_ratio": 1.0388873304734818,
+      "n_rows": 369
+    },
+    {
+      "forecast_period": "2012-11",
+      "source_window_start": "2011-11",
+      "source_window_end": "2012-10",
+      "observed_trailing_12m": 1173.0,
+      "expected_trailing_12m": 1069.8736921354762,
+      "raw_ratio": 1.088151659925165,
+      "applied_ratio": 1.088151659925165,
+      "n_rows": 370
+    },
+    {
+      "forecast_period": "2012-12",
+      "source_window_start": "2011-12",
+      "source_window_end": "2012-11",
+      "observed_trailing_12m": 992.0,
+      "expected_trailing_12m": 1070.4526395038972,
+      "raw_ratio": 0.9329723930246765,
+      "applied_ratio": 0.9329723930246765,
+      "n_rows": 371
+    },
+    {
+      "forecast_period": "2013-01",
+      "source_window_start": "2012-01",
+      "source_window_end": "2012-12",
+      "observed_trailing_12m": 832.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7958079365156653,
+      "applied_ratio": 0.7958079365156653,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2013-02",
+      "source_window_start": "2012-02",
+      "source_window_end": "2013-01",
+      "observed_trailing_12m": 795.0,
+      "expected_trailing_12m": 1071.1368500302133,
+      "raw_ratio": 0.7642147029844638,
+      "applied_ratio": 0.7642147029844638,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2013-03",
+      "source_window_start": "2012-03",
+      "source_window_end": "2013-02",
+      "observed_trailing_12m": 789.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7590914759253502,
+      "applied_ratio": 0.7590914759253502,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2013-04",
+      "source_window_start": "2012-04",
+      "source_window_end": "2013-03",
+      "observed_trailing_12m": 785.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7556759912192744,
+      "applied_ratio": 0.7556759912192744,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2013-05",
+      "source_window_start": "2012-05",
+      "source_window_end": "2013-04",
+      "observed_trailing_12m": 784.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7548221200427555,
+      "applied_ratio": 0.7548221200427555,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2013-06",
+      "source_window_start": "2012-06",
+      "source_window_end": "2013-05",
+      "observed_trailing_12m": 779.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7505527641601607,
+      "applied_ratio": 0.7505527641601607,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2013-07",
+      "source_window_start": "2012-07",
+      "source_window_end": "2013-06",
+      "observed_trailing_12m": 767.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7403063100419333,
+      "applied_ratio": 0.7403063100419333,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2013-08",
+      "source_window_start": "2012-08",
+      "source_window_end": "2013-07",
+      "observed_trailing_12m": 745.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7215211441585163,
+      "applied_ratio": 0.7215211441585163,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2013-09",
+      "source_window_start": "2012-09",
+      "source_window_end": "2013-08",
+      "observed_trailing_12m": 703.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.6856585547447202,
+      "applied_ratio": 0.6856585547447202,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2013-10",
+      "source_window_start": "2012-10",
+      "source_window_end": "2013-09",
+      "observed_trailing_12m": 625.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.6190566029762418,
+      "applied_ratio": 0.6190566029762418,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2013-11",
+      "source_window_start": "2012-11",
+      "source_window_end": "2013-10",
+      "observed_trailing_12m": 544.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.5498930376782065,
+      "applied_ratio": 0.5498930376782065,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2013-12",
+      "source_window_start": "2012-12",
+      "source_window_end": "2013-11",
+      "observed_trailing_12m": 525.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.5336694853243463,
+      "applied_ratio": 0.5336694853243463,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2014-01",
+      "source_window_start": "2013-01",
+      "source_window_end": "2013-12",
+      "observed_trailing_12m": 558.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.5618472341494718,
+      "applied_ratio": 0.5618472341494718,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2014-02",
+      "source_window_start": "2013-02",
+      "source_window_end": "2014-01",
+      "observed_trailing_12m": 564.0,
+      "expected_trailing_12m": 1071.1368500302133,
+      "raw_ratio": 0.5669704612085854,
+      "applied_ratio": 0.5669704612085854,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2014-03",
+      "source_window_start": "2013-03",
+      "source_window_end": "2014-02",
+      "observed_trailing_12m": 564.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.5669704612085855,
+      "applied_ratio": 0.5669704612085855,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2014-04",
+      "source_window_start": "2013-04",
+      "source_window_end": "2014-03",
+      "observed_trailing_12m": 564.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.5669704612085855,
+      "applied_ratio": 0.5669704612085855,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2014-05",
+      "source_window_start": "2013-05",
+      "source_window_end": "2014-04",
+      "observed_trailing_12m": 564.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.5669704612085855,
+      "applied_ratio": 0.5669704612085855,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2014-06",
+      "source_window_start": "2013-06",
+      "source_window_end": "2014-05",
+      "observed_trailing_12m": 563.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.5661165900320666,
+      "applied_ratio": 0.5661165900320666,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2014-07",
+      "source_window_start": "2013-07",
+      "source_window_end": "2014-06",
+      "observed_trailing_12m": 565.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.5678243323851045,
+      "applied_ratio": 0.5678243323851045,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2014-08",
+      "source_window_start": "2013-08",
+      "source_window_end": "2014-07",
+      "observed_trailing_12m": 571.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.5729475594442183,
+      "applied_ratio": 0.5729475594442183,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2014-09",
+      "source_window_start": "2013-09",
+      "source_window_end": "2014-08",
+      "observed_trailing_12m": 591.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.5900249829745974,
+      "applied_ratio": 0.5900249829745974,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2014-10",
+      "source_window_start": "2013-10",
+      "source_window_end": "2014-09",
+      "observed_trailing_12m": 586.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.5857556270920026,
+      "applied_ratio": 0.5857556270920026,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2014-11",
+      "source_window_start": "2013-11",
+      "source_window_end": "2014-10",
+      "observed_trailing_12m": 556.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.560139491796434,
+      "applied_ratio": 0.560139491796434,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2014-12",
+      "source_window_start": "2013-12",
+      "source_window_end": "2014-11",
+      "observed_trailing_12m": 528.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.5362310988539032,
+      "applied_ratio": 0.5362310988539032,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2015-01",
+      "source_window_start": "2014-01",
+      "source_window_end": "2014-12",
+      "observed_trailing_12m": 462.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.47987560120365225,
+      "applied_ratio": 0.5,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2015-02",
+      "source_window_start": "2014-02",
+      "source_window_end": "2015-01",
+      "observed_trailing_12m": 484.0,
+      "expected_trailing_12m": 1071.1368500302133,
+      "raw_ratio": 0.49866076708706913,
+      "applied_ratio": 0.5,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2015-03",
+      "source_window_start": "2014-03",
+      "source_window_end": "2015-02",
+      "observed_trailing_12m": 485.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.49951463826358816,
+      "applied_ratio": 0.5,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2015-04",
+      "source_window_start": "2014-04",
+      "source_window_end": "2015-03",
+      "observed_trailing_12m": 488.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.5020762517931451,
+      "applied_ratio": 0.5020762517931451,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2015-05",
+      "source_window_start": "2014-05",
+      "source_window_end": "2015-04",
+      "observed_trailing_12m": 487.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.501222380616626,
+      "applied_ratio": 0.501222380616626,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2015-06",
+      "source_window_start": "2014-06",
+      "source_window_end": "2015-05",
+      "observed_trailing_12m": 488.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.5020762517931451,
+      "applied_ratio": 0.5020762517931451,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2015-07",
+      "source_window_start": "2014-07",
+      "source_window_end": "2015-06",
+      "observed_trailing_12m": 486.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.5003685094401071,
+      "applied_ratio": 0.5003685094401071,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2015-08",
+      "source_window_start": "2014-08",
+      "source_window_end": "2015-07",
+      "observed_trailing_12m": 486.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.5003685094401071,
+      "applied_ratio": 0.5003685094401071,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2015-09",
+      "source_window_start": "2014-09",
+      "source_window_end": "2015-08",
+      "observed_trailing_12m": 500.0,
+      "expected_trailing_12m": 1070.986850030213,
+      "raw_ratio": 0.5123883329556769,
+      "applied_ratio": 0.5123883329556769,
+      "n_rows": 371
+    },
+    {
+      "forecast_period": "2015-10",
+      "source_window_start": "2014-10",
+      "source_window_end": "2015-09",
+      "observed_trailing_12m": 488.0,
+      "expected_trailing_12m": 1069.9868500302132,
+      "raw_ratio": 0.5025697510914894,
+      "applied_ratio": 0.5025697510914894,
+      "n_rows": 370
+    },
+    {
+      "forecast_period": "2015-11",
+      "source_window_start": "2014-11",
+      "source_window_end": "2015-10",
+      "observed_trailing_12m": 540.0,
+      "expected_trailing_12m": 1069.1297071730703,
+      "raw_ratio": 0.5474157367427656,
+      "applied_ratio": 0.5474157367427656,
+      "n_rows": 369
+    },
+    {
+      "forecast_period": "2015-12",
+      "source_window_start": "2014-12",
+      "source_window_end": "2015-11",
+      "observed_trailing_12m": 595.0,
+      "expected_trailing_12m": 1067.0820881254513,
+      "raw_ratio": 0.5955022419342396,
+      "applied_ratio": 0.5955022419342396,
+      "n_rows": 368
+    },
+    {
+      "forecast_period": "2016-01",
+      "source_window_start": "2015-01",
+      "source_window_end": "2015-12",
+      "observed_trailing_12m": 634.0,
+      "expected_trailing_12m": 1065.3201833635464,
+      "raw_ratio": 0.6298698078680862,
+      "applied_ratio": 0.6298698078680862,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2016-02",
+      "source_window_start": "2015-02",
+      "source_window_end": "2016-01",
+      "observed_trailing_12m": 603.0,
+      "expected_trailing_12m": 1065.3201833635467,
+      "raw_ratio": 0.6032676770180716,
+      "applied_ratio": 0.6032676770180716,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2016-03",
+      "source_window_start": "2015-03",
+      "source_window_end": "2016-02",
+      "observed_trailing_12m": 599.0,
+      "expected_trailing_12m": 1065.3201833635464,
+      "raw_ratio": 0.5998351440051666,
+      "applied_ratio": 0.5998351440051666,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2016-04",
+      "source_window_start": "2015-04",
+      "source_window_end": "2016-03",
+      "observed_trailing_12m": 594.0,
+      "expected_trailing_12m": 1065.3201833635464,
+      "raw_ratio": 0.5955444777390352,
+      "applied_ratio": 0.5955444777390352,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2016-05",
+      "source_window_start": "2015-05",
+      "source_window_end": "2016-04",
+      "observed_trailing_12m": 599.0,
+      "expected_trailing_12m": 1065.3201833635464,
+      "raw_ratio": 0.5998351440051666,
+      "applied_ratio": 0.5998351440051666,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2016-06",
+      "source_window_start": "2015-06",
+      "source_window_end": "2016-05",
+      "observed_trailing_12m": 599.0,
+      "expected_trailing_12m": 1065.3201833635464,
+      "raw_ratio": 0.5998351440051666,
+      "applied_ratio": 0.5998351440051666,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2016-07",
+      "source_window_start": "2015-07",
+      "source_window_end": "2016-06",
+      "observed_trailing_12m": 601.0,
+      "expected_trailing_12m": 1065.3201833635464,
+      "raw_ratio": 0.6015514105116191,
+      "applied_ratio": 0.6015514105116191,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2016-08",
+      "source_window_start": "2015-08",
+      "source_window_end": "2016-07",
+      "observed_trailing_12m": 606.0,
+      "expected_trailing_12m": 1065.3201833635464,
+      "raw_ratio": 0.6058420767777505,
+      "applied_ratio": 0.6058420767777505,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2016-09",
+      "source_window_start": "2015-09",
+      "source_window_end": "2016-08",
+      "observed_trailing_12m": 627.0,
+      "expected_trailing_12m": 1065.4701833635463,
+      "raw_ratio": 0.6237825818090673,
+      "applied_ratio": 0.6237825818090673,
+      "n_rows": 368
+    },
+    {
+      "forecast_period": "2016-10",
+      "source_window_start": "2015-10",
+      "source_window_end": "2016-09",
+      "observed_trailing_12m": 671.0,
+      "expected_trailing_12m": 1066.4701833635463,
+      "raw_ratio": 0.6609684593709905,
+      "applied_ratio": 0.6609684593709905,
+      "n_rows": 369
+    },
+    {
+      "forecast_period": "2016-11",
+      "source_window_start": "2015-11",
+      "source_window_end": "2016-10",
+      "observed_trailing_12m": 789.0,
+      "expected_trailing_12m": 1067.3273262206892,
+      "raw_ratio": 0.7615687391455188,
+      "applied_ratio": 0.7615687391455188,
+      "n_rows": 370
+    },
+    {
+      "forecast_period": "2016-12",
+      "source_window_start": "2015-12",
+      "source_window_end": "2016-11",
+      "observed_trailing_12m": 826.0,
+      "expected_trailing_12m": 1069.3749452683082,
+      "raw_ratio": 0.7918760392010392,
+      "applied_ratio": 0.7918760392010392,
+      "n_rows": 371
+    },
+    {
+      "forecast_period": "2017-01",
+      "source_window_start": "2016-01",
+      "source_window_end": "2016-12",
+      "observed_trailing_12m": 786.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7565298623957933,
+      "applied_ratio": 0.7565298623957933,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2017-02",
+      "source_window_start": "2016-02",
+      "source_window_end": "2017-01",
+      "observed_trailing_12m": 786.0,
+      "expected_trailing_12m": 1071.1368500302133,
+      "raw_ratio": 0.7565298623957932,
+      "applied_ratio": 0.7565298623957932,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2017-03",
+      "source_window_start": "2016-03",
+      "source_window_end": "2017-02",
+      "observed_trailing_12m": 790.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7599453471018692,
+      "applied_ratio": 0.7599453471018692,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2017-04",
+      "source_window_start": "2016-04",
+      "source_window_end": "2017-03",
+      "observed_trailing_12m": 791.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7607992182783881,
+      "applied_ratio": 0.7607992182783881,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2017-05",
+      "source_window_start": "2016-05",
+      "source_window_end": "2017-04",
+      "observed_trailing_12m": 788.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7582376047488313,
+      "applied_ratio": 0.7582376047488313,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2017-06",
+      "source_window_start": "2016-06",
+      "source_window_end": "2017-05",
+      "observed_trailing_12m": 788.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7582376047488313,
+      "applied_ratio": 0.7582376047488313,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2017-07",
+      "source_window_start": "2016-07",
+      "source_window_end": "2017-06",
+      "observed_trailing_12m": 788.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7582376047488313,
+      "applied_ratio": 0.7582376047488313,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2017-08",
+      "source_window_start": "2016-08",
+      "source_window_end": "2017-07",
+      "observed_trailing_12m": 783.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7539682488662365,
+      "applied_ratio": 0.7539682488662365,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2017-09",
+      "source_window_start": "2016-09",
+      "source_window_end": "2017-08",
+      "observed_trailing_12m": 754.0,
+      "expected_trailing_12m": 1070.7558976492605,
+      "raw_ratio": 0.7294432611569424,
+      "applied_ratio": 0.7294432611569424,
+      "n_rows": 371
+    },
+    {
+      "forecast_period": "2017-10",
+      "source_window_start": "2016-10",
+      "source_window_end": "2017-09",
+      "observed_trailing_12m": 740.0,
+      "expected_trailing_12m": 1069.8987547921179,
+      "raw_ratio": 0.7180108505622451,
+      "applied_ratio": 0.7180108505622451,
+      "n_rows": 370
+    },
+    {
+      "forecast_period": "2017-11",
+      "source_window_start": "2016-11",
+      "source_window_end": "2017-10",
+      "observed_trailing_12m": 687.0,
+      "expected_trailing_12m": 1068.946373839737,
+      "raw_ratio": 0.6732558632393671,
+      "applied_ratio": 0.6732558632393671,
+      "n_rows": 369
+    },
+    {
+      "forecast_period": "2017-12",
+      "source_window_start": "2016-12",
+      "source_window_end": "2017-11",
+      "observed_trailing_12m": 645.0,
+      "expected_trailing_12m": 1067.993992887356,
+      "raw_ratio": 0.6378457462425062,
+      "applied_ratio": 0.6378457462425062,
+      "n_rows": 368
+    },
+    {
+      "forecast_period": "2018-01",
+      "source_window_start": "2017-01",
+      "source_window_end": "2017-12",
+      "observed_trailing_12m": 772.0,
+      "expected_trailing_12m": 1067.7558976492605,
+      "raw_ratio": 0.746731403160002,
+      "applied_ratio": 0.746731403160002,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2018-02",
+      "source_window_start": "2017-02",
+      "source_window_end": "2018-01",
+      "observed_trailing_12m": 778.0,
+      "expected_trailing_12m": 1067.7558976492608,
+      "raw_ratio": 0.7518694632734881,
+      "applied_ratio": 0.7518694632734881,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2018-03",
+      "source_window_start": "2017-03",
+      "source_window_end": "2018-02",
+      "observed_trailing_12m": 772.0,
+      "expected_trailing_12m": 1067.7558976492608,
+      "raw_ratio": 0.7467314031600019,
+      "applied_ratio": 0.7467314031600019,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2018-04",
+      "source_window_start": "2017-04",
+      "source_window_end": "2018-03",
+      "observed_trailing_12m": 775.0,
+      "expected_trailing_12m": 1067.7558976492608,
+      "raw_ratio": 0.749300433216745,
+      "applied_ratio": 0.749300433216745,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2018-05",
+      "source_window_start": "2017-05",
+      "source_window_end": "2018-04",
+      "observed_trailing_12m": 773.0,
+      "expected_trailing_12m": 1067.7558976492608,
+      "raw_ratio": 0.7475877465122496,
+      "applied_ratio": 0.7475877465122496,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2018-06",
+      "source_window_start": "2017-06",
+      "source_window_end": "2018-05",
+      "observed_trailing_12m": 772.0,
+      "expected_trailing_12m": 1067.7558976492608,
+      "raw_ratio": 0.7467314031600019,
+      "applied_ratio": 0.7467314031600019,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2018-07",
+      "source_window_start": "2017-07",
+      "source_window_end": "2018-06",
+      "observed_trailing_12m": 774.0,
+      "expected_trailing_12m": 1067.7558976492608,
+      "raw_ratio": 0.7484440898644973,
+      "applied_ratio": 0.7484440898644973,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2018-08",
+      "source_window_start": "2017-08",
+      "source_window_end": "2018-07",
+      "observed_trailing_12m": 775.0,
+      "expected_trailing_12m": 1067.7558976492608,
+      "raw_ratio": 0.749300433216745,
+      "applied_ratio": 0.749300433216745,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2018-09",
+      "source_window_start": "2017-09",
+      "source_window_end": "2018-08",
+      "observed_trailing_12m": 776.0,
+      "expected_trailing_12m": 1068.1368500302133,
+      "raw_ratio": 0.7499121357034004,
+      "applied_ratio": 0.7499121357034004,
+      "n_rows": 368
+    },
+    {
+      "forecast_period": "2018-10",
+      "source_window_start": "2017-10",
+      "source_window_end": "2018-09",
+      "observed_trailing_12m": 783.0,
+      "expected_trailing_12m": 1068.993992887356,
+      "raw_ratio": 0.7553503314581067,
+      "applied_ratio": 0.7553503314581067,
+      "n_rows": 369
+    },
+    {
+      "forecast_period": "2018-11",
+      "source_window_start": "2017-11",
+      "source_window_end": "2018-10",
+      "observed_trailing_12m": 694.0,
+      "expected_trailing_12m": 1069.946373839737,
+      "raw_ratio": 0.6786635847197939,
+      "applied_ratio": 0.6786635847197939,
+      "n_rows": 370
+    },
+    {
+      "forecast_period": "2018-12",
+      "source_window_start": "2017-12",
+      "source_window_end": "2018-11",
+      "observed_trailing_12m": 644.0,
+      "expected_trailing_12m": 1070.8987547921179,
+      "raw_ratio": 0.6354093357389301,
+      "applied_ratio": 0.6354093357389301,
+      "n_rows": 371
+    },
+    {
+      "forecast_period": "2019-01",
+      "source_window_start": "2018-01",
+      "source_window_end": "2018-12",
+      "observed_trailing_12m": 507.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.5182998041470052,
+      "applied_ratio": 0.5182998041470052,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2019-02",
+      "source_window_start": "2018-02",
+      "source_window_end": "2019-01",
+      "observed_trailing_12m": 519.0,
+      "expected_trailing_12m": 1071.1368500302133,
+      "raw_ratio": 0.5285462582652325,
+      "applied_ratio": 0.5285462582652325,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2019-03",
+      "source_window_start": "2018-03",
+      "source_window_end": "2019-02",
+      "observed_trailing_12m": 522.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.5311078717947895,
+      "applied_ratio": 0.5311078717947895,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2019-04",
+      "source_window_start": "2018-04",
+      "source_window_end": "2019-03",
+      "observed_trailing_12m": 519.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.5285462582652326,
+      "applied_ratio": 0.5285462582652326,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2019-05",
+      "source_window_start": "2018-05",
+      "source_window_end": "2019-04",
+      "observed_trailing_12m": 519.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.5285462582652326,
+      "applied_ratio": 0.5285462582652326,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2019-06",
+      "source_window_start": "2018-06",
+      "source_window_end": "2019-05",
+      "observed_trailing_12m": 522.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.5311078717947895,
+      "applied_ratio": 0.5311078717947895,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2019-07",
+      "source_window_start": "2018-07",
+      "source_window_end": "2019-06",
+      "observed_trailing_12m": 525.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.5336694853243463,
+      "applied_ratio": 0.5336694853243463,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2019-08",
+      "source_window_start": "2018-08",
+      "source_window_end": "2019-07",
+      "observed_trailing_12m": 521.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.5302540006182705,
+      "applied_ratio": 0.5302540006182705,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2019-09",
+      "source_window_start": "2018-09",
+      "source_window_end": "2019-08",
+      "observed_trailing_12m": 522.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.5311078717947895,
+      "applied_ratio": 0.5311078717947895,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2019-10",
+      "source_window_start": "2018-10",
+      "source_window_end": "2019-09",
+      "observed_trailing_12m": 522.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.5311078717947895,
+      "applied_ratio": 0.5311078717947895,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2019-11",
+      "source_window_start": "2018-11",
+      "source_window_end": "2019-10",
+      "observed_trailing_12m": 610.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.6062485353284575,
+      "applied_ratio": 0.6062485353284575,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2019-12",
+      "source_window_start": "2018-12",
+      "source_window_end": "2019-11",
+      "observed_trailing_12m": 713.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.6941972665099098,
+      "applied_ratio": 0.6941972665099098,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2020-01",
+      "source_window_start": "2019-01",
+      "source_window_end": "2019-12",
+      "observed_trailing_12m": 776.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7479911506306038,
+      "applied_ratio": 0.7479911506306038,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2020-02",
+      "source_window_start": "2019-02",
+      "source_window_end": "2020-01",
+      "observed_trailing_12m": 756.0,
+      "expected_trailing_12m": 1071.1368500302133,
+      "raw_ratio": 0.7309137271002246,
+      "applied_ratio": 0.7309137271002246,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2020-03",
+      "source_window_start": "2019-03",
+      "source_window_end": "2020-02",
+      "observed_trailing_12m": 754.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7292059847471869,
+      "applied_ratio": 0.7292059847471869,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2020-04",
+      "source_window_start": "2019-04",
+      "source_window_end": "2020-03",
+      "observed_trailing_12m": 753.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7283521135706679,
+      "applied_ratio": 0.7283521135706679,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2020-05",
+      "source_window_start": "2019-05",
+      "source_window_end": "2020-04",
+      "observed_trailing_12m": 753.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7283521135706679,
+      "applied_ratio": 0.7283521135706679,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2020-06",
+      "source_window_start": "2019-06",
+      "source_window_end": "2020-05",
+      "observed_trailing_12m": 753.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7283521135706679,
+      "applied_ratio": 0.7283521135706679,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2020-07",
+      "source_window_start": "2019-07",
+      "source_window_end": "2020-06",
+      "observed_trailing_12m": 751.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.72664437121763,
+      "applied_ratio": 0.72664437121763,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2020-08",
+      "source_window_start": "2019-08",
+      "source_window_end": "2020-07",
+      "observed_trailing_12m": 767.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7403063100419333,
+      "applied_ratio": 0.7403063100419333,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2020-09",
+      "source_window_start": "2019-09",
+      "source_window_end": "2020-08",
+      "observed_trailing_12m": 763.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7368908253358575,
+      "applied_ratio": 0.7368908253358575,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2020-10",
+      "source_window_start": "2019-10",
+      "source_window_end": "2020-09",
+      "observed_trailing_12m": 773.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.745429537101047,
+      "applied_ratio": 0.745429537101047,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2020-11",
+      "source_window_start": "2019-11",
+      "source_window_end": "2020-10",
+      "observed_trailing_12m": 748.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7240827576880732,
+      "applied_ratio": 0.7240827576880732,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2020-12",
+      "source_window_start": "2019-12",
+      "source_window_end": "2020-11",
+      "observed_trailing_12m": 718.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.6984666223925045,
+      "applied_ratio": 0.6984666223925045,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2021-01",
+      "source_window_start": "2020-01",
+      "source_window_end": "2020-12",
+      "observed_trailing_12m": 720.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7001743647455424,
+      "applied_ratio": 0.7001743647455424,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2021-02",
+      "source_window_start": "2020-02",
+      "source_window_end": "2021-01",
+      "observed_trailing_12m": 745.0,
+      "expected_trailing_12m": 1071.1368500302133,
+      "raw_ratio": 0.7215211441585161,
+      "applied_ratio": 0.7215211441585161,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2021-03",
+      "source_window_start": "2020-03",
+      "source_window_end": "2021-02",
+      "observed_trailing_12m": 762.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7360369541593385,
+      "applied_ratio": 0.7360369541593385,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2021-04",
+      "source_window_start": "2020-04",
+      "source_window_end": "2021-03",
+      "observed_trailing_12m": 763.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7368908253358575,
+      "applied_ratio": 0.7368908253358575,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2021-05",
+      "source_window_start": "2020-05",
+      "source_window_end": "2021-04",
+      "observed_trailing_12m": 763.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7368908253358575,
+      "applied_ratio": 0.7368908253358575,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2021-06",
+      "source_window_start": "2020-06",
+      "source_window_end": "2021-05",
+      "observed_trailing_12m": 769.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7420140523949712,
+      "applied_ratio": 0.7420140523949712,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2021-07",
+      "source_window_start": "2020-07",
+      "source_window_end": "2021-06",
+      "observed_trailing_12m": 778.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7496988929836418,
+      "applied_ratio": 0.7496988929836418,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2021-08",
+      "source_window_start": "2020-08",
+      "source_window_end": "2021-07",
+      "observed_trailing_12m": 770.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7428679235714901,
+      "applied_ratio": 0.7428679235714901,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2021-09",
+      "source_window_start": "2020-09",
+      "source_window_end": "2021-08",
+      "observed_trailing_12m": 762.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7360369541593385,
+      "applied_ratio": 0.7360369541593385,
+      "n_rows": 371
+    },
+    {
+      "forecast_period": "2021-10",
+      "source_window_start": "2020-10",
+      "source_window_end": "2021-09",
+      "observed_trailing_12m": 753.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 0.7283521135706679,
+      "applied_ratio": 0.7283521135706679,
+      "n_rows": 370
+    },
+    {
+      "forecast_period": "2021-11",
+      "source_window_start": "2020-11",
+      "source_window_end": "2021-10",
+      "observed_trailing_12m": 742.0,
+      "expected_trailing_12m": 1070.8511357444988,
+      "raw_ratio": 0.7191349730934026,
+      "applied_ratio": 0.7191349730934026,
+      "n_rows": 369
+    },
+    {
+      "forecast_period": "2021-12",
+      "source_window_start": "2020-12",
+      "source_window_end": "2021-11",
+      "observed_trailing_12m": 803.0,
+      "expected_trailing_12m": 1070.4874993808623,
+      "raw_ratio": 0.7714734249427253,
+      "applied_ratio": 0.7714734249427253,
+      "n_rows": 368
+    },
+    {
+      "forecast_period": "2022-01",
+      "source_window_start": "2021-01",
+      "source_window_end": "2021-12",
+      "observed_trailing_12m": 742.0,
+      "expected_trailing_12m": 1070.0329539263168,
+      "raw_ratio": 0.7196378505190592,
+      "applied_ratio": 0.7196378505190592,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2022-02",
+      "source_window_start": "2021-02",
+      "source_window_end": "2022-01",
+      "observed_trailing_12m": 708.0,
+      "expected_trailing_12m": 1070.032953926317,
+      "raw_ratio": 0.6905788399280282,
+      "applied_ratio": 0.6905788399280282,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2022-03",
+      "source_window_start": "2021-03",
+      "source_window_end": "2022-02",
+      "observed_trailing_12m": 690.0,
+      "expected_trailing_12m": 1070.0329539263168,
+      "raw_ratio": 0.6751946578504237,
+      "applied_ratio": 0.6751946578504237,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2022-04",
+      "source_window_start": "2021-04",
+      "source_window_end": "2022-03",
+      "observed_trailing_12m": 691.0,
+      "expected_trailing_12m": 1070.0329539263168,
+      "raw_ratio": 0.6760493346325128,
+      "applied_ratio": 0.6760493346325128,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2022-05",
+      "source_window_start": "2021-05",
+      "source_window_end": "2022-04",
+      "observed_trailing_12m": 691.0,
+      "expected_trailing_12m": 1070.0329539263168,
+      "raw_ratio": 0.6760493346325128,
+      "applied_ratio": 0.6760493346325128,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2022-06",
+      "source_window_start": "2021-06",
+      "source_window_end": "2022-05",
+      "observed_trailing_12m": 684.0,
+      "expected_trailing_12m": 1070.0329539263168,
+      "raw_ratio": 0.6700665971578887,
+      "applied_ratio": 0.6700665971578887,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2022-07",
+      "source_window_start": "2021-07",
+      "source_window_end": "2022-06",
+      "observed_trailing_12m": 680.0,
+      "expected_trailing_12m": 1070.0329539263168,
+      "raw_ratio": 0.6666478900295322,
+      "applied_ratio": 0.6666478900295322,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2022-08",
+      "source_window_start": "2021-08",
+      "source_window_end": "2022-07",
+      "observed_trailing_12m": 683.0,
+      "expected_trailing_12m": 1070.0329539263168,
+      "raw_ratio": 0.6692119203757997,
+      "applied_ratio": 0.6692119203757997,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2022-09",
+      "source_window_start": "2021-09",
+      "source_window_end": "2022-08",
+      "observed_trailing_12m": 699.0,
+      "expected_trailing_12m": 1069.0855855052641,
+      "raw_ratio": 0.683440126117612,
+      "applied_ratio": 0.683440126117612,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2022-10",
+      "source_window_start": "2021-10",
+      "source_window_end": "2022-09",
+      "observed_trailing_12m": 700.0,
+      "expected_trailing_12m": 1068.1382170842116,
+      "raw_ratio": 0.6848504640117665,
+      "applied_ratio": 0.6848504640117665,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2022-11",
+      "source_window_start": "2021-11",
+      "source_window_end": "2022-10",
+      "observed_trailing_12m": 777.0,
+      "expected_trailing_12m": 1067.108141896242,
+      "raw_ratio": 0.7514299391101043,
+      "applied_ratio": 0.7514299391101043,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2022-12",
+      "source_window_start": "2021-12",
+      "source_window_end": "2022-11",
+      "observed_trailing_12m": 741.0,
+      "expected_trailing_12m": 1066.8928308914572,
+      "raw_ratio": 0.7207174281442035,
+      "applied_ratio": 0.7207174281442035,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2023-01",
+      "source_window_start": "2022-01",
+      "source_window_end": "2022-12",
+      "observed_trailing_12m": 842.0,
+      "expected_trailing_12m": 1066.663165819687,
+      "raw_ratio": 0.8074309943077351,
+      "applied_ratio": 0.8074309943077351,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2023-02",
+      "source_window_start": "2022-02",
+      "source_window_end": "2023-01",
+      "observed_trailing_12m": 851.0,
+      "expected_trailing_12m": 1066.663165819687,
+      "raw_ratio": 0.8151453031705479,
+      "applied_ratio": 0.8151453031705479,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2023-03",
+      "source_window_start": "2022-03",
+      "source_window_end": "2023-02",
+      "observed_trailing_12m": 859.0,
+      "expected_trailing_12m": 1066.6631658196868,
+      "raw_ratio": 0.8220024666041594,
+      "applied_ratio": 0.8220024666041594,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2023-04",
+      "source_window_start": "2022-04",
+      "source_window_end": "2023-03",
+      "observed_trailing_12m": 862.0,
+      "expected_trailing_12m": 1066.6631658196868,
+      "raw_ratio": 0.8245739028917637,
+      "applied_ratio": 0.8245739028917637,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2023-05",
+      "source_window_start": "2022-05",
+      "source_window_end": "2023-04",
+      "observed_trailing_12m": 864.0,
+      "expected_trailing_12m": 1066.6631658196868,
+      "raw_ratio": 0.8262881937501665,
+      "applied_ratio": 0.8262881937501665,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2023-06",
+      "source_window_start": "2022-06",
+      "source_window_end": "2023-05",
+      "observed_trailing_12m": 865.0,
+      "expected_trailing_12m": 1066.6631658196868,
+      "raw_ratio": 0.8271453391793679,
+      "applied_ratio": 0.8271453391793679,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2023-07",
+      "source_window_start": "2022-07",
+      "source_window_end": "2023-06",
+      "observed_trailing_12m": 859.0,
+      "expected_trailing_12m": 1066.663165819687,
+      "raw_ratio": 0.8220024666041592,
+      "applied_ratio": 0.8220024666041592,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2023-08",
+      "source_window_start": "2022-08",
+      "source_window_end": "2023-07",
+      "observed_trailing_12m": 880.0,
+      "expected_trailing_12m": 1066.6631658196868,
+      "raw_ratio": 0.8400025206173892,
+      "applied_ratio": 0.8400025206173892,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2023-09",
+      "source_window_start": "2022-09",
+      "source_window_end": "2023-08",
+      "observed_trailing_12m": 890.0,
+      "expected_trailing_12m": 1067.6105342407395,
+      "raw_ratio": 0.8478854643460081,
+      "applied_ratio": 0.8478854643460081,
+      "n_rows": 368
+    },
+    {
+      "forecast_period": "2023-10",
+      "source_window_start": "2022-10",
+      "source_window_end": "2023-09",
+      "observed_trailing_12m": 968.0,
+      "expected_trailing_12m": 1068.557902661792,
+      "raw_ratio": 0.9139470090162097,
+      "applied_ratio": 0.9139470090162097,
+      "n_rows": 369
+    },
+    {
+      "forecast_period": "2023-11",
+      "source_window_start": "2022-11",
+      "source_window_end": "2023-10",
+      "observed_trailing_12m": 1136.0,
+      "expected_trailing_12m": 1069.8736921354762,
+      "raw_ratio": 1.056524313957191,
+      "applied_ratio": 1.056524313957191,
+      "n_rows": 370
+    },
+    {
+      "forecast_period": "2023-12",
+      "source_window_start": "2022-12",
+      "source_window_end": "2023-11",
+      "observed_trailing_12m": 1244.0,
+      "expected_trailing_12m": 1070.4526395038972,
+      "raw_ratio": 1.1482737144919095,
+      "applied_ratio": 1.1482737144919095,
+      "n_rows": 371
+    },
+    {
+      "forecast_period": "2024-01",
+      "source_window_start": "2023-01",
+      "source_window_end": "2023-12",
+      "observed_trailing_12m": 1342.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.231282236540332,
+      "applied_ratio": 1.231282236540332,
+      "n_rows": 372
+    },
+    {
+      "forecast_period": "2024-02",
+      "source_window_start": "2023-02",
+      "source_window_end": "2024-01",
+      "observed_trailing_12m": 1398.0,
+      "expected_trailing_12m": 1071.1368500302133,
+      "raw_ratio": 1.279099022425393,
+      "applied_ratio": 1.279099022425393,
+      "n_rows": 371
+    },
+    {
+      "forecast_period": "2024-03",
+      "source_window_start": "2023-03",
+      "source_window_end": "2024-02",
+      "observed_trailing_12m": 1399.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.2799528936019122,
+      "applied_ratio": 1.2799528936019122,
+      "n_rows": 370
+    },
+    {
+      "forecast_period": "2024-04",
+      "source_window_start": "2023-04",
+      "source_window_end": "2024-03",
+      "observed_trailing_12m": 1398.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.2790990224253933,
+      "applied_ratio": 1.2790990224253933,
+      "n_rows": 369
+    },
+    {
+      "forecast_period": "2024-05",
+      "source_window_start": "2023-05",
+      "source_window_end": "2024-04",
+      "observed_trailing_12m": 1401.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.2816606359549503,
+      "applied_ratio": 1.2816606359549503,
+      "n_rows": 368
+    },
+    {
+      "forecast_period": "2024-06",
+      "source_window_start": "2023-06",
+      "source_window_end": "2024-05",
+      "observed_trailing_12m": 1409.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.2884916053671018,
+      "applied_ratio": 1.2884916053671018,
+      "n_rows": 367
+    },
+    {
+      "forecast_period": "2024-07",
+      "source_window_start": "2023-07",
+      "source_window_end": "2024-06",
+      "observed_trailing_12m": 1421.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.2987380594853293,
+      "applied_ratio": 1.2987380594853293,
+      "n_rows": 366
+    },
+    {
+      "forecast_period": "2024-08",
+      "source_window_start": "2023-08",
+      "source_window_end": "2024-07",
+      "observed_trailing_12m": 1398.0,
+      "expected_trailing_12m": 1071.136850030213,
+      "raw_ratio": 1.2790990224253933,
+      "applied_ratio": 1.2790990224253933,
+      "n_rows": 365
+    },
+    {
+      "forecast_period": "2024-09",
+      "source_window_start": "2023-09",
+      "source_window_end": "2024-08",
+      "observed_trailing_12m": 1411.0,
+      "expected_trailing_12m": 1067.4803565237196,
+      "raw_ratio": 1.2942401913289074,
+      "applied_ratio": 1.2942401913289074,
+      "n_rows": 356
+    },
+    {
+      "forecast_period": "2024-10",
+      "source_window_start": "2023-10",
+      "source_window_end": "2024-09",
+      "observed_trailing_12m": 1361.0,
+      "expected_trailing_12m": 1053.8483218916851,
+      "raw_ratio": 1.2661976208491188,
+      "applied_ratio": 1.2661976208491188,
+      "n_rows": 347
+    },
+    {
+      "forecast_period": "2024-11",
+      "source_window_start": "2023-11",
+      "source_window_end": "2024-10",
+      "observed_trailing_12m": 1221.0,
+      "expected_trailing_12m": 1024.8435599869233,
+      "raw_ratio": 1.1743855296778842,
+      "applied_ratio": 1.1743855296778842,
+      "n_rows": 338
+    },
+    {
+      "forecast_period": "2024-12",
+      "source_window_start": "2023-12",
+      "source_window_end": "2024-11",
+      "observed_trailing_12m": 1313.0,
+      "expected_trailing_12m": 986.079923623287,
+      "raw_ratio": 1.3010092252567107,
+      "applied_ratio": 1.3010092252567107,
+      "n_rows": 329
+    },
+    {
+      "forecast_period": "2025-01",
+      "source_window_start": "2024-01",
+      "source_window_end": "2024-12",
+      "observed_trailing_12m": 1385.0,
+      "expected_trailing_12m": 966.1225643159277,
+      "raw_ratio": 1.3928980116398182,
+      "applied_ratio": 1.3928980116398182,
+      "n_rows": 320
+    }
+  ],
+  "artifact_sha256": "6767d4daa837605f31acb6b0e6637b20b1ff96ba56fc124f1d8379d0d8b884e8"
+}

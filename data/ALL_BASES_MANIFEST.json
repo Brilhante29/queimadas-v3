@@ -1,0 +1,210 @@
+{
+  "schema_version": "firecast_all_bases_manifest_v1",
+  "created_at": "2026-07-15",
+  "snapshot_count": 20,
+  "snapshots": [
+    {
+      "name": "enso_cpc_v1",
+      "path": "data/snapshots/enso_cpc_v1",
+      "files": 2,
+      "size_mb": 0.017,
+      "has_manifest": true,
+      "status": "versioned_snapshot"
+    },
+    {
+      "name": "era5_grid_weights_cariri_central_v1",
+      "path": "data/snapshots/era5_grid_weights_cariri_central_v1",
+      "files": 3,
+      "size_mb": 0.005,
+      "has_manifest": true,
+      "status": "versioned_snapshot"
+    },
+    {
+      "name": "era5_grid_weights_chapada_v1",
+      "path": "data/snapshots/era5_grid_weights_chapada_v1",
+      "files": 3,
+      "size_mb": 0.013,
+      "has_manifest": true,
+      "status": "versioned_snapshot"
+    },
+    {
+      "name": "era5_grid_weights_v1",
+      "path": "data/snapshots/era5_grid_weights_v1",
+      "files": 4,
+      "size_mb": 0.027,
+      "has_manifest": true,
+      "status": "versioned_snapshot"
+    },
+    {
+      "name": "era5_openmeteo_v1",
+      "path": "data/snapshots/era5_openmeteo_v1",
+      "files": 15,
+      "size_mb": 11.016,
+      "has_manifest": true,
+      "status": "versioned_snapshot"
+    },
+    {
+      "name": "firms_modis_sp_ce_v1",
+      "path": "data/snapshots/firms_modis_sp_ce_v1",
+      "files": 5,
+      "size_mb": 24.756,
+      "has_manifest": true,
+      "status": "versioned_snapshot"
+    },
+    {
+      "name": "firms_multi_sensor_ce_v1",
+      "path": "data/snapshots/firms_multi_sensor_ce_v1",
+      "files": 2,
+      "size_mb": 0.799,
+      "has_manifest": true,
+      "status": "versioned_snapshot"
+    },
+    {
+      "name": "firms_viirs_noaa20_sp_ce_v1",
+      "path": "data/snapshots/firms_viirs_noaa20_sp_ce_v1",
+      "files": 5,
+      "size_mb": 75.295,
+      "has_manifest": true,
+      "status": "versioned_snapshot"
+    },
+    {
+      "name": "firms_viirs_snpp_sp_ce_v1",
+      "path": "data/snapshots/firms_viirs_snpp_sp_ce_v1",
+      "files": 5,
+      "size_mb": 108.321,
+      "has_manifest": true,
+      "status": "versioned_snapshot"
+    },
+    {
+      "name": "ibge_malha_municipal_2024",
+      "path": "data/snapshots/ibge_malha_municipal_2024",
+      "files": 7,
+      "size_mb": 0.709,
+      "has_manifest": true,
+      "status": "versioned_snapshot"
+    },
+    {
+      "name": "ibge_pam_crop_area_v1",
+      "path": "data/snapshots/ibge_pam_crop_area_v1",
+      "files": 25,
+      "size_mb": 6.404,
+      "has_manifest": true,
+      "status": "versioned_snapshot"
+    },
+    {
+      "name": "ibge_population_estimates_v1",
+      "path": "data/snapshots/ibge_population_estimates_v1",
+      "files": 5,
+      "size_mb": 0.143,
+      "has_manifest": true,
+      "status": "versioned_snapshot"
+    },
+    {
+      "name": "ibge_spatial_graph_v1",
+      "path": "data/snapshots/ibge_spatial_graph_v1",
+      "files": 3,
+      "size_mb": 0.167,
+      "has_manifest": true,
+      "status": "versioned_snapshot"
+    },
+    {
+      "name": "inmet_automatic_station_observed_v1",
+      "path": "data/snapshots/inmet_automatic_station_observed_v1",
+      "files": 370,
+      "size_mb": 251.845,
+      "has_manifest": true,
+      "status": "versioned_snapshot"
+    },
+    {
+      "name": "inmet_station_availability_unverified",
+      "path": "data/snapshots/inmet_station_availability_unverified",
+      "files": 18,
+      "size_mb": 0.057,
+      "has_manifest": true,
+      "status": "unverified_or_exploratory"
+    },
+    {
+      "name": "inpe_event_points_v1",
+      "path": "data/snapshots/inpe_event_points_v1",
+      "files": 3,
+      "size_mb": 5.439,
+      "has_manifest": true,
+      "status": "versioned_snapshot"
+    },
+    {
+      "name": "inpe_local_v1",
+      "path": "data/snapshots/inpe_local_v1",
+      "files": 4,
+      "size_mb": 0.632,
+      "has_manifest": true,
+      "status": "versioned_snapshot"
+    },
+    {
+      "name": "inpe_local_v2",
+      "path": "data/snapshots/inpe_local_v2",
+      "files": 5,
+      "size_mb": 1.337,
+      "has_manifest": true,
+      "status": "versioned_snapshot"
+    },
+    {
+      "name": "inpe_monthly_public_v3",
+      "path": "data/snapshots/inpe_monthly_public_v3",
+      "files": 22,
+      "size_mb": 678.108,
+      "has_manifest": true,
+      "status": "versioned_snapshot"
+    },
+    {
+      "name": "nasa_monthly_enriched_unverified",
+      "path": "data/snapshots/nasa_monthly_enriched_unverified",
+      "files": 18,
+      "size_mb": 0.109,
+      "has_manifest": true,
+      "status": "unverified_or_exploratory"
+    }
+  ],
+  "raw_external_bases": [
+    {
+      "name": "availability.zip",
+      "path": "data/raw_external_bases/availability.zip",
+      "size_mb": 0.017,
+      "status": "raw_received_base"
+    },
+    {
+      "name": "dados.zip",
+      "path": "data/raw_external_bases/dados.zip",
+      "size_mb": 0.075,
+      "status": "raw_received_base"
+    },
+    {
+      "name": "dados_INPE.zip",
+      "path": "data/raw_external_bases/dados_INPE.zip",
+      "size_mb": 0.357,
+      "status": "raw_received_base"
+    },
+    {
+      "name": "dados_INPE_Monitor.zip",
+      "path": "data/raw_external_bases/dados_INPE_Monitor.zip",
+      "size_mb": 0.027,
+      "status": "raw_received_base"
+    },
+    {
+      "name": "dados_mensais_enriquecidos_nasa.zip",
+      "path": "data/raw_external_bases/dados_mensais_enriquecidos_nasa.zip",
+      "size_mb": 0.039,
+      "status": "raw_received_base"
+    },
+    {
+      "name": "NDVI_Ceara_Municipios_Mensal_FINAL.csv",
+      "path": "data/raw_external_bases/NDVI_Ceara_Municipios_Mensal_FINAL.csv",
+      "size_mb": 6.183,
+      "status": "raw_received_base"
+    }
+  ],
+  "notes": [
+    "All directories present in the source data/snapshots folder are included.",
+    "Snapshots with 'unverified' in the name are included for audit/exploration and are not production evidence by themselves.",
+    "Fire-count target remains INPE AQUA_M-T; INMET is weather/station context, not the target."
+  ]
+}

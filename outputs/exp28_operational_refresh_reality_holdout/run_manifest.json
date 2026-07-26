@@ -1,0 +1,114 @@
+{
+  "experiment_id": "EXP-2026-07-11-28",
+  "run_at": "2026-07-11T13:23:13.887123+00:00",
+  "hypothesis": "Monthly operational refresh of the regional intensity ratio improves reality-holdout aggregate volume without overfitting.",
+  "change": "Same climatology as champion; recompute only the trailing-12 observed/expected regional multiplier each forecast month using prior observed AQUA_M-T months.",
+  "rejection_condition": "Reject if refresh worsens complete 2025 absolute total error versus frozen champion or improves only the incomplete/provisional 2026 slice.",
+  "protocol": "No parameter selected on 2025/2026. Public AQUA_M-T is scoring target; v2 <=2024 remains history for prior windows.",
+  "target_metric": {
+    "abs_total_error_max": 300.0
+  },
+  "artifact_sha256": "6767d4daa837605f31acb6b0e6637b20b1ff96ba56fc124f1d8379d0d8b884e8",
+  "data_hashes": {
+    "inpe_local_v2": "06640e40c9ab64cc27aef222bd4d10ba65e18582e0762482bb4a82020154bbfb",
+    "inpe_public_v3_events": "bfbc7a49dd61f80dfcffd561235a277d9e6623dc3d9a4d90dac673bb5601520b"
+  },
+  "results": [
+    {
+      "model": "champion_static_artifact",
+      "year": 2025,
+      "months": "01-12",
+      "actual_total": 1571.0,
+      "pred_total": 1491.984388601223,
+      "abs_total_error": 79.01561139877708,
+      "passes_owner_abs_total_error_target": true,
+      "monthly_wape_on_totals": 0.15799325000959136
+    },
+    {
+      "model": "municipal_climatology_no_ratio",
+      "year": 2025,
+      "months": "01-12",
+      "actual_total": 1571.0,
+      "pred_total": 1071.1368500302137,
+      "abs_total_error": 499.86314996978626,
+      "passes_owner_abs_total_error_target": false,
+      "monthly_wape_on_totals": 0.3285397054376279
+    },
+    {
+      "model": "operational_monthly_refresh",
+      "year": 2025,
+      "months": "01-12",
+      "actual_total": 1571.0,
+      "pred_total": 1430.8137248448206,
+      "abs_total_error": 140.18627515517937,
+      "passes_owner_abs_total_error_target": true,
+      "monthly_wape_on_totals": 0.2122432637762769
+    },
+    {
+      "model": "champion_static_artifact",
+      "year": 2026,
+      "months": "01-06",
+      "actual_total": 131.0,
+      "pred_total": 87.43600700339042,
+      "abs_total_error": 43.563992996609585,
+      "passes_owner_abs_total_error_target": true,
+      "monthly_wape_on_totals": 0.3863097974750914
+    },
+    {
+      "model": "municipal_climatology_no_ratio",
+      "year": 2026,
+      "months": "01-06",
+      "actual_total": 131.0,
+      "pred_total": 62.77272727272727,
+      "abs_total_error": 68.22727272727272,
+      "passes_owner_abs_total_error_target": true,
+      "monthly_wape_on_totals": 0.5464954892435808
+    },
+    {
+      "model": "operational_monthly_refresh",
+      "year": 2026,
+      "months": "01-06",
+      "actual_total": 131.0,
+      "pred_total": 90.32035837423363,
+      "abs_total_error": 40.679641625766365,
+      "passes_owner_abs_total_error_target": true,
+      "monthly_wape_on_totals": 0.3702652478582989
+    },
+    {
+      "model": "champion_static_artifact",
+      "year": 2026,
+      "months": "01-07",
+      "actual_total": 140.0,
+      "pred_total": 102.73311026560873,
+      "abs_total_error": 37.26688973439127,
+      "passes_owner_abs_total_error_target": true,
+      "monthly_wape_on_totals": 0.4064549052246807
+    },
+    {
+      "model": "municipal_climatology_no_ratio",
+      "year": 2026,
+      "months": "01-07",
+      "actual_total": 140.0,
+      "pred_total": 73.75494071146245,
+      "abs_total_error": 66.24505928853755,
+      "passes_owner_abs_total_error_target": true,
+      "monthly_wape_on_totals": 0.5255223037831734
+    },
+    {
+      "model": "operational_monthly_refresh",
+      "year": 2026,
+      "months": "01-07",
+      "actual_total": 140.0,
+      "pred_total": 106.38383688237556,
+      "abs_total_error": 33.61616311762444,
+      "passes_owner_abs_total_error_target": true,
+      "monthly_wape_on_totals": 0.39691589983985054
+    }
+  ],
+  "decision": "REJECT_REFRESH_KEEP_CHAMPION_STATIC",
+  "justification": "The frozen champion already passes the owner target with 2025 absolute total error 79.0. Operational refresh slightly improves 2026 jan-jul (37.3 -> 33.6) but worsens complete 2025 (79.0 -> 140.2), so promoting it would be overfitting to the still-short 2026 slice.",
+  "artifacts": [
+    "monthly_strategy_comparison.csv",
+    "aggregate_strategy_windows.csv"
+  ]
+}

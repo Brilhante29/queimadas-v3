@@ -1,0 +1,5 @@
+slice,n,n_municipios,volume_real,volume_predito,wape,mae,bias_total,spatial_slice,regime
+chapada_araripe_cariri__dry_aug_dec,125,16,755.0,487.55320715913376,0.5692859932805665,3.438487399414622,-267.44679284086624,chapada_araripe_cariri,dry_aug_dec
+chapada_araripe_cariri__other_months,224,16,77.0,44.02774951528444,1.1389441341874629,0.3915120461269404,-32.97225048471556,chapada_araripe_cariri,other_months
+fora_chapada_universo__dry_aug_dec,135,15,1761.0,1602.4201880193345,0.48150094622657486,6.280912342999987,-158.5798119806654,fora_chapada_universo,dry_aug_dec
+fora_chapada_universo__other_months,203,15,129.0,110.21456681187084,1.023589630969272,0.6504584354435275,-18.785433188129137,fora_chapada_universo,other_months

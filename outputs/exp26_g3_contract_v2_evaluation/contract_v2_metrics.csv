@@ -1,0 +1,5 @@
+model,scope,wape_municipal_month_informational,wape_scope_month,wape_scope_season,recall10,zero_indevido,n_cells,total_observed
+climatology_regional_intensity12,ceara,0.49931133936979377,0.22454775141125147,0.17944589628327196,0.775,0.0,104,1444.0
+climatology_regional_intensity12,chapada_araripe,0.5110194926430548,0.37226128240249645,0.37226128240249634,0.9,0.0,50,460.0
+climatology_municipal,ceara,0.5104083517549509,0.2984791717629853,0.2984791717629852,0.775,0.0,104,1444.0
+climatology_municipal,chapada_araripe,0.5393457108243755,0.4551208904614478,0.4551208904614478,0.9,0.0,50,460.0

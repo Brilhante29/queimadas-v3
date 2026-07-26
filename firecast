@@ -1,0 +1,75 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$ROOT"
+export PYTHONPATH="$ROOT${PYTHONPATH:+:$PYTHONPATH}"
+PYTHON_BIN="${PYTHON_BIN:-python3}"
+CHAMPION_DIR="${CHAMPION_DIR:-outputs/champion_climatology_regional_intensity12}"
+PUBLIC_TARGET_PATH="${PUBLIC_TARGET_PATH:-data/snapshots/inpe_monthly_public_v3/events_target_region.csv}"
+PUBLIC_TARGET_SATELLITE="${PUBLIC_TARGET_SATELLITE:-AQUA_M-T}"
+MONTHS="${MONTHS:-$(date +%Y%m)}"
+
+usage() {
+  cat <<'EOF'
+FireCast CLI
+
+Usage:
+  ./firecast <command>
+
+Core:
+  status          Show current public release status
+  test            Run the test suite
+  serve           Start the fail-closed champion API
+  predict         Run one local sample prediction
+  explain         Run one verified XAI explanation
+  xai-graph       Run one graph-only XAI explanation
+  dashboard       Start the Streamlit XAI dashboard
+
+Operations:
+  package         Repackage the champion artifact
+  plan            Export the G0-G7 production plan
+  monthly-plan    Write monthly feeding/scoring plan
+  shadow-score    Score committed shadow predictions
+  shadow-report   Write the shadow monitoring report
+  data-check      Validate ingestors/snapshots
+EOF
+}
+
+case "${1:-help}" in
+  help|-h|--help) usage ;;
+  status)
+    sed -n '1,90p' outputs/model_progress_report.md
+    "$PYTHON_BIN" src/mlops/contracts.py --out outputs/production_ml_plan.json >/dev/null
+    ;;
+  test) "$PYTHON_BIN" -m pytest tests/ -q ;;
+  serve)
+    "$PYTHON_BIN" src/production/serving_api.py --model-path "$CHAMPION_DIR/model.json" --host 0.0.0.0 --port "${PORT:-8000}"
+    ;;
+  dashboard)
+    "$PYTHON_BIN" -m streamlit run streamlit_app/firecast_dashboard.py --server.port "${STREAMLIT_PORT:-8501}" --server.address 0.0.0.0
+    ;;
+  package) "$PYTHON_BIN" src/production/champion_climatology.py --out-dir "$CHAMPION_DIR" ;;
+  predict)
+    "$PYTHON_BIN" src/production/champion_climatology.py --out-dir "$CHAMPION_DIR" --predict --geocodigo "${GEOCODIGO:-2300101}" --ano "${ANO:-2026}" --mes "${MES:-10}"
+    ;;
+  explain)
+    "$PYTHON_BIN" -m src.production.llm_xai --model-path "$CHAMPION_DIR/model.json" --geocodigo "${GEOCODIGO:-2300101}" --ano "${ANO:-2026}" --mes "${MES:-10}"
+    ;;
+  xai-graph)
+    "$PYTHON_BIN" -m src.production.llm_xai --graph-only --model-path "$CHAMPION_DIR/model.json" --geocodigo "${GEOCODIGO:-2300101}" --ano "${ANO:-2026}" --mes "${MES:-10}"
+    ;;
+  plan) "$PYTHON_BIN" src/mlops/contracts.py --out outputs/production_ml_plan.json ;;
+  monthly-plan)
+    # shellcheck disable=SC2086
+    "$PYTHON_BIN" src/mlops/monthly_ops.py --months ${MONTHS//,/ } --out outputs/monthly_operations_plan.json --format json
+    ;;
+  shadow-score)
+    "$PYTHON_BIN" -m src.production.shadow_monitor score --target-path "$PUBLIC_TARGET_PATH" --target-satellite "$PUBLIC_TARGET_SATELLITE"
+    ;;
+  shadow-report)
+    "$PYTHON_BIN" -m src.production.shadow_monitor report --target-path "$PUBLIC_TARGET_PATH" --target-satellite "$PUBLIC_TARGET_SATELLITE"
+    ;;
+  data-check) "$PYTHON_BIN" scripts/check_data_ingestors.py ;;
+  *) echo "Unknown command: $1" >&2; usage >&2; exit 2 ;;
+esac

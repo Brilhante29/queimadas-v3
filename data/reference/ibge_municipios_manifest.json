@@ -1,0 +1,13 @@
+{
+    "source_name":  "IBGE",
+    "dataset_name":  "localidades/municipios",
+    "official_url":  "https://servicodados.ibge.gov.br/api/v1/localidades/estados/{UF}/municipios",
+    "license":  "dados abertos IBGE",
+    "retrieved_at":  "2026-07-02T18:15:02-03:00",
+    "states":  [
+                   "CE",
+                   "PE",
+                   "PI"
+               ],
+    "record_count":  593
+}

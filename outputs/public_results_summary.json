@@ -1,0 +1,33 @@
+{
+  "package_schema": "firecast_public_handoff_v1",
+  "created_at": "2026-07-15",
+  "scope": "Chapada do Araripe / CE-PE-PI, monthly municipal fire-focus forecasting",
+  "champion": "climatology_regional_intensity12",
+  "target_definition": "INPE AQUA_M-T monthly fire-focus count by IBGE municipality code",
+  "internal_status": "approved for internal production under G3 v2",
+  "external_status": "pending live shadow window and explicit deployment authorization",
+  "metrics": {
+    "extended_walk_forward_wape": 0.643,
+    "extended_walk_forward_baseline_wape": 0.7906,
+    "extended_walk_forward_out_nov_wape": 0.5419,
+    "extended_walk_forward_out_nov_baseline_wape": 0.6923,
+    "g3_v2_ce_monthly_scope_wape": 0.2245,
+    "g3_v2_ce_seasonal_wape": 0.1794,
+    "g3_v2_chapada_seasonal_wape": 0.3723,
+    "g5_ic95_overall_coverage": 0.917,
+    "g5_ic95_dry_coverage": 0.9,
+    "g5_ic95_wet_coverage": 0.9274,
+    "reality_2025_actual_aqua_mt": 1571,
+    "reality_2025_predicted": 1491.984,
+    "reality_2025_absolute_error": 79.016,
+    "reality_2026_jan_jun_actual_aqua_mt": 131,
+    "reality_2026_jan_jun_predicted": 87.436,
+    "reality_2026_jan_jun_absolute_error": 43.564
+  },
+  "data_handoff": {
+    "fire_target_training": "data/snapshots/inpe_local_v2/inpe_monthly_merged.csv",
+    "fire_target_public_scoring": "data/snapshots/inpe_monthly_public_v3/events_target_region.csv filtered to AQUA_M-T",
+    "inmet_station_features": "data/snapshots/inmet_automatic_station_observed_v1/municipal_monthly_station_features.csv",
+    "important_note": "INMET is weather/station context, not the fire target. Fire counts come from INPE."
+  }
+}

@@ -1,0 +1,65 @@
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------------------
+# Virtual environments
+# ---------------------------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+
+# ---------------------------------------------------------------------------
+# OS / IDE
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# ---------------------------------------------------------------------------
+# Secrets / local config (FIRMS_MAP_KEY, etc. live in the environment, never here)
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+credentials.json
+secrets.json
+
+# ---------------------------------------------------------------------------
+# Runtime caches
+# ---------------------------------------------------------------------------
+cache/
+
+# ---------------------------------------------------------------------------
+# Large datasets (~1.2 GB) are delivered via GitHub Releases, not tracked here.
+# Only the small essentials required by the test suite and the base inventory
+# stay in the repository.
+# ---------------------------------------------------------------------------
+data/**
+!data/
+!data/ALL_BASES_MANIFEST.json
+!data/reference/
+!data/reference/**
+!data/snapshots/
+!data/snapshots/inpe_local_v2/
+!data/snapshots/inpe_local_v2/**

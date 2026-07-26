@@ -1,0 +1,87 @@
+{
+  "schema_version": "firecast_related_work_benchmark_v1",
+  "updated_at": "2026-07-13",
+  "principle": "Do not compare metrics across incompatible tasks; claim superiority only on shared or explicitly defined axes.",
+  "firecast_core_claim": "Leakage-controlled municipality-month active-fire count forecasting with calibrated intervals, noise-floor audit, prospective reality scoring, fail-closed serving and verified LLM-XAI.",
+  "papers": [
+    {
+      "id": "prapas_2021_daily_wildfire_danger",
+      "url": "https://arxiv.org/abs/2111.02736",
+      "task": "next-day fire danger classification on 1 km daily grid",
+      "headline_metric": "ConvLSTM AUROC 0.926",
+      "firecast_position": "not metric-comparable; FireCast is stronger on count accounting, uncertainty, exact XAI and production serving"
+    },
+    {
+      "id": "wisp_2026_set_prediction",
+      "url": "https://arxiv.org/abs/2605.10298",
+      "task": "next-day active-fire cluster center set prediction at 375 m",
+      "headline_metric": "AP 38.2, FRP mass coverage 53.4%, 5 km localization 54.1%",
+      "firecast_position": "do not claim localization superiority; FireCast is stronger on municipal planning counts and production governance"
+    },
+    {
+      "id": "anastasiou_2025_spread_dl",
+      "url": "https://arxiv.org/abs/2505.17556",
+      "task": "post-ignition burned-area spread forecasting",
+      "headline_metric": "about 5% F1/IoU gain with multi-day context",
+      "firecast_position": "different task; FireCast targets pre-ignition monthly prevention planning"
+    },
+    {
+      "id": "yu_2025_diffusion_spread",
+      "url": "https://arxiv.org/abs/2507.00761",
+      "task": "probabilistic spread surrogate",
+      "headline_metric": "probabilistic ensembles for spread distributions",
+      "firecast_position": "different task; cite for uncertainty framing, not direct performance"
+    },
+    {
+      "id": "cheerala_2025_rf_shap",
+      "url": "https://arxiv.org/abs/2511.11680",
+      "task": "wildfire susceptibility/risk mapping with RF+SHAP",
+      "headline_metric": "random split AUC near 0.996/0.997; lower spatial/temporal transfer",
+      "firecast_position": "FireCast has stronger XAI safety because attribution is exact and narrative is numerically verified"
+    },
+    {
+      "id": "padua_2026_cerrado_benchmark",
+      "url": "https://arxiv.org/abs/2606.04170",
+      "task": "retrospective daily active-fire detection/ranking in Cerrado conservation units",
+      "headline_metric": "AUC-PR primary with time-series CV and spatial holdouts",
+      "firecast_position": "strong Brazilian comparator; FireCast is prospective/as-of and production packaged"
+    },
+    {
+      "id": "tavares_2024_amazon_lstm_gru",
+      "url": "https://arxiv.org/abs/2409.02681",
+      "task": "Amazon monthly aggregate active-fire time series",
+      "headline_metric": "LSTM/GRU captures seasonality",
+      "firecast_position": "FireCast is stronger on municipal decomposition, baseline audit, noise floor and serving"
+    },
+    {
+      "id": "pereira_2021_landsat_active_fire_detection",
+      "url": "https://arxiv.org/abs/2101.03409",
+      "task": "active fire detection in Landsat-8 imagery",
+      "headline_metric": "87.2% precision and 92.4% recall on manual annotations",
+      "firecast_position": "detection, not forecasting; complementary data/vision line"
+    },
+    {
+      "id": "jain_2020_review",
+      "url": "https://arxiv.org/abs/2003.00646",
+      "task": "review of ML in wildfire science and management",
+      "headline_metric": "298 publications across six wildfire ML domains",
+      "firecast_position": "supports the need for domain data quality and realistic process-aware validation"
+    }
+  ],
+  "defensible_firecast_wins": [
+    "prospective as-of semantics for served forecast",
+    "municipality-month count accounting with aggregate reality-year error",
+    "noise-floor audit for target feasibility",
+    "negative-result ledger",
+    "calibrated conformal intervals",
+    "fail-closed train-serving identity",
+    "mechanically verified LLM-XAI"
+  ],
+  "non_claims": [
+    "daily point localization superiority",
+    "fire spread IoU superiority",
+    "cross-biome generalization",
+    "external production approval",
+    "LLM improves prediction"
+  ]
+}

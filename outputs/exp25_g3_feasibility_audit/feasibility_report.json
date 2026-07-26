@@ -1,0 +1,205 @@
+{
+  "experiment_id": "EXP-2026-07-11-25",
+  "run_at": "2026-07-11T07:00:31.597356+00:00",
+  "hypothesis": "The G3 WAPE limits (0.20 CE / 0.25 Chapada, 2023-2024 critical months, municipal-month) are below the irreducible statistical floor of the target, so no point-forecast model can pass them as written.",
+  "rejection_condition": "If the Poisson perfect-mean floor is clearly below the limits (upper CI < limit), the hypothesis is rejected and the grid/cell modeling line remains a viable path to G3 as written.",
+  "method": "Perfect-mean oracle Monte Carlo (prediction = realized count as true mean; outcomes ~ Poisson / NB with pooled historical dispersion), plus INPE-vs-FIRMS measurement disagreement and an aggregation feasibility frontier.",
+  "seed": 20260711,
+  "mc_draws": 4000,
+  "gate_years": [
+    2023,
+    2024
+  ],
+  "critical_months": [
+    10,
+    11
+  ],
+  "target_snapshot_sha256": "06640e40c9ab64cc27aef222bd4d10ba65e18582e0762482bb4a82020154bbfb",
+  "exp10_predictions_sha256": "caf84ea927e6c4c4093bf2dde5648b77cf00904515ac4c06a572de9b7d424403",
+  "firms_snapshot_sha256": "e1af531956ead70aca6a54366e51c5d2eb360a0f24bab04e18ad8c6525d10d5f",
+  "scopes": {
+    "ceara": {
+      "g3_limit": 0.2,
+      "nb_pooled_dispersion_r": 5.478038699712542,
+      "levels": {
+        "municipal_month": {
+          "poisson_floor": {
+            "mean": 0.16902606069501497,
+            "p2p5": 0.13821138211382114,
+            "p97p5": 0.20107303007943533,
+            "cells": 104,
+            "total_count": 1444.0
+          },
+          "nb_floor": {
+            "mean": 0.3839476196969129,
+            "p2p5": 0.2992180329904802,
+            "p97p5": 0.4870738647155806,
+            "cells": 104,
+            "total_count": 1444.0
+          },
+          "champion_wape": 0.49931133936979377,
+          "poisson_floor_exceeds_limit": false
+        },
+        "municipal_season": {
+          "poisson_floor": {
+            "mean": 0.12460709820847046,
+            "p2p5": 0.09466951567497726,
+            "p97p5": 0.15729945341224122,
+            "cells": 52,
+            "total_count": 1444.0
+          },
+          "nb_floor": {
+            "mean": 0.3646961327600587,
+            "p2p5": 0.25742206573598536,
+            "p97p5": 0.49550942389758185,
+            "cells": 52,
+            "total_count": 1444.0
+          },
+          "champion_wape": 0.41561495395971265,
+          "poisson_floor_exceeds_limit": false
+        },
+        "scope_month": {
+          "poisson_floor": {
+            "mean": 0.041646204817409244,
+            "p2p5": 0.015470624140710189,
+            "p97p5": 0.07652100720259707,
+            "cells": 4,
+            "total_count": 1444.0
+          },
+          "nb_floor": {
+            "mean": 0.3495589933623104,
+            "p2p5": 0.12305492227381426,
+            "p97p5": 0.7048417321824373,
+            "cells": 4,
+            "total_count": 1444.0
+          },
+          "champion_wape": 0.22454775141125147,
+          "poisson_floor_exceeds_limit": false
+        },
+        "scope_season": {
+          "poisson_floor": {
+            "mean": 0.02948067293801881,
+            "p2p5": 0.0048712595685455815,
+            "p97p5": 0.06676281567126893,
+            "cells": 2,
+            "total_count": 1444.0
+          },
+          "nb_floor": {
+            "mean": 0.36938366388137106,
+            "p2p5": 0.06559495920727168,
+            "p97p5": 1.0455439859122586,
+            "cells": 2,
+            "total_count": 1444.0
+          },
+          "champion_wape": 0.17944589628327196,
+          "poisson_floor_exceeds_limit": false
+        }
+      },
+      "verdict_municipal_month": "NOT_PROVABLY_INFEASIBLE"
+    },
+    "chapada_cariri": {
+      "g3_limit": 0.25,
+      "nb_pooled_dispersion_r": 2.6117703693694168,
+      "levels": {
+        "municipal_month": {
+          "poisson_floor": {
+            "mean": 0.2256432925446528,
+            "p2p5": 0.17142213642213644,
+            "p97p5": 0.2860417494251202,
+            "cells": 50,
+            "total_count": 460.0
+          },
+          "nb_floor": {
+            "mean": 0.5344452302759674,
+            "p2p5": 0.39712561964416093,
+            "p97p5": 0.7032980177717021,
+            "cells": 50,
+            "total_count": 460.0
+          },
+          "champion_wape": 0.5110194926430548,
+          "poisson_floor_exceeds_limit": false
+        },
+        "municipal_season": {
+          "poisson_floor": {
+            "mean": 0.16826826413672974,
+            "p2p5": 0.11496561591360133,
+            "p97p5": 0.22907824074487765,
+            "cells": 25,
+            "total_count": 460.0
+          },
+          "nb_floor": {
+            "mean": 0.5119308699647759,
+            "p2p5": 0.3363631233326493,
+            "p97p5": 0.7461704738794523,
+            "cells": 25,
+            "total_count": 460.0
+          },
+          "champion_wape": 0.4083140987164388,
+          "poisson_floor_exceeds_limit": false
+        },
+        "scope_month": {
+          "poisson_floor": {
+            "mean": 0.07334853514883707,
+            "p2p5": 0.02643171806167401,
+            "p97p5": 0.13513513513513514,
+            "cells": 4,
+            "total_count": 460.0
+          },
+          "nb_floor": {
+            "mean": 0.5188811649696156,
+            "p2p5": 0.17478050969917241,
+            "p97p5": 1.1490324354040682,
+            "cells": 4,
+            "total_count": 460.0
+          },
+          "champion_wape": 0.37226128240249645,
+          "poisson_floor_exceeds_limit": false
+        },
+        "scope_season": {
+          "poisson_floor": {
+            "mean": 0.05231180907187667,
+            "p2p5": 0.008771929824561403,
+            "p97p5": 0.1170204459353944,
+            "cells": 2,
+            "total_count": 460.0
+          },
+          "nb_floor": {
+            "mean": 0.5936796908601306,
+            "p2p5": 0.08712298696696462,
+            "p97p5": 2.087248322147651,
+            "cells": 2,
+            "total_count": 460.0
+          },
+          "champion_wape": 0.37226128240249634,
+          "poisson_floor_exceeds_limit": false
+        }
+      },
+      "verdict_municipal_month": "NOT_PROVABLY_INFEASIBLE"
+    }
+  },
+  "measurement_disagreement_inpe_vs_firms": {
+    "ceara": {
+      "wape_raw_firms_vs_inpe": 7.214681440443213,
+      "wape_total_rescaled_firms_vs_inpe": 0.41241661377307176,
+      "rescale_factor": 0.12173326589108076,
+      "cells": 104
+    },
+    "chapada_cariri": {
+      "wape_raw_firms_vs_inpe": 8.65,
+      "wape_total_rescaled_firms_vs_inpe": 0.42694300518134715,
+      "rescale_factor": 0.10362694300518134,
+      "cells": 50
+    }
+  },
+  "caveats": [
+    "Poisson floor assumes counts are at least Poisson-dispersed given the true mean; sub-Poisson counts would lower the floor (rare for fire counts).",
+    "Perfect-mean oracle uses the realized count as the true mean, the most favorable assumption possible for a forecaster.",
+    "NB dispersion is pooled from climatology residuals and includes predictable signal, so the NB floor overstates pure noise; treat as realistic reference.",
+    "FIRMS disagreement is contextual: INPE is the defined target, so a model could in principle learn INPE-specific behavior.",
+    "This audit does not change any gate, threshold or protocol; a G3 contract revision remains a human product decision."
+  ],
+  "artifacts": [
+    "feasibility_report.json",
+    "feasibility_summary.csv"
+  ]
+}

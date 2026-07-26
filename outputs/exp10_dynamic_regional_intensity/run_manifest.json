@@ -1,0 +1,53 @@
+{
+  "experiment_id": "EXP-2026-07-09-10",
+  "run_at": "2026-07-09T20:21:14.310340+00:00",
+  "hypothesis": "Trailing-12-month regional fire-memory intensity corrects interannual activity level while preserving municipal-month climatology shape.",
+  "change": "candidate = climatology_municipal * clipped regional trailing-12m observed/expected ratio",
+  "protocol": "walk-forward estendido 2015-2024 (120 cortes), 2025+ congelado",
+  "target_snapshot_sha256": "06640e40c9ab64cc27aef222bd4d10ba65e18582e0762482bb4a82020154bbfb",
+  "frozen_years_untouched": [
+    2025,
+    2026
+  ],
+  "parameters": {
+    "trailing_months": 12,
+    "shrink_fire_count": 100.0,
+    "ratio_clip": [
+      0.5,
+      2.0
+    ],
+    "min_train_months": 60
+  },
+  "baseline": {
+    "model": "climatology_municipal",
+    "wape": 0.7905503029462198,
+    "outnov_wape": 0.6923199337268331,
+    "dry_wape": 0.7426967849851729
+  },
+  "candidate": {
+    "model": "climatology_regional_intensity12",
+    "wape": 0.6429838793696906,
+    "outnov_wape": 0.5418575926425169,
+    "dry_wape": 0.5982683082565942
+  },
+  "delta_wape_candidate_minus_baseline": -0.14756642357652916,
+  "delta_outnov_wape_candidate_minus_baseline": -0.15046234108431622,
+  "candidate_wins_of_n_cuts": 85,
+  "n_cuts": 120,
+  "bootstrap_delta_wape_ci95": [
+    -0.21945937147851297,
+    -0.08522195814352293
+  ],
+  "p_candidate_better": 1.0,
+  "rejection_condition": "all_wape >= baseline OR outnov_wape > baseline OR wins <= 60/120 OR bootstrap delta WAPE CI95 upper >= 0",
+  "decision": "PROMOTE",
+  "series_gaps_reindexed": [],
+  "skipped_cuts": [],
+  "artifacts": [
+    "summary.csv",
+    "per_cut_comparison.csv",
+    "by_year.csv",
+    "ratio_log.csv",
+    "predictions.csv"
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "snapshot_name": "inpe_local_v2",
+  "created_at": "2026-07-02T22:22:51.914753+00:00",
+  "role": "target",
+  "official_url": "https://data.inpe.br/queimadas/portal/dados-abertos/",
+  "license": "dados abertos INPE",
+  "export_dates_from_zip_timestamps": {
+    "dados_INPE.zip": "2025-10",
+    "dados_INPE_Monitor.zip": "2025-11",
+    "dados.zip": "2026-05"
+  },
+  "available_at_rule": "cobertura de cada fonte limitada ao mes anterior ao export do zip; zeros presumidos apenas dentro da janela comprovada",
+  "merge_rule": "meses <= 2024-12 preferem inpe_bdq_aqua_ref; meses posteriores preferem inpe_bdq_legacy (export mais fresco); fallback para a outra fonte",
+  "timezone_rule": "mes atribuido em horario local America/Fortaleza (UTC-3 fixo)",
+  "deduplication_rule": "drop_duplicates(event_date/time, lat, lon, satellite) por fonte",
+  "keys": [
+    "geocodigo",
+    "ano",
+    "mes",
+    "source_name"
+  ],
+  "sources": {
+    "inpe_bdq_aqua_ref": {
+      "zips": [
+        {
+          "file": "dados_INPE.zip",
+          "sha256": "a1e299fa9b385496b929abf30f297ce167b6e9c74df5b225030b699aab87d4f0",
+          "rows": 17766
+        },
+        {
+          "file": "dados_INPE_Monitor.zip",
+          "sha256": "21bda30d502276722d527021acf987f9fbeadfb634e9706b2673809e8a75a6af",
+          "rows": 652
+        }
+      ],
+      "events_raw": 18418,
+      "events_deduplicated": 18418,
+      "duplicates_removed": 0,
+      "satellites": [
+        "AQUA_M-T"
+      ],
+      "sensor_note": "AQUA_M-T (satelite de referencia INPE)",
+      "municipalities": 43,
+      "municipalities_with_valid_coverage": 42,
+      "suspect_gap_months": 25
+    },
+    "inpe_bdq_legacy": {
+      "zips": [
+        {
+          "file": "dados.zip",
+          "sha256": "932e7eca9348f676918cdb34ffd03a4804cc558e37c5dc154d654e032331cb3e",
+          "rows": 7391
+        }
+      ],
+      "events_raw": 7391,
+      "events_deduplicated": 7391,
+      "duplicates_removed": 0,
+      "satellites": [
+        "UNKNOWN"
+      ],
+      "sensor_note": "sensor NAO informado no formato legado; validado via overlap_validation.csv",
+      "municipalities": 17,
+      "municipalities_with_valid_coverage": 17,
+      "suspect_gap_months": 60
+    }
+  },
+  "excluded_municipalities": [
+    {
+      "geocodigo": 2304806,
+      "municipio_ibge": "Granjeiro",
+      "uf": "CE",
+      "source_name": "inpe_bdq_aqua_ref",
+      "exclusion_reason": "first_observation_after_export_cutoff"
+    }
+  ],
+  "outputs": {
+    "inpe_monthly.csv": {
+      "sha256": "8446680cd7307978fc48dcf65661b284300a7292703d9de844633471e54febc3",
+      "rows": 9282
+    },
+    "inpe_monthly_merged.csv": {
+      "sha256": "06640e40c9ab64cc27aef222bd4d10ba65e18582e0762482bb4a82020154bbfb",
+      "rows": 8659
+    }
+  }
+}

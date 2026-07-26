@@ -1,0 +1,495 @@
+{
+  "created_at": "2026-07-15T06:10:57.069921+00:00",
+  "scope": "chapada_araripe_internal_ce_pe_pi",
+  "current_champion": "climatology_regional_intensity12; EXP-10 promoted; extended WAPE 0.6430 vs baseline 0.7906; out-nov WAPE 0.5419 vs baseline 0.6923",
+  "status": "APPROVED_INTERNAL_PRODUCTION_G3V2_EXTERNAL_PENDING_SHADOW_AND_HUMAN_AUTHORIZATION",
+  "data_sources": [
+    {
+      "name": "inpe_local_v2",
+      "role": "target",
+      "snapshot": "data/snapshots/inpe_local_v2",
+      "required_for": [
+        "training",
+        "evaluation",
+        "internal_monitoring"
+      ],
+      "as_of_rule": "Frozen historical target. A target month is usable only after source coverage proves availability; suspect gaps stay missing, never zero-filled.",
+      "production_status": "PASS",
+      "blocker": null
+    },
+    {
+      "name": "inpe_monthly_public_v3",
+      "role": "target",
+      "snapshot": "data/snapshots/inpe_monthly_public_v3",
+      "required_for": [
+        "scoring_only_2025_2026",
+        "shadow_monitoring"
+      ],
+      "as_of_rule": "Additive monthly public target. Use event-level rows filtered to AQUA_M-T for comparability with the historical target; do not tune on 2025/2026.",
+      "production_status": "PASS",
+      "blocker": null
+    },
+    {
+      "name": "inpe_event_points_v1",
+      "role": "target",
+      "snapshot": "data/snapshots/inpe_event_points_v1",
+      "required_for": [
+        "audit",
+        "event_feature_experiments"
+      ],
+      "as_of_rule": "Event points preserve source time, satellite, FRP, risk and location; any aggregation must be lagged or scoring-only.",
+      "production_status": "PASS",
+      "blocker": null
+    },
+    {
+      "name": "ibge_malha_municipal_2024",
+      "role": "geometry",
+      "snapshot": "data/snapshots/ibge_malha_municipal_2024",
+      "required_for": [
+        "zonal_features",
+        "serving_identity"
+      ],
+      "as_of_rule": "Static snapshot versioned by retrieval date and checksum; geocodigo is the canonical entity key.",
+      "production_status": "PASS",
+      "blocker": null
+    },
+    {
+      "name": "era5_grid_weights_chapada_v1",
+      "role": "geometry",
+      "snapshot": "data/snapshots/era5_grid_weights_chapada_v1",
+      "required_for": [
+        "weather_zonal"
+      ],
+      "as_of_rule": "Static grid-municipality weights; weights by municipality must sum near 1 before use.",
+      "production_status": "PASS",
+      "blocker": null
+    },
+    {
+      "name": "era5_zonal_chapada",
+      "role": "weather",
+      "snapshot": "cache/era5_zonal_chapada",
+      "required_for": [
+        "candidate_training",
+        "weather_audit"
+      ],
+      "as_of_rule": "Historical reanalysis is used only as lagged/as-of evidence; serving must not depend on future reanalysis for the target month.",
+      "production_status": "PASS",
+      "blocker": "weather candidates tested so far did not beat the champion gates"
+    },
+    {
+      "name": "enso_cpc_v1",
+      "role": "weather",
+      "snapshot": "data/snapshots/enso_cpc_v1",
+      "required_for": [
+        "climate_regime_audit",
+        "serving_context"
+      ],
+      "as_of_rule": "Monthly climate-regime labels are context features; never select a final model on 2025/2026 scoring windows.",
+      "production_status": "PASS",
+      "blocker": null
+    },
+    {
+      "name": "nasa_firms_multi_sensor",
+      "role": "audit",
+      "snapshot": "data/snapshots/firms_multi_sensor_ce_v1",
+      "required_for": [
+        "target_audit",
+        "frontier_experiments"
+      ],
+      "as_of_rule": "FIRMS is an independent audit/feature source. It is not summed with INPE without explicit sensor-time-space rules.",
+      "production_status": "PASS",
+      "blocker": null
+    },
+    {
+      "name": "ibge_population_and_pam",
+      "role": "human_pressure",
+      "snapshot": "data/snapshots/ibge_population_estimates_v1; data/snapshots/ibge_pam_crop_area_v1",
+      "required_for": [
+        "human_pressure_experiments",
+        "audit"
+      ],
+      "as_of_rule": "Static or slow-moving snapshots must use the publication year available before the prediction cut.",
+      "production_status": "PASS",
+      "blocker": "tested candidates did not improve G3 enough for promotion"
+    },
+    {
+      "name": "inmet_automatic_station_observed_v1",
+      "role": "weather",
+      "snapshot": "data/snapshots/inmet_automatic_station_observed_v1",
+      "required_for": [
+        "weather_audit",
+        "candidate_training"
+      ],
+      "as_of_rule": "Station observations carry distance, altitude and missingness. Only lagged observed months can feed training/serving.",
+      "production_status": "PASS",
+      "blocker": "tested candidates did not improve G3 enough for promotion"
+    }
+  ],
+  "feature_blocks": [
+    {
+      "name": "fire_memory",
+      "sources": [
+        "inpe_local_v2"
+      ],
+      "availability": "available after the target month is observed",
+      "leakage_controls": [
+        "sort by geocodigo/time",
+        "shift(1) before lags/rolling",
+        "climatology fit inside each train cut"
+      ],
+      "promotion_rule": "baseline block and current champion; every candidate must beat it on the same frozen protocol"
+    },
+    {
+      "name": "regional_intensity",
+      "sources": [
+        "inpe_local_v2"
+      ],
+      "availability": "last 12 observed months before the forecast cut",
+      "leakage_controls": [
+        "target month excluded",
+        "rolling totals use only observed past months",
+        "clip ratio to documented range"
+      ],
+      "promotion_rule": "current promoted block because it improved WAPE and out-nov without leaking the target month"
+    },
+    {
+      "name": "climate_physical",
+      "sources": [
+        "era5_zonal_chapada",
+        "enso_cpc_v1",
+        "inmet_automatic_station_observed_v1"
+      ],
+      "availability": "lagged or published-before-cut values only",
+      "leakage_controls": [
+        "available_at <= prediction_cut",
+        "train-serving source parity",
+        "no future reanalysis for target month"
+      ],
+      "promotion_rule": "promote only if it beats the champion and critical slices after ablation"
+    },
+    {
+      "name": "external_fire_audit",
+      "sources": [
+        "nasa_firms_multi_sensor",
+        "inpe_event_points_v1"
+      ],
+      "availability": "audit and lagged feature candidates only",
+      "leakage_controls": [
+        "sensor filter documented",
+        "no target mixing without dedup",
+        "event aggregations use past months only"
+      ],
+      "promotion_rule": "use to estimate measurement noise and test frontier hypotheses, not to redefine the target silently"
+    },
+    {
+      "name": "human_pressure",
+      "sources": [
+        "ibge_population_and_pam",
+        "ibge_malha_municipal_2024"
+      ],
+      "availability": "static or slowly changing snapshots with known publication year",
+      "leakage_controls": [
+        "geocodigo primary key",
+        "published year <= prediction year",
+        "ablate separately from fire memory"
+      ],
+      "promotion_rule": "must improve ranking or aggregate error without degrading G3/G5"
+    },
+    {
+      "name": "conformal_wrapper",
+      "sources": [
+        "approved_point_predictions"
+      ],
+      "availability": "computed from frozen out-of-sample residuals",
+      "leakage_controls": [
+        "alpha selected on validation year only",
+        "gate measured on held-out 2023-2024",
+        "strata documented"
+      ],
+      "promotion_rule": "empirical IC coverage must remain inside the configured G5 range"
+    },
+    {
+      "name": "llm_xai_explanation",
+      "sources": [
+        "approved_point_predictions"
+      ],
+      "availability": "computed only after a hash-verified prediction exists",
+      "leakage_controls": [
+        "LLM cannot call predict or change y_pred",
+        "all numeric narrative tokens must be present in the XAI packet",
+        "unverified narrative fails closed"
+      ],
+      "promotion_rule": "explanation layer may ship only when exact attribution equals served prediction and numeric_fact_guard_v1 passes"
+    }
+  ],
+  "model_families": [
+    {
+      "name": "approved_champion",
+      "purpose": "production baseline and current internal champion",
+      "required_features": [
+        "fire_memory",
+        "regional_intensity"
+      ],
+      "search_space": {
+        "model": [
+          "municipal_month_climatology_x_regional_intensity12"
+        ]
+      },
+      "promotion_condition": "serves internally until a challenger passes all gates and a human authorizes promotion"
+    },
+    {
+      "name": "mandatory_baselines",
+      "purpose": "valid lower bound and regression guard",
+      "required_features": [
+        "fire_memory"
+      ],
+      "search_space": {
+        "models": [
+          "lag12",
+          "municipal_climatology",
+          "state_climatology",
+          "historical_mean"
+        ]
+      },
+      "promotion_condition": "all baselines must execute; challengers must beat the best valid baseline"
+    },
+    {
+      "name": "gbm_count",
+      "purpose": "strong tabular count challenger",
+      "required_features": [
+        "fire_memory",
+        "climate_physical"
+      ],
+      "search_space": {
+        "loss": [
+          "poisson",
+          "tweedie",
+          "squared_error"
+        ],
+        "learning_rate": [
+          0.03,
+          0.06
+        ]
+      },
+      "promotion_condition": "beat the champion in aggregate, out-nov, G3 v2, G4 and G5 without 2025/2026 tuning"
+    },
+    {
+      "name": "two_stage_occurrence_count",
+      "purpose": "separate occurrence/risk ranking from count severity",
+      "required_features": [
+        "fire_memory",
+        "climate_physical",
+        "external_fire_audit"
+      ],
+      "search_space": {
+        "classifier": [
+          "hist_gbm"
+        ],
+        "regressor": [
+          "poisson_gbm",
+          "tweedie"
+        ]
+      },
+      "promotion_condition": "improve Recall@K/NDCG and aggregate WAPE without calibration failure"
+    },
+    {
+      "name": "hierarchical_or_bayesian_count",
+      "purpose": "research candidate for sparse municipalities and measurement noise",
+      "required_features": [
+        "fire_memory",
+        "external_fire_audit",
+        "human_pressure"
+      ],
+      "search_space": {
+        "families": [
+          "negative_binomial",
+          "partial_pooling"
+        ]
+      },
+      "promotion_condition": "publishable only if it improves noise-aware slices and preserves operational simplicity"
+    }
+  ],
+  "evaluation": {
+    "scope": "Chapada do Araripe CE/PE/PI target municipalities plus CE aggregate gate slices",
+    "entity_key": "geocodigo IBGE",
+    "target": "monthly INPE fire_count; public scoring uses AQUA_M-T event-level aggregation for comparability",
+    "horizon": "h=1 month forecast; future horizons are separate contracts",
+    "temporal_split": "extended walk-forward 2015-2024 for selection; 2023-2024 frozen gate; 2025/2026 scoring-only reality checks",
+    "spatial_tests": [
+      "municipality slices",
+      "Chapada/Cariri critical slice",
+      "state/CE aggregate gate",
+      "dry-season out-nov"
+    ],
+    "primary_metrics": [
+      "WAPE",
+      "MAE",
+      "RMSE",
+      "Recall@K",
+      "NDCG",
+      "interval coverage",
+      "absolute aggregate volume error"
+    ],
+    "slice_metrics": [
+      "state",
+      "municipality",
+      "month",
+      "dry season",
+      "out-nov",
+      "volume decile",
+      "target coverage regime"
+    ],
+    "uncertainty": "finite-sample conformal IC95 with validation-year alpha selection and 2023-2024 gate coverage",
+    "final_test_policy": "No feature, hyperparameter, threshold or model choice may be selected on 2025/2026 scoring windows."
+  },
+  "gates": [
+    {
+      "gate": "G0_integrity",
+      "status": "PASS",
+      "must_prove": [
+        "tests pass",
+        "ingestors/snapshots accounted for",
+        "release evidence valid",
+        "public package checks pass"
+      ],
+      "evidence": [
+        "pytest tests -q",
+        "scripts/check_data_ingestors.py",
+        "python src/mlops/contracts.py --out outputs/production_ml_plan.json",
+        "python -m pytest tests -q"
+      ],
+      "current_blocker": null
+    },
+    {
+      "gate": "G1_real_data_asof",
+      "status": "PASS",
+      "must_prove": [
+        "real immutable snapshots",
+        "as-of rules",
+        "no synthetic production evidence",
+        "sensor-aligned public scoring target"
+      ],
+      "evidence": [
+        "data/snapshots/* manifests",
+        "EXP-27 public AQUA_M-T overlap validation"
+      ],
+      "current_blocker": null
+    },
+    {
+      "gate": "G2_baseline_superiority",
+      "status": "PASS",
+      "must_prove": [
+        "candidate beats best valid baseline",
+        "critical dry-season slice does not regress"
+      ],
+      "evidence": [
+        "EXP-10 WAPE 0.6430 vs 0.7906; out-nov 0.5419 vs 0.6923; CI95 delta below zero"
+      ],
+      "current_blocker": null
+    },
+    {
+      "gate": "G3_scope_contract_v2",
+      "status": "PASS",
+      "must_prove": [
+        "CE aggregate monthly/seasonal limits",
+        "Chapada seasonal limit",
+        "Recall@10 limits",
+        "zero indevido limit"
+      ],
+      "evidence": [
+        "outputs/exp26_g3_contract_v2_evaluation/contract_v2_report.json"
+      ],
+      "current_blocker": null
+    },
+    {
+      "gate": "G4_spatial_slice_robustness",
+      "status": "PASS",
+      "must_prove": [
+        "spatial and critical-slice regressions checked",
+        "known residual risks documented"
+      ],
+      "evidence": [
+        "outputs/g4_spatial_robustness_exp10_2023_2024/g4_report.json"
+      ],
+      "current_blocker": null
+    },
+    {
+      "gate": "G5_uncertainty_calibration",
+      "status": "PASS",
+      "must_prove": [
+        "empirical IC coverage in configured range",
+        "dry/wet slices covered"
+      ],
+      "evidence": [
+        "outputs/g5_conformal_ic95_guarded_exp10/g5_report.json"
+      ],
+      "current_blocker": null
+    },
+    {
+      "gate": "G6_serving_contract",
+      "status": "PASS",
+      "must_prove": [
+        "artifact hash",
+        "fail-closed API",
+        "training-serving identity",
+        "concurrent load smoke",
+        "verified LLM XAI cannot alter prediction or invent numbers"
+      ],
+      "evidence": [
+        "tests/test_serving_api.py",
+        "tests/test_g6_serving_contract.py",
+        "tests/test_llm_xai.py",
+        "POST /v1/explain"
+      ],
+      "current_blocker": null
+    },
+    {
+      "gate": "G7_governance_monitoring_internal",
+      "status": "PASS",
+      "must_prove": [
+        "human internal approval",
+        "model/data card",
+        "rollback",
+        "shadow harness",
+        "LLM XAI limitations documented",
+        "related-work claims are bounded and benchmarked"
+      ],
+      "evidence": [
+        "OPS-G7-APPROVAL-2026-07-11",
+        "outputs/shadow_monitor/",
+        "rollback_plan.md",
+        "data_card.md",
+        "docs/LLM_XAI_CONTRACT.md",
+        "docs/RELATED_WORK_COMPETITIVE_POSITION.md",
+        "outputs/research_frontier_benchmark.json"
+      ],
+      "current_blocker": "external release still requires scored live shadow months and separate human authorization"
+    }
+  ],
+  "retraining": {
+    "cadence": "monthly scoring and monitoring; retraining only on scheduled review or a documented trigger",
+    "triggers": [
+      "three scored shadow months with degradation or target coverage drift",
+      "schema/source/checksum change that affects training or serving",
+      "new causal/as-of feature block with a source contract",
+      "annual model refresh review",
+      "human-approved contract revision"
+    ],
+    "steps": [
+      "ingest immutable snapshots",
+      "validate source contracts and manifests",
+      "build as-of feature table",
+      "run mandatory baselines",
+      "run candidate search on training windows only",
+      "evaluate frozen G0-G7 gates",
+      "package only if promoted",
+      "shadow/canary only with human authorization"
+    ],
+    "rollback_rule": "serving keeps the last approved artifact; a challenger is rejected if any required internal gate is FAIL/UNKNOWN or if external authorization is absent"
+  },
+  "next_actions": [
+    "Score the committed live shadow window with public AQUA_M-T observations as months arrive.",
+    "Keep external release blocked until at least 3 scored shadow months show no degradation alert and a human authorization is recorded.",
+    "Use the monthly operations plan to ingest new months, score delayed reality, and decide whether retraining is actually triggered."
+  ]
+}

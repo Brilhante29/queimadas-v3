@@ -1,0 +1,207 @@
+# FireCast / RAST-Fire-X Configuration
+system:
+  name: "FireCast"
+  version: "5.0.0"
+  method_name: "RAST-Fire-X"
+  method_full: "Regime-Aware Spatio-Temporal Transfer Fire Forecasting"
+
+# NOTA (2026-07-11): os thresholds municipais-mes abaixo (contrato v1) foram
+# demonstrados praticamente inatingiveis pela auditoria EXP-25
+# (outputs/exp25_g3_feasibility_audit/): piso NB realista 0.38/0.53 e desacordo
+# INPE-FIRMS 0.41/0.43 ficam acima dos limites. Mantidos apenas como registro
+# historico; o gate G3 vigente e `g3_contract` (v2) abaixo.
+scopes:
+  ceara:
+    states: ["CE"]
+    description: "Ceará completo"
+    wape_critical_threshold: 0.20
+    ic95_min: 0.90
+    ic95_max: 0.98
+    zero_indevido_threshold: 0.0
+    recall10_threshold: 0.70
+  
+  chapada_araripe:
+    states: ["CE", "PE", "PI"]
+    municipalities_filter: "chapada"
+    description: "Chapada do Araripe"
+    wape_critical_threshold: 0.25
+    ic95_min: 0.88
+    ic95_max: 0.98
+    zero_indevido_threshold: 0.0
+    recall10_threshold: 0.60
+  
+  brazil:
+    states: null  # all states
+    description: "Brasil completo"
+    wape_critical_threshold: 0.35
+    ic95_min: 0.85
+    ic95_max: 0.99
+    zero_indevido_threshold: 0.0
+    recall10_threshold: 0.50
+
+# Contrato G3 vigente (v2). Decisao de produto aprovada pelo owner humano em
+# 2026-07-11 (registrada no ledger como DECISION-G3-CONTRACT-V2), ancorada na
+# auditoria de viabilidade EXP-25. Caso de uso: ranking de municipios criticos
+# e magnitude agregada por escopo. Os limites foram definidos com conhecimento
+# do desempenho do champion; a alegacao estatistica de qualidade vem dos pisos
+# EXP-25 e da superioridade sobre baselines (G2), nao da posicao dos limites.
+g3_contract:
+  version: 2
+  decided_by: "owner humano (aprovacao explicita em chat, 2026-07-11)"
+  decision_record: "DECISION-G3-CONTRACT-V2 no experiment_ledger.jsonl"
+  evidence_basis: "outputs/exp25_g3_feasibility_audit/feasibility_report.json"
+  gate_window: "2023-2024, meses criticos 10-11, protocolo congelado EXP-12..24"
+  ceara:
+    wape_scope_month_max: 0.25
+    wape_scope_season_max: 0.20
+    recall10_min: 0.70
+    zero_indevido_max: 0.0
+  chapada_araripe:
+    wape_scope_season_max: 0.40
+    recall10_min: 0.60
+    zero_indevido_max: 0.0
+  informational_non_gating:
+    - "WAPE municipal-mes (reportado, nao gating; ver pisos EXP-25)"
+  ic95_coverage: "herdada do G5 guardado [0.90, 0.98]"
+
+temporal:
+  train_start: "2003-01"
+  train_end: "2024-12"
+  test_years: [2024, 2025]
+  forecast_years: [2026, 2027]
+  critical_months: [10, 11]
+  dry_season_months: [8, 9, 10, 11, 12]
+  reference_climatology: [2003, 2020]
+
+features:
+  blocks:
+    - "fire_memory"
+    - "climate_physical"
+    - "vegetation"
+    - "human_pressure"
+    - "spatial_graph"
+    - "regime_climate"
+    - "data_quality"
+  
+  lags: [1, 2, 3, 6, 12]
+  rolling_windows: [3, 6, 12]
+  extreme_threshold: 30
+  
+  enso:
+    el_nino_threshold: 0.5
+    la_nina_threshold: -0.5
+    strong_threshold: 1.0
+
+models:
+  baselines:
+    - "naive_lag12"
+    - "climatology_municipal"
+    - "climatology_state"
+    - "historical_mean"
+    - "poisson_glm"
+    - "negative_binomial"
+    - "zero_inflated_poisson"
+    - "tweedie"
+  
+  rast_fire_x:
+    occurrence_model: "xgboost"
+    count_model: "xgboost"
+    extreme_model: "xgboost"
+    regime_detector: "xgboost"
+    calibration: "conformal"
+    
+  transfer:
+    strategies:
+      - "global_single"
+      - "global_adapted"
+      - "hierarchical"
+      - "mixture_experts"
+      - "graph_spatial"
+
+conformal:
+  coverage_levels: [0.80, 0.95]
+  calibration_window: 36  # months
+  stratify_by:
+    - "regime"
+    - "month"
+    - "state"
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  max_forecast_horizon: 19
+
+dashboard:
+  audit_required: true
+  cards:
+    - "total_focos_2025"
+    - "wape_medio"
+    - "cobertura_ic95"
+    - "municipios_risco"
+  
+  tabs:
+    - "series_temporal"
+    - "ranking_risco"
+    - "cenarios"
+    - "enso_clima"
+    - "calibracao"
+
+outputs:
+  directory: "outputs"
+  files:
+    census: "00_input_census.csv"
+    coverage: "01_data_coverage_report.csv"
+    freshness: "02_data_freshness_report.csv"
+    feature_store: "03_feature_store.parquet"
+    feature_manifest: "04_feature_manifest.json"
+    leakage_audit: "05_leakage_audit.csv"
+    backtest_ceara: "06_backtest_ceara_2024_2025.csv"
+    backtest_chapada: "07_backtest_chapada_2024_2025.csv"
+    backtest_brazil: "08_backtest_brazil_2024_2025.csv"
+    state_holdout: "09_state_holdout_results.csv"
+    region_holdout: "10_region_holdout_chapada.csv"
+    city_holdout: "11_city_holdout_results.csv"
+    nowcast_2025: "12_nowcast_2025_cuts.csv"
+    ablation: "13_ablation_table.csv"
+    calibration: "14_calibration_report.csv"
+    model_comparison: "15_model_comparison.csv"
+    forecasts_2026_2027: "16_forecasts_2026_2027_scenarios.csv"
+    risk_ranking: "17_risk_ranking.csv"
+    dashboard_cards: "18_dashboard_cards.json"
+    dashboard_timeseries: "19_dashboard_timeseries.json"
+    dashboard_scenarios: "20_dashboard_scenarios.json"
+    dashboard_enso: "21_dashboard_enso_climate.json"
+    innovation_ledger: "22_innovation_ledger.csv"
+    failure_cases: "23_failure_cases.csv"
+    model_card: "24_model_card.md"
+    reproducibility: "25_reproducibility_report.md"
+    sibgrapi_experiment: "26_sibgrapi_experiment_report.md"
+    sibgrapi_paper: "27_sibgrapi_paper_outline.md"
+
+retraining:
+  monthly:
+    - "update_inpe"
+    - "update_climate"
+    - "update_forecast"
+    - "update_ndvi"
+    - "update_enso"
+    - "update_feature_store"
+    - "drift_detection"
+    - "recalibrate_conformal"
+    - "generate_forecasts"
+  
+  annual:
+    - "close_previous_year"
+    - "update_mapbiomas"
+    - "update_ibge"
+    - "recalculate_climatologies"
+    - "retrain_all_models"
+    - "rerun_backtests"
+    - "update_model_card"
+  
+  drift_thresholds:
+    psi: 0.25
+    wape_increase: 0.05
+    brier_increase: 0.02
+    ic95_minimum: 0.88
+    regime_probability: 0.70

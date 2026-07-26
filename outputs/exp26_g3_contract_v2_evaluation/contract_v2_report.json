@@ -1,0 +1,129 @@
+{
+  "experiment_id": "EXP-2026-07-11-26",
+  "run_at": "2026-07-11T07:15:34.534546+00:00",
+  "contract": {
+    "version": 2,
+    "ceara": {
+      "wape_scope_month_max": 0.25,
+      "wape_scope_season_max": 0.2,
+      "recall10_min": 0.7,
+      "zero_indevido_max": 0.0
+    },
+    "chapada_araripe": {
+      "wape_scope_season_max": 0.4,
+      "recall10_min": 0.6,
+      "zero_indevido_max": 0.0
+    }
+  },
+  "authorization": "Aprovado pelo owner humano em 2026-07-11 via chat (DECISION-G3-CONTRACT-V2); limites definidos com conhecimento do desempenho do champion; base estatistica = EXP-25 + superioridade sobre baseline.",
+  "protocol": "Fatia de gate congelada de EXP-12..24: 2023-2024, meses criticos 10-11, mesma elegibilidade; predicoes EXP-10 imutaveis; nada re-ajustado.",
+  "target_snapshot_sha256": "06640e40c9ab64cc27aef222bd4d10ba65e18582e0762482bb4a82020154bbfb",
+  "exp10_predictions_sha256": "caf84ea927e6c4c4093bf2dde5648b77cf00904515ac4c06a572de9b7d424403",
+  "exp25_report_sha256": "cea3b4c7a89e9f7d437a3d543f9899f348242c69f60b87e0dfcef30848cb95d4",
+  "metrics": {
+    "climatology_regional_intensity12": {
+      "ceara": {
+        "wape_municipal_month_informational": 0.49931133936979377,
+        "wape_scope_month": 0.22454775141125147,
+        "wape_scope_season": 0.17944589628327196,
+        "recall10": 0.775,
+        "zero_indevido": 0.0,
+        "n_cells": 104,
+        "total_observed": 1444.0
+      },
+      "chapada_araripe": {
+        "wape_municipal_month_informational": 0.5110194926430548,
+        "wape_scope_month": 0.37226128240249645,
+        "wape_scope_season": 0.37226128240249634,
+        "recall10": 0.9,
+        "zero_indevido": 0.0,
+        "n_cells": 50,
+        "total_observed": 460.0
+      }
+    },
+    "climatology_municipal": {
+      "ceara": {
+        "wape_municipal_month_informational": 0.5104083517549509,
+        "wape_scope_month": 0.2984791717629853,
+        "wape_scope_season": 0.2984791717629852,
+        "recall10": 0.775,
+        "zero_indevido": 0.0,
+        "n_cells": 104,
+        "total_observed": 1444.0
+      },
+      "chapada_araripe": {
+        "wape_municipal_month_informational": 0.5393457108243755,
+        "wape_scope_month": 0.4551208904614478,
+        "wape_scope_season": 0.4551208904614478,
+        "recall10": 0.9,
+        "zero_indevido": 0.0,
+        "n_cells": 50,
+        "total_observed": 460.0
+      }
+    }
+  },
+  "champion_evaluation": {
+    "ceara": {
+      "checks": {
+        "wape_scope_month": {
+          "value": 0.22454775141125147,
+          "limit": 0.25,
+          "pass": true
+        },
+        "wape_scope_season": {
+          "value": 0.17944589628327196,
+          "limit": 0.2,
+          "pass": true
+        },
+        "recall10": {
+          "value": 0.775,
+          "limit": 0.7,
+          "pass": true
+        },
+        "zero_indevido": {
+          "value": 0.0,
+          "limit": 0.0,
+          "pass": true
+        }
+      },
+      "all_pass": true
+    },
+    "chapada_araripe": {
+      "checks": {
+        "wape_scope_season": {
+          "value": 0.37226128240249634,
+          "limit": 0.4,
+          "pass": true
+        },
+        "recall10": {
+          "value": 0.9,
+          "limit": 0.6,
+          "pass": true
+        },
+        "zero_indevido": {
+          "value": 0.0,
+          "limit": 0.0,
+          "pass": true
+        }
+      },
+      "all_pass": true
+    }
+  },
+  "baseline_coherence": {
+    "ceara": {
+      "wape_scope_month_champion_le_baseline": true,
+      "wape_scope_season_champion_le_baseline": true,
+      "recall10_champion_ge_baseline": true
+    },
+    "chapada_araripe": {
+      "wape_scope_month_champion_le_baseline": true,
+      "wape_scope_season_champion_le_baseline": true,
+      "recall10_champion_ge_baseline": true
+    }
+  },
+  "decision": "G3_PASS_V2",
+  "artifacts": [
+    "contract_v2_report.json",
+    "contract_v2_metrics.csv"
+  ]
+}

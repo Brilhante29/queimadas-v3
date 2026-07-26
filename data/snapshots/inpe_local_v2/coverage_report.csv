@@ -1,0 +1,61 @@
+geocodigo,municipio_ibge,uf,coverage_start,coverage_end,total_events,coverage_valid,exclusion_reason,source_name
+2300101,Abaiara,CE,2025-09,2025-10,7,True,,inpe_bdq_aqua_ref
+2300200,Acaraú,CE,2003-01,2024-12,1255,True,,inpe_bdq_aqua_ref
+2300606,Altaneira,CE,2025-01,2025-10,9,True,,inpe_bdq_aqua_ref
+2300804,Antonina do Norte,CE,2025-02,2025-10,6,True,,inpe_bdq_aqua_ref
+2301307,Araripe,CE,2025-01,2025-10,81,True,,inpe_bdq_aqua_ref
+2301604,Assaré,CE,2025-01,2025-10,25,True,,inpe_bdq_aqua_ref
+2301703,Aurora,CE,2025-01,2025-10,23,True,,inpe_bdq_aqua_ref
+2301802,Baixio,CE,2025-10,2025-10,7,True,,inpe_bdq_aqua_ref
+2301901,Barbalha,CE,2003-01,2024-12,361,True,,inpe_bdq_aqua_ref
+2302008,Barro,CE,2025-01,2025-10,26,True,,inpe_bdq_aqua_ref
+2302503,Brejo Santo,CE,2025-01,2025-10,17,True,,inpe_bdq_aqua_ref
+2302701,Campos Sales,CE,2003-01,2024-12,233,True,,inpe_bdq_aqua_ref
+2303204,Caririaçu,CE,2025-01,2025-10,62,True,,inpe_bdq_aqua_ref
+2304103,Crateús,CE,2003-01,2024-12,3373,True,,inpe_bdq_aqua_ref
+2304202,Crato,CE,2025-02,2025-10,51,True,,inpe_bdq_aqua_ref
+2304301,Farias Brito,CE,2025-01,2025-10,8,True,,inpe_bdq_aqua_ref
+2304400,Fortaleza,CE,2003-01,2024-12,77,True,,inpe_bdq_aqua_ref
+2304806,Granjeiro,CE,2025-11,2025-10,2,False,first_observation_after_export_cutoff,inpe_bdq_aqua_ref
+2305100,Guaramiranga,CE,2003-01,2023-12,13,True,,inpe_bdq_aqua_ref
+2305506,Iguatu,CE,2003-01,2025-09,654,True,,inpe_bdq_aqua_ref
+2305704,Ipaumirim,CE,2025-01,2025-10,14,True,,inpe_bdq_aqua_ref
+2306405,Itapipoca,CE,2003-01,2025-09,2415,True,,inpe_bdq_aqua_ref
+2306900,Jaguaribe,CE,2003-01,2025-09,332,True,,inpe_bdq_aqua_ref
+2307007,Jaguaruana,CE,2003-01,2025-09,123,True,,inpe_bdq_aqua_ref
+2307106,Jardim,CE,2025-01,2025-10,16,True,,inpe_bdq_aqua_ref
+2307205,Jati,CE,2025-01,2025-10,5,True,,inpe_bdq_aqua_ref
+2307304,Juazeiro do Norte,CE,2025-09,2025-10,5,True,,inpe_bdq_aqua_ref
+2307502,Lavras da Mangabeira,CE,2025-01,2025-10,29,True,,inpe_bdq_aqua_ref
+2308104,Mauriti,CE,2025-01,2025-10,56,True,,inpe_bdq_aqua_ref
+2308302,Milagres,CE,2025-01,2025-10,24,True,,inpe_bdq_aqua_ref
+2308708,Morada Nova,CE,2003-01,2025-09,482,True,,inpe_bdq_aqua_ref
+2309201,Nova Olinda,CE,2025-08,2025-10,15,True,,inpe_bdq_aqua_ref
+2311108,Porteiras,CE,2025-02,2025-10,9,True,,inpe_bdq_aqua_ref
+2311207,Potengi,CE,2025-10,2025-10,25,True,,inpe_bdq_aqua_ref
+2311306,Quixadá,CE,2003-01,2025-09,1455,True,,inpe_bdq_aqua_ref
+2311405,Quixeramobim,CE,2003-01,2025-09,3002,True,,inpe_bdq_aqua_ref
+2311959,Salitre,CE,2025-01,2025-10,35,True,,inpe_bdq_aqua_ref
+2312106,Santana do Cariri,CE,2025-02,2025-10,62,True,,inpe_bdq_aqua_ref
+2312908,Sobral,CE,2003-01,2025-09,2132,True,,inpe_bdq_aqua_ref
+2313252,Tarrafas,CE,2025-08,2025-10,10,True,,inpe_bdq_aqua_ref
+2313302,Tauá,CE,2003-01,2025-09,1102,True,,inpe_bdq_aqua_ref
+2313401,Tianguá,CE,2003-01,2025-09,757,True,,inpe_bdq_aqua_ref
+2313708,Umari,CE,2025-09,2025-10,23,True,,inpe_bdq_aqua_ref
+2300101,Abaiara,CE,2002-10,2026-01,220,True,,inpe_bdq_legacy
+2301307,Araripe,CE,2002-08,2026-02,1154,True,,inpe_bdq_legacy
+2301604,Assaré,CE,2002-09,2026-02,498,True,,inpe_bdq_legacy
+2301901,Barbalha,CE,2002-07,2025-12,412,True,,inpe_bdq_legacy
+2302503,Brejo Santo,CE,2002-09,2025-12,324,True,,inpe_bdq_legacy
+2302701,Campos Sales,CE,2002-09,2025-12,247,True,,inpe_bdq_legacy
+2304202,Crato,CE,2002-08,2026-01,810,True,,inpe_bdq_legacy
+2307106,Jardim,CE,2002-10,2026-04,336,True,,inpe_bdq_legacy
+2307205,Jati,CE,2002-08,2025-12,176,True,,inpe_bdq_legacy
+2307304,Juazeiro do Norte,CE,2002-08,2026-02,204,True,,inpe_bdq_legacy
+2308401,Missão Velha,CE,2002-09,2026-01,814,True,,inpe_bdq_legacy
+2309201,Nova Olinda,CE,2002-10,2025-12,235,True,,inpe_bdq_legacy
+2310605,Penaforte,CE,2002-11,2026-04,32,True,,inpe_bdq_legacy
+2311108,Porteiras,CE,2002-10,2025-12,144,True,,inpe_bdq_legacy
+2311207,Potengi,CE,2002-09,2025-12,213,True,,inpe_bdq_legacy
+2311959,Salitre,CE,2002-08,2025-12,541,True,,inpe_bdq_legacy
+2312106,Santana do Cariri,CE,2002-08,2026-01,1031,True,,inpe_bdq_legacy

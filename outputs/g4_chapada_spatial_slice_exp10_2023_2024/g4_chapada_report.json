@@ -1,0 +1,57 @@
+{
+  "source_predictions": "outputs\\exp10_dynamic_regional_intensity\\predictions_2023_2024.csv",
+  "source_chapada_weights": "C:\\Users\\Guilherme\\Desktop\\queimadas\\firecast\\data\\snapshots\\era5_grid_weights_chapada_v1\\era5_cell_weights.csv",
+  "champion": "climatology_regional_intensity12",
+  "chapada_geocodigos_in_weights": 29,
+  "chapada_geocodigos_in_predictions": 16,
+  "non_chapada_geocodigos_in_predictions": 15,
+  "overall": {
+    "slice": "overall",
+    "n": 687,
+    "n_municipios": 31,
+    "volume_real": 2722.0,
+    "volume_predito": 2244.215711505624,
+    "wape": 0.5501380793384631,
+    "mae": 2.1797319533614217,
+    "bias_total": -477.78428849437637
+  },
+  "overall_dry_aug_dec": {
+    "slice": "overall_dry_aug_dec",
+    "n": 260,
+    "n_municipios": 31,
+    "volume_real": 2516.0,
+    "volume_predito": 2089.9733951784683,
+    "wape": 0.5078434384864173,
+    "mae": 4.914361889353176,
+    "bias_total": -426.0266048215316
+  },
+  "chapada_araripe_cariri": {
+    "slice": "chapada_araripe_cariri",
+    "n": 349,
+    "n_municipios": 16,
+    "volume_real": 832.0,
+    "volume_predito": 531.5809566744182,
+    "wape": 0.6220067587250748,
+    "mae": 1.4828355967314106,
+    "bias_total": -300.41904332558175
+  },
+  "chapada_araripe_cariri_dry_aug_dec": {
+    "slice": "chapada_araripe_cariri__dry_aug_dec",
+    "n": 125,
+    "n_municipios": 16,
+    "volume_real": 755.0,
+    "volume_predito": 487.55320715913376,
+    "wape": 0.5692859932805665,
+    "mae": 3.438487399414622,
+    "bias_total": -267.44679284086624,
+    "spatial_slice": "chapada_araripe_cariri",
+    "regime": "dry_aug_dec"
+  },
+  "regional_wape_delta_vs_overall": 0.07186867938661168,
+  "dry_wape_delta_vs_overall_dry": 0.06144255479414917,
+  "absolute_wape_margin": 0.1,
+  "regional_violation": false,
+  "dry_violation": false,
+  "gate_G4_chapada_slice": "PASS",
+  "limitation": "Slice audit over existing walk-forward predictions; not a leave-region-out retraining protocol because the current champion is municipality-specific."
+}

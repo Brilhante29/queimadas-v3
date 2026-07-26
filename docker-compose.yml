@@ -1,0 +1,139 @@
+name: firecast
+
+x-firecast-base: &firecast-base
+  build:
+    context: .
+    dockerfile: Dockerfile
+  image: firecast:local
+  environment:
+    PYTHONPATH: /app
+    CHAMPION_DIR: outputs/champion_climatology_regional_intensity12
+    PUBLIC_TARGET_PATH: data/snapshots/inpe_monthly_public_v3/events_target_region.csv
+    PUBLIC_TARGET_SATELLITE: AQUA_M-T
+    OLLAMA_BASE_URL: http://ollama:11434
+    OLLAMA_MODEL: ${OLLAMA_MODEL:-llama3.2:3b}
+    STREAMLIT_PORT: "8501"
+  volumes:
+    - ./data:/app/data:ro
+    - ./outputs:/app/outputs
+    - ./cache:/app/cache
+
+services:
+  api:
+    <<: *firecast-base
+    command: ["api"]
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=5).read()"]
+      interval: 15s
+      timeout: 10s
+      retries: 8
+      start_period: 20s
+
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 10s
+      retries: 12
+      start_period: 15s
+
+  ollama-pull:
+    image: ollama/ollama:latest
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-llama3.2:3b}
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        set -eu
+        echo "Baixando ou conferindo modelo Ollama: ${OLLAMA_MODEL:-llama3.2:3b}"
+        ollama pull "${OLLAMA_MODEL:-llama3.2:3b}"
+    depends_on:
+      ollama:
+        condition: service_healthy
+    restart: "no"
+
+  streamlit:
+    <<: *firecast-base
+    command: ["streamlit"]
+    ports:
+      - "8501:8501"
+    restart: unless-stopped
+    depends_on:
+      api:
+        condition: service_healthy
+      ollama-pull:
+        condition: service_completed_successfully
+
+  test:
+    <<: *firecast-base
+    profiles: ["ops"]
+    command: ["test"]
+
+  serving-test:
+    <<: *firecast-base
+    profiles: ["ops"]
+    command: ["serving-test"]
+
+  data-check:
+    <<: *firecast-base
+    profiles: ["ops"]
+    command: ["data-check"]
+
+  plan:
+    <<: *firecast-base
+    profiles: ["ops"]
+    command: ["plan"]
+
+  monthly-plan:
+    <<: *firecast-base
+    profiles: ["ops"]
+    command: ["monthly-plan"]
+    environment:
+      PYTHONPATH: /app
+      MONTHS: "202608"
+      CHAMPION_DIR: outputs/champion_climatology_regional_intensity12
+      PUBLIC_TARGET_PATH: data/snapshots/inpe_monthly_public_v3/events_target_region.csv
+      PUBLIC_TARGET_SATELLITE: AQUA_M-T
+      OLLAMA_BASE_URL: http://ollama:11434
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-llama3.2:3b}
+      STREAMLIT_PORT: "8501"
+
+  shadow-score:
+    <<: *firecast-base
+    profiles: ["ops"]
+    command: ["shadow-score"]
+
+  shadow-report:
+    <<: *firecast-base
+    profiles: ["ops"]
+    command: ["shadow-report"]
+
+  explain:
+    <<: *firecast-base
+    profiles: ["ops"]
+    command: ["explain"]
+
+  xai-graph:
+    <<: *firecast-base
+    profiles: ["ops"]
+    command: ["xai-graph"]
+
+  shell:
+    <<: *firecast-base
+    profiles: ["debug"]
+    command: ["sh"]
+    stdin_open: true
+    tty: true
+
+volumes:
+  ollama_models:

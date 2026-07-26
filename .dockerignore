@@ -1,0 +1,36 @@
+# Keep the image reproducible without shipping local virtualenvs/caches/state.
+.git
+.gitignore
+.githooks
+.venv
+.pytest_cache
+__pycache__
+**/__pycache__
+*.py[cod]
+*.pyo
+*.pyd
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Data, outputs and mutable caches are mounted by compose.
+data
+data/**
+outputs
+outputs/**
+cache
+cache/**
+
+# Local notebook/editor/runtime noise.
+.ipynb_checkpoints
+.vscode
+.idea
+.env
+.env.*
+
+# Avoid copying accidental secrets.
+*.pem
+*.key
+*secret*
+*credentials*

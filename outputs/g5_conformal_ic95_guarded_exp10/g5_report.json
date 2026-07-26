@@ -1,0 +1,50 @@
+{
+  "run_at": "2026-07-09T20:52:32.607463+00:00",
+  "source_predictions": "outputs\\exp10_dynamic_regional_intensity\\predictions.csv",
+  "champion": "climatology_regional_intensity12",
+  "protocol": "Finite-sample conformal IC95 guardrail from existing out-of-sample predictions. Nominal alpha selected on validation year 2022 only; gate measured on 2023-2024 only.",
+  "method_for_gate": "finite_sample_stratified_conformal_guarded_ic95",
+  "alpha_grid": [
+    0.05,
+    0.04,
+    0.03,
+    0.02
+  ],
+  "selection_year": 2022,
+  "selection_coverage_required": [
+    0.94,
+    0.98
+  ],
+  "selection_decision": "SELECTED_NARROWEST_ALPHA_PASSING_2022_GUARDRAIL",
+  "alpha_selected": 0.04,
+  "nominal_coverage_selected": 0.96,
+  "validation_coverage": {
+    "overall": 0.9530386740331491,
+    "dry": 0.9517241379310345,
+    "wet": 0.9539170506912442
+  },
+  "validation_width": {
+    "overall": 7.493666066238344,
+    "dry": 15.61678877766162,
+    "wet": 2.0657730102181833
+  },
+  "ic_acceptable_range": [
+    0.9,
+    0.98
+  ],
+  "n_test_predictions": 687,
+  "test_coverage_2023_2024": {
+    "overall": 0.9170305676855895,
+    "dry": 0.9,
+    "wet": 0.927400468384075
+  },
+  "test_interval_width_2023_2024": {
+    "overall": 8.160735624362493,
+    "dry": 17.951820633385296,
+    "wet": 2.1989508413509493
+  },
+  "overall_coverage_test_2023_2024": 0.9170305676855895,
+  "dry_season_coverage_test": 0.9,
+  "wet_season_coverage_test": 0.927400468384075,
+  "gate_G5": "PASS"
+}

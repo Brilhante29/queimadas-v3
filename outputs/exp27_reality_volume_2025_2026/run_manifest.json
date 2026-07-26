@@ -1,0 +1,133 @@
+{
+  "experiment_id": "EXP-2026-07-11-27",
+  "run_at": "2026-07-11T07:58:18.722282+00:00",
+  "hypothesis": "The apparent 2025 volume miss is mainly a target-coverage/sensor-alignment artifact, not a model magnitude failure.",
+  "owner_target": {
+    "abs_total_error_max": 300.0
+  },
+  "protocol": "2025/2026 are scoring-only holdouts. No parameter is selected on these years; frozen champion artifact is evaluated as-is.",
+  "target_snapshots": {
+    "v2_frozen_sha256": "06640e40c9ab64cc27aef222bd4d10ba65e18582e0762482bb4a82020154bbfb",
+    "public_v3_manifest_sha256": "8ba76ce1360b2147ada5a2702a93baa2b3033fbbb94de3760b8d148a4e5d10db",
+    "public_reference_satellite": "AQUA_M-T"
+  },
+  "model_artifact_sha256": "6767d4daa837605f31acb6b0e6637b20b1ff96ba56fc124f1d8379d0d8b884e8",
+  "served_municipalities": 31,
+  "primary_results": [
+    {
+      "scenario": "v2_partial_observed_rows",
+      "year": 2025,
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "actual_total": 686.0,
+      "pred_total": 551.4985245099965,
+      "abs_total_error": 134.5014754900035,
+      "passes_owner_abs_total_error_target": true,
+      "monthly_sum_abs_error": 418.7605019391294,
+      "monthly_wape_on_totals": 0.26597139769218103
+    },
+    {
+      "scenario": "public_aqua_full_31",
+      "year": 2025,
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "actual_total": 1571.0,
+      "pred_total": 1491.984388601223,
+      "abs_total_error": 79.01561139877708,
+      "passes_owner_abs_total_error_target": true,
+      "monthly_sum_abs_error": 1020.4927618037356,
+      "monthly_wape_on_totals": 0.15799325000959133
+    },
+    {
+      "scenario": "v2_partial_observed_rows",
+      "year": 2026,
+      "months": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "actual_total": 32.0,
+      "pred_total": 14.055607208365439,
+      "abs_total_error": 17.944392791634563,
+      "passes_owner_abs_total_error_target": true,
+      "monthly_sum_abs_error": 25.746745816065488,
+      "monthly_wape_on_totals": 0.5647193713625568
+    },
+    {
+      "scenario": "public_aqua_full_31_complete_jan_jun",
+      "year": 2026,
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "actual_total": 131.0,
+      "pred_total": 87.4360070033904,
+      "abs_total_error": 43.5639929966096,
+      "passes_owner_abs_total_error_target": true,
+      "monthly_sum_abs_error": 108.78048562515977,
+      "monthly_wape_on_totals": 0.38630979747509153
+    },
+    {
+      "scenario": "public_aqua_full_31_jan_jul_provisional",
+      "year": 2026,
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "actual_total": 140.0,
+      "pred_total": 102.73311026560872,
+      "abs_total_error": 37.266889734391285,
+      "passes_owner_abs_total_error_target": true,
+      "monthly_sum_abs_error": 129.30480959983652,
+      "monthly_wape_on_totals": 0.4064549052246808
+    }
+  ],
+  "overlap_validation": {
+    "months_compared": 16,
+    "all_monthly_totals_exact_match": true,
+    "overlap_csv": "v2_public_aqua_overlap.csv"
+  },
+  "decision": "PROMOTE_SCORING_PROTOCOL_NOT_MODEL_CHANGE",
+  "justification": "The frozen champion already meets the owner absolute-volume target when compared against a complete, sensor-aligned AQUA_M-T reality target: 2025 actual 1571 vs predicted 1492, absolute error 79 <= 300. The earlier 686 vs 1492 comparison mixed full prediction coverage with partial v2 observation coverage.",
+  "artifacts": [
+    "monthly_reality_comparison.csv",
+    "aggregate_windows.csv",
+    "v2_public_aqua_overlap.csv",
+    "public_v3_satellite_mix.csv",
+    "top_municipality_errors_2025_public_aqua.csv"
+  ]
+}
