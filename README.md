@@ -235,6 +235,7 @@ Endpoints principais:
 - `GET /v1/champion/summary`
 - `GET /v1/champion/monthly_series`
 - `GET /v1/champion/municipio_ranking`
+- `GET /v1/champion/municipio_monthly_series?geocodigo=<int>&ano=<int?>`
 - `GET /v1/climate/enso`
 
 ## Docker
