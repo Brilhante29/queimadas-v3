@@ -14,7 +14,7 @@
 - FireCast changes must not touch the model, gates, or training — read-only view over already-frozen backtest evidence (`docs/superpowers/specs/2026-07-26-cariri-ia-integration-design.md`).
 - No `@Cron` automatic sync yet — manual endpoint only (explicit user decision).
 - No code duplicated into `LISA-Repo/Monitor-Queimadas-Cariri-IA` — `queimadas-v3` is the IA (explicit user decision).
-- No direct commits to `main`/`develop` on the Back-End/Front-End repos — branch `feat/integracao-firecast-ia` + PR (spec, "repos de equipe, não de uso exclusivo do agente").
+- No direct commits to `main`/`develop` on ANY of the three repos, including `queimadas-v3` — branch `feat/integracao-firecast-ia` + PR everywhere (explicit user decision, confirmed after the spec was written: "branch separada a ser analisada" applies to all three, not just the two LISA-Repo repos).
 - No infrastructure deploy, no `docker-compose.test.yaml` containers spun up without separate authorization.
 
 ---
@@ -63,7 +63,16 @@ C:\Users\Guilherme\Desktop\queimadas\Queimadas-Cariri-Front)
 - Produces: `FireCastServingService.champion_municipio_monthly_series(self, geocodigo: int, ano: int | None = None) -> list[dict[str, Any]]` — raises `ValueError` if `geocodigo` has no rows for the champion model in `BACKTEST_PREDICTIONS_PATH`.
 - Produces: route `GET /v1/champion/municipio_monthly_series?geocodigo=<int>&ano=<int, optional>` — 200 with the list on success, 422 if `geocodigo` unknown, 503 if the backtest file is missing (same fail-closed pattern as every other endpoint in this file).
 
-- [ ] **Step 1: Write the failing tests**
+- [ ] **Step 1: Create the working branch**
+
+```bash
+cd "C:/Users/Guilherme/Desktop/queimadas/firecast_entrega_limpa_20260715/firecast"
+git checkout main
+git pull origin main
+git checkout -b feat/integracao-firecast-ia
+```
+
+- [ ] **Step 2: Write the failing tests**
 
 Open `tests/test_serving_api.py` and add these two tests right after
 `test_serving_api_champion_monthly_series_has_24_real_cuts` (which ends at
@@ -114,12 +123,12 @@ def test_serving_api_champion_municipio_monthly_series_fails_closed_for_unknown_
     assert "9999999" in response.json()["detail"]
 ```
 
-- [ ] **Step 2: Run tests to verify they fail**
+- [ ] **Step 3: Run tests to verify they fail**
 
 Run: `PYTHONPATH=. pytest tests/test_serving_api.py -k municipio_monthly_series -v`
 Expected: FAIL — `AttributeError` or 404 (route does not exist yet).
 
-- [ ] **Step 3: Implement the service method**
+- [ ] **Step 4: Implement the service method**
 
 In `src/production/serving_api.py`, insert this method into
 `FireCastServingService`, immediately after `champion_monthly_series` (which
@@ -151,7 +160,7 @@ ends at line 231, right before `def champion_municipio_ranking`):
         return rows
 ```
 
-- [ ] **Step 4: Wire the route**
+- [ ] **Step 5: Wire the route**
 
 In `src/production/serving_api.py`, insert this route inside `create_app`,
 immediately after the `champion_monthly_series` route (which ends at line
@@ -171,17 +180,17 @@ immediately after the `champion_monthly_series` route (which ends at line
             raise HTTPException(status_code=422, detail=str(exc)) from exc
 ```
 
-- [ ] **Step 5: Run tests to verify they pass**
+- [ ] **Step 6: Run tests to verify they pass**
 
 Run: `PYTHONPATH=. pytest tests/test_serving_api.py -k municipio_monthly_series -v`
 Expected: 3 passed.
 
-- [ ] **Step 6: Run the full suite**
+- [ ] **Step 7: Run the full suite**
 
 Run: `PYTHONPATH=. pytest tests -q`
 Expected: all tests pass (61 previously + 3 new = 64 passed). If shapely/pyproj are missing in the environment, `pip install shapely pyproj` first (optional geo deps, not a code problem).
 
-- [ ] **Step 7: Update README endpoint list**
+- [ ] **Step 8: Update README endpoint list**
 
 In `README.md`, find the "Endpoints principais" list (currently ending with
 `GET /v1/climate/enso`) and add a line right after `GET /v1/champion/municipio_ranking`:
@@ -190,7 +199,7 @@ In `README.md`, find the "Endpoints principais" list (currently ending with
 - `GET /v1/champion/municipio_monthly_series?geocodigo=<int>&ano=<int?>`
 ```
 
-- [ ] **Step 8: Commit**
+- [ ] **Step 9: Commit**
 
 ```bash
 git add src/production/serving_api.py tests/test_serving_api.py README.md
@@ -202,12 +211,15 @@ Queimadas Cariri back-end sync use-case (see docs/superpowers/specs/
 2026-07-26-cariri-ia-integration-design.md)."
 ```
 
-- [ ] **Step 9: Push**
+- [ ] **Step 10: Push the branch**
 
 ```bash
 AUTH=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
-git -c http.extraheader="AUTHORIZATION: basic $AUTH" push origin main
+git -c http.extraheader="AUTHORIZATION: basic $AUTH" push -u origin feat/integracao-firecast-ia
 ```
+
+The PR against `main` is opened in Task 9 (Step 0 there), alongside the
+Back-End and Front-End PRs.
 
 ---
 
@@ -1091,11 +1103,27 @@ git -c http.extraheader="AUTHORIZATION: basic $AUTH" push -u origin feat/integra
 
 ---
 
-## Task 9: Open Pull Requests on both private repos
+## Task 9: Open Pull Requests on all three repos
 
 **Files:** none (GitHub API calls only)
 
-- [ ] **Step 1: Open the Back-End PR**
+- [ ] **Step 1: Open the queimadas-v3 PR**
+
+```bash
+cd "C:/Users/Guilherme/Desktop/queimadas/firecast_entrega_limpa_20260715/firecast"
+curl -s -X POST \
+  -H "Authorization: token $GH_TOKEN" \
+  -H "Accept: application/vnd.github+json" \
+  https://api.github.com/repos/Brilhante29/queimadas-v3/pulls \
+  -d '{
+    "title": "feat: endpoint de serie mensal por municipio (para integracao Cariri)",
+    "head": "feat/integracao-firecast-ia",
+    "base": "main",
+    "body": "Adiciona GET /v1/champion/municipio_monthly_series, leitura pura do backtest ja validado (predictions_2023_2024.csv), filtrado por geocodigo/ano. Sem mudanca de modelo ou gate. Alimenta o sync manual do Monitor Queimadas Cariri Back-End. Design completo em docs/superpowers/specs/2026-07-26-cariri-ia-integration-design.md."
+  }'
+```
+
+- [ ] **Step 2: Open the Back-End PR**
 
 ```bash
 curl -s -X POST \
@@ -1113,7 +1141,7 @@ curl -s -X POST \
 (If the sandbox blocks direct `curl`, use the Python `urllib.request` pattern
 established earlier in this session instead — same headers, same JSON body.)
 
-- [ ] **Step 2: Open the Front-End PR**
+- [ ] **Step 3: Open the Front-End PR**
 
 ```bash
 curl -s -X POST \
@@ -1128,9 +1156,9 @@ curl -s -X POST \
   }'
 ```
 
-- [ ] **Step 3: Report both PR URLs back to the user**
+- [ ] **Step 4: Report all three PR URLs back to the user**
 
-Print the `html_url` field from each API response.
+Print the `html_url` field from each of the three API responses.
 
 ---
 
