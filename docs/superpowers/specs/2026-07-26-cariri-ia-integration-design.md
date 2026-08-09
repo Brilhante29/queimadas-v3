@@ -29,9 +29,17 @@ depois.
 
 O mock do front lista 29 cidades (Cariri cearense). Cruzadas com
 `data/reference/ibge_municipios_CE_PE_PI.json` deste repo: **29/29 batem
-exatamente por nome**, todas em CE, todas dentro da cobertura atual do
-champion (Chapada do Araripe / CE-PE-PI). Lista completa com geocódigo IBGE
-em `scripts/cariri_city_geocode_map.json` (gerado neste design, ver Anexo).
+exatamente por nome**, todas em CE — todas são geocódigos IBGE válidos.
+Isso **não** significa que as 29 têm dado no champion hoje: apenas 15/29 têm
+alguma linha no backtest do champion
+(`outputs/exp10_dynamic_regional_intensity/predictions_2023_2024.csv`); as
+outras 14 vão retornar consistentemente "sem dado" (404) no novo endpoint até
+a cobertura do champion aumentar. Mesmo entre as 15 cobertas, 8 têm cobertura
+parcial de 2024 (apenas meses 1-7, faltando a temporada de incêndio
+ago-dez) — é exatamente por isso que o campo `cobertura_completa` foi
+adicionado à resposta da API (`GET /v1/champion/municipio_monthly_series`).
+Lista completa com geocódigo IBGE em `scripts/cariri_city_geocode_map.json`
+(gerado neste design, ver Anexo).
 
 ## Arquitetura
 
