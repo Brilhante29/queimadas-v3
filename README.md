@@ -235,6 +235,12 @@ Endpoints principais:
 - `GET /v1/champion/summary`
 - `GET /v1/champion/monthly_series`
 - `GET /v1/champion/municipio_ranking`
+- `GET /v1/champion/municipio_monthly_series?geocodigo=<int>&ano=<int?>`
+  (cada linha traz `cobertura_completa: bool`, indicando se o `ano` daquela
+  linha tem os 12 meses no backtest; `y_sum` e sempre inteiro (contagem
+  historica bruta), `pred_sum` e um valor real (previsao de climatologia) e
+  nao deve ser arredondado por esta API — arredondamento, se necessario, e
+  responsabilidade da camada de persistencia do consumidor)
 - `GET /v1/climate/enso`
 
 ## Docker

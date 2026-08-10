@@ -13,7 +13,7 @@ from pathlib import Path
 from typing import Any
 
 import pandas as pd
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
@@ -230,6 +230,35 @@ class FireCastServingService:
             )
         return rows
 
+    def champion_municipio_monthly_series(self, geocodigo: int, ano: int | None = None) -> list[dict[str, Any]]:
+        """Executa a etapa `champion municipio monthly series` do fluxo FireCast.
+
+        A funcao faz parte de `src/production/serving_api.py` e deve preservar rastreabilidade, determinismo e separacao entre treino, avaliacao e serving."""
+        preds = pd.read_csv(_require_file(BACKTEST_PREDICTIONS_PATH))
+        preds = preds[(preds["model"] == CHAMPION_MODEL_NAME) & (preds["geocodigo"] == geocodigo)].copy()
+        if ano is not None:
+            preds = preds[preds["ano"] == ano]
+        if preds.empty:
+            raise ValueError(f"Nenhuma evidencia de backtest para geocodigo={geocodigo} ano={ano}")
+        meses_por_ano = {
+            int(row_ano): sorted(int(mes) for mes in group["mes"].unique())
+            for row_ano, group in preds.groupby("ano", sort=True)
+        }
+        rows = []
+        for (row_ano, mes), group in preds.groupby(["ano", "mes"], sort=True):
+            rows.append(
+                {
+                    "geocodigo": geocodigo,
+                    "ano": int(row_ano),
+                    "mes": int(mes),
+                    "y_sum": float(group["fire_count"].sum()),
+                    "pred_sum": float(group["y_pred"].sum()),
+                    "n": int(len(group)),
+                    "cobertura_completa": len(meses_por_ano[int(row_ano)]) == 12,
+                }
+            )
+        return rows
+
     def champion_municipio_ranking(self) -> list[dict[str, Any]]:
         """Executa a etapa `champion municipio ranking` do fluxo FireCast.
         
@@ -329,6 +358,21 @@ def create_app(model_path: Path = DEFAULT_MODEL_PATH) -> FastAPI:
             return service.champion_monthly_series()
         except FileNotFoundError as exc:
             raise HTTPException(status_code=503, detail=str(exc)) from exc
+
+    @app.get("/v1/champion/municipio_monthly_series")
+    def champion_municipio_monthly_series(
+        geocodigo: int = Query(..., gt=0, description="Codigo IBGE do municipio"),
+        ano: int | None = None,
+    ) -> list[dict[str, Any]]:
+        """Executa a etapa `champion municipio monthly series` do fluxo FireCast.
+
+        A funcao faz parte de `src/production/serving_api.py` e deve preservar rastreabilidade, determinismo e separacao entre treino, avaliacao e serving."""
+        try:
+            return service.champion_municipio_monthly_series(geocodigo, ano)
+        except FileNotFoundError as exc:
+            raise HTTPException(status_code=503, detail=str(exc)) from exc
+        except ValueError as exc:
+            raise HTTPException(status_code=404, detail=str(exc)) from exc
 
     @app.get("/v1/champion/municipio_ranking")
     def champion_municipio_ranking() -> list[dict[str, Any]]:

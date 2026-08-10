@@ -87,6 +87,94 @@ def test_serving_api_champion_monthly_series_has_24_real_cuts():
     assert {"cut", "ano", "mes", "y_sum", "pred_sum", "wape"} <= body[0].keys()
 
 
+def test_serving_api_champion_municipio_monthly_series_returns_24_real_cuts_for_abaiara():
+    """Verifica o comportamento `test serving api champion municipio monthly series returns 24 real cuts for abaiara`.
+
+    O teste protege uma garantia publica da entrega, evitando regressao silenciosa em dados, metricas, API, container ou XAI."""
+    client = TestClient(create_app())
+
+    response = client.get("/v1/champion/municipio_monthly_series", params={"geocodigo": 2300101})
+
+    assert response.status_code == 200
+    body = response.json()
+    assert len(body) == 24
+    assert {"mes", "ano", "y_sum", "pred_sum", "cobertura_completa"} <= body[0].keys()
+    assert all(row["ano"] in (2023, 2024) for row in body)
+    assert all(row["cobertura_completa"] is True for row in body)
+
+
+def test_serving_api_champion_municipio_monthly_series_filters_by_year():
+    """Verifica o comportamento `test serving api champion municipio monthly series filters by year`.
+
+    O teste protege uma garantia publica da entrega, evitando regressao silenciosa em dados, metricas, API, container ou XAI."""
+    client = TestClient(create_app())
+
+    response = client.get(
+        "/v1/champion/municipio_monthly_series",
+        params={"geocodigo": 2300101, "ano": 2024},
+    )
+
+    assert response.status_code == 200
+    body = response.json()
+    assert len(body) == 12
+    assert {row["mes"] for row in body} == set(range(1, 13))
+    assert all(row["cobertura_completa"] is True for row in body)
+
+
+def test_serving_api_champion_municipio_monthly_series_fails_closed_for_unknown_geocodigo():
+    """Verifica o comportamento `test serving api champion municipio monthly series fails closed for unknown geocodigo`.
+
+    O teste protege uma garantia publica da entrega, evitando regressao silenciosa em dados, metricas, API, container ou XAI."""
+    client = TestClient(create_app())
+
+    response = client.get("/v1/champion/municipio_monthly_series", params={"geocodigo": 9999999})
+
+    assert response.status_code == 404
+    assert "9999999" in response.json()["detail"]
+
+
+def test_serving_api_champion_municipio_monthly_series_returns_404_for_valid_geocodigo_without_backtest_rows():
+    """Verifica o comportamento `test serving api champion municipio monthly series returns 404 for valid geocodigo without backtest rows`.
+
+    O teste protege uma garantia publica da entrega, evitando regressao silenciosa em dados, metricas, API, container ou XAI."""
+    client = TestClient(create_app())
+
+    # 2308104 = Mauriti, municipio real do Cariri (geocode IBGE valido) mas
+    # sem nenhuma linha no backtest do champion (predictions_2023_2024.csv).
+    response = client.get("/v1/champion/municipio_monthly_series", params={"geocodigo": 2308104})
+
+    assert response.status_code == 404
+    assert response.json()["detail"]
+
+
+def test_serving_api_champion_municipio_monthly_series_flags_partial_2024_coverage_for_crato():
+    """Verifica o comportamento `test serving api champion municipio monthly series flags partial 2024 coverage for crato`.
+
+    O teste protege uma garantia publica da entrega, evitando regressao silenciosa em dados, metricas, API, container ou XAI."""
+    client = TestClient(create_app())
+
+    # 2304202 = Crato: 2024 so tem meses 1-7 no backtest (falta a temporada
+    # de incendio ago-dez), enquanto 2023 tem os 12 meses completos.
+    partial = client.get(
+        "/v1/champion/municipio_monthly_series",
+        params={"geocodigo": 2304202, "ano": 2024},
+    )
+    complete = client.get(
+        "/v1/champion/municipio_monthly_series",
+        params={"geocodigo": 2304202, "ano": 2023},
+    )
+
+    assert partial.status_code == 200
+    partial_body = partial.json()
+    assert len(partial_body) == 7
+    assert all(row["cobertura_completa"] is False for row in partial_body)
+
+    assert complete.status_code == 200
+    complete_body = complete.json()
+    assert len(complete_body) == 12
+    assert all(row["cobertura_completa"] is True for row in complete_body)
+
+
 def test_serving_api_champion_municipio_ranking_is_sorted_by_wape_desc():
     """Verifica o comportamento `test serving api champion municipio ranking is sorted by wape desc`.
     
