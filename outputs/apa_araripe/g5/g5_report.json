@@ -1,0 +1,63 @@
+{
+  "gate": "G5_conformal",
+  "scope": "apa_chapada_araripe",
+  "status": "FAIL",
+  "failures": [
+    "cobertura geral 0.8762 fora de [0.9, 0.98]",
+    "cobertura CE 0.8819 fora de [0.9, 0.98]",
+    "cobertura PE 0.8490 fora de [0.9, 0.98]",
+    "cobertura PI 0.8875 fora de [0.9, 0.98]"
+  ],
+  "calibration_provenance": "calibrado do zero a partir de outputs/apa_araripe/exp10/predictions_2015_2024.csv; nenhum residuo do escopo CE reutilizado",
+  "predictions_sha256": "f17b645e426f8db691d0cf50589c60788db68a8f4b6fbb13598b38542080b648",
+  "champion": "climatology_apa_intensity12",
+  "method": "conformal Mondrian (estacao x tercil de volume), janela expansiva",
+  "stratify_volume": true,
+  "alpha_grid": [
+    0.05,
+    0.04,
+    0.03,
+    0.02
+  ],
+  "alpha_selected": 0.05,
+  "nominal_coverage": 0.95,
+  "selection_decision": "SELECTED_NARROWEST_PASSING_VALIDATION_GUARDRAIL_INCL_PER_UF",
+  "selection_window": [
+    "2020-01",
+    "2022-12"
+  ],
+  "evaluation_window": [
+    "2023-01",
+    "2024-12"
+  ],
+  "coverage": {
+    "overall": 0.8761574074074074,
+    "dry": 0.8666666666666667,
+    "wet": 0.8829365079365079,
+    "critical_out_nov": 0.7916666666666666,
+    "n_rows": 864,
+    "uf_CE": 0.8819444444444444,
+    "n_uf_CE": 432,
+    "uf_PE": 0.8489583333333334,
+    "n_uf_PE": 192,
+    "uf_PI": 0.8875,
+    "n_uf_PI": 240,
+    "volume_low": 0.9097222222222222,
+    "n_volume_low": 288,
+    "volume_mid": 0.8854166666666666,
+    "n_volume_mid": 288,
+    "volume_high": 0.8333333333333334,
+    "n_volume_high": 288
+  },
+  "interval_width": {
+    "overall": 5.319009248493281,
+    "dry": 11.193342814076304,
+    "wet": 1.1230567016482649,
+    "median": 2.0466580896394118
+  },
+  "ic_bounds": [
+    0.9,
+    0.98
+  ],
+  "generated_at": "2026-08-17T04:30:45.260135+00:00"
+}
