@@ -65,7 +65,7 @@ data/**
 !data/snapshots/inpe_local_v2/**
 !data/snapshots/enso_cpc_v1/
 !data/snapshots/enso_cpc_v1/**
-# APA-33 historical target: derived, reproducible artifact (raw ZIPs stay in
+# APA Chapada do Araripe historical target: derived, reproducible artifact (raw ZIPs stay in
 # gitignored cache/; provenance lives in source_files.csv).
-!data/snapshots/inpe_apa33_satref_v1/
-!data/snapshots/inpe_apa33_satref_v1/**
+!data/snapshots/inpe_ce_pe_pi_satref_v1/
+!data/snapshots/inpe_ce_pe_pi_satref_v1/**

@@ -39,9 +39,9 @@ from src.models.baselines import ClimatologyMunicipal  # noqa: E402
 from src.scopes import apa_geocodes  # noqa: E402
 from src.utils.metrics import mae, wape  # noqa: E402
 
-TARGET_SNAPSHOT = PROJECT_ROOT / "data" / "snapshots" / "inpe_apa33_satref_v1" / "municipality_month.csv"
+TARGET_SNAPSHOT = PROJECT_ROOT / "data" / "snapshots" / "inpe_ce_pe_pi_satref_v1" / "municipality_month.csv"
 SCOPE_CSV = PROJECT_ROOT / "data" / "reference" / "apa_chapada_araripe.csv"
-OUT_DIR = PROJECT_ROOT / "outputs" / "apa33" / "exp10"
+OUT_DIR = PROJECT_ROOT / "outputs" / "apa_araripe" / "exp10"
 
 BASELINE = "climatology_municipal"
 CANDIDATE = "climatology_apa_intensity12"
@@ -139,11 +139,18 @@ def compute_cut_predictions(df: pd.DataFrame, cut: pd.Period):
         "cut": str(cut),
         "ano": int(cut.year),
         "mes": int(cut.month),
+        # Limites REAIS da janela usada, registrados para auditoria de
+        # vazamento: `prior_window_end` tem que ser sempre cut-1, nunca cut.
+        "prior_window_start": str(prior_periods.min()),
+        "prior_window_end": str(prior_periods.max()),
+        "prior_max_period_observed": str(prior["period"].max()) if len(prior) else "",
+        "train_max_period": str(train["period"].max()),
         "observed_trailing_12m": observed_12m,
         "expected_trailing_12m": expected_12m,
         "raw_ratio": float(raw_ratio),
         "applied_ratio": ratio,
         "n_eligible_municipios": int(len(eligible)),
+        "n_prior_rows": int(len(prior)),
         "n_test_rows": int(len(test)),
     }
     return pd.concat(rows, ignore_index=True), ratio_row
@@ -165,42 +172,65 @@ def block(preds: pd.DataFrame, label: str) -> dict:
     return out
 
 
-def bootstrap_delta_by_cut(base: pd.DataFrame, cand: pd.DataFrame, n: int = 2000):
-    """Calcula a etapa `bootstrap delta by cut` do fluxo FireCast.
+def bootstrap_global_wape_delta(base: pd.DataFrame, cand: pd.DataFrame, n: int = 2000):
+    """Calcula a etapa `bootstrap global wape delta` do fluxo FireCast.
 
-    Reamostra CORTES (nao linhas), preservando a dependencia temporal dentro
-    de cada corte."""
+    **Estimando oficial do gate.** Reproduz exatamente o bootstrap do EXP-10
+    original: reamostra CORTES (preservando a dependencia temporal dentro do
+    corte), CONCATENA as observacoes da amostra e recalcula o WAPE **global**
+    sobre a concatenacao. O delta e portanto do mesmo estimando reportado em
+    `all_wape` -- e nao a media de WAPEs por corte, que e outra quantidade.
+
+    Nenhum corte precisa ser removido: em `WAPE = sum|y-p| / sum|y|`, um corte
+    sem fogo contribui zero ao numerador e ao denominador. So resultaria em
+    indefinicao se a amostra inteira tivesse denominador zero, o que e
+    verificado explicitamente."""
+    rng = np.random.default_rng(42)
     cuts = sorted(base["cut"].unique())
-    per_cut = {}
-    skipped_undefined = []
+    base_by_cut = {c: g for c, g in base.groupby("cut")}
+    cand_by_cut = {c: g for c, g in cand.groupby("cut")}
+
+    deltas: list[float] = []
+    degenerate = 0
+    for _ in range(n):
+        sample = rng.choice(cuts, size=len(cuts), replace=True)
+        b = pd.concat([base_by_cut[c] for c in sample], ignore_index=True)
+        k = pd.concat([cand_by_cut[c] for c in sample], ignore_index=True)
+        if b["fire_count"].abs().sum() == 0:
+            degenerate += 1
+            continue
+        deltas.append(
+            wape(k["fire_count"].to_numpy(float), k["y_pred"].to_numpy(float))
+            - wape(b["fire_count"].to_numpy(float), b["y_pred"].to_numpy(float))
+        )
+    arr = np.asarray(deltas, dtype=float)
+    return arr, float((arr < 0).mean()) if len(arr) else float("nan"), degenerate
+
+
+def per_cut_wape_stats(base: pd.DataFrame, cand: pd.DataFrame):
+    """Calcula a etapa `per cut wape stats` do fluxo FireCast.
+
+    **Analise secundaria, nao usada no gate.** Taxa de vitoria corte a corte,
+    que e o criterio de "wins" do SDD 19. Cortes cujo observado total e zero
+    tem WAPE indefinido e sao contados a parte, nunca silenciosamente."""
+    cuts = sorted(base["cut"].unique())
+    wins = 0
+    comparable = 0
+    undefined: list[str] = []
     for c in cuts:
         b = base[base["cut"] == c]
         k = cand[cand["cut"] == c]
-        if len(b) == 0 or len(k) == 0:
-            continue
-        # WAPE e indefinido quando o corte nao tem nenhum foco observado
-        # (denominador zero). Incluir NaN aqui contamina todo o bootstrap e
-        # faz o gate `ci_high >= 0` passar por acidente -- o corte tem que sair
-        # explicitamente, e ser contado.
-        if b["fire_count"].abs().sum() == 0:
-            skipped_undefined.append(c)
+        if len(b) == 0 or len(k) == 0 or b["fire_count"].abs().sum() == 0:
+            undefined.append(c)
             continue
         bw = wape(b["fire_count"].to_numpy(float), b["y_pred"].to_numpy(float))
         kw = wape(k["fire_count"].to_numpy(float), k["y_pred"].to_numpy(float))
         if not (np.isfinite(bw) and np.isfinite(kw)):
-            skipped_undefined.append(c)
+            undefined.append(c)
             continue
-        per_cut[c] = (bw, kw)
-    cuts = list(per_cut)
-    rng = np.random.default_rng(42)
-    deltas = []
-    for _ in range(n):
-        sample = rng.choice(cuts, size=len(cuts), replace=True)
-        bw = np.mean([per_cut[c][0] for c in sample])
-        kw = np.mean([per_cut[c][1] for c in sample])
-        deltas.append(kw - bw)
-    wins = sum(1 for c in cuts if per_cut[c][1] < per_cut[c][0])
-    return deltas, (wins / len(cuts) if cuts else 0.0), skipped_undefined
+        comparable += 1
+        wins += int(kw < bw)
+    return (wins / comparable if comparable else 0.0), comparable, undefined
 
 
 def main() -> None:
@@ -232,8 +262,13 @@ def main() -> None:
 
     base = preds[preds["model"] == BASELINE]
     cand = preds[preds["model"] == CANDIDATE]
-    deltas, win_rate, skipped_cuts = bootstrap_delta_by_cut(base, cand)
-    ci_low, ci_high = float(np.percentile(deltas, 2.5)), float(np.percentile(deltas, 97.5))
+    # Estimando oficial do gate: WAPE global recalculado por reamostra.
+    deltas, prob_delta_negative, degenerate = bootstrap_global_wape_delta(base, cand)
+    ci_low = float(np.percentile(deltas, 2.5)) if len(deltas) else float("nan")
+    ci_high = float(np.percentile(deltas, 97.5)) if len(deltas) else float("nan")
+
+    # Analise secundaria: taxa de vitoria corte a corte (criterio "wins").
+    win_rate, comparable_cuts, undefined_cuts = per_cut_wape_stats(base, cand)
 
     all_block = blocks[0]
     crit_block = blocks[1]
@@ -289,11 +324,16 @@ def main() -> None:
         "delta_all_wape": cand_all - base_all,
         "critical_wape_baseline": base_crit,
         "critical_wape_candidate": cand_crit,
-        "win_rate_by_cut": win_rate,
+        "bootstrap_estimand": (
+            "WAPE global recalculado por reamostra de cortes (reproduz EXP-10 original)"
+        ),
         "bootstrap_delta_ci95": [ci_low, ci_high],
         "bootstrap_n": 2000,
-        "bootstrap_cuts_used": len(set(base["cut"])) - len(skipped_cuts),
-        "bootstrap_cuts_skipped_wape_undefined": skipped_cuts,
+        "bootstrap_prob_delta_negative": prob_delta_negative,
+        "bootstrap_degenerate_samples": degenerate,
+        "win_rate_by_cut": win_rate,
+        "per_cut_comparable": comparable_cuts,
+        "per_cut_undefined_wape": undefined_cuts,
         "decision": decision,
         "reject_reasons": reasons,
         "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -303,7 +343,9 @@ def main() -> None:
     print(json.dumps({k: result[k] for k in (
         "scope_n_municipios", "n_cuts", "all_wape_baseline", "all_wape_candidate",
         "delta_all_wape", "critical_wape_baseline", "critical_wape_candidate",
-        "win_rate_by_cut", "bootstrap_delta_ci95", "decision", "reject_reasons",
+        "bootstrap_delta_ci95", "bootstrap_prob_delta_negative",
+        "bootstrap_degenerate_samples", "win_rate_by_cut", "per_cut_comparable",
+        "decision", "reject_reasons",
     )}, indent=2, ensure_ascii=False))
 
 

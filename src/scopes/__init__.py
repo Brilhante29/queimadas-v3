@@ -10,7 +10,7 @@ Escopos disponiveis:
   intersecao espacial versionada entre o poligono ICMBio da UC e a malha
   municipal IBGE (CE/PE/PI). N nao e fixado a priori; e o resultado da
   intersecao. Ver ``apa_araripe.py`` e
-  ``outputs/apa33/audit/scope_derivation_report.md``.
+  ``outputs/apa_araripe/audit/scope_derivation_report.md``.
 - ``cariri_legacy``: escopo legado "Chapada"/Cariri (29 municipios, apenas
   CE), usado pelos experimentos G4 anteriores a este SDD. Preservado apenas
   para reproducibilidade historica -- NAO deve ser usado para novas metricas

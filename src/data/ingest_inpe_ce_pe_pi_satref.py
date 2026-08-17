@@ -1,10 +1,10 @@
-"""Ingestao historica INPE sat_ref (CE/PE/PI, 2003-2024) para o alvo municipio-mes do FireCast APA-33.
+"""Ingestao historica INPE sat_ref (CE/PE/PI, 2003-2024) para o alvo municipio-mes do FireCast APA Chapada do Araripe.
 
-Arquivo `src/data/ingest_inpe_apa33_satref.py` baixa os 66 arquivos anuais da serie de
+Arquivo `src/data/ingest_inpe_ce_pe_pi_satref.py` baixa os 66 arquivos anuais da serie de
 referencia do satelite (`sat_ref`) publicados pelo INPE em
 `https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/anual/EstadosBr_sat_ref/{UF}/`,
 resolve cada `municipio` bruto (sem geocodigo no arquivo fonte) contra a malha IBGE de
-CE+PE+PI e produz um snapshot reproduzivel em `data/snapshots/inpe_apa33_satref_v1/`:
+CE+PE+PI e produz um snapshot reproduzivel em `data/snapshots/inpe_ce_pe_pi_satref_v1/`:
 
     manifest.json          contrato de fonte, contrato de sensor, anos, UFs, contagens
     source_files.csv        uma linha por arquivo baixado (proveniencia: url/sha256/bytes/...)
@@ -21,7 +21,7 @@ Se o arquivo falhar, todo o municipio-mes daquele (uf, ano) fica `observed = fal
 todos os meses do ano) e emitida para cada arquivo validado, tornando zeros reais
 explicitos.
 
-Uso: `python -m src.data.ingest_inpe_apa33_satref [--force] [--years ...] [--ufs ...]`
+Uso: `python -m src.data.ingest_inpe_ce_pe_pi_satref [--force] [--years ...] [--ufs ...]`
 """
 
 from __future__ import annotations
@@ -46,9 +46,9 @@ import requests
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(PROJECT_ROOT))
 
-CACHE_DIR = PROJECT_ROOT / "cache" / "inpe_apa33_satref"
+CACHE_DIR = PROJECT_ROOT / "cache" / "inpe_apa_araripe_satref"
 CACHE_INDEX_PATH = CACHE_DIR / "_cache_index.json"
-SNAPSHOT_DIR = PROJECT_ROOT / "data" / "snapshots" / "inpe_apa33_satref_v1"
+SNAPSHOT_DIR = PROJECT_ROOT / "data" / "snapshots" / "inpe_ce_pe_pi_satref_v1"
 REFERENCE_PATH = PROJECT_ROOT / "data" / "reference" / "ibge_municipios_CE_PE_PI.json"
 
 BASE_URL = "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/anual/EstadosBr_sat_ref"
@@ -62,7 +62,7 @@ READ_TIMEOUT = 120
 MAX_ATTEMPTS = 5
 BASE_BACKOFF_SECONDS = 2.0
 MAX_BACKOFF_SECONDS = 60.0
-USER_AGENT = "FireCast APA-33 historical ingest (guilhermebrilhante00@gmail.com)"
+USER_AGENT = "FireCast APA Chapada do Araripe historical ingest (guilhermebrilhante00@gmail.com)"
 
 KEEP_COLS = ["data_pas", "estado", "municipio"]
 CHUNKSIZE = 100_000
@@ -672,9 +672,9 @@ def build_snapshot(years: list[int], ufs: list[str], force: bool = False) -> dic
     )
 
     manifest = {
-        "snapshot_name": "inpe_apa33_satref_v1",
+        "snapshot_name": "inpe_ce_pe_pi_satref_v1",
         "created_at": datetime.now(timezone.utc).isoformat(),
-        "role": "target_historical_apa33",
+        "role": "target_historical_apa_araripe",
         "source_contract": {
             "url_template": f"{BASE_URL}/{{UF}}/focos_br_{{uf}}_ref_{{year}}.zip",
             "official_url": "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/anual/EstadosBr_sat_ref/",
@@ -734,7 +734,7 @@ def build_snapshot(years: list[int], ufs: list[str], force: bool = False) -> dic
 
 
 def main() -> None:
-    """Ponto de entrada de linha de comando: `python -m src.data.ingest_inpe_apa33_satref`."""
+    """Ponto de entrada de linha de comando: `python -m src.data.ingest_inpe_ce_pe_pi_satref`."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--years", nargs="*", type=int, default=YEARS)
     parser.add_argument("--ufs", nargs="*", default=UFS)

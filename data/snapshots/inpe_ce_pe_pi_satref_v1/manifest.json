@@ -1,7 +1,7 @@
 {
-  "snapshot_name": "inpe_apa33_satref_v1",
+  "snapshot_name": "inpe_ce_pe_pi_satref_v1",
   "created_at": "2026-08-17T03:30:27.848552+00:00",
-  "role": "target_historical_apa33",
+  "role": "target_historical_apa_araripe",
   "source_contract": {
     "url_template": "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/anual/EstadosBr_sat_ref/{UF}/focos_br_{uf}_ref_{year}.zip",
     "official_url": "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/anual/EstadosBr_sat_ref/",

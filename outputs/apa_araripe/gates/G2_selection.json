@@ -10,26 +10,12 @@
   "critical_wape_candidate": 0.5760808598967986,
   "win_rate_by_cut": 0.7383177570093458,
   "bootstrap_delta_ci95": [
-    -0.1748713705227501,
-    -0.07524248228621591
+    -0.13148587600425563,
+    -0.030680729544427115
   ],
-  "bootstrap_cuts_used": 107,
-  "bootstrap_cuts_skipped_wape_undefined": [
-    "2015-04",
-    "2015-05",
-    "2015-06",
-    "2016-03",
-    "2017-03",
-    "2017-05",
-    "2018-03",
-    "2019-04",
-    "2020-03",
-    "2020-04",
-    "2021-04",
-    "2022-03",
-    "2022-04"
-  ],
+  "bootstrap_cuts_used": null,
+  "bootstrap_cuts_skipped_wape_undefined": null,
   "decision": "PROMOTE",
   "reject_reasons": [],
-  "generated_at": "2026-08-17T03:50:34.869111+00:00"
+  "generated_at": "2026-08-17T04:11:58.702325+00:00"
 }

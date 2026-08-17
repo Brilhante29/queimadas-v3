@@ -1,7 +1,7 @@
 # Derivação do escopo APA Chapada do Araripe — relatório
 
 Data: 2026-08-14
-Branch: `feat/firecast-apa33`
+Branch: `feat/firecast-apa_araripe`
 Código: `src/scopes/apa_araripe.py` (`python -m src.scopes.apa_araripe`)
 Artefato: `data/reference/apa_chapada_araripe.csv`
 
@@ -143,23 +143,33 @@ superconjunto da APA — é outro recorte.
 | CRS de medição de área | Albers equivalente América do Sul (`+proj=aea +lat_1=-5 +lat_2=-42 +lat_0=-32 +lon_0=-60 +ellps=GRS80`) |
 | malha municipal | API oficial IBGE v3 `/malhas/estados/{23,26,22}?intrarregiao=municipio&qualidade=maxima` |
 | regra de pertencimento | `area_intersect_apa_km2 > 0` |
-| geometrias reparadas | registradas em `cache/apa33_scope/derivation_meta.json` |
+| geometrias reparadas | registradas em `cache/apa_araripe_scope/derivation_meta.json` |
 | hashes | SHA-256 de cada arquivo baixado, em `derivation_meta.json` e no CSV |
 
 **Área nunca foi medida em graus.** Medir em EPSG:4674 daria número
 fisicamente sem sentido; o próprio ICMBio calcula em Albers (campo
 `areahaalb`).
 
-### Validação independente da geometria
+### Checagem de consistência interna da interseção
 
 ```text
 soma das interseções municipais : 10.173,6  km²
 área oficial declarada (ICMBio) :  1.017.361,601 ha = 10.173,616 km²
 ```
 
-Bate em 4 algarismos significativos. Isso prova que os 36 municípios
-**ladrilham a APA inteira** — não falta pedaço nem há dupla contagem. É a
-checagem mais forte disponível de que a interseção está correta e completa.
+Bate em 4 algarismos significativos.
+
+**O que isso valida:** CRS correto, ausência de buracos, ausência de dupla
+contagem e cobertura completa da geometria empregada. Como a malha municipal
+do IBGE ladrilha o território, a soma das interseções *deve* reproduzir a área
+do polígono usado — se não reproduzisse, haveria erro de projeção, geometria
+inválida ou município faltando.
+
+**O que isso NÃO valida:** que o polígono publicado pelo ICMBio coincide com o
+limite jurídico definido pelo decreto de 1997. Ele não coincide — a própria
+literatura documenta a divergência, e está registrado na seção de limitações.
+Esta é uma checagem de consistência interna, não de correção jurídica da
+fronteira.
 
 ## 7. Sensibilidade ao limiar (NÃO aplicada — registro para o artigo)
 
@@ -205,12 +215,16 @@ Não escrever:
 > ~~"os 33 municípios definidos pelo decreto federal da APA"~~
 
 O decreto não define lista nenhuma (ver
-`outputs/apa33/audit/source_research_findings.md`, Art. 3º = memorial
+`outputs/apa_araripe/audit/source_research_findings.md`, Art. 3º = memorial
 descritivo). Escrever:
 
 > "O escopo municipal foi derivado pela interseção espacial entre o limite
 > geoespacial da APA Chapada do Araripe publicado pelo ICMBio e a malha
 > municipal do IBGE, incluindo todo município com área de interseção maior
 > que zero, resultando em 36 municípios (CE 18, PE 8, PI 10). A soma das
-> áreas de interseção (10.173,6 km²) reproduz a área oficial declarada da
-> unidade (10.173,6 km²)."
+> áreas de interseção (10.173,6 km²) reproduz a área declarada da unidade
+> (10.173,6 km²), o que confirma a consistência interna da operação
+> espacial. Registra-se que o limite geoespacial publicado pelo ICMBio não
+> coincide com o memorial descritivo do decreto de 1997; adota-se o primeiro
+> como definição operacional versionada por ser o objeto com geometria
+> auditável."

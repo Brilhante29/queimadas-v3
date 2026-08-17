@@ -1,6 +1,6 @@
 """Testes do escopo APA, do alvo historico e de vazamento temporal.
 
-Cobrem os contratos que o SDD APA-33 marca como inegociaveis: identidade do
+Cobrem os contratos que o SDD APA Chapada do Araripe marca como inegociaveis: identidade do
 escopo, integridade do alvo, semantica de zero vs missing, e ausencia de
 informacao do futuro no treino.
 """
@@ -14,9 +14,9 @@ import pytest
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 SCOPE_CSV = PROJECT_ROOT / "data" / "reference" / "apa_chapada_araripe.csv"
-SNAP = PROJECT_ROOT / "data" / "snapshots" / "inpe_apa33_satref_v1"
+SNAP = PROJECT_ROOT / "data" / "snapshots" / "inpe_ce_pe_pi_satref_v1"
 TARGET = SNAP / "municipality_month.csv"
-EXP_DIR = PROJECT_ROOT / "outputs" / "apa33" / "exp10"
+EXP_DIR = PROJECT_ROOT / "outputs" / "apa_araripe" / "exp10"
 
 EXPECTED_MONTHS = 264  # 2003-01 .. 2024-12
 MIN_TRAIN_MONTHS = 60
@@ -71,10 +71,13 @@ def test_scope_intersection_area_is_strictly_positive(scope):
 
 
 def test_scope_area_reproduces_official_apa_area(scope):
-    """A soma das intersecoes tem que reproduzir a area oficial da UC.
+    """Consistencia interna da intersecao: a soma reproduz a area do poligono.
 
-    Area declarada pelo ICMBio: 1.017.361,601 ha = 10.173,616 km2. Se os
-    municipios nao ladrilharem a APA inteira, este teste quebra."""
+    Como a malha municipal ladrilha o territorio, a soma das intersecoes DEVE
+    reproduzir a area do proprio poligono usado. Isto valida CRS, ausencia de
+    buraco, ausencia de dupla contagem e cobertura completa da geometria
+    empregada -- e **nao** prova que o poligono do ICMBio coincide com o
+    limite juridico de 1997 (que a propria literatura aponta divergir)."""
     total = scope["area_intersect_apa_km2"].sum()
     assert total == pytest.approx(10_173.616, rel=0.001)
 
@@ -172,7 +175,7 @@ def test_test_month_excluded_from_train():
 
     Verifica o comportamento real da funcao usada pelo experimento, nao a
     intencao declarada."""
-    from src.experiments.exp10_apa33_regional_intensity import load_apa_target
+    from src.experiments.exp10_apa_araripe_regional_intensity import load_apa_target
 
     df = load_apa_target()
     cut = pd.Period("2020-10", freq="M")
@@ -183,22 +186,45 @@ def test_test_month_excluded_from_train():
 
 def test_regional_factor_uses_only_apa_scope():
     """O fator regional nao pode olhar municipio fora da APA (SDD 14)."""
-    from src.experiments.exp10_apa33_regional_intensity import load_apa_target
+    from src.experiments.exp10_apa_araripe_regional_intensity import load_apa_target
     from src.scopes import apa_geocodes
 
     df = load_apa_target()
     assert set(df["geocodigo"].astype(int)) <= apa_geocodes()
 
 
-def test_regional_factor_uses_only_past_periods():
-    """A janela de 12 meses do fator termina em cut-1, nunca inclui o alvo."""
+def test_regional_factor_window_ends_strictly_before_cut():
+    """A janela do fator regional termina em cut-1 e tem exatamente 12 meses.
+
+    Reconstroi os limites REAIS registrados por corte e prova
+    `prior_window_end == cut - 1`, em vez de apenas confiar na intencao do
+    codigo. Se o mes previsto entrasse na janela, o fator veria o proprio
+    alvo."""
+    ratios = pd.read_csv(EXP_DIR / "regional_ratio_by_cut.csv")
+    assert len(ratios) == 120
+
+    for _, row in ratios.iterrows():
+        cut = pd.Period(row["cut"], freq="M")
+        start = pd.Period(row["prior_window_start"], freq="M")
+        end = pd.Period(row["prior_window_end"], freq="M")
+
+        assert end == cut - 1, f"janela do corte {cut} termina em {end}, deveria ser {cut - 1}"
+        assert start == cut - 12, f"janela do corte {cut} comeca em {start}, deveria ser {cut - 12}"
+        assert (end - start).n == 11, "janela deveria cobrir 12 meses"
+
+        # O maximo periodo REALMENTE observado na janela nunca pode alcancar o
+        # mes previsto.
+        if isinstance(row["prior_max_period_observed"], str) and row["prior_max_period_observed"]:
+            assert pd.Period(row["prior_max_period_observed"], freq="M") < cut
+
+
+def test_train_never_reaches_the_predicted_month():
+    """O maximo periodo do treino, corte a corte, fica estritamente antes do alvo."""
     ratios = pd.read_csv(EXP_DIR / "regional_ratio_by_cut.csv")
     for _, row in ratios.iterrows():
         cut = pd.Period(row["cut"], freq="M")
-        # a janela usada e [cut-12, cut-1]; se o mes alvo entrasse, o
-        # experimento teria registrado n_test_rows dentro de n_prior_rows
-        assert row["n_eligible_municipios"] > 0
-        assert cut.year <= 2024
+        train_max = pd.Period(row["train_max_period"], freq="M")
+        assert train_max < cut, f"treino do corte {cut} alcanca {train_max}"
 
 
 def test_min_train_months_preserved():

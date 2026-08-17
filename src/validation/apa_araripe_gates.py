@@ -18,10 +18,10 @@ import pandas as pd
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(PROJECT_ROOT))
 
-SNAP = PROJECT_ROOT / "data" / "snapshots" / "inpe_apa33_satref_v1"
+SNAP = PROJECT_ROOT / "data" / "snapshots" / "inpe_ce_pe_pi_satref_v1"
 SCOPE_CSV = PROJECT_ROOT / "data" / "reference" / "apa_chapada_araripe.csv"
-EXP_DIR = PROJECT_ROOT / "outputs" / "apa33" / "exp10"
-GATES_DIR = PROJECT_ROOT / "outputs" / "apa33" / "gates"
+EXP_DIR = PROJECT_ROOT / "outputs" / "apa_araripe" / "exp10"
+GATES_DIR = PROJECT_ROOT / "outputs" / "apa_araripe" / "gates"
 
 MIN_TRAIN_MONTHS = 60
 EXPECTED_MONTHS = 264  # 2003-01 .. 2024-12

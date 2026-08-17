@@ -1,8 +1,8 @@
 # APA Chapada do Araripe — pesquisa de fonte oficial (PHASE 2)
 
 Data da pesquisa: 2026-08-14
-Executor: Claude Code (skill `/official-source-research`, SDD APA-33 §8)
-Branch: `feat/firecast-apa33`
+Executor: Claude Code (skill `/official-source-research`, SDD APA Chapada do Araripe §8)
+Branch: `feat/firecast-apa_araripe`
 
 ## Resumo executivo
 

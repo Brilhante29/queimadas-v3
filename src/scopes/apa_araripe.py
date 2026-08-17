@@ -9,7 +9,7 @@ ICMBio para a UC tambem nao publica lista de municipios. Consequencia: toda
 "lista de N municipios" em circulacao (33, 36, 38) e uma *interpretacao*
 derivada do poligono, e as interpretacoes divergem entre si.
 
-Ver ``outputs/apa33/audit/source_research_findings.md`` para a evidencia
+Ver ``outputs/apa_araripe/audit/source_research_findings.md`` para a evidencia
 primaria (texto do decreto, pagina do ICMBio, divergencia entre fontes).
 
 Definicao operacional adotada
@@ -40,8 +40,8 @@ import pandas as pd
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 SCOPE_CSV = PROJECT_ROOT / "data" / "reference" / "apa_chapada_araripe.csv"
-CACHE_DIR = PROJECT_ROOT / "cache" / "apa33_scope"
-REPORT_PATH = PROJECT_ROOT / "outputs" / "apa33" / "audit" / "scope_derivation_report.md"
+CACHE_DIR = PROJECT_ROOT / "cache" / "apa_araripe_scope"
+REPORT_PATH = PROJECT_ROOT / "outputs" / "apa_araripe" / "audit" / "scope_derivation_report.md"
 
 INDE_WFS = "https://geoservicos.inde.gov.br/geoserver/wfs"
 UC_LAYER = "ICMBio:limiteucsfederais_a"
@@ -59,7 +59,7 @@ ALBERS_SA = (
 )
 
 MEMBERSHIP_RULE = "area_intersect_apa_km2 > 0"
-UA = {"User-Agent": "FireCast APA33 scope derivation"}
+UA = {"User-Agent": "FireCast APA Araripe scope derivation"}
 
 
 def _http_get(url: str, timeout: int = 300) -> bytes:

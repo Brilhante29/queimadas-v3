@@ -1,13 +1,13 @@
-# FireCast APA-33 — PROGRESS
+# FireCast APA Chapada do Araripe — PROGRESS
 
-Branch: `feat/firecast-apa33`
+Branch: `feat/firecast-apa_araripe`
 SDD: reconstrução do escopo Chapada do Araripe + ingestão histórica + retreino + validação
 Regra: atualizar com **evidência**, não narrativa (§61).
 
 ## Estado por fase
 
 ```text
-[PASS] PHASE 0   baseline do repo (branch criada, namespaces outputs/apa33/*)
+[PASS] PHASE 0   baseline do repo (branch criada, namespaces outputs/apa_araripe/*)
 [PASS] PHASE 2   descoberta/verificacao das fontes oficiais
 [PASS] PHASE 1'  escopo APA por intersecao espacial versionada -> N = 36
 [PASS] PHASE 3   ingestor historico INPE CE+PE+PI 2003-2024 -> 156.552 linhas
@@ -26,13 +26,13 @@ Regra: atualizar com **evidência**, não narrativa (§61).
 
 ## PHASE 0 — baseline (PASS)
 
-- Branch `feat/firecast-apa33` criada a partir de `feat/integracao-firecast-ia`.
-- Namespaces criados: `outputs/apa33/audit/`, `data/snapshots/inpe_apa33_satref_v1/`.
+- Branch `feat/firecast-apa_araripe` criada a partir de `feat/integracao-firecast-ia`.
+- Namespaces criados: `outputs/apa_araripe/audit/`, `data/snapshots/inpe_ce_pe_pi_satref_v1/`.
 - Nenhum output legado sobrescrito (§5, §59).
 
 ## PHASE 2 — fontes oficiais (PASS)
 
-Artefato: `outputs/apa33/audit/source_research_findings.md` (commit `f9153b8`)
+Artefato: `outputs/apa_araripe/audit/source_research_findings.md` (commit `f9153b8`)
 
 Evidência:
 
@@ -57,7 +57,7 @@ Caminhos disjuntos, sem conflito de arquivo:
 | agente | escreve em | entrega |
 |---|---|---|
 | `scope-engineer` | `data/reference/`, `src/scopes/` | `apa_chapada_araripe.csv` (N derivado), `cariri_ce_legacy`, relatório de derivação + divergência vs 29/33/36/38 |
-| `data-engineer` | `src/data/`, `data/snapshots/inpe_apa33_satref_v1/`, `cache/` | target `geocodigo × mês` 2003–2024 CE+PE+PI, manifest, provenance, coverage, mapping, QA |
+| `data-engineer` | `src/data/`, `data/snapshots/inpe_ce_pe_pi_satref_v1/`, `cache/` | target `geocodigo × mês` 2003–2024 CE+PE+PI, manifest, provenance, coverage, mapping, QA |
 
 Contratos exigidos dos dois (§10, §4.2, §50, §53):
 - zero vs missing derivado da **validade do arquivo-fonte**, nunca de "primeiro/último foco";
@@ -74,7 +74,7 @@ Contratos exigidos dos dois (§10, §4.2, §50, §53):
 ## PHASE 1' — escopo derivado (PASS)
 
 Artefatos: `data/reference/apa_chapada_araripe.csv`, `src/scopes/apa_araripe.py`,
-`outputs/apa33/audit/scope_derivation_report.md` (commit `557c9b8`)
+`outputs/apa_araripe/audit/scope_derivation_report.md` (commit `557c9b8`)
 
 ```text
 N = 36   (CE 18, PE 8, PI 10)   <- COMPUTADO, nunca fixado
@@ -105,8 +105,8 @@ Divergencias explicadas municipio a municipio no relatorio. Destaques:
 
 ## PHASE 3 — ingestao historica (PASS)
 
-Artefatos: `src/data/ingest_inpe_apa33_satref.py`,
-`data/snapshots/inpe_apa33_satref_v1/` (commit `90b25c3`)
+Artefatos: `src/data/ingest_inpe_ce_pe_pi_satref.py`,
+`data/snapshots/inpe_ce_pe_pi_satref_v1/` (commit `90b25c3`)
 
 ```text
 66/66 arquivos-fonte baixados e validados por hash

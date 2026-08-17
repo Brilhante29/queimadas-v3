@@ -3,7 +3,7 @@
   "scope": "apa_chapada_araripe",
   "scope_n_municipios": 36,
   "scope_sha256": "3d3d651c89bc511b5eac2f1e86d647f30d02fce43f6bf7f7b6000d5edaae8d50",
-  "target_snapshot": "data\\snapshots\\inpe_apa33_satref_v1\\municipality_month.csv",
+  "target_snapshot": "data\\snapshots\\inpe_ce_pe_pi_satref_v1\\municipality_month.csv",
   "target_sha256": "b393cb8fb720a9beecf0b95d5833202203804a7737eb184a58f44064fd8429c8",
   "protocol": "walk-forward 2015-2024, treino so com passado, 2025+ congelado",
   "n_cuts": 120,
@@ -23,14 +23,17 @@
   "delta_all_wape": -0.07753970189423331,
   "critical_wape_baseline": 0.6710043382733948,
   "critical_wape_candidate": 0.5760808598967986,
-  "win_rate_by_cut": 0.7383177570093458,
+  "bootstrap_estimand": "WAPE global recalculado por reamostra de cortes (reproduz EXP-10 original)",
   "bootstrap_delta_ci95": [
-    -0.1748713705227501,
-    -0.07524248228621591
+    -0.13148587600425563,
+    -0.030680729544427115
   ],
   "bootstrap_n": 2000,
-  "bootstrap_cuts_used": 107,
-  "bootstrap_cuts_skipped_wape_undefined": [
+  "bootstrap_prob_delta_negative": 0.9995,
+  "bootstrap_degenerate_samples": 0,
+  "win_rate_by_cut": 0.7383177570093458,
+  "per_cut_comparable": 107,
+  "per_cut_undefined_wape": [
     "2015-04",
     "2015-05",
     "2015-06",
@@ -47,5 +50,5 @@
   ],
   "decision": "PROMOTE",
   "reject_reasons": [],
-  "generated_at": "2026-08-17T03:48:57.703995+00:00"
+  "generated_at": "2026-08-17T04:11:56.271681+00:00"
 }
