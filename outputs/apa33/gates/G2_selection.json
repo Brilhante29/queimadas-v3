@@ -1,0 +1,35 @@
+{
+  "gate": "G2_selection",
+  "status": "PASS",
+  "baseline": "climatology_municipal",
+  "candidate": "climatology_apa_intensity12",
+  "all_wape_baseline": 0.7849593095159628,
+  "all_wape_candidate": 0.7074196076217295,
+  "delta_all_wape": -0.07753970189423331,
+  "critical_wape_baseline": 0.6710043382733948,
+  "critical_wape_candidate": 0.5760808598967986,
+  "win_rate_by_cut": 0.7383177570093458,
+  "bootstrap_delta_ci95": [
+    -0.1748713705227501,
+    -0.07524248228621591
+  ],
+  "bootstrap_cuts_used": 107,
+  "bootstrap_cuts_skipped_wape_undefined": [
+    "2015-04",
+    "2015-05",
+    "2015-06",
+    "2016-03",
+    "2017-03",
+    "2017-05",
+    "2018-03",
+    "2019-04",
+    "2020-03",
+    "2020-04",
+    "2021-04",
+    "2022-03",
+    "2022-04"
+  ],
+  "decision": "PROMOTE",
+  "reject_reasons": [],
+  "generated_at": "2026-08-17T03:50:34.869111+00:00"
+}

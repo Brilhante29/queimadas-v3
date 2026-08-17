@@ -1,0 +1,29 @@
+{
+  "gate": "G0_data",
+  "status": "PASS",
+  "failures": [],
+  "checks": {
+    "scope_n": 36,
+    "scope_by_uf": {
+      "CE": 18,
+      "PI": 10,
+      "PE": 8
+    },
+    "scope_geocodigo_unique": true,
+    "scope_all_in_ibge_reference": true,
+    "scope_present_in_target": 36,
+    "duplicate_monthly_keys": 0,
+    "months_per_municipality_min": 264,
+    "months_per_municipality_max": 264,
+    "min_train_months": 60,
+    "n_eligible": 36,
+    "eligible_fraction": 1.0,
+    "negative_fire_count": 0,
+    "unresolved_municipality_names": null,
+    "source_files_ok": 66,
+    "source_files_failed": 0,
+    "target_sha256": "b393cb8fb720a9beecf0b95d5833202203804a7737eb184a58f44064fd8429c8",
+    "scope_sha256": "3d3d651c89bc511b5eac2f1e86d647f30d02fce43f6bf7f7b6000d5edaae8d50"
+  },
+  "generated_at": "2026-08-17T03:50:34.843332+00:00"
+}

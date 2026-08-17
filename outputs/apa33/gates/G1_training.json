@@ -1,0 +1,39 @@
+{
+  "gate": "G1_training",
+  "status": "PASS",
+  "failures": [],
+  "checks": {
+    "artifacts_present": [
+      "predictions_2015_2024.csv",
+      "summary.csv",
+      "regional_ratio_by_cut.csv",
+      "result.json"
+    ],
+    "n_cuts": 120,
+    "n_prediction_rows": 8640,
+    "predictions_nonnegative": true,
+    "test_years": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "hyperparameters_unchanged": {
+      "trailing_months": 12,
+      "shrink_fire_count": 100.0,
+      "ratio_clip": [
+        0.5,
+        2.0
+      ],
+      "min_train_months": 60
+    },
+    "bootstrap_present": true
+  },
+  "generated_at": "2026-08-17T03:50:34.867595+00:00"
+}
