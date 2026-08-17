@@ -1,0 +1,82 @@
+{
+  "snapshot_name": "inpe_apa33_satref_v1",
+  "created_at": "2026-08-17T03:30:27.848552+00:00",
+  "role": "target_historical_apa33",
+  "source_contract": {
+    "url_template": "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/anual/EstadosBr_sat_ref/{UF}/focos_br_{uf}_ref_{year}.zip",
+    "official_url": "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/anual/EstadosBr_sat_ref/",
+    "license": "dados abertos INPE",
+    "ufs": [
+      "CE",
+      "PE",
+      "PI"
+    ],
+    "years": [
+      2003,
+      2024
+    ],
+    "years_requested": [
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "n_files_expected": 66
+  },
+  "sensor_contract": {
+    "series": "sat_ref",
+    "description": "Serie de referencia do satelite (sat_ref) do INPE: o arquivo inteiro E a referencia; nao ha coluna de satelite por linha. O contrato de sensor e uma propriedade do arquivo fonte (anual, por UF), nao derivada por linha."
+  },
+  "municipality_join": {
+    "method": "normalize(municipio) + estado(->UF) -> geocodigo via data/reference/ibge_municipios_CE_PE_PI.json",
+    "normalization": "NFKD, strip accents, strip/collapse whitespace, casefold",
+    "fail_closed": "nomes com 0 ou >1 candidatos na UF ficam UNRESOLVED em mapping_report.csv; nunca adivinhados ou descartados silenciosamente"
+  },
+  "zero_vs_missing_semantics": "fire_count=0,observed=true somente quando o arquivo (uf,ano) baixou, validou hash/zip e parseou com sucesso. Arquivo com falha => observed=false e fire_count vazio (NA) para todo o municipio-mes daquele (uf,ano).",
+  "counts": {
+    "files_ok": 66,
+    "files_failed": 0,
+    "n_files_expected": 66,
+    "municipality_month_rows_total": 156552,
+    "municipality_month_rows_observed_true": 156552,
+    "distinct_geocodigos_resolved": 588,
+    "n_unresolved_municipality_names": 0
+  },
+  "generated_at": "2026-08-17T03:30:27.850577+00:00",
+  "quality_overall_pass": true,
+  "outputs": {
+    "source_files.csv": {
+      "rows": 66
+    },
+    "mapping_report.csv": {
+      "rows": 588
+    },
+    "coverage_report.csv": {
+      "rows": 66
+    },
+    "municipality_month.csv": {
+      "rows": 156552
+    },
+    "quality_report.json": {
+      "overall_pass": true
+    }
+  }
+}

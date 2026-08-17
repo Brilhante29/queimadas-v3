@@ -1,0 +1,75 @@
+{
+  "generated_at": "2026-08-17T03:30:27.101633+00:00",
+  "overall_pass": true,
+  "not_approved_for_production_reason": null,
+  "files_requested": 66,
+  "files_ok": 66,
+  "files_failed": 0,
+  "rows_dropped_no_municipality_match": 0,
+  "checks": {
+    "unique_key_geocodigo_ano_mes": {
+      "pass": true,
+      "n_duplicates": 0
+    },
+    "fire_count_non_negative_where_observed": {
+      "pass": true
+    },
+    "fire_count_integer_where_observed": {
+      "pass": true
+    },
+    "mes_in_1_12": {
+      "pass": true
+    },
+    "ano_in_2003_2024": {
+      "pass": true
+    },
+    "uf_in_ce_pe_pi": {
+      "pass": true
+    },
+    "all_geocodigos_in_ibge_reference": {
+      "pass": true
+    },
+    "zero_unresolved_municipality_names": {
+      "pass": true,
+      "n_unresolved": 0,
+      "unresolved_names": []
+    },
+    "unresolved_names_have_zero_fires": {
+      "pass": true,
+      "n_unresolved_with_nonzero_fires": 0,
+      "unresolved_with_fires": []
+    },
+    "reference_has_no_duplicate_name_uf": {
+      "pass": true,
+      "duplicates": []
+    },
+    "observed_row_count_matches_expected_grid": {
+      "pass": true,
+      "expected": 156552,
+      "actual": 156552
+    },
+    "per_uf_municipality_coverage": [
+      {
+        "uf": "CE",
+        "n_municipios_reference": 184,
+        "n_distinct_municipio_names_in_raw_data": 184,
+        "n_resolved_geocodigos_seen": 184,
+        "gap_reference_minus_resolved": 0
+      },
+      {
+        "uf": "PE",
+        "n_municipios_reference": 185,
+        "n_distinct_municipio_names_in_raw_data": 180,
+        "n_resolved_geocodigos_seen": 180,
+        "gap_reference_minus_resolved": 5
+      },
+      {
+        "uf": "PI",
+        "n_municipios_reference": 224,
+        "n_distinct_municipio_names_in_raw_data": 224,
+        "n_resolved_geocodigos_seen": 224,
+        "gap_reference_minus_resolved": 0
+      }
+    ]
+  }
+}
