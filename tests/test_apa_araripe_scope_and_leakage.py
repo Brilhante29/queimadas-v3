@@ -340,3 +340,92 @@ def test_frozen_config_exists_and_records_selection_rule():
     # a regra tem que exigir margem, nao "mais estreito que mal passou"
     assert frozen["dev_margin"] > 0
     assert frozen["effective_dev_floor"] > frozen["ic_bounds"][0]
+
+
+# ------------------------------------------------------- endpoints APA
+
+
+@pytest.fixture(scope="module")
+def api_client():
+    """Cliente de teste da API de serving."""
+    from fastapi.testclient import TestClient
+
+    from src.production.serving_api import create_app
+
+    return TestClient(create_app())
+
+
+def test_apa_scope_endpoint_serves_derived_scope(api_client, scope):
+    """O endpoint publica exatamente o escopo derivado, com hash."""
+    r = api_client.get("/v1/apa/scope")
+    assert r.status_code == 200
+    body = r.json()
+    assert body["scope"] == "apa_chapada_araripe"
+    assert body["scope_n_municipios"] == len(scope)
+    assert len(body["municipios"]) == len(scope)
+    assert len(body["scope_sha256"]) == 64
+    served = {m["geocodigo"] for m in body["municipios"]}
+    assert served == set(scope["geocodigo"].astype(int))
+
+
+def test_apa_predict_fails_closed_outside_scope(api_client):
+    """Municipio fora da APA recebe 404, nunca previsao silenciosa."""
+    r = api_client.post("/v1/apa/predict", json={"geocodigo": 2307304, "ano": 2026, "mes": 10})
+    assert r.status_code == 404
+    assert "fora do escopo" in r.json()["detail"]
+
+
+def test_apa_predict_hides_interval_while_uncertainty_not_validated(api_client):
+    """Enquanto o gate nao valida, a API nao publica intervalo."""
+    r = api_client.post("/v1/apa/predict", json={"geocodigo": 2602001, "ano": 2026, "mes": 10})
+    assert r.status_code == 200
+    body = r.json()
+    assert body["forecast"] > 0
+    gate_path = PROJECT_ROOT / "outputs" / "apa_araripe" / "gates" / "G5_conformal.json"
+    gate = json.loads(gate_path.read_text(encoding="utf-8"))
+    if gate["status"] != "PASS":
+        assert body["interval"] is None
+        assert body["uncertainty_status"] == "not_validated"
+
+
+def test_apa_uncertainty_status_endpoint(api_client):
+    """O status de incerteza e publicado explicitamente, com motivo."""
+    r = api_client.get("/v1/apa/uncertainty_status")
+    assert r.status_code == 200
+    body = r.json()
+    assert body["status"] in {"validated", "not_validated"}
+    assert body["reason"]
+
+
+# ------------------------------------------------- teste selado de 2025
+
+
+def test_sealed_2025_gate_recorded_with_frozen_provenance():
+    """O gate final registra a config congelada e os hashes de proveniencia."""
+    path = PROJECT_ROOT / "outputs" / "apa_araripe" / "gates" / "G5_final_sealed_2025.json"
+    if not path.exists():
+        pytest.skip("teste selado ainda nao executado")
+    gate = json.loads(path.read_text(encoding="utf-8"))
+    assert gate["status"] in {"PASS", "FAIL"}
+    assert gate["frozen_config"]["name"]
+    assert len(gate["dev_predictions_sha256"]) == 64
+    assert len(gate["scoring_snapshot_sha256"]) == 64
+    # a config avaliada tem que ser a congelada, nao outra
+    frozen = json.loads(
+        (PROJECT_ROOT / "outputs" / "apa_araripe" / "g5_drift" / "frozen_config.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert gate["frozen_config"] == frozen["chosen"]
+
+
+def test_training_snapshot_never_contaminated_with_2025():
+    """O snapshot de treino nao pode conter 2025 -- scoring vive separado."""
+    train = pd.read_csv(TARGET)
+    assert train["ano"].max() <= 2024
+    score_path = (
+        PROJECT_ROOT / "data" / "snapshots" / "inpe_ce_pe_pi_satref_2025_scoring" / "municipality_month.csv"
+    )
+    if score_path.exists():
+        score = pd.read_csv(score_path)
+        assert set(score["ano"].unique()) == {2025}

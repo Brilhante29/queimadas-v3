@@ -45,6 +45,7 @@ G4_MUNICIPIO_PATH = PROJECT_ROOT / "outputs" / "g4_spatial_robustness_exp10_2023
 G5_REPORT_PATH = PROJECT_ROOT / "outputs" / "g5_conformal_ic95_guarded_exp10" / "g5_report.json"
 PRODUCTION_PLAN_PATH = PROJECT_ROOT / "outputs" / "production_ml_plan.json"
 ENSO_SNAPSHOT_PATH = PROJECT_ROOT / "data" / "snapshots" / "enso_cpc_v1" / "enso_monthly.csv"
+APA_SERVING_ARTIFACT = PROJECT_ROOT / "outputs" / "apa_araripe" / "serving" / "model.json"
 CHAMPION_MODEL_NAME = "climatology_regional_intensity12"
 
 # Status de release definidos pela decisao humana de 2026-07-11
@@ -393,6 +394,65 @@ def create_app(model_path: Path = DEFAULT_MODEL_PATH) -> FastAPI:
             return service.climate_enso()
         except FileNotFoundError as exc:
             raise HTTPException(status_code=503, detail=str(exc)) from exc
+
+    # ------------------------------------------------------------------
+    # Escopo APA Chapada do Araripe
+    #
+    # Existe para que o consumidor (back-end) leia a lista de municipios
+    # DESTE artefato em vez de manter mapa hardcoded. Foi exatamente o
+    # acoplamento por lista fixa que produziu o mapa de 29 cidades do Cariri
+    # na integracao anterior; trocar por uma lista fixa de 36 repetiria o
+    # mesmo erro um numero adiante.
+    # ------------------------------------------------------------------
+
+    @app.get("/v1/apa/scope")
+    def apa_scope() -> dict[str, Any]:
+        """Executa a etapa `apa scope` do fluxo FireCast.
+
+        A funcao faz parte de `src/production/serving_api.py` e deve preservar rastreabilidade, determinismo e separacao entre treino, avaliacao e serving."""
+        try:
+            artifact = json.loads(_require_file(APA_SERVING_ARTIFACT).read_text(encoding="utf-8"))
+        except FileNotFoundError as exc:
+            raise HTTPException(status_code=503, detail=str(exc)) from exc
+        return {
+            "scope": artifact["scope"],
+            "scope_sha256": artifact["scope_sha256"],
+            "scope_n_municipios": artifact["scope_n_municipios"],
+            "scope_by_uf": artifact["scope_by_uf"],
+            "municipios": artifact["municipios"],
+            "model_name": artifact["model_name"],
+            "generated_at": artifact["generated_at"],
+        }
+
+    @app.get("/v1/apa/uncertainty_status")
+    def apa_uncertainty_status() -> dict[str, Any]:
+        """Executa a etapa `apa uncertainty status` do fluxo FireCast.
+
+        A funcao faz parte de `src/production/serving_api.py` e deve preservar rastreabilidade, determinismo e separacao entre treino, avaliacao e serving."""
+        try:
+            artifact = json.loads(_require_file(APA_SERVING_ARTIFACT).read_text(encoding="utf-8"))
+        except FileNotFoundError as exc:
+            raise HTTPException(status_code=503, detail=str(exc)) from exc
+        return artifact["uncertainty"]
+
+    @app.post("/v1/apa/predict")
+    def apa_predict(req: PredictionRequest) -> dict[str, Any]:
+        """Gera a etapa `apa predict` do fluxo FireCast.
+
+        Falha fechada para municipio fora da APA. O intervalo so e exposto se
+        o gate de incerteza estiver validado -- enquanto nao estiver, devolve
+        `interval: null` e `uncertainty_status` explicito, em vez de publicar
+        barra de erro sem cobertura demonstrada."""
+        from src.production.apa_araripe_serving import predict as apa_predict_fn
+
+        try:
+            artifact = json.loads(_require_file(APA_SERVING_ARTIFACT).read_text(encoding="utf-8"))
+        except FileNotFoundError as exc:
+            raise HTTPException(status_code=503, detail=str(exc)) from exc
+        try:
+            return apa_predict_fn(artifact, req.geocodigo, req.ano, req.mes)
+        except ValueError as exc:
+            raise HTTPException(status_code=404, detail=str(exc)) from exc
 
     return app
 
