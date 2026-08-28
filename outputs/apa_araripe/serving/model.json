@@ -1,0 +1,2392 @@
+{
+  "model_name": "climatology_apa_intensity12",
+  "scope": "apa_chapada_araripe",
+  "scope_sha256": "3d3d651c89bc511b5eac2f1e86d647f30d02fce43f6bf7f7b6000d5edaae8d50",
+  "scope_n_municipios": 36,
+  "scope_by_uf": {
+    "CE": 18,
+    "PI": 10,
+    "PE": 8
+  },
+  "target_snapshot": "data\\snapshots\\inpe_ce_pe_pi_satref_v1\\municipality_month.csv",
+  "target_sha256": "b393cb8fb720a9beecf0b95d5833202203804a7737eb184a58f44064fd8429c8",
+  "training_period": {
+    "start": "2003-01",
+    "end": "2024-12"
+  },
+  "generated_at": "2026-08-28T18:16:27.036710+00:00",
+  "parameters": {
+    "trailing_months": 12,
+    "shrink_fire_count": 100.0,
+    "ratio_clip": [
+      0.5,
+      2.0
+    ]
+  },
+  "regional_factor": {
+    "observed_trailing_12m": 1215.0,
+    "expected_trailing_12m": 731.909090909091,
+    "raw_ratio": 1.5807015626707461,
+    "applied_ratio": 1.5807015626707461,
+    "window_end": "2024-12",
+    "contract": "fator calculado SOMENTE sobre municipios do escopo APA"
+  },
+  "point_forecast_evidence": {
+    "all_wape_baseline": 0.7849593095159628,
+    "all_wape_candidate": 0.7074196076217295,
+    "bootstrap_delta_ci95": [
+      -0.13148587600425563,
+      -0.030680729544427115
+    ],
+    "decision": "PROMOTE"
+  },
+  "uncertainty": {
+    "status": "not_validated",
+    "reason": "G5 FAIL: ['cobertura geral 0.8762 fora de [0.9, 0.98]', 'cobertura CE 0.8819 fora de [0.9, 0.98]', 'cobertura PE 0.8490 fora de [0.9, 0.98]', 'cobertura PI 0.8875 fora de [0.9, 0.98]']",
+    "contract": "enquanto status != validated o serving devolve interval=null; previsao pontual permitida, intervalo com aparencia de garantia nao"
+  },
+  "municipios": [
+    {
+      "geocodigo": 2200277,
+      "municipio": "Alegrete do Piauí",
+      "uf": "PI"
+    },
+    {
+      "geocodigo": 2202091,
+      "municipio": "Caldeirão Grande do Piauí",
+      "uf": "PI"
+    },
+    {
+      "geocodigo": 2202554,
+      "municipio": "Caridade do Piauí",
+      "uf": "PI"
+    },
+    {
+      "geocodigo": 2203271,
+      "municipio": "Curral Novo do Piauí",
+      "uf": "PI"
+    },
+    {
+      "geocodigo": 2204154,
+      "municipio": "Francisco Macedo",
+      "uf": "PI"
+    },
+    {
+      "geocodigo": 2204303,
+      "municipio": "Fronteiras",
+      "uf": "PI"
+    },
+    {
+      "geocodigo": 2205953,
+      "municipio": "Marcolândia",
+      "uf": "PI"
+    },
+    {
+      "geocodigo": 2207207,
+      "municipio": "Padre Marcos",
+      "uf": "PI"
+    },
+    {
+      "geocodigo": 2210300,
+      "municipio": "São Julião",
+      "uf": "PI"
+    },
+    {
+      "geocodigo": 2210706,
+      "municipio": "Simões",
+      "uf": "PI"
+    },
+    {
+      "geocodigo": 2300101,
+      "municipio": "Abaiara",
+      "uf": "CE"
+    },
+    {
+      "geocodigo": 2300606,
+      "municipio": "Altaneira",
+      "uf": "CE"
+    },
+    {
+      "geocodigo": 2301307,
+      "municipio": "Araripe",
+      "uf": "CE"
+    },
+    {
+      "geocodigo": 2301604,
+      "municipio": "Assaré",
+      "uf": "CE"
+    },
+    {
+      "geocodigo": 2301901,
+      "municipio": "Barbalha",
+      "uf": "CE"
+    },
+    {
+      "geocodigo": 2302503,
+      "municipio": "Brejo Santo",
+      "uf": "CE"
+    },
+    {
+      "geocodigo": 2302701,
+      "municipio": "Campos Sales",
+      "uf": "CE"
+    },
+    {
+      "geocodigo": 2304202,
+      "municipio": "Crato",
+      "uf": "CE"
+    },
+    {
+      "geocodigo": 2304301,
+      "municipio": "Farias Brito",
+      "uf": "CE"
+    },
+    {
+      "geocodigo": 2307106,
+      "municipio": "Jardim",
+      "uf": "CE"
+    },
+    {
+      "geocodigo": 2307205,
+      "municipio": "Jati",
+      "uf": "CE"
+    },
+    {
+      "geocodigo": 2308401,
+      "municipio": "Missão Velha",
+      "uf": "CE"
+    },
+    {
+      "geocodigo": 2309201,
+      "municipio": "Nova Olinda",
+      "uf": "CE"
+    },
+    {
+      "geocodigo": 2310605,
+      "municipio": "Penaforte",
+      "uf": "CE"
+    },
+    {
+      "geocodigo": 2311108,
+      "municipio": "Porteiras",
+      "uf": "CE"
+    },
+    {
+      "geocodigo": 2311207,
+      "municipio": "Potengi",
+      "uf": "CE"
+    },
+    {
+      "geocodigo": 2311959,
+      "municipio": "Salitre",
+      "uf": "CE"
+    },
+    {
+      "geocodigo": 2312106,
+      "municipio": "Santana do Cariri",
+      "uf": "CE"
+    },
+    {
+      "geocodigo": 2601102,
+      "municipio": "Araripina",
+      "uf": "PE"
+    },
+    {
+      "geocodigo": 2602001,
+      "municipio": "Bodocó",
+      "uf": "PE"
+    },
+    {
+      "geocodigo": 2604304,
+      "municipio": "Cedro",
+      "uf": "PE"
+    },
+    {
+      "geocodigo": 2605301,
+      "municipio": "Exu",
+      "uf": "PE"
+    },
+    {
+      "geocodigo": 2607307,
+      "municipio": "Ipubi",
+      "uf": "PE"
+    },
+    {
+      "geocodigo": 2614006,
+      "municipio": "Serrita",
+      "uf": "PE"
+    },
+    {
+      "geocodigo": 2614303,
+      "municipio": "Moreilândia",
+      "uf": "PE"
+    },
+    {
+      "geocodigo": 2615607,
+      "municipio": "Trindade",
+      "uf": "PE"
+    }
+  ],
+  "climatology": [
+    {
+      "geocodigo": 2200277,
+      "mes": 1,
+      "prediction": 0.09090909090909091
+    },
+    {
+      "geocodigo": 2200277,
+      "mes": 2,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2200277,
+      "mes": 3,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2200277,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2200277,
+      "mes": 5,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2200277,
+      "mes": 6,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2200277,
+      "mes": 7,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2200277,
+      "mes": 8,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2200277,
+      "mes": 9,
+      "prediction": 0.7727272727272727
+    },
+    {
+      "geocodigo": 2200277,
+      "mes": 10,
+      "prediction": 1.7727272727272727
+    },
+    {
+      "geocodigo": 2200277,
+      "mes": 11,
+      "prediction": 1.4545454545454546
+    },
+    {
+      "geocodigo": 2200277,
+      "mes": 12,
+      "prediction": 0.7272727272727273
+    },
+    {
+      "geocodigo": 2202091,
+      "mes": 1,
+      "prediction": 0.18181818181818182
+    },
+    {
+      "geocodigo": 2202091,
+      "mes": 2,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2202091,
+      "mes": 3,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2202091,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2202091,
+      "mes": 5,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2202091,
+      "mes": 6,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2202091,
+      "mes": 7,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2202091,
+      "mes": 8,
+      "prediction": 0.2727272727272727
+    },
+    {
+      "geocodigo": 2202091,
+      "mes": 9,
+      "prediction": 1.8636363636363635
+    },
+    {
+      "geocodigo": 2202091,
+      "mes": 10,
+      "prediction": 6.7272727272727275
+    },
+    {
+      "geocodigo": 2202091,
+      "mes": 11,
+      "prediction": 5.181818181818182
+    },
+    {
+      "geocodigo": 2202091,
+      "mes": 12,
+      "prediction": 1.2727272727272727
+    },
+    {
+      "geocodigo": 2202554,
+      "mes": 1,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2202554,
+      "mes": 2,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2202554,
+      "mes": 3,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2202554,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2202554,
+      "mes": 5,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2202554,
+      "mes": 6,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2202554,
+      "mes": 7,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2202554,
+      "mes": 8,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2202554,
+      "mes": 9,
+      "prediction": 2.090909090909091
+    },
+    {
+      "geocodigo": 2202554,
+      "mes": 10,
+      "prediction": 9.409090909090908
+    },
+    {
+      "geocodigo": 2202554,
+      "mes": 11,
+      "prediction": 4.2727272727272725
+    },
+    {
+      "geocodigo": 2202554,
+      "mes": 12,
+      "prediction": 1.6363636363636365
+    },
+    {
+      "geocodigo": 2203271,
+      "mes": 1,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2203271,
+      "mes": 2,
+      "prediction": 0.09090909090909091
+    },
+    {
+      "geocodigo": 2203271,
+      "mes": 3,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2203271,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2203271,
+      "mes": 5,
+      "prediction": 0.18181818181818182
+    },
+    {
+      "geocodigo": 2203271,
+      "mes": 6,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2203271,
+      "mes": 7,
+      "prediction": 0.18181818181818182
+    },
+    {
+      "geocodigo": 2203271,
+      "mes": 8,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2203271,
+      "mes": 9,
+      "prediction": 2.6818181818181817
+    },
+    {
+      "geocodigo": 2203271,
+      "mes": 10,
+      "prediction": 6.2727272727272725
+    },
+    {
+      "geocodigo": 2203271,
+      "mes": 11,
+      "prediction": 2.909090909090909
+    },
+    {
+      "geocodigo": 2203271,
+      "mes": 12,
+      "prediction": 0.5454545454545454
+    },
+    {
+      "geocodigo": 2204154,
+      "mes": 1,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2204154,
+      "mes": 2,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2204154,
+      "mes": 3,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2204154,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2204154,
+      "mes": 5,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2204154,
+      "mes": 6,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2204154,
+      "mes": 7,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2204154,
+      "mes": 8,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2204154,
+      "mes": 9,
+      "prediction": 0.4090909090909091
+    },
+    {
+      "geocodigo": 2204154,
+      "mes": 10,
+      "prediction": 2.3181818181818183
+    },
+    {
+      "geocodigo": 2204154,
+      "mes": 11,
+      "prediction": 2.5
+    },
+    {
+      "geocodigo": 2204154,
+      "mes": 12,
+      "prediction": 0.9090909090909091
+    },
+    {
+      "geocodigo": 2204303,
+      "mes": 1,
+      "prediction": 0.36363636363636365
+    },
+    {
+      "geocodigo": 2204303,
+      "mes": 2,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2204303,
+      "mes": 3,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2204303,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2204303,
+      "mes": 5,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2204303,
+      "mes": 6,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2204303,
+      "mes": 7,
+      "prediction": 0.22727272727272727
+    },
+    {
+      "geocodigo": 2204303,
+      "mes": 8,
+      "prediction": 0.3181818181818182
+    },
+    {
+      "geocodigo": 2204303,
+      "mes": 9,
+      "prediction": 3.6363636363636362
+    },
+    {
+      "geocodigo": 2204303,
+      "mes": 10,
+      "prediction": 6.409090909090909
+    },
+    {
+      "geocodigo": 2204303,
+      "mes": 11,
+      "prediction": 7.2727272727272725
+    },
+    {
+      "geocodigo": 2204303,
+      "mes": 12,
+      "prediction": 2.1818181818181817
+    },
+    {
+      "geocodigo": 2205953,
+      "mes": 1,
+      "prediction": 0.18181818181818182
+    },
+    {
+      "geocodigo": 2205953,
+      "mes": 2,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2205953,
+      "mes": 3,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2205953,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2205953,
+      "mes": 5,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2205953,
+      "mes": 6,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2205953,
+      "mes": 7,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2205953,
+      "mes": 8,
+      "prediction": 0.09090909090909091
+    },
+    {
+      "geocodigo": 2205953,
+      "mes": 9,
+      "prediction": 0.5909090909090909
+    },
+    {
+      "geocodigo": 2205953,
+      "mes": 10,
+      "prediction": 0.9545454545454546
+    },
+    {
+      "geocodigo": 2205953,
+      "mes": 11,
+      "prediction": 1.4090909090909092
+    },
+    {
+      "geocodigo": 2205953,
+      "mes": 12,
+      "prediction": 1.2727272727272727
+    },
+    {
+      "geocodigo": 2207207,
+      "mes": 1,
+      "prediction": 0.2727272727272727
+    },
+    {
+      "geocodigo": 2207207,
+      "mes": 2,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2207207,
+      "mes": 3,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2207207,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2207207,
+      "mes": 5,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2207207,
+      "mes": 6,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2207207,
+      "mes": 7,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2207207,
+      "mes": 8,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2207207,
+      "mes": 9,
+      "prediction": 0.3181818181818182
+    },
+    {
+      "geocodigo": 2207207,
+      "mes": 10,
+      "prediction": 3.0454545454545454
+    },
+    {
+      "geocodigo": 2207207,
+      "mes": 11,
+      "prediction": 2.9545454545454546
+    },
+    {
+      "geocodigo": 2207207,
+      "mes": 12,
+      "prediction": 0.8181818181818182
+    },
+    {
+      "geocodigo": 2210300,
+      "mes": 1,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2210300,
+      "mes": 2,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2210300,
+      "mes": 3,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2210300,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2210300,
+      "mes": 5,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2210300,
+      "mes": 6,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2210300,
+      "mes": 7,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2210300,
+      "mes": 8,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2210300,
+      "mes": 9,
+      "prediction": 1.4545454545454546
+    },
+    {
+      "geocodigo": 2210300,
+      "mes": 10,
+      "prediction": 1.2727272727272727
+    },
+    {
+      "geocodigo": 2210300,
+      "mes": 11,
+      "prediction": 1.4090909090909092
+    },
+    {
+      "geocodigo": 2210300,
+      "mes": 12,
+      "prediction": 0.8636363636363636
+    },
+    {
+      "geocodigo": 2210706,
+      "mes": 1,
+      "prediction": 0.22727272727272727
+    },
+    {
+      "geocodigo": 2210706,
+      "mes": 2,
+      "prediction": 0.09090909090909091
+    },
+    {
+      "geocodigo": 2210706,
+      "mes": 3,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2210706,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2210706,
+      "mes": 5,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2210706,
+      "mes": 6,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2210706,
+      "mes": 7,
+      "prediction": 0.09090909090909091
+    },
+    {
+      "geocodigo": 2210706,
+      "mes": 8,
+      "prediction": 0.2727272727272727
+    },
+    {
+      "geocodigo": 2210706,
+      "mes": 9,
+      "prediction": 1.9545454545454546
+    },
+    {
+      "geocodigo": 2210706,
+      "mes": 10,
+      "prediction": 9.454545454545455
+    },
+    {
+      "geocodigo": 2210706,
+      "mes": 11,
+      "prediction": 8.954545454545455
+    },
+    {
+      "geocodigo": 2210706,
+      "mes": 12,
+      "prediction": 1.7272727272727273
+    },
+    {
+      "geocodigo": 2300101,
+      "mes": 1,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2300101,
+      "mes": 2,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2300101,
+      "mes": 3,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2300101,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2300101,
+      "mes": 5,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2300101,
+      "mes": 6,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2300101,
+      "mes": 7,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2300101,
+      "mes": 8,
+      "prediction": 0.36363636363636365
+    },
+    {
+      "geocodigo": 2300101,
+      "mes": 9,
+      "prediction": 0.5454545454545454
+    },
+    {
+      "geocodigo": 2300101,
+      "mes": 10,
+      "prediction": 1.7272727272727273
+    },
+    {
+      "geocodigo": 2300101,
+      "mes": 11,
+      "prediction": 3.409090909090909
+    },
+    {
+      "geocodigo": 2300101,
+      "mes": 12,
+      "prediction": 1.8181818181818181
+    },
+    {
+      "geocodigo": 2300606,
+      "mes": 1,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2300606,
+      "mes": 2,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2300606,
+      "mes": 3,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2300606,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2300606,
+      "mes": 5,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2300606,
+      "mes": 6,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2300606,
+      "mes": 7,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2300606,
+      "mes": 8,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2300606,
+      "mes": 9,
+      "prediction": 0.2727272727272727
+    },
+    {
+      "geocodigo": 2300606,
+      "mes": 10,
+      "prediction": 0.4090909090909091
+    },
+    {
+      "geocodigo": 2300606,
+      "mes": 11,
+      "prediction": 0.5
+    },
+    {
+      "geocodigo": 2300606,
+      "mes": 12,
+      "prediction": 0.5
+    },
+    {
+      "geocodigo": 2301307,
+      "mes": 1,
+      "prediction": 1.5
+    },
+    {
+      "geocodigo": 2301307,
+      "mes": 2,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2301307,
+      "mes": 3,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2301307,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2301307,
+      "mes": 5,
+      "prediction": 0.45454545454545453
+    },
+    {
+      "geocodigo": 2301307,
+      "mes": 6,
+      "prediction": 0.3181818181818182
+    },
+    {
+      "geocodigo": 2301307,
+      "mes": 7,
+      "prediction": 0.36363636363636365
+    },
+    {
+      "geocodigo": 2301307,
+      "mes": 8,
+      "prediction": 1.0909090909090908
+    },
+    {
+      "geocodigo": 2301307,
+      "mes": 9,
+      "prediction": 7.590909090909091
+    },
+    {
+      "geocodigo": 2301307,
+      "mes": 10,
+      "prediction": 13.090909090909092
+    },
+    {
+      "geocodigo": 2301307,
+      "mes": 11,
+      "prediction": 14.227272727272727
+    },
+    {
+      "geocodigo": 2301307,
+      "mes": 12,
+      "prediction": 7.409090909090909
+    },
+    {
+      "geocodigo": 2301604,
+      "mes": 1,
+      "prediction": 1.7727272727272727
+    },
+    {
+      "geocodigo": 2301604,
+      "mes": 2,
+      "prediction": 0.3181818181818182
+    },
+    {
+      "geocodigo": 2301604,
+      "mes": 3,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2301604,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2301604,
+      "mes": 5,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2301604,
+      "mes": 6,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2301604,
+      "mes": 7,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2301604,
+      "mes": 8,
+      "prediction": 0.8636363636363636
+    },
+    {
+      "geocodigo": 2301604,
+      "mes": 9,
+      "prediction": 1.9090909090909092
+    },
+    {
+      "geocodigo": 2301604,
+      "mes": 10,
+      "prediction": 4.2272727272727275
+    },
+    {
+      "geocodigo": 2301604,
+      "mes": 11,
+      "prediction": 5.5
+    },
+    {
+      "geocodigo": 2301604,
+      "mes": 12,
+      "prediction": 5.2272727272727275
+    },
+    {
+      "geocodigo": 2301901,
+      "mes": 1,
+      "prediction": 0.4090909090909091
+    },
+    {
+      "geocodigo": 2301901,
+      "mes": 2,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2301901,
+      "mes": 3,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2301901,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2301901,
+      "mes": 5,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2301901,
+      "mes": 6,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2301901,
+      "mes": 7,
+      "prediction": 0.3181818181818182
+    },
+    {
+      "geocodigo": 2301901,
+      "mes": 8,
+      "prediction": 1.3181818181818181
+    },
+    {
+      "geocodigo": 2301901,
+      "mes": 9,
+      "prediction": 2.909090909090909
+    },
+    {
+      "geocodigo": 2301901,
+      "mes": 10,
+      "prediction": 4.318181818181818
+    },
+    {
+      "geocodigo": 2301901,
+      "mes": 11,
+      "prediction": 4.7727272727272725
+    },
+    {
+      "geocodigo": 2301901,
+      "mes": 12,
+      "prediction": 2.090909090909091
+    },
+    {
+      "geocodigo": 2302503,
+      "mes": 1,
+      "prediction": 0.5
+    },
+    {
+      "geocodigo": 2302503,
+      "mes": 2,
+      "prediction": 0.09090909090909091
+    },
+    {
+      "geocodigo": 2302503,
+      "mes": 3,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2302503,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2302503,
+      "mes": 5,
+      "prediction": 0.09090909090909091
+    },
+    {
+      "geocodigo": 2302503,
+      "mes": 6,
+      "prediction": 0.36363636363636365
+    },
+    {
+      "geocodigo": 2302503,
+      "mes": 7,
+      "prediction": 0.2727272727272727
+    },
+    {
+      "geocodigo": 2302503,
+      "mes": 8,
+      "prediction": 0.18181818181818182
+    },
+    {
+      "geocodigo": 2302503,
+      "mes": 9,
+      "prediction": 2.0
+    },
+    {
+      "geocodigo": 2302503,
+      "mes": 10,
+      "prediction": 2.772727272727273
+    },
+    {
+      "geocodigo": 2302503,
+      "mes": 11,
+      "prediction": 4.909090909090909
+    },
+    {
+      "geocodigo": 2302503,
+      "mes": 12,
+      "prediction": 2.727272727272727
+    },
+    {
+      "geocodigo": 2302701,
+      "mes": 1,
+      "prediction": 0.4090909090909091
+    },
+    {
+      "geocodigo": 2302701,
+      "mes": 2,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2302701,
+      "mes": 3,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2302701,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2302701,
+      "mes": 5,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2302701,
+      "mes": 6,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2302701,
+      "mes": 7,
+      "prediction": 0.2727272727272727
+    },
+    {
+      "geocodigo": 2302701,
+      "mes": 8,
+      "prediction": 0.5
+    },
+    {
+      "geocodigo": 2302701,
+      "mes": 9,
+      "prediction": 1.5454545454545454
+    },
+    {
+      "geocodigo": 2302701,
+      "mes": 10,
+      "prediction": 3.590909090909091
+    },
+    {
+      "geocodigo": 2302701,
+      "mes": 11,
+      "prediction": 2.590909090909091
+    },
+    {
+      "geocodigo": 2302701,
+      "mes": 12,
+      "prediction": 1.6363636363636365
+    },
+    {
+      "geocodigo": 2304202,
+      "mes": 1,
+      "prediction": 0.9090909090909091
+    },
+    {
+      "geocodigo": 2304202,
+      "mes": 2,
+      "prediction": 0.3181818181818182
+    },
+    {
+      "geocodigo": 2304202,
+      "mes": 3,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2304202,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2304202,
+      "mes": 5,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2304202,
+      "mes": 6,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2304202,
+      "mes": 7,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2304202,
+      "mes": 8,
+      "prediction": 1.6818181818181819
+    },
+    {
+      "geocodigo": 2304202,
+      "mes": 9,
+      "prediction": 3.909090909090909
+    },
+    {
+      "geocodigo": 2304202,
+      "mes": 10,
+      "prediction": 9.772727272727273
+    },
+    {
+      "geocodigo": 2304202,
+      "mes": 11,
+      "prediction": 10.136363636363637
+    },
+    {
+      "geocodigo": 2304202,
+      "mes": 12,
+      "prediction": 5.7272727272727275
+    },
+    {
+      "geocodigo": 2304301,
+      "mes": 1,
+      "prediction": 0.5
+    },
+    {
+      "geocodigo": 2304301,
+      "mes": 2,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2304301,
+      "mes": 3,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2304301,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2304301,
+      "mes": 5,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2304301,
+      "mes": 6,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2304301,
+      "mes": 7,
+      "prediction": 0.22727272727272727
+    },
+    {
+      "geocodigo": 2304301,
+      "mes": 8,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2304301,
+      "mes": 9,
+      "prediction": 2.9545454545454546
+    },
+    {
+      "geocodigo": 2304301,
+      "mes": 10,
+      "prediction": 2.8181818181818183
+    },
+    {
+      "geocodigo": 2304301,
+      "mes": 11,
+      "prediction": 3.6363636363636362
+    },
+    {
+      "geocodigo": 2304301,
+      "mes": 12,
+      "prediction": 2.8181818181818183
+    },
+    {
+      "geocodigo": 2307106,
+      "mes": 1,
+      "prediction": 0.5454545454545454
+    },
+    {
+      "geocodigo": 2307106,
+      "mes": 2,
+      "prediction": 0.09090909090909091
+    },
+    {
+      "geocodigo": 2307106,
+      "mes": 3,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2307106,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2307106,
+      "mes": 5,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2307106,
+      "mes": 6,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2307106,
+      "mes": 7,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2307106,
+      "mes": 8,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2307106,
+      "mes": 9,
+      "prediction": 1.8181818181818181
+    },
+    {
+      "geocodigo": 2307106,
+      "mes": 10,
+      "prediction": 2.772727272727273
+    },
+    {
+      "geocodigo": 2307106,
+      "mes": 11,
+      "prediction": 3.5454545454545454
+    },
+    {
+      "geocodigo": 2307106,
+      "mes": 12,
+      "prediction": 3.6363636363636362
+    },
+    {
+      "geocodigo": 2307205,
+      "mes": 1,
+      "prediction": 0.45454545454545453
+    },
+    {
+      "geocodigo": 2307205,
+      "mes": 2,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2307205,
+      "mes": 3,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2307205,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2307205,
+      "mes": 5,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2307205,
+      "mes": 6,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2307205,
+      "mes": 7,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2307205,
+      "mes": 8,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2307205,
+      "mes": 9,
+      "prediction": 0.5909090909090909
+    },
+    {
+      "geocodigo": 2307205,
+      "mes": 10,
+      "prediction": 2.909090909090909
+    },
+    {
+      "geocodigo": 2307205,
+      "mes": 11,
+      "prediction": 2.6363636363636362
+    },
+    {
+      "geocodigo": 2307205,
+      "mes": 12,
+      "prediction": 1.0454545454545454
+    },
+    {
+      "geocodigo": 2308401,
+      "mes": 1,
+      "prediction": 1.2272727272727273
+    },
+    {
+      "geocodigo": 2308401,
+      "mes": 2,
+      "prediction": 0.22727272727272727
+    },
+    {
+      "geocodigo": 2308401,
+      "mes": 3,
+      "prediction": 0.3181818181818182
+    },
+    {
+      "geocodigo": 2308401,
+      "mes": 4,
+      "prediction": 0.18181818181818182
+    },
+    {
+      "geocodigo": 2308401,
+      "mes": 5,
+      "prediction": 0.18181818181818182
+    },
+    {
+      "geocodigo": 2308401,
+      "mes": 6,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2308401,
+      "mes": 7,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2308401,
+      "mes": 8,
+      "prediction": 1.0454545454545454
+    },
+    {
+      "geocodigo": 2308401,
+      "mes": 9,
+      "prediction": 3.1818181818181817
+    },
+    {
+      "geocodigo": 2308401,
+      "mes": 10,
+      "prediction": 6.7272727272727275
+    },
+    {
+      "geocodigo": 2308401,
+      "mes": 11,
+      "prediction": 10.772727272727273
+    },
+    {
+      "geocodigo": 2308401,
+      "mes": 12,
+      "prediction": 7.2272727272727275
+    },
+    {
+      "geocodigo": 2309201,
+      "mes": 1,
+      "prediction": 0.22727272727272727
+    },
+    {
+      "geocodigo": 2309201,
+      "mes": 2,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2309201,
+      "mes": 3,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2309201,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2309201,
+      "mes": 5,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2309201,
+      "mes": 6,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2309201,
+      "mes": 7,
+      "prediction": 0.36363636363636365
+    },
+    {
+      "geocodigo": 2309201,
+      "mes": 8,
+      "prediction": 0.22727272727272727
+    },
+    {
+      "geocodigo": 2309201,
+      "mes": 9,
+      "prediction": 0.7727272727272727
+    },
+    {
+      "geocodigo": 2309201,
+      "mes": 10,
+      "prediction": 1.0
+    },
+    {
+      "geocodigo": 2309201,
+      "mes": 11,
+      "prediction": 4.2272727272727275
+    },
+    {
+      "geocodigo": 2309201,
+      "mes": 12,
+      "prediction": 2.8636363636363638
+    },
+    {
+      "geocodigo": 2310605,
+      "mes": 1,
+      "prediction": 0.09090909090909091
+    },
+    {
+      "geocodigo": 2310605,
+      "mes": 2,
+      "prediction": 0.09090909090909091
+    },
+    {
+      "geocodigo": 2310605,
+      "mes": 3,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2310605,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2310605,
+      "mes": 5,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2310605,
+      "mes": 6,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2310605,
+      "mes": 7,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2310605,
+      "mes": 8,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2310605,
+      "mes": 9,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2310605,
+      "mes": 10,
+      "prediction": 0.2727272727272727
+    },
+    {
+      "geocodigo": 2310605,
+      "mes": 11,
+      "prediction": 0.3181818181818182
+    },
+    {
+      "geocodigo": 2310605,
+      "mes": 12,
+      "prediction": 0.45454545454545453
+    },
+    {
+      "geocodigo": 2311108,
+      "mes": 1,
+      "prediction": 0.18181818181818182
+    },
+    {
+      "geocodigo": 2311108,
+      "mes": 2,
+      "prediction": 0.09090909090909091
+    },
+    {
+      "geocodigo": 2311108,
+      "mes": 3,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2311108,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2311108,
+      "mes": 5,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2311108,
+      "mes": 6,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2311108,
+      "mes": 7,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2311108,
+      "mes": 8,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2311108,
+      "mes": 9,
+      "prediction": 0.9090909090909091
+    },
+    {
+      "geocodigo": 2311108,
+      "mes": 10,
+      "prediction": 0.7727272727272727
+    },
+    {
+      "geocodigo": 2311108,
+      "mes": 11,
+      "prediction": 2.090909090909091
+    },
+    {
+      "geocodigo": 2311108,
+      "mes": 12,
+      "prediction": 1.7727272727272727
+    },
+    {
+      "geocodigo": 2311207,
+      "mes": 1,
+      "prediction": 0.6363636363636364
+    },
+    {
+      "geocodigo": 2311207,
+      "mes": 2,
+      "prediction": 0.2727272727272727
+    },
+    {
+      "geocodigo": 2311207,
+      "mes": 3,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2311207,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2311207,
+      "mes": 5,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2311207,
+      "mes": 6,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2311207,
+      "mes": 7,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2311207,
+      "mes": 8,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2311207,
+      "mes": 9,
+      "prediction": 1.5454545454545454
+    },
+    {
+      "geocodigo": 2311207,
+      "mes": 10,
+      "prediction": 1.9090909090909092
+    },
+    {
+      "geocodigo": 2311207,
+      "mes": 11,
+      "prediction": 2.909090909090909
+    },
+    {
+      "geocodigo": 2311207,
+      "mes": 12,
+      "prediction": 1.3636363636363635
+    },
+    {
+      "geocodigo": 2311959,
+      "mes": 1,
+      "prediction": 0.5
+    },
+    {
+      "geocodigo": 2311959,
+      "mes": 2,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2311959,
+      "mes": 3,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2311959,
+      "mes": 4,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2311959,
+      "mes": 5,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2311959,
+      "mes": 6,
+      "prediction": 0.09090909090909091
+    },
+    {
+      "geocodigo": 2311959,
+      "mes": 7,
+      "prediction": 0.36363636363636365
+    },
+    {
+      "geocodigo": 2311959,
+      "mes": 8,
+      "prediction": 0.5909090909090909
+    },
+    {
+      "geocodigo": 2311959,
+      "mes": 9,
+      "prediction": 2.090909090909091
+    },
+    {
+      "geocodigo": 2311959,
+      "mes": 10,
+      "prediction": 5.045454545454546
+    },
+    {
+      "geocodigo": 2311959,
+      "mes": 11,
+      "prediction": 8.772727272727273
+    },
+    {
+      "geocodigo": 2311959,
+      "mes": 12,
+      "prediction": 3.727272727272727
+    },
+    {
+      "geocodigo": 2312106,
+      "mes": 1,
+      "prediction": 3.272727272727273
+    },
+    {
+      "geocodigo": 2312106,
+      "mes": 2,
+      "prediction": 0.22727272727272727
+    },
+    {
+      "geocodigo": 2312106,
+      "mes": 3,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2312106,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2312106,
+      "mes": 5,
+      "prediction": 0.09090909090909091
+    },
+    {
+      "geocodigo": 2312106,
+      "mes": 6,
+      "prediction": 0.22727272727272727
+    },
+    {
+      "geocodigo": 2312106,
+      "mes": 7,
+      "prediction": 0.6818181818181818
+    },
+    {
+      "geocodigo": 2312106,
+      "mes": 8,
+      "prediction": 1.0454545454545454
+    },
+    {
+      "geocodigo": 2312106,
+      "mes": 9,
+      "prediction": 4.363636363636363
+    },
+    {
+      "geocodigo": 2312106,
+      "mes": 10,
+      "prediction": 8.181818181818182
+    },
+    {
+      "geocodigo": 2312106,
+      "mes": 11,
+      "prediction": 12.272727272727273
+    },
+    {
+      "geocodigo": 2312106,
+      "mes": 12,
+      "prediction": 10.409090909090908
+    },
+    {
+      "geocodigo": 2601102,
+      "mes": 1,
+      "prediction": 0.5
+    },
+    {
+      "geocodigo": 2601102,
+      "mes": 2,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2601102,
+      "mes": 3,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2601102,
+      "mes": 4,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2601102,
+      "mes": 5,
+      "prediction": 0.09090909090909091
+    },
+    {
+      "geocodigo": 2601102,
+      "mes": 6,
+      "prediction": 0.45454545454545453
+    },
+    {
+      "geocodigo": 2601102,
+      "mes": 7,
+      "prediction": 1.2272727272727273
+    },
+    {
+      "geocodigo": 2601102,
+      "mes": 8,
+      "prediction": 2.0454545454545454
+    },
+    {
+      "geocodigo": 2601102,
+      "mes": 9,
+      "prediction": 11.954545454545455
+    },
+    {
+      "geocodigo": 2601102,
+      "mes": 10,
+      "prediction": 22.363636363636363
+    },
+    {
+      "geocodigo": 2601102,
+      "mes": 11,
+      "prediction": 13.727272727272727
+    },
+    {
+      "geocodigo": 2601102,
+      "mes": 12,
+      "prediction": 4.363636363636363
+    },
+    {
+      "geocodigo": 2602001,
+      "mes": 1,
+      "prediction": 1.8636363636363635
+    },
+    {
+      "geocodigo": 2602001,
+      "mes": 2,
+      "prediction": 0.2727272727272727
+    },
+    {
+      "geocodigo": 2602001,
+      "mes": 3,
+      "prediction": 0.22727272727272727
+    },
+    {
+      "geocodigo": 2602001,
+      "mes": 4,
+      "prediction": 0.09090909090909091
+    },
+    {
+      "geocodigo": 2602001,
+      "mes": 5,
+      "prediction": 0.5
+    },
+    {
+      "geocodigo": 2602001,
+      "mes": 6,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2602001,
+      "mes": 7,
+      "prediction": 0.4090909090909091
+    },
+    {
+      "geocodigo": 2602001,
+      "mes": 8,
+      "prediction": 1.3636363636363635
+    },
+    {
+      "geocodigo": 2602001,
+      "mes": 9,
+      "prediction": 16.0
+    },
+    {
+      "geocodigo": 2602001,
+      "mes": 10,
+      "prediction": 44.36363636363637
+    },
+    {
+      "geocodigo": 2602001,
+      "mes": 11,
+      "prediction": 29.454545454545453
+    },
+    {
+      "geocodigo": 2602001,
+      "mes": 12,
+      "prediction": 14.272727272727273
+    },
+    {
+      "geocodigo": 2604304,
+      "mes": 1,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2604304,
+      "mes": 2,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2604304,
+      "mes": 3,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2604304,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2604304,
+      "mes": 5,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2604304,
+      "mes": 6,
+      "prediction": 0.18181818181818182
+    },
+    {
+      "geocodigo": 2604304,
+      "mes": 7,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2604304,
+      "mes": 8,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2604304,
+      "mes": 9,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2604304,
+      "mes": 10,
+      "prediction": 0.3181818181818182
+    },
+    {
+      "geocodigo": 2604304,
+      "mes": 11,
+      "prediction": 0.2727272727272727
+    },
+    {
+      "geocodigo": 2604304,
+      "mes": 12,
+      "prediction": 0.2727272727272727
+    },
+    {
+      "geocodigo": 2605301,
+      "mes": 1,
+      "prediction": 2.1363636363636362
+    },
+    {
+      "geocodigo": 2605301,
+      "mes": 2,
+      "prediction": 0.4090909090909091
+    },
+    {
+      "geocodigo": 2605301,
+      "mes": 3,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2605301,
+      "mes": 4,
+      "prediction": 0.18181818181818182
+    },
+    {
+      "geocodigo": 2605301,
+      "mes": 5,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2605301,
+      "mes": 6,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2605301,
+      "mes": 7,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2605301,
+      "mes": 8,
+      "prediction": 0.8181818181818182
+    },
+    {
+      "geocodigo": 2605301,
+      "mes": 9,
+      "prediction": 4.545454545454546
+    },
+    {
+      "geocodigo": 2605301,
+      "mes": 10,
+      "prediction": 15.363636363636363
+    },
+    {
+      "geocodigo": 2605301,
+      "mes": 11,
+      "prediction": 17.363636363636363
+    },
+    {
+      "geocodigo": 2605301,
+      "mes": 12,
+      "prediction": 11.272727272727273
+    },
+    {
+      "geocodigo": 2607307,
+      "mes": 1,
+      "prediction": 0.4090909090909091
+    },
+    {
+      "geocodigo": 2607307,
+      "mes": 2,
+      "prediction": 0.09090909090909091
+    },
+    {
+      "geocodigo": 2607307,
+      "mes": 3,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2607307,
+      "mes": 4,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2607307,
+      "mes": 5,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2607307,
+      "mes": 6,
+      "prediction": 0.18181818181818182
+    },
+    {
+      "geocodigo": 2607307,
+      "mes": 7,
+      "prediction": 0.5
+    },
+    {
+      "geocodigo": 2607307,
+      "mes": 8,
+      "prediction": 1.0
+    },
+    {
+      "geocodigo": 2607307,
+      "mes": 9,
+      "prediction": 5.136363636363637
+    },
+    {
+      "geocodigo": 2607307,
+      "mes": 10,
+      "prediction": 13.045454545454545
+    },
+    {
+      "geocodigo": 2607307,
+      "mes": 11,
+      "prediction": 8.909090909090908
+    },
+    {
+      "geocodigo": 2607307,
+      "mes": 12,
+      "prediction": 4.090909090909091
+    },
+    {
+      "geocodigo": 2614006,
+      "mes": 1,
+      "prediction": 1.3636363636363635
+    },
+    {
+      "geocodigo": 2614006,
+      "mes": 2,
+      "prediction": 0.09090909090909091
+    },
+    {
+      "geocodigo": 2614006,
+      "mes": 3,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2614006,
+      "mes": 4,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2614006,
+      "mes": 5,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2614006,
+      "mes": 6,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2614006,
+      "mes": 7,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2614006,
+      "mes": 8,
+      "prediction": 0.2727272727272727
+    },
+    {
+      "geocodigo": 2614006,
+      "mes": 9,
+      "prediction": 5.045454545454546
+    },
+    {
+      "geocodigo": 2614006,
+      "mes": 10,
+      "prediction": 12.227272727272727
+    },
+    {
+      "geocodigo": 2614006,
+      "mes": 11,
+      "prediction": 10.136363636363637
+    },
+    {
+      "geocodigo": 2614006,
+      "mes": 12,
+      "prediction": 5.2727272727272725
+    },
+    {
+      "geocodigo": 2614303,
+      "mes": 1,
+      "prediction": 0.4090909090909091
+    },
+    {
+      "geocodigo": 2614303,
+      "mes": 2,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2614303,
+      "mes": 3,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2614303,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2614303,
+      "mes": 5,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2614303,
+      "mes": 6,
+      "prediction": 0.09090909090909091
+    },
+    {
+      "geocodigo": 2614303,
+      "mes": 7,
+      "prediction": 0.09090909090909091
+    },
+    {
+      "geocodigo": 2614303,
+      "mes": 8,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2614303,
+      "mes": 9,
+      "prediction": 1.5909090909090908
+    },
+    {
+      "geocodigo": 2614303,
+      "mes": 10,
+      "prediction": 6.2272727272727275
+    },
+    {
+      "geocodigo": 2614303,
+      "mes": 11,
+      "prediction": 5.181818181818182
+    },
+    {
+      "geocodigo": 2614303,
+      "mes": 12,
+      "prediction": 2.1818181818181817
+    },
+    {
+      "geocodigo": 2615607,
+      "mes": 1,
+      "prediction": 0.13636363636363635
+    },
+    {
+      "geocodigo": 2615607,
+      "mes": 2,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2615607,
+      "mes": 3,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2615607,
+      "mes": 4,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2615607,
+      "mes": 5,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2615607,
+      "mes": 6,
+      "prediction": 0.0
+    },
+    {
+      "geocodigo": 2615607,
+      "mes": 7,
+      "prediction": 0.045454545454545456
+    },
+    {
+      "geocodigo": 2615607,
+      "mes": 8,
+      "prediction": 0.5454545454545454
+    },
+    {
+      "geocodigo": 2615607,
+      "mes": 9,
+      "prediction": 1.5
+    },
+    {
+      "geocodigo": 2615607,
+      "mes": 10,
+      "prediction": 2.727272727272727
+    },
+    {
+      "geocodigo": 2615607,
+      "mes": 11,
+      "prediction": 1.6818181818181819
+    },
+    {
+      "geocodigo": 2615607,
+      "mes": 12,
+      "prediction": 0.6818181818181818
+    }
+  ]
+}

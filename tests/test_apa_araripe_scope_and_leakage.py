@@ -251,3 +251,92 @@ def test_gate_fails_closed_on_non_finite_metric():
         assert ci_high < 0, "PROMOTE exige CI95 inteiramente negativo"
         assert result["win_rate_by_cut"] > 0.50
         assert result["all_wape_candidate"] < result["all_wape_baseline"]
+
+
+# ---------------------------------------------------------------- serving
+
+
+@pytest.fixture(scope="module")
+def serving_artifact():
+    """Carrega o artefato de serving da APA."""
+    path = PROJECT_ROOT / "outputs" / "apa_araripe" / "serving" / "model.json"
+    if not path.exists():
+        pytest.skip("artefato de serving ainda nao gerado")
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def test_serving_scope_matches_derived_scope(serving_artifact, scope):
+    """O artefato serve exatamente o escopo derivado, nem mais nem menos."""
+    served = {m["geocodigo"] for m in serving_artifact["municipios"]}
+    assert served == set(scope["geocodigo"].astype(int))
+    assert serving_artifact["scope_n_municipios"] == len(scope)
+
+
+def test_serving_fails_closed_for_municipality_outside_apa(serving_artifact):
+    """Municipio fora da APA nao pode ser aceito silenciosamente."""
+    from src.production.apa_araripe_serving import predict
+
+    # Juazeiro do Norte: Cariri, geocodigo IBGE valido, mas fora da APA
+    with pytest.raises(ValueError, match="fora do escopo"):
+        predict(serving_artifact, 2307304, 2026, 10)
+
+
+def test_serving_does_not_expose_interval_while_g5_fails(serving_artifact):
+    """Enquanto G5 nao passar, intervalo tem que vir null.
+
+    Previsao pontual e permitida; intervalo com aparencia de garantia, nao."""
+    from src.production.apa_araripe_serving import predict
+
+    gate_path = PROJECT_ROOT / "outputs" / "apa_araripe" / "gates" / "G5_conformal.json"
+    gate = json.loads(gate_path.read_text(encoding="utf-8"))
+
+    out = predict(serving_artifact, 2602001, 2026, 10)  # Bodoco/PE
+    assert out["forecast"] > 0
+
+    if gate["status"] != "PASS":
+        assert out["interval"] is None
+        assert out["uncertainty_status"] == "not_validated"
+        assert serving_artifact["uncertainty"]["status"] == "not_validated"
+
+
+def test_serving_uncertainty_status_is_read_from_gate_not_hardcoded(serving_artifact):
+    """O status de incerteza vem do gate, nao de constante no codigo."""
+    gate_path = PROJECT_ROOT / "outputs" / "apa_araripe" / "gates" / "G5_conformal.json"
+    gate = json.loads(gate_path.read_text(encoding="utf-8"))
+    expected = "validated" if gate["status"] == "PASS" else "not_validated"
+    assert serving_artifact["uncertainty"]["status"] == expected
+
+
+def test_serving_regional_factor_scope_contract(serving_artifact):
+    """O fator regional do artefato e declaradamente da APA, nao do Ceara."""
+    assert "APA" in serving_artifact["regional_factor"]["contract"]
+    lo, hi = serving_artifact["parameters"]["ratio_clip"]
+    assert lo <= serving_artifact["regional_factor"]["applied_ratio"] <= hi
+
+
+# ---------------------------------------------------- lacre de 2025 (G5 drift)
+
+
+def test_drift_family_refuses_sealed_year():
+    """O modulo de desenvolvimento do novo G5 recusa carregar 2025+.
+
+    O lacre e uma trava de codigo, nao disciplina humana."""
+    from src.experiments import g5_conformal_drift_family as fam
+
+    assert fam.SEALED_FROM == 2025
+    dev = fam.load_dev_residuals()
+    assert dev["ano"].max() <= 2024
+
+
+def test_frozen_config_exists_and_records_selection_rule():
+    """A configuracao do novo G5 esta congelada com regra e hash registrados."""
+    path = PROJECT_ROOT / "outputs" / "apa_araripe" / "g5_drift" / "frozen_config.json"
+    if not path.exists():
+        pytest.skip("familia de drift ainda nao congelada")
+    frozen = json.loads(path.read_text(encoding="utf-8"))
+    assert frozen["sealed_year"] == 2025
+    assert frozen["chosen"]["name"]
+    assert len(frozen["predictions_sha256"]) == 64
+    # a regra tem que exigir margem, nao "mais estreito que mal passou"
+    assert frozen["dev_margin"] > 0
+    assert frozen["effective_dev_floor"] > frozen["ic_bounds"][0]
