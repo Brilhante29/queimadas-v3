@@ -1,0 +1,62 @@
+{
+  "gate": "G5_conformal_final_sealed_2025",
+  "scope": "apa_chapada_araripe",
+  "status": "FAIL",
+  "failures": [
+    "cobertura PE 0.9896 fora de [0.9, 0.98]"
+  ],
+  "execution_contract": "execucao unica em holdout selado; configuracao congelada antes de qualquer acesso a 2025; nenhuma segunda tentativa e permitida",
+  "frozen_config": {
+    "name": "rolling_mondrian_48",
+    "method": "mondrian",
+    "window": 48.0,
+    "alpha": 0.02
+  },
+  "frozen_selection_rule": "cobertura minima entre folds E entre UFs deve atingir piso + margem de desenvolvimento; teto nao pode ser estourado; largura apenas como desempate entre as que ja tem folga",
+  "frozen_at": "2026-08-28T18:13:39.576971+00:00",
+  "frozen_dev_metrics": {
+    "min_fold_coverage": 0.9537037037037037,
+    "mean_fold_coverage": 0.9635416666666666,
+    "max_fold_coverage": 0.9768518518518519,
+    "min_fold_uf_coverage": 0.9375,
+    "mean_width": 7.111562361162616
+  },
+  "dev_predictions_sha256": "f17b645e426f8db691d0cf50589c60788db68a8f4b6fbb13598b38542080b648",
+  "scoring_snapshot_sha256": "465e22f9d3e5ae9b0e175558cf653db674a3bd3d07307edfdd1b9ee126cf7830",
+  "coverage_2025": {
+    "overall": 0.9537037037037037,
+    "dry": 0.95,
+    "wet": 0.9563492063492064,
+    "critical_out_nov": 0.8888888888888888,
+    "n_rows": 432,
+    "uf_CE": 0.9444444444444444,
+    "n_uf_CE": 216,
+    "uf_PE": 0.9895833333333334,
+    "n_uf_PE": 96,
+    "uf_PI": 0.9416666666666667,
+    "n_uf_PI": 120,
+    "volume_high": 0.972027972027972,
+    "n_volume_high": 143,
+    "volume_low": 0.9375,
+    "n_volume_low": 144,
+    "volume_mid": 0.9517241379310345,
+    "n_volume_mid": 145,
+    "volume_strata_source": "causal_from_calibration_window"
+  },
+  "interval_width_2025": {
+    "mean": 10.107396738647731,
+    "median": 4.811277850925388
+  },
+  "point_accuracy_2025": {
+    "wape_baseline": 0.6484584118171905,
+    "wape_champion": 0.5611087980602998,
+    "mae_champion": 1.8716615231594724,
+    "observed_total_2025": 1441,
+    "predicted_total_2025": 1236.365620944333
+  },
+  "ic_bounds": [
+    0.9,
+    0.98
+  ],
+  "generated_at": "2026-08-28T18:25:03.004355+00:00"
+}
