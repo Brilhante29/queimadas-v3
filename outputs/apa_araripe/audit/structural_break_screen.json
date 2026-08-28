@@ -1,0 +1,124 @@
+{
+  "check": "rastreio de quebra estrutural na serie do alvo",
+  "model_impact": {
+    "regional_factor_earliest_window_start": "2014-01",
+    "latest_significant_break_year": 2012,
+    "all_regional_windows_are_post_break": true,
+    "first_cut_raw_ratio": 0.5583,
+    "break_level_ratios_after_over_before": {
+      "UF CE": 0.558,
+      "UF PE": 0.542
+    },
+    "reading": "O fator regional de intensidade e uma razao observado/esperado nos 12 meses anteriores ao corte. A janela mais antiga comeca em 2014-01, depois da quebra de 2012: nenhuma janela mistura os dois regimes. Alem disso, a razao do primeiro corte (0.5583) e praticamente igual a razao de nivel medida na propria quebra -- ou seja, o fator regional absorve empiricamente o degrau de nivel. Isso e uma explicacao mecanica de por que o champion supera a climatologia pura, e nao apenas um ganho empirico sem causa.",
+    "residual_risk": "A climatologia municipal por mes e estimada sobre 2003-2024 inteiro e portanto ATRAVESSA a quebra: o nivel base de cada municipio mistura os dois regimes. O fator regional corrige isso no agregado, nao por municipio. Recalibrar a climatologia so com dados pos-2012 e um experimento legitimo e NAO foi feito -- o EXP-10 esta congelado por decisao registrada, e refaze-lo agora seria selecionar metodo depois de ver o diagnostico."
+  },
+  "motivation": "Os arquivos-fonte do INPE nao tem coluna de satelite (id_bdq, foco_id, lat, lon, data_pas, pais, estado, municipio, bioma). A homogeneidade do satelite de referencia era assercao sobre o produto, sem nenhuma verificacao no repositorio.",
+  "method": "Pettitt (nao parametrico, ponto de mudanca unico)",
+  "what_this_cannot_do": "Nao distingue troca de sensor de dinamica real de seca -- as duas produzem salto de nivel. Ponto de mudanca aqui e motivo de investigacao, nao prova de defeito. Ausencia de ponto de mudanca nao prova homogeneidade: com 22 pontos anuais o poder e baixo.",
+  "alpha": 0.05,
+  "series": [
+    {
+      "series": "CE+PE+PI (todos os 593 municipios)",
+      "n_months": 264,
+      "n_years": 22,
+      "monthly_deseasonalized": {
+        "change_point": "2021-02",
+        "K": 3343.0,
+        "p_value": 0.053,
+        "significant_at_0.05": false
+      },
+      "annual_totals": {
+        "change_point_year": 2013,
+        "K": 72.0,
+        "p_value": 0.1223,
+        "significant_at_0.05": false,
+        "mean_before": 20805.6,
+        "mean_after": 15391.8,
+        "ratio_after_over_before": 0.74
+      }
+    },
+    {
+      "series": "UF CE",
+      "n_months": 264,
+      "n_years": 22,
+      "monthly_deseasonalized": {
+        "change_point": "2020-07",
+        "K": 4232.0,
+        "p_value": 0.0059,
+        "significant_at_0.05": true
+      },
+      "annual_totals": {
+        "change_point_year": 2012,
+        "K": 101.0,
+        "p_value": 0.0082,
+        "significant_at_0.05": true,
+        "mean_before": 7470.7,
+        "mean_after": 4171.2,
+        "ratio_after_over_before": 0.558
+      }
+    },
+    {
+      "series": "UF PE",
+      "n_months": 264,
+      "n_years": 22,
+      "monthly_deseasonalized": {
+        "change_point": "2020-06",
+        "K": 4002.0,
+        "p_value": 0.011,
+        "significant_at_0.05": true
+      },
+      "annual_totals": {
+        "change_point_year": 2012,
+        "K": 93.0,
+        "p_value": 0.0189,
+        "significant_at_0.05": true,
+        "mean_before": 1941.7,
+        "mean_after": 1052.2,
+        "ratio_after_over_before": 0.542
+      }
+    },
+    {
+      "series": "UF PI",
+      "n_months": 264,
+      "n_years": 22,
+      "monthly_deseasonalized": {
+        "change_point": "2009-11",
+        "K": 3377.0,
+        "p_value": 0.0492,
+        "significant_at_0.05": true
+      },
+      "annual_totals": {
+        "change_point_year": 2013,
+        "K": 28.0,
+        "p_value": 1.0,
+        "significant_at_0.05": false,
+        "mean_before": 11785.2,
+        "mean_after": 10190.8,
+        "ratio_after_over_before": 0.865
+      }
+    },
+    {
+      "series": "escopo APA (36 municipios)",
+      "n_months": 264,
+      "n_years": 22,
+      "monthly_deseasonalized": {
+        "change_point": "2020-05",
+        "K": 5903.0,
+        "p_value": 0.0,
+        "significant_at_0.05": true
+      },
+      "annual_totals": {
+        "change_point_year": 2012,
+        "K": 81.0,
+        "p_value": 0.0582,
+        "significant_at_0.05": false,
+        "mean_before": 896.3,
+        "mean_after": 618.1,
+        "ratio_after_over_before": 0.69
+      }
+    }
+  ],
+  "n_series_flagged": 4,
+  "verdict": "QUEBRA detectada; investigar antes de tratar a serie como homogenea.",
+  "generated_at": "2026-08-28T23:06:08.917677+00:00"
+}

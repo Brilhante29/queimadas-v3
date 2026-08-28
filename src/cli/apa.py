@@ -43,6 +43,18 @@ STEPS = [
     ("artefato de serving", ["-m", "src.production.apa_araripe_serving"]),
 ]
 
+# Auditorias de integridade. Rodam DEPOIS do pipeline porque leem os artefatos
+# que ele produz. Nenhuma delas altera o snapshot congelado -- todas gravam em
+# `outputs/apa_araripe/audit/`.
+AUDIT_STEPS = [
+    ("auditoria: semantica de zero", ["scripts/audit_zero_semantics.py"]),
+    ("auditoria: quebra estrutural do alvo", ["scripts/screen_target_structural_break.py"]),
+    ("auditoria: decomposicao alpha x metodo no G5", ["scripts/decompose_g5_improvement.py"]),
+    ("auditoria: equivalencia entre caminhos da fonte (usa rede na 1a vez)",
+     ["scripts/validate_source_path_equivalence.py"]),
+    ("summary publico + blocos de metricas", ["scripts/build_public_results_summary.py"]),
+]
+
 SEALED_STEPS = [
     ("ingestao 2025 (scoring)", ["-m", "src.data.ingest_inpe_2025_scoring"]),
     ("G5 FINAL selado em 2025 (execucao unica)", ["-m", "src.experiments.g5_final_sealed_2025"]),
@@ -78,6 +90,7 @@ def cmd_rebuild(with_sealed: bool) -> int:
     steps = list(STEPS)
     if with_sealed:
         steps += SEALED_STEPS
+    steps += AUDIT_STEPS
 
     results = []
     for label, args in steps:

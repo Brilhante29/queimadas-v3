@@ -202,3 +202,131 @@ queimado para esse fim.
   propriedade: valor legado so pode aparecer abaixo do cabecalho que o
   desqualifica, e nenhum documento pode afirmar aprovacao enquanto um gate da
   APA reprovar. Suite: **114 passando**.
+
+## PHASE 7 - integridade do alvo e honestidade do registro (I3-I7)
+
+Os cinco achados "Importantes" restantes da auditoria independente. Cada um
+trocou uma assercao por uma medicao. Todos os artefatos ficam em
+`outputs/apa_araripe/audit/`.
+
+### I7 - equivalencia entre caminhos da fonte  [x] SUSTENTADA COM EVIDENCIA
+
+O treino vem de `EstadosBr_sat_ref/{UF}/` e o scoring de 2025 vem de
+`Brasil_sat_ref/` (arquivo nacional). O manifest afirmava "mesmo produto" sem
+nunca ter cruzado os dois caminhos.
+
+Baixei 2024 pelos dois caminhos e comparei celula a celula:
+
+```text
+2.401 celulas comparadas
+19.804 focos pelo caminho nacional
+19.804 focos pelo caminho por UF
+0 celulas divergentes, delta maximo 0
+```
+
+Identico. Tratar 2025 como o mesmo produto agora e **verificado**, nao
+asserido. `scripts/validate_source_path_equivalence.py`.
+
+### I6 - homogeneidade de sensor  [x] ASSERCAO SUBSTITUIDA POR RASTREIO
+
+Confirmei que os arquivos-fonte **nao tem coluna de satelite**:
+`id_bdq, foco_id, lat, lon, data_pas, pais, estado, municipio, bioma`. Ou seja,
+o contrato de sensor era afirmacao sobre o produto do INPE, e uma troca
+silenciosa nao seria detectada por nada no repositorio.
+
+Rodei teste de Pettitt (nao parametrico) na serie mensal dessazonalizada e nos
+totais anuais. **Quebra significativa em 2012**:
+
+```text
+UF CE   ponto 2012  p=0,0082  nivel depois/antes = 0,558
+UF PE   ponto 2012  p=0,0189  nivel depois/antes = 0,542
+UF PI   ponto 2013  p=1,0000  ns
+escopo APA          p=0,0582  ns (marginal)
+CE+PE+PI agregado   p=0,1223  ns
+```
+
+Nao da para atribuir: 2012 e o inicio da grande seca do Nordeste (2012-2017) e
+tambem poderia ser troca de sensor. As duas produzem degrau de nivel. O
+rastreio declara isso explicitamente.
+
+**Impacto no modelo, e um achado com valor proprio:** o fator regional de
+intensidade e razao observado/esperado nos 12 meses antes do corte. A janela
+mais antiga comeca em **2014-01**, depois da quebra -- nenhuma das 120 janelas
+mistura regimes. Mais: a razao do primeiro corte e **0,5583**, praticamente
+identica a razao de nivel medida na propria quebra em CE (0,558). O fator
+regional **absorve empiricamente o degrau de 2012**. Isso e explicacao mecanica
+de por que o champion supera a climatologia pura, nao so ganho empirico sem
+causa.
+
+Risco residual registrado: a climatologia municipal e estimada sobre 2003-2024
+inteiro e **atravessa** a quebra. O fator regional corrige no agregado, nao por
+municipio. Recalibrar so com pos-2012 e experimento legitimo e **nao foi
+feito** -- o EXP-10 esta congelado por decisao registrada, e refaze-lo agora
+seria escolher metodo depois de ver o diagnostico.
+
+### I5 - semantica de zero  [x] ALARME PARCIALMENTE FALSO, LACUNA REAL FECHADA
+
+Os 5 municipios com zero em 264 meses sao Fernando de Noronha, Ilha de
+Itamaraca, Jupi, Olinda e Paulista -- ilhas oceanicas e area urbana densa da
+regiao metropolitana do Recife. Zero deteccao em 22 anos e plausivel para esse
+perfil. **Nenhum esta no escopo APA**, entao nenhum resultado da APA depende
+dessas 1.320 linhas (1,2% de todos os zeros).
+
+O ponto de fundo procede: o codigo nao distingue "sem deteccao" de "join
+falhou". Fechado por tres caminhos:
+
+1. A ingestao **falha fechada** em nome nao resolvido -- erro de join aborta em
+   vez de virar zero. O snapshot registra `n_unresolved_municipality_names = 0`.
+2. `test_ingestion_fails_closed_on_unresolvable_municipality` exercita esse
+   caminho de verdade: trunca a referencia IBGE para so o Piaui e exige
+   `ValueError`. Roda offline. Substitui a cobertura vacua de
+   `test_missing_not_silently_zeroed`, que filtra `observed == False` --
+   conjunto vazio -- e passava sem testar nada.
+3. `test_grid_minus_source_equals_the_never_emitted_set` amarra as contagens:
+   593 na grade menos 588 resolvidos pela fonte tem que dar exatamente os 5.
+   Uma terceira causa de zero quebraria o teste.
+
+### I3 - comparacao confundida  [x] DECOMPOSTA
+
+O registro anterior punha 0,8762 contra 0,9537 e atribuia o salto a janela
+deslizante. Mas metodo, alpha **e** ano de avaliacao mudaram juntos.
+
+Decomposicao nos 4 folds de desenvolvimento, **sem tocar em 2025**:
+
+```text
+expanding_mondrian  @ a=0,05 -> 0,8964
+expanding_mondrian  @ a=0,02 -> 0,9537   so alpha:  +0,0573
+rolling_mondrian_48 @ a=0,05 -> 0,9149   so metodo: +0,0185
+rolling_mondrian_48 @ a=0,02 -> 0,9635   total:     +0,0671
+```
+
+**Alpha responde por 85% da melhora, o metodo por 28%** (somam mais de 100%
+porque a interacao e -0,0087). A atribuicao anterior nao se sustenta: o efeito
+dominante foi alargar o nivel nominal de 0,95 para 0,98.
+
+O efeito do ano de avaliacao nao e separavel -- exigiria rodar outras
+configuracoes no holdout selado. Fica declarado, nao estimado.
+
+### I4 - "uma unica violacao" era falso  [x] CORRIGIDO
+
+O gate avalia so `overall` e as tres UFs. A fatia **critico out-nov = 0,8889
+esta ABAIXO do piso 0,90** e simplesmente nao conta como falha. Outubro e
+novembro sao o pico da estacao seca, a janela de uso operacional real.
+
+Ha dois valores fora de [0,90; 0,98], um acima e um abaixo, e o abaixo e o que
+mais importa. Incluir a fatia critica no gate **agora**, depois de ver o
+numero, seria mudar criterio em cima do holdout -- fica registrado como
+requisito obrigatorio do proximo gate.
+
+### Registro final do G5
+
+`g5_final_sealed_result.md` foi reescrito com secao de correcoes explicita (as
+tres frases refutadas ficam listadas, nao apagadas). Veredito duplo:
+
+> O metodo nao foi validado **e** o gate, como especificado, tambem nao serve.
+
+Proxima rodada exige gate reescrito e pre-registrado antes de tocar em 2026:
+teto com folga contra o nominal, fatia critica como criterio, e cobertura
+medida **por lado** -- a agregada atual e quase toda do lado superior.
+
+Suite: **126 passando**.

@@ -1,0 +1,53 @@
+{
+  "check": "decomposicao da melhora do G5: alpha x metodo",
+  "why": "A comparacao publicada antes mudava metodo, alpha e ano de avaliacao ao mesmo tempo, e atribuia o ganho inteiro a janela deslizante.",
+  "evaluated_on": "os 4 folds de desenvolvimento (2021-2024), nunca em 2025",
+  "configurations": {
+    "old_method": "expanding_mondrian",
+    "old_alpha": 0.05,
+    "new_method": "rolling_mondrian_48",
+    "new_alpha": 0.02
+  },
+  "effects": {
+    "mean_fold_coverage": {
+      "baseline_old_method_old_alpha": 0.8964,
+      "old_method_new_alpha": 0.9537,
+      "new_method_old_alpha": 0.9149,
+      "new_method_new_alpha": 0.9635,
+      "effect_of_alpha_alone": 0.0573,
+      "effect_of_method_alone": 0.0185,
+      "total_effect": 0.0671,
+      "share_attributable_to_alpha": 0.8534,
+      "share_attributable_to_method": 0.2759,
+      "interaction": -0.0087
+    },
+    "min_fold_coverage": {
+      "baseline_old_method_old_alpha": 0.8657,
+      "old_method_new_alpha": 0.9352,
+      "new_method_old_alpha": 0.8912,
+      "new_method_new_alpha": 0.9537,
+      "effect_of_alpha_alone": 0.0694,
+      "effect_of_method_alone": 0.0255,
+      "total_effect": 0.088,
+      "share_attributable_to_alpha": 0.7895,
+      "share_attributable_to_method": 0.2895,
+      "interaction": -0.0069
+    },
+    "min_fold_uf_coverage": {
+      "baseline_old_method_old_alpha": 0.8333,
+      "old_method_new_alpha": 0.8958,
+      "new_method_old_alpha": 0.8542,
+      "new_method_new_alpha": 0.9375,
+      "effect_of_alpha_alone": 0.0625,
+      "effect_of_method_alone": 0.0208,
+      "total_effect": 0.1042,
+      "share_attributable_to_alpha": 0.6,
+      "share_attributable_to_method": 0.2,
+      "interaction": 0.0208
+    }
+  },
+  "alpha_dominates_method": true,
+  "conclusion": "O alargamento de alpha (0,05 -> 0,02, nominal 0,95 -> 0,98) responde por 85% da melhora de cobertura media entre folds; a troca de janela responde por 28%. Atribuir a correcao a janela deslizante, como o texto anterior fazia, nao se sustenta: o efeito dominante e ter alargado o nivel nominal. As duas fracoes somam mais de 100% porque os efeitos nao sao aditivos -- o termo de interacao e negativo, ja que alpha e metodo empurram a cobertura contra o mesmo teto.",
+  "what_remains_unseparable": "O efeito do ano de avaliacao (2023-2024 contra 2025) nao e estimavel: exigiria rodar outras configuracoes sobre o holdout selado, que o contrato de execucao unica proibe. Fica declarado como confundimento residual, nao estimado.",
+  "generated_at": "2026-08-28T23:10:22.726862+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "check": "equivalencia entre caminhos de distribuicao do INPE",
+  "why": "O treino usa EstadosBr_sat_ref (por UF) e o scoring de 2025 usa Brasil_sat_ref (nacional). Se os caminhos divergirem, a definicao do alvo muda entre treino e scoring.",
+  "year_tested": 2024,
+  "national_url": "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/anual/Brasil_sat_ref/focos_br_ref_2024.zip",
+  "national_sha256": "a2cec2f67483a4a95956a471d5cbdb7b3cbd93b21c9b87c845a649ef89abf4e1",
+  "per_uf_sha256": {
+    "CE": "708bb2daab3bd4baba04897f37c021c3fc7747ef80efad5672892f3fe9d1f561",
+    "PE": "e3e981966271809c0598e2deba3b6762c5d6b78fdf063d2bc57fafe4b13747e7",
+    "PI": "5be2507fb02ab62940ec85d346bcedf0804ce2d23f7ab8d3ec2f9e056fd6a0ae"
+  },
+  "cells_compared": 2401,
+  "total_fires_national": 19804,
+  "total_fires_per_uf": 19804,
+  "n_mismatched_cells": 0,
+  "max_abs_delta": 0,
+  "identical": true,
+  "verdict": "SUSTENTADA: os dois caminhos entregam contagens identicas celula a celula neste ano; tratar 2025 como o mesmo produto e justificado.",
+  "generated_at": "2026-08-28T23:04:05.262855+00:00"
+}

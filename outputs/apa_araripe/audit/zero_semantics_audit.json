@@ -1,0 +1,49 @@
+{
+  "check": "semantica de zero -- zero observado x ausencia de dado",
+  "target_sha256": "b393cb8fb720a9beecf0b95d5833202203804a7737eb184a58f44064fd8429c8",
+  "rows": 156552,
+  "months_per_municipality": 264,
+  "zeros_total": 113405,
+  "rows_marked_observed_false": 0,
+  "municipalities_never_emitted_by_source": {
+    "count": 5,
+    "rows_involved": 1320,
+    "share_of_all_zeros": 0.0116,
+    "list": [
+      {
+        "geocodigo": 2605459,
+        "municipio": "Fernando de Noronha",
+        "uf": "PE"
+      },
+      {
+        "geocodigo": 2607604,
+        "municipio": "Ilha de Itamaracá",
+        "uf": "PE"
+      },
+      {
+        "geocodigo": 2608305,
+        "municipio": "Jupi",
+        "uf": "PE"
+      },
+      {
+        "geocodigo": 2609600,
+        "municipio": "Olinda",
+        "uf": "PE"
+      },
+      {
+        "geocodigo": 2610707,
+        "municipio": "Paulista",
+        "uf": "PE"
+      }
+    ]
+  },
+  "intersection_with_apa_scope": {
+    "count": 0,
+    "geocodigos": [],
+    "consequence": "Nenhum resultado da APA depende dessas linhas."
+  },
+  "why_these_zeros_are_defensible": "Os 5 municipios sao ilhas oceanicas ou area urbana densa da regiao metropolitana do Recife (Fernando de Noronha, Ilha de Itamaraca, Jupi, Olinda, Paulista). Zero deteccao de foco em 22 anos e plausivel para esse perfil, nao anomalo.",
+  "why_join_failure_cannot_masquerade_as_zero": "A ingestao levanta ValueError em nome de municipio nao resolvido (falha fechada). Um erro de join aborta a construcao do snapshot em vez de produzir zero silencioso. O snapshot registra unresolved_municipality_names = 0.",
+  "residual_gap": "O esquema atual nao consegue distinguir 'a fonte nao emitiu porque nao houve foco' de 'a fonte nao emitiu porque nao cobre este municipio'. Enquanto a fonte for a lista de deteccoes do INPE, as duas coisas sao indistinguiveis por construcao. A mitigacao e monitorar a contagem: uma regressao de join apareceria como salto no numero de municipios sem nenhuma deteccao.",
+  "generated_at": "2026-08-28T23:06:58.197819+00:00"
+}
