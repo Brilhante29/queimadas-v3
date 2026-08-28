@@ -1,33 +1,156 @@
 {
-  "package_schema": "firecast_public_handoff_v1",
-  "created_at": "2026-07-15",
-  "scope": "Chapada do Araripe / CE-PE-PI, monthly municipal fire-focus forecasting",
-  "champion": "climatology_regional_intensity12",
-  "target_definition": "INPE AQUA_M-T monthly fire-focus count by IBGE municipality code",
-  "internal_status": "approved for internal production under G3 v2",
-  "external_status": "pending live shadow window and explicit deployment authorization",
-  "metrics": {
-    "extended_walk_forward_wape": 0.643,
-    "extended_walk_forward_baseline_wape": 0.7906,
-    "extended_walk_forward_out_nov_wape": 0.5419,
-    "extended_walk_forward_out_nov_baseline_wape": 0.6923,
-    "g3_v2_ce_monthly_scope_wape": 0.2245,
-    "g3_v2_ce_seasonal_wape": 0.1794,
-    "g3_v2_chapada_seasonal_wape": 0.3723,
-    "g5_ic95_overall_coverage": 0.917,
-    "g5_ic95_dry_coverage": 0.9,
-    "g5_ic95_wet_coverage": 0.9274,
-    "reality_2025_actual_aqua_mt": 1571,
-    "reality_2025_predicted": 1491.984,
-    "reality_2025_absolute_error": 79.016,
-    "reality_2026_jan_jun_actual_aqua_mt": 131,
-    "reality_2026_jan_jun_predicted": 87.436,
-    "reality_2026_jan_jun_absolute_error": 43.564
+  "package_schema": "firecast_public_handoff_v2",
+  "generated_by": "scripts/build_public_results_summary.py",
+  "generated_at": "2026-08-28T18:55:12.694924+00:00",
+  "READ_THIS_FIRST": "Este arquivo contem DOIS escopos distintos e nao intercambiaveis. `apa_chapada_araripe` e o escopo do produto atual (36 municipios de CE, PE e PI, derivados por intersecao espacial com o poligono da APA). `legacy_cariri_ce` e um escopo anterior, so do Ceara, com outro alvo e outro snapshot. Metrica de um bloco NAO vale para o outro. Nenhum gate do bloco legado sustenta afirmacao sobre a APA.",
+  "current_scope": {
+    "id": "apa_chapada_araripe",
+    "description": "APA Chapada do Araripe -- CE, PE, PI; contagem mensal de focos por municipio IBGE",
+    "n_municipalities": 36,
+    "by_uf": {
+      "CE": 18,
+      "PI": 10,
+      "PE": 8
+    },
+    "scope_sha256": "3d3d651c89bc511b5eac2f1e86d647f30d02fce43f6bf7f7b6000d5edaae8d50",
+    "target_snapshot_sha256": "b393cb8fb720a9beecf0b95d5833202203804a7737eb184a58f44064fd8429c8",
+    "champion": "climatology_apa_intensity12",
+    "baseline": "climatology_municipal",
+    "protocol": "walk-forward 2015-2024, treino so com passado, 2025+ congelado",
+    "n_cuts": 120,
+    "point_forecast": {
+      "all_wape_baseline": 0.7849593095159628,
+      "all_wape_champion": 0.7074196076217295,
+      "delta_all_wape": -0.07753970189423331,
+      "critical_wape_baseline": 0.6710043382733948,
+      "critical_wape_champion": 0.5760808598967986,
+      "bootstrap_estimand": "WAPE global recalculado por reamostra de cortes (reproduz EXP-10 original)",
+      "bootstrap_delta_ci95": [
+        -0.13148587600425563,
+        -0.030680729544427115
+      ],
+      "bootstrap_prob_delta_negative": 0.9995,
+      "win_rate_by_cut": 0.7383177570093458
+    },
+    "sealed_2025_holdout": {
+      "contract": "execucao unica em holdout selado; configuracao congelada antes de qualquer acesso a 2025; nenhuma segunda tentativa e permitida",
+      "frozen_config": {
+        "name": "rolling_mondrian_48",
+        "method": "mondrian",
+        "window": 48.0,
+        "alpha": 0.02
+      },
+      "frozen_at": "2026-08-28T18:13:39.576971+00:00",
+      "coverage_2025": {
+        "overall": 0.9537037037037037,
+        "dry": 0.95,
+        "wet": 0.9563492063492064,
+        "critical_out_nov": 0.8888888888888888,
+        "n_rows": 432,
+        "uf_CE": 0.9444444444444444,
+        "n_uf_CE": 216,
+        "uf_PE": 0.9895833333333334,
+        "n_uf_PE": 96,
+        "uf_PI": 0.9416666666666667,
+        "n_uf_PI": 120,
+        "volume_high": 0.972027972027972,
+        "n_volume_high": 143,
+        "volume_low": 0.9375,
+        "n_volume_low": 144,
+        "volume_mid": 0.9517241379310345,
+        "n_volume_mid": 145,
+        "volume_strata_source": "causal_from_calibration_window"
+      },
+      "interval_width_2025": {
+        "mean": 10.107396738647731,
+        "median": 4.811277850925388
+      },
+      "point_accuracy_2025": {
+        "wape_baseline": 0.6484584118171905,
+        "wape_champion": 0.5611087980602998,
+        "mae_champion": 1.8716615231594724,
+        "observed_total_2025": 1441,
+        "predicted_total_2025": 1236.365620944333
+      },
+      "status": "FAIL",
+      "failures": [
+        "cobertura PE 0.9896 fora de [0.9, 0.98]"
+      ]
+    },
+    "gates": {
+      "G0_data": "PASS",
+      "G1_training": "PASS",
+      "G2_selection": "PASS",
+      "G5_conformal_incumbent_method": "FAIL",
+      "G5_conformal_final_sealed_2025": "FAIL"
+    },
+    "known_limitations": {
+      "intervals_effectively_one_sided": {
+        "n_intervals": 432,
+        "n_lower_bound_at_or_below_zero": 420,
+        "share_lower_bound_non_informative": 0.9722,
+        "n_lower_bound_testable": 12,
+        "coverage_where_lower_bound_testable": 0.5833,
+        "violations_below_lower_bound": 3,
+        "violations_above_upper_bound": 17,
+        "interpretation": "A cobertura global de 2025 e dominada pelo limite inferior, que fica em zero na maioria das linhas e por isso quase nunca pode ser violado. O intervalo e, na pratica, unilateral. A cobertura restrita as linhas com piso testavel e o numero honesto para o lado inferior."
+      },
+      "gate_ceiling_collides_with_nominal_level": {
+        "nominal_coverage": 0.98,
+        "gate_ceiling": 0.98,
+        "ceiling_equals_nominal": true,
+        "by_uf": {
+          "CE": {
+            "n": 216,
+            "coverage_observed": 0.9444,
+            "misses_observed": 12,
+            "min_misses_needed_to_pass_ceiling": 5,
+            "prob_perfect_method_fails_ceiling": 0.566
+          },
+          "PE": {
+            "n": 96,
+            "coverage_observed": 0.9896,
+            "misses_observed": 1,
+            "min_misses_needed_to_pass_ceiling": 2,
+            "prob_perfect_method_fails_ceiling": 0.4255
+          },
+          "PI": {
+            "n": 120,
+            "coverage_observed": 0.9417,
+            "misses_observed": 7,
+            "min_misses_needed_to_pass_ceiling": 3,
+            "prob_perfect_method_fails_ceiling": 0.5687
+          }
+        },
+        "interpretation": "O teto do gate e igual ao nivel nominal do intervalo. Um metodo perfeitamente calibrado ultrapassa esse teto por acaso com a probabilidade acima. A reprovacao de PE, portanto, e evidencia fraca contra o metodo e evidencia forte contra a especificacao do gate. O FAIL e mantido: reespecificar o gate depois de ver o holdout seria ajuste no holdout."
+      }
+    },
+    "uncertainty_status": "not_validated",
+    "uncertainty_reason": "G5 reprovado: G5_final_sealed_2025.json=FAIL ['cobertura PE 0.9896 fora de [0.9, 0.98]']; G5_conformal.json=FAIL ['cobertura geral 0.8762 fora de [0.9, 0.98]', 'cobertura CE 0.8819 fora de [0.9, 0.98]', 'cobertura PE 0.8490 fora de [0.9, 0.98]', 'cobertura PI 0.8875 fora de [0.9, 0.98]']",
+    "production_status": "NAO APROVADO PARA PRODUCAO",
+    "what_is_permitted": "Servir previsao pontual, sinalizada como nao validada quanto a incerteza. Proibido apresentar intervalo como validado enquanto o G5 nao passar."
   },
-  "data_handoff": {
-    "fire_target_training": "data/snapshots/inpe_local_v2/inpe_monthly_merged.csv",
-    "fire_target_public_scoring": "data/snapshots/inpe_monthly_public_v3/events_target_region.csv filtered to AQUA_M-T",
-    "inmet_station_features": "data/snapshots/inmet_automatic_station_observed_v1/municipal_monthly_station_features.csv",
-    "important_note": "INMET is weather/station context, not the fire target. Fire counts come from INPE."
+  "legacy_cariri_ce": {
+    "id": "cariri_ce_legacy",
+    "status": "LEGADO -- NAO SE APLICA A APA CHAPADA DO ARARIPE",
+    "why_kept": "Preservado para rastreabilidade historica do projeto. Foi produzido sobre outro escopo, outro snapshot e outro recorte de avaliacao.",
+    "scope_description": "municipios do Ceara apenas; recorte 'chapada' interno de 50 celulas avaliadas",
+    "n_municipalities_in_training_artifact": 31,
+    "champion": "climatology_regional_intensity12",
+    "artifact_status": "release_candidate_not_production_approved",
+    "metrics": {
+      "extended_walk_forward_wape": 0.6429838793696906,
+      "extended_walk_forward_out_nov_wape": 0.5418575926425169,
+      "g3_v2_ce_monthly_scope_wape": 0.22454775141125147,
+      "g3_v2_ce_seasonal_wape": 0.17944589628327196,
+      "g3_v2_chapada_seasonal_wape": 0.37226128240249634,
+      "g3_v2_chapada_n_cells_evaluated": 50,
+      "g5_coverage_overall": 0.9170305676855895,
+      "g5_coverage_dry": 0.9,
+      "g5_coverage_wet": 0.927400468384075,
+      "g5_nominal_coverage": 0.96,
+      "g5_gate": "PASS"
+    },
+    "must_not_be_used_for": "Qualquer afirmacao sobre desempenho na APA Chapada do Araripe. O escopo APA tem WAPE mais alto e G5 reprovado; usar estes numeros no lugar daqueles inverteria a conclusao."
   }
 }

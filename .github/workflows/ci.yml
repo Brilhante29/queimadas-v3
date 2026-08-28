@@ -47,6 +47,11 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+      - name: Docs and public summary match the artifacts
+        env:
+          PYTHONPATH: .
+        run: python scripts/build_public_results_summary.py --check
+
       - name: Run test suite
         env:
           PYTHONPATH: .

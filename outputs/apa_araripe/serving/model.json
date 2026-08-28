@@ -14,7 +14,7 @@
     "start": "2003-01",
     "end": "2024-12"
   },
-  "generated_at": "2026-08-28T18:16:27.036710+00:00",
+  "generated_at": "2026-08-28T18:51:49.372786+00:00",
   "parameters": {
     "trailing_months": 12,
     "shrink_fire_count": 100.0,
@@ -42,7 +42,7 @@
   },
   "uncertainty": {
     "status": "not_validated",
-    "reason": "G5 FAIL: ['cobertura geral 0.8762 fora de [0.9, 0.98]', 'cobertura CE 0.8819 fora de [0.9, 0.98]', 'cobertura PE 0.8490 fora de [0.9, 0.98]', 'cobertura PI 0.8875 fora de [0.9, 0.98]']",
+    "reason": "G5 reprovado: G5_final_sealed_2025.json=FAIL ['cobertura PE 0.9896 fora de [0.9, 0.98]']; G5_conformal.json=FAIL ['cobertura geral 0.8762 fora de [0.9, 0.98]', 'cobertura CE 0.8819 fora de [0.9, 0.98]', 'cobertura PE 0.8490 fora de [0.9, 0.98]', 'cobertura PI 0.8875 fora de [0.9, 0.98]']",
     "contract": "enquanto status != validated o serving devolve interval=null; previsao pontual permitida, intervalo com aparencia de garantia nao"
   },
   "municipios": [

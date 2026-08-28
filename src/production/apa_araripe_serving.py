@@ -41,7 +41,13 @@ sys.path.insert(0, str(PROJECT_ROOT))
 SCOPE_CSV = PROJECT_ROOT / "data" / "reference" / "apa_chapada_araripe.csv"
 TARGET = PROJECT_ROOT / "data" / "snapshots" / "inpe_ce_pe_pi_satref_v1" / "municipality_month.csv"
 EXP_RESULT = PROJECT_ROOT / "outputs" / "apa_araripe" / "exp10" / "result.json"
-G5_GATE = PROJECT_ROOT / "outputs" / "apa_araripe" / "gates" / "G5_conformal.json"
+GATES_DIR = PROJECT_ROOT / "outputs" / "apa_araripe" / "gates"
+# Ordem de autoridade: o teste selado de 2025 e o veredito definitivo do G5.
+# O run do metodo incumbente ficou para tras e nao pode mais liberar intervalo.
+G5_GATES = (
+    GATES_DIR / "G5_final_sealed_2025.json",
+    GATES_DIR / "G5_conformal.json",
+)
 OUT_DIR = PROJECT_ROOT / "outputs" / "apa_araripe" / "serving"
 
 MODEL_NAME = "climatology_apa_intensity12"
@@ -58,17 +64,27 @@ def sha256_file(path: Path) -> str:
 def uncertainty_status() -> tuple[str, str]:
     """Carrega a etapa `uncertainty status` do fluxo FireCast.
 
-    Le o status direto do gate G5. Fail-closed: gate ausente ou ilegivel
-    tambem resulta em `not_validated`, nunca em intervalo exposto."""
-    if not G5_GATE.exists():
-        return "not_validated", "gate G5 ausente"
-    try:
-        gate = json.loads(G5_GATE.read_text(encoding="utf-8"))
-    except Exception as exc:  # noqa: BLE001
-        return "not_validated", f"gate G5 ilegivel: {exc}"
-    if gate.get("status") == "PASS":
-        return "validated", "G5 PASS"
-    return "not_validated", f"G5 {gate.get('status')}: {gate.get('failures')}"
+    Le o status dos gates G5. Fail-closed em todas as bordas: gate ausente,
+    ilegivel ou reprovado resulta em `not_validated`, nunca em intervalo
+    exposto. Exige que **todos** os gates G5 existentes tenham passado --
+    um PASS antigo nao sobrepoe um FAIL do teste selado."""
+    verdicts = []
+    for path in G5_GATES:
+        if not path.exists():
+            continue
+        try:
+            gate = json.loads(path.read_text(encoding="utf-8"))
+        except Exception as exc:  # noqa: BLE001
+            return "not_validated", f"gate G5 ilegivel ({path.name}): {exc}"
+        verdicts.append((path.name, gate.get("status"), gate.get("failures")))
+
+    if not verdicts:
+        return "not_validated", "nenhum gate G5 presente"
+    failed = [v for v in verdicts if v[1] != "PASS"]
+    if failed:
+        detail = "; ".join(f"{name}={status} {failures}" for name, status, failures in failed)
+        return "not_validated", f"G5 reprovado: {detail}"
+    return "validated", "G5 PASS em " + ", ".join(name for name, _, _ in verdicts)
 
 
 def build_artifact() -> dict:

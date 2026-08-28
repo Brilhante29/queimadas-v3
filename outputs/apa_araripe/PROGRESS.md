@@ -136,3 +136,69 @@ minimo de meses observados no escopo: 264 (todos completos)
 Achado com peso cientifico: os 3 municipios de maior incidencia da APA sao
 todos de **Pernambuco** -- Bodoco (2.397 focos), Araripina (1.253), Exu
 (1.158). O champion atual, treinado so no CE, **nunca viu nenhum deles**.
+
+## PHASE 6 - contrato de divulgacao (§23, §44, §46, §47)
+
+Auditoria independente (red-team, `outputs/apa_araripe/audit/red_team_report.md`)
+sustentou o EXP-10, o escopo e a ausencia de leakage -- reimplementou os 120
+cortes sem importar o repo e bateu previsao a previsao ate 1e-15, replicando o
+bootstrap em [-0,1315; -0,0307], P = 0,9995.
+
+Mas **refutou** duas afirmacoes de documentacao. Ambas corrigidas aqui.
+
+### C1 - numeros legados publicados como se fossem da APA  [x]
+
+`README.md`, `PRODUCTION_READINESS.md`, `docs/ARTIGO_FIRECAST.md` e
+`outputs/public_results_summary.json` publicavam metricas do escopo Cariri/CE
+(WAPE 0,3723; EXP-10 0,6430; G5 PASS 0,9170) sob o rotulo
+`"scope": "Chapada do Araripe / CE-PE-PI"`, com gates PASS. No escopo APA o
+WAPE e mais alto e o G5 reprovou. O leitor tirava a conclusao invertida.
+
+Correcao estrutural, nao textual: `scripts/build_public_results_summary.py`
+gera o summary e os blocos de metricas do README e do PRODUCTION_READINESS a
+partir dos artefatos, via `pluck()`, que **levanta erro** se a chave sumir.
+Numero digitado a mao deixou de existir nesses arquivos. `--check` roda no CI
+e nos testes.
+
+Os dois escopos agora sao blocos nomeados: `current_scope`
+(`apa_chapada_araripe`) e `legacy_cariri_ce`, este ultimo com
+`status: "LEGADO -- NAO SE APLICA A APA CHAPADA DO ARARIPE"`.
+
+### C2 - "APPROVED FOR INTERNAL PRODUCTION" com G5 reprovado  [x]
+
+Substituido pelo status gerado, que le os gates: **NAO APROVADO PARA
+PRODUCAO**. O serving passou a ler `G5_final_sealed_2025.json` com precedencia
+sobre `G5_conformal.json` -- um PASS antigo nao pode sobrepor o FAIL do
+holdout selado.
+
+### Duas ressalvas metodologicas ao proprio G5  [x] publicadas
+
+Medidas, nao opinadas; ambas geradas a partir dos artefatos.
+
+1. **O intervalo e unilateral na pratica.** 420 de 432 intervalos de 2025
+   (97,2%) tem `interval_low <= 0`, limite que quase nunca pode ser violado.
+   Nas 12 linhas com piso testavel a cobertura cai para **0,5833**. Das
+   violacoes, 17 sao por cima e 3 por baixo. Ou seja: a cobertura global de
+   0,9537 mede sobretudo o teto do intervalo, nao o intervalo inteiro.
+
+2. **O teto do gate coincide com o nivel nominal.** Com `alpha = 0,02` o
+   intervalo e nominalmente 0,98 e o teto aceitavel tambem e 0,98. Um metodo
+   perfeitamente calibrado estoura esse teto so por acaso amostral com
+   probabilidade CE 0,5660 / PE 0,4255 / PI 0,5687. PE reprovou com **1 erro
+   em 96** -- precisaria de pelo menos 2 para passar. O gate penalizou acerto.
+
+Consequencia registrada: o G5 **permanece FAIL**. Reespecificar o criterio
+depois de ver o holdout seria ajuste no holdout, que o contrato de execucao
+unica proibe. O registro honesto e que o metodo nao foi validado **e** que o
+gate, como especificado, tambem nao serve. Qualquer nova tentativa exige gate
+reescrito e pre-registrado antes de tocar em outro ano -- e 2025 ja esta
+queimado para esse fim.
+
+### Reparos adjacentes  [x]
+
+- `docs/ARTIGO_FIRECAST.md` estava gravado como UTF-8 de texto ja decodificado
+  como cp1252: todo acento ilegivel. Reparado, com banner de escopo no topo.
+- 12 testes novos em `tests/test_scope_disclosure_contract.py` travam a
+  propriedade: valor legado so pode aparecer abaixo do cabecalho que o
+  desqualifica, e nenhum documento pode afirmar aprovacao enquanto um gate da
+  APA reprovar. Suite: **114 passando**.

@@ -2,35 +2,91 @@
 
 Updated on 2026-07-13.
 
-Status: **APPROVED FOR INTERNAL PRODUCTION under G3 contract v2**.  External
-release remains **blocked** until live shadow scores show no unresolved
-monitoring alert and a separate human authorization is recorded.
+O veredito por escopo esta no bloco gerado abaixo, produzido por
+`scripts/build_public_results_summary.py` a partir dos artefatos. Nao edite
+aquele bloco a mao: ele e reescrito e verificado no CI.
 
 ## Current verdict
 
-| Gate | Status | Evidence |
-|---|---|---|
-| G0 | PASS | `.venv/Scripts/python.exe -m pytest tests -q` => 56/56 passing, 1 known Starlette/httpx warning; container `docker compose --profile ops run --rm serving-test` => 16/16 passing after image rebuild; `scripts/check_data_ingestors.py` => 20 snapshots / 26 ingestors OK; checklist sync OK; JSONL/checkpoint OK; Compose config OK. |
-| G1 | PASS | Real versioned data sources are in the path: INPE v2 target, public INPE v3 scoring target, INPE event points, ERA5/ENSO, FIRMS, IBGE and INMET snapshots. Public 2025/2026 scoring uses event-level `AQUA_M-T`, not all-sensor mixing. |
-| G2 | PASS | EXP-10 `climatology_regional_intensity12` beats the previous climatology baseline: WAPE 0.6430 vs 0.7906, out-nov 0.5419 vs 0.6923, 85/120 cuts won, bootstrap delta WAPE CI95 [-0.2195, -0.0852]. |
-| G3 | PASS (v2) | EXP-26 frozen gate: CE monthly scope WAPE 0.2245 <= 0.25; CE seasonal WAPE 0.1794 <= 0.20; Chapada seasonal WAPE 0.3723 <= 0.40; Recall@10 0.775/0.90; zero indevido 0.0. v1 municipal-month limits remain historical/informational because EXP-25 measured practical irreducible noise around that granularity. |
-| G4 | PASS | EXP-10 spatial/slice gate passed on the 2023-2024 window; residual low-volume risks are documented. |
-| G5 | PASS | `g5_conformal_ic95_guarded_exp10`: 2023-2024 coverage 0.9170 overall, 0.9000 dry, 0.9274 wet, inside [0.90, 0.98]. |
-| G6 | PASS | Fail-closed serving, artifact hash validation, train-serving identity, concurrent load smoke and verified LLM-safe XAI are covered by tests. `POST /v1/explain` returns exact attribution and rejects unverified numbers. CLI/Makefile point to `outputs/champion_climatology_regional_intensity12/model.json`. |
-| G7 | PASS (internal only) | Human internal approval, model/data card, rollback and shadow harness exist. Public AQUA-MT shadow scoring now uses `score_schema_version=v2_event_absence_is_zero`, treating absent event rows as zero fires. 2026-05..07 are scored and 2026-08 is pending observed data. External release is blocked by unresolved WAPE alerts on the scored low-denominator live months. |
+<!-- FIRECAST:METRICS:START -->
+> Bloco gerado por `scripts/build_public_results_summary.py`. Nao edite a mao.
+> Todo numero e lido de artefato; o CI falha se este bloco divergir.
 
-## Current champion
+### Escopo vigente: APA Chapada do Araripe (36 municipios -- CE 18, PE 8, PI 10)
 
-| Metric | Value |
+Status de producao: **NAO APROVADO PARA PRODUCAO**
+
+Incerteza: `not_validated` -- G5 reprovado: G5_final_sealed_2025.json=FAIL ['cobertura PE 0.9896 fora de [0.9, 0.98]']; G5_conformal.json=FAIL ['cobertura geral 0.8762 fora de [0.9, 0.98]', 'cobertura CE 0.8819 fora de [0.9, 0.98]', 'cobertura PE 0.8490 fora de [0.9, 0.98]', 'cobertura PI 0.8875 fora de [0.9, 0.98]']
+
+| Bloco | Metrica | Valor |
+|---|---|---:|
+| Walk-forward 120 cortes | WAPE baseline | `0.7850` |
+| Walk-forward 120 cortes | WAPE champion | `0.7074` |
+| Walk-forward 120 cortes | Delta WAPE | `-0.0775` |
+| Estacao critica Out-Nov | WAPE baseline | `0.6710` |
+| Estacao critica Out-Nov | WAPE champion | `0.5761` |
+| Selecao | Bootstrap delta WAPE IC95 | `[-0.1315, -0.0307]` |
+| Selecao | P(delta < 0) | `0.9995` |
+| Selecao | Cortes vencidos | `0.7383` |
+| Holdout selado 2025 | WAPE baseline | `0.6485` |
+| Holdout selado 2025 | WAPE champion | `0.5611` |
+| Holdout selado 2025 | Cobertura geral | `0.9537` |
+| Holdout selado 2025 | Largura media | `10.1074` |
+
+#### Gates
+
+| Gate | Status |
+|---|---|
+| G0_data | **PASS** |
+| G1_training | **PASS** |
+| G2_selection | **PASS** |
+| G5_conformal_incumbent_method | **FAIL** |
+| G5_conformal_final_sealed_2025 | **FAIL** |
+
+G5 reprovou. Motivo registrado: `['cobertura PE 0.9896 fora de [0.9, 0.98]']`.
+
+#### Limitacoes conhecidas do G5
+
+Duas ressalvas medidas, nao opinadas. Ambas saem de auditoria independente e
+ficam aqui porque mudam a leitura do resultado de 2025.
+
+1. **O intervalo e unilateral na pratica.** 420 de 432 intervalos (97.2%) tem limite inferior <= 0, que praticamente nao pode ser violado. Nas 12 linhas com piso testavel a cobertura cai para `0.5833`. Das violacoes, 17 sao por cima e 3 por baixo. A cobertura global de `0.9537` mede sobretudo o teto do intervalo.
+
+2. **O teto do gate coincide com o nivel nominal.** Nominal `0.98`, teto aceitavel `0.98`. Um metodo perfeitamente calibrado estoura esse teto so por acaso amostral com a probabilidade abaixo:
+
+| UF | n | Cobertura | Erros observados | Erros minimos p/ passar o teto | P(metodo perfeito reprova) |
+|---|---:|---:|---:|---:|---:|
+| CE | 216 | 0.9444 | 12 | 5 | 0.5660 |
+| PE | 96 | 0.9896 | 1 | 2 | 0.4255 |
+| PI | 120 | 0.9417 | 7 | 3 | 0.5687 |
+
+   PE reprovou com 1 erro em 96. Precisaria de pelo menos 2 para passar: o gate
+   penalizou acerto. O FAIL **permanece** -- reespecificar o criterio depois de ver
+   o holdout seria ajuste no holdout, que o contrato proibe. O registro correto e
+   que o metodo nao foi validado **e** que o gate, como especificado, tambem nao
+   serve. Nova tentativa exige gate reescrito e pre-registrado antes de tocar em
+   outro ano.
+
+### Escopo legado: Cariri/CE -- NAO SE APLICA A APA
+
+Preservado para rastreabilidade historica do projeto. Foi produzido sobre outro escopo, outro snapshot e outro recorte de avaliacao. Escopo: municipios do Ceara apenas; recorte 'chapada' interno de 50 celulas avaliadas; 31 municipios no artefato de treino.
+
+**Qualquer afirmacao sobre desempenho na APA Chapada do Araripe. O escopo APA tem WAPE mais alto e G5 reprovado; usar estes numeros no lugar daqueles inverteria a conclusao.**
+
+| Metrica legada (Cariri/CE) | Valor |
 |---|---:|
-| Model | `climatology_regional_intensity12` |
-| Artifact | `outputs/champion_climatology_regional_intensity12/model.json` |
-| Extended WAPE | `0.6430` |
-| Extended out-nov WAPE | `0.5419` |
-| Dry-season WAPE | `0.5983` |
-| G5 coverage overall/dry/wet | `0.9170 / 0.9000 / 0.9274` |
-| 2025 public AQUA-MT actual/pred/error | `1571 / 1491.984 / 79.016` |
-| 2026 Jan-Jun public AQUA-MT actual/pred/error | `131 / 87.436 / 43.564` |
+| WAPE walk-forward estendido | `0.6430` |
+| WAPE Out-Nov | `0.5419` |
+| G3 v2 CE mensal | `0.2245` |
+| G3 v2 CE sazonal | `0.1794` |
+| G3 v2 'chapada' sazonal (recorte de 50 celulas) | `0.3723` |
+| G5 legado cobertura geral (nominal 0.96) | `0.9170` |
+| G5 legado gate | `PASS` |
+
+O G5 legado passou com nominal 0,96 contra teto 0,98 -- tinha folga. O G5 da APA
+usou nominal 0,98 contra o mesmo teto 0,98, sem folga nenhuma. Os dois numeros
+nao sao comparaveis, e o PASS legado nao sustenta nada sobre a APA.
+<!-- FIRECAST:METRICS:END -->
 
 ## What is operational locally
 
