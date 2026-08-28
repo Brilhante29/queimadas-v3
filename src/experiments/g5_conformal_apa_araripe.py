@@ -147,6 +147,10 @@ def run_alpha(
             band_wet = conformal_band(wet, alpha)
             band = np.where(t["is_dry"].to_numpy(dtype=bool), band_dry, band_wet)
             t["stratum"] = np.where(t["is_dry"].to_numpy(dtype=bool), "dry", "wet")
+            t["n_calib_effective"] = np.where(
+                t["is_dry"].to_numpy(dtype=bool), len(dry), len(wet)
+            )
+            t["fallback_level"] = "season"
         else:
             strata = _volume_strata_from_calib(calib)
             calib = calib.copy()
@@ -160,20 +164,28 @@ def run_alpha(
             )
 
             band = np.empty(len(t), dtype=float)
+            n_eff = np.empty(len(t), dtype=int)
+            fb = np.empty(len(t), dtype=object)
             ok = True
             for i, s in enumerate(t["stratum"].to_numpy()):
                 errs = calib[calib["stratum"] == s]["abs_error"]
+                level = "stratum"
                 if len(errs) < MIN_STRATUM_CALIB:
                     # estrato sem residuos suficientes: recua para a estacao
                     # inteira em vez de inventar quantil com amostra minuscula
                     season = "dry" if s.endswith("_dry") else "wet"
                     errs = calib[calib["is_dry"] == (season == "dry")]["abs_error"]
+                    level = "season"
                 if errs.empty:
                     ok = False
                     break
                 band[i] = conformal_band(errs, alpha)
+                n_eff[i] = int(len(errs))
+                fb[i] = level
             if not ok:
                 continue
+            t["n_calib_effective"] = n_eff
+            t["fallback_level"] = fb
 
         y = t["fire_count"].to_numpy(dtype=float)
         p = t["y_pred"].to_numpy(dtype=float)
@@ -185,7 +197,10 @@ def run_alpha(
         t["covered"] = (y >= low) & (y <= high)
         t["alpha"] = alpha
         t["nominal_coverage"] = 1.0 - alpha
-        t["n_calib"] = len(calib)
+        t["calibration_window_start"] = str(calib["period"].min())
+        t["calibration_window_end"] = str(cut - 1)
+        t["alpha_effective"] = alpha
+        t["band"] = band
         rows.append(t)
     if not rows:
         raise ValueError(f"nenhum corte avaliavel para alpha={alpha}")
@@ -208,19 +223,18 @@ def coverage_report(df: pd.DataFrame) -> dict:
         out[f"uf_{uf}"] = float(g["covered"].mean())
         out[f"n_uf_{uf}"] = int(len(g))
 
-    volume = df.groupby("geocodigo")["fire_count"].sum()
-    if len(volume) >= 3:
-        q1, q2 = volume.quantile([1 / 3, 2 / 3])
-        strata = {
-            "volume_low": volume[volume <= q1].index,
-            "volume_mid": volume[(volume > q1) & (volume <= q2)].index,
-            "volume_high": volume[volume > q2].index,
-        }
-        for name, geos in strata.items():
-            sub = df[df["geocodigo"].isin(geos)]
-            if len(sub):
-                out[name] = float(sub["covered"].mean())
-                out[f"n_{name}"] = int(len(sub))
+    # Estrato de volume CAUSAL: usa o `vol` atribuido durante a calibracao
+    # (informacao disponivel ANTES da previsao). Recalcular tercis com o
+    # `fire_count` do proprio conjunto avaliado seria estratificacao ex-post
+    # do holdout -- os numeros por volume descreveriam grupos definidos pelo
+    # resultado que se quer medir.
+    if "vol" in df.columns:
+        for name, sub in df.groupby("vol"):
+            out[f"volume_{name}"] = float(sub["covered"].mean())
+            out[f"n_volume_{name}"] = int(len(sub))
+        out["volume_strata_source"] = "causal_from_calibration_window"
+    else:
+        out["volume_strata_source"] = "unavailable_method_without_volume_strata"
     return out
 
 

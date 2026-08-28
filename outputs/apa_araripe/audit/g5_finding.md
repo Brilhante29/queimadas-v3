@@ -125,3 +125,58 @@ O EXP-10 permanece intacto: `all_wape 0,7850 → 0,7074`, CI95 do ΔWAPE
 separado da acurácia pontual. O modelo prevê melhor que o baseline; o que
 ainda não está demonstrado é que os intervalos declarados cobrem na taxa
 nominal.
+
+---
+
+## Adendo (2026-08-14) — duas correções de higiene e o que elas mudaram
+
+Revisão externa apontou duas sujeiras no código deste G5. Ambas corrigidas.
+**O `FAIL` permanece** — nenhuma delas contaminava a construção dos
+intervalos.
+
+### 1. Estratificação por volume era ex-post
+
+`coverage_report()` recalculava os tercis `low/mid/high` usando o
+`fire_count` do **próprio conjunto avaliado**. A construção dos intervalos já
+era causal (tercis vindos só da janela de calibração), então o `FAIL` não é
+afetado — mas os números *reportados* por volume descreviam grupos definidos
+pelo resultado que se queria medir.
+
+Corrigido para usar o estrato causal atribuído em `run_alpha()`. O efeito não
+foi cosmético:
+
+| estrato | ex-post (antes) | causal (agora) |
+|---|---:|---:|
+| volume baixo | 0,9097 | 0,8933 |
+| volume médio | 0,8854 | 0,8804 |
+| volume alto | 0,8333 | 0,8542 |
+
+A estratificação ex-post **exagerava o gradiente por volume**. Na leitura
+causal a subcobertura é bem mais uniforme (0,85–0,89). Consequência para o
+diagnóstico: a hipótese "o problema são os municípios de alto volume" era
+parcialmente artefato de estratificar o holdout pelo próprio desfecho. O
+déficit é sistêmico, não concentrado numa faixa.
+
+Isso **reforça** a leitura de deslocamento temporal como mecanismo dominante,
+em vez de heterocedasticidade pura entre escalas.
+
+### 2. Proveniência por intervalo era insuficiente
+
+`n_calib` registrava o tamanho global da calibração, não o número de resíduos
+efetivamente usados no quantil daquele estrato. Um intervalo que caiu de
+`high_dry` para `dry` por falta de amostra ficava indistinguível de um
+calibrado no estrato certo.
+
+Cada intervalo agora carrega: `stratum`, `n_calib_effective`,
+`fallback_level`, `band`, `alpha_effective`, `calibration_window_start` e
+`calibration_window_end`.
+
+### 3. Correção de linguagem
+
+"A causa raiz é não-estacionariedade" era afirmação forte demais para a
+evidência disponível — pode haver contribuição de heterocedasticidade, mudança
+de regime ou má especificação do modelo. A formulação sustentável, adotada
+aqui e no artigo, é:
+
+> **evidência de deslocamento temporal da distribuição dos erros**
+

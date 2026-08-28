@@ -1,0 +1,45 @@
+{
+  "frozen_at": "2026-08-28T18:13:39.576971+00:00",
+  "purpose": "configuracao conformal congelada ANTES de qualquer acesso a 2025",
+  "sealed_year": 2025,
+  "development_window": "2015-2024 (2023-2024 rebaixado de holdout para desenvolvimento)",
+  "selection_rule": "cobertura minima entre folds E entre UFs deve atingir piso + margem de desenvolvimento; teto nao pode ser estourado; largura apenas como desempate entre as que ja tem folga",
+  "dev_margin": 0.02,
+  "effective_dev_floor": 0.92,
+  "selection_decision": "SELECTED_NARROWEST_AMONG_THOSE_WITH_MARGIN_IN_EVERY_FOLD_AND_UF",
+  "folds": [
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "ic_bounds": [
+    0.9,
+    0.98
+  ],
+  "candidate_family": [
+    "adaptive_aci_expanding",
+    "expanding_mondrian",
+    "normalized_expanding",
+    "normalized_rolling_36",
+    "rolling_mondrian_24",
+    "rolling_mondrian_36",
+    "rolling_mondrian_48"
+  ],
+  "chosen": {
+    "name": "rolling_mondrian_48",
+    "method": "mondrian",
+    "window": 48.0,
+    "alpha": 0.02
+  },
+  "chosen_dev_metrics": {
+    "min_fold_coverage": 0.9537037037037037,
+    "mean_fold_coverage": 0.9635416666666666,
+    "max_fold_coverage": 0.9768518518518519,
+    "min_fold_uf_coverage": 0.9375,
+    "mean_width": 7.111562361162616
+  },
+  "predictions_sha256": "f17b645e426f8db691d0cf50589c60788db68a8f4b6fbb13598b38542080b648",
+  "eligible_count": 4,
+  "n_candidates_evaluated": 28
+}
