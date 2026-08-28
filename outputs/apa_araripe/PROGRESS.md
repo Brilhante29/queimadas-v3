@@ -330,3 +330,108 @@ teto com folga contra o nominal, fatia critica como criterio, e cobertura
 medida **por lado** -- a agregada atual e quase toda do lado superior.
 
 Suite: **126 passando**.
+
+## PHASE 8 - achados menores, com dois resultados negativos que importam
+
+Os "Menores" da auditoria. Dois deles nao eram menores.
+
+### M5 - o baseline do G2 era fraco demais  [x] RESULTADO NEGATIVO PUBLICADO
+
+O G2 compara o champion so contra climatologia de longo prazo, que nao corrige
+nivel. Numa serie com degrau em 2012, vencer esse baseline nao prova que o
+fator regional importa -- qualquer janela recente faria parte do trabalho.
+
+Rodei o champion contra tres baselines que tambem corrigem nivel, no mesmo
+protocolo de 120 cortes, com o mesmo estimando de bootstrap:
+
+```text
+modelo                          WAPE    out-nov
+champion                       0,7074   0,5761
+climatology_recent_60          0,7375   0,6161
+climatology_x_municipal_r12    0,7725   0,6572
+climatology_municipal          0,7976   0,6922
+seasonal_naive_12              0,8456   0,6931
+```
+
+IC95 do delta contra o champion:
+
+```text
+climatology_municipal        [-0,1545; -0,0380]  VENCE
+seasonal_naive_12            [-0,1978; -0,0858]  VENCE
+climatology_x_municipal_r12  [-0,1135; -0,0274]  VENCE
+climatology_recent_60        [-0,0643; +0,0088]  NAO VENCE
+```
+
+**O champion nao supera com significancia uma climatologia dos ultimos 60
+meses** -- sem fator regional, sem encolhimento, sem clip. P = 0,9425.
+
+O G2 continua valido **como foi definido**: o champion bate
+`climatology_municipal` com IC95 inteiramente negativo. Mas a leitura
+cientifica fica mais modesta do que "o fator regional de intensidade e o que
+importa". Publicado no README e no PRODUCTION_READINESS, nao escondido no
+arquivo de auditoria. Qualquer G2 futuro precisa incluir baseline de janela
+recente.
+
+O champion **nao** foi trocado: seria selecionar metodo a partir de um
+diagnostico rodado depois do congelamento -- e `climatology_recent_60` e pior
+na estimativa pontual de todo jeito.
+
+### M7 - o ganho de 2025 nao tinha intervalo  [x] RESULTADO NEGATIVO PUBLICADO
+
+O registro dizia "-13,5%" e "a previsao pontual e robusta" a partir de um ano.
+Bootstrap por mes (o cluster honesto -- municipios do mesmo mes nao sao
+independentes):
+
+```text
+delta de WAPE      -0,0873   IC95 [-0,1872; +0,2881]
+ganho relativo     -13,5%    IC95 [-29,7%; +39,7%]
+P(champion melhor) 0,7738
+```
+
+**O IC95 cruza o zero.** 2025 nao confirma nem refuta o ganho; e apenas
+consistente com ele. O que sustenta o EXP-10 continua sendo o walk-forward de
+120 cortes, IC95 [-0,1315; -0,0307].
+
+Alem disso, o champion **subestima o total de 2025 em 14,2%** (1.236 previstos
+contra 1.441 observados) -- o lado errado do erro em contexto de risco de fogo,
+e isso tambem nao estava reportado.
+
+### M6 - deriva de cache  [x] BUG REAL
+
+O codigo apontava para `cache/inpe_apa_araripe_satref/` e o disco tinha
+`cache/inpe_apa33_satref/` -- sobra da remocao do nome `apa33`. Uma reexecucao
+re-baixaria os 66 arquivos. Diretorio renomeado; 67 arquivos voltaram a ser
+alcancaveis.
+
+### M1 - data errada  [x] / M3 - motivo desatualizado no serving  [x]
+
+M1: o registro do teste selado dizia "2026-08-14"; o `generated_at` do gate diz
+`2026-08-28T18:25:03Z`. Agora as duas datas -- congelamento
+(`18:13:39Z`) e execucao (`18:25:03Z`) -- sao lidas dos artefatos, e a ordem
+fica verificavel: congelou **antes** de acessar 2025.
+
+M3: o `serving/model.json` publicava o motivo do G5 **antigo**. Corrigido na
+PHASE 6 -- o serving agora le `G5_final_sealed_2025.json` com precedencia.
+
+### M2, M4, M8 - registrados sem acao de codigo
+
+- **M2**: `MIN_TRAIN_MONTHS = 60` esta preservado mas e inerte -- no primeiro
+  corte o municipio com menor historico ja tem 132 meses. "36/36 elegiveis" e
+  verdade e nao testa nada.
+- **M4**: o join municipal e por nome porque a fonte do INPE nao traz
+  geocodigo. A canaria Cedro esta correta (Cedro/PE dentro, Cedro/CE fora,
+  resolvido por geometria). O desenho depende da correcao do campo `estado` do
+  INPE, e os 4 nomes compartilhados entre UFs so sobrevivem por causa dele.
+- **M8**: a arvore mudou durante a auditoria porque havia trabalho concorrente
+  na mesma branch. Auditoria futura precisa fixar um SHA antes de comecar.
+
+### Balanco
+
+A auditoria adversarial sustentou o nucleo -- escopo, EXP-10, ausencia de
+vazamento, reproduzido do zero ate 1e-15. E derrubou a forma como quase tudo
+estava sendo **contado**: numeros legados publicados como se fossem da APA,
+aprovacao de producao com gate reprovado, atribuicao causal sem controle,
+"uma unica violacao" que eram duas, e dois ganhos publicados sem a incerteza
+que os relativiza.
+
+Suite: **130 passando**.

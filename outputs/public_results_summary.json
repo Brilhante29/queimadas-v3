@@ -1,7 +1,7 @@
 {
   "package_schema": "firecast_public_handoff_v2",
   "generated_by": "scripts/build_public_results_summary.py",
-  "generated_at": "2026-08-28T18:55:12.694924+00:00",
+  "generated_at": "2026-08-28T23:25:57.379338+00:00",
   "READ_THIS_FIRST": "Este arquivo contem DOIS escopos distintos e nao intercambiaveis. `apa_chapada_araripe` e o escopo do produto atual (36 municipios de CE, PE e PI, derivados por intersecao espacial com o poligono da APA). `legacy_cariri_ce` e um escopo anterior, so do Ceara, com outro alvo e outro snapshot. Metrica de um bloco NAO vale para o outro. Nenhum gate do bloco legado sustenta afirmacao sobre a APA.",
   "current_scope": {
     "id": "apa_chapada_araripe",
@@ -123,6 +123,63 @@
           }
         },
         "interpretation": "O teto do gate e igual ao nivel nominal do intervalo. Um metodo perfeitamente calibrado ultrapassa esse teto por acaso com a probabilidade acima. A reprovacao de PE, portanto, e evidencia fraca contra o metodo e evidencia forte contra a especificacao do gate. O FAIL e mantido: reespecificar o gate depois de ver o holdout seria ajuste no holdout."
+      },
+      "gain_over_a_recent_window_baseline_is_not_significant": {
+        "wape_by_model": {
+          "champion": 0.7074,
+          "climatology_municipal": 0.7976,
+          "climatology_recent_60": 0.7375,
+          "seasonal_naive_12": 0.8456,
+          "climatology_x_municipal_r12": 0.7725
+        },
+        "champion_beats_significantly": [
+          "climatology_municipal",
+          "climatology_x_municipal_r12",
+          "seasonal_naive_12"
+        ],
+        "champion_does_not_beat_significantly": [
+          "climatology_recent_60"
+        ],
+        "comparisons": {
+          "climatology_municipal": {
+            "delta_wape_champion_minus_baseline": -0.0902,
+            "bootstrap_delta_ci95": [
+              -0.1545,
+              -0.038
+            ],
+            "prob_champion_better": 1.0,
+            "champion_significantly_better": true
+          },
+          "climatology_recent_60": {
+            "delta_wape_champion_minus_baseline": -0.0301,
+            "bootstrap_delta_ci95": [
+              -0.0643,
+              0.0088
+            ],
+            "prob_champion_better": 0.9425,
+            "champion_significantly_better": false
+          },
+          "seasonal_naive_12": {
+            "delta_wape_champion_minus_baseline": -0.1382,
+            "bootstrap_delta_ci95": [
+              -0.1978,
+              -0.0858
+            ],
+            "prob_champion_better": 1.0,
+            "champion_significantly_better": true
+          },
+          "climatology_x_municipal_r12": {
+            "delta_wape_champion_minus_baseline": -0.0651,
+            "bootstrap_delta_ci95": [
+              -0.1135,
+              -0.0274
+            ],
+            "prob_champion_better": 0.9995,
+            "champion_significantly_better": true
+          }
+        },
+        "interpretation": "O champion NAO supera com significancia: climatology_recent_60. A afirmacao do G2 e mais fraca do que parecia -- parte do ganho sobre a climatologia de longo prazo e correcao de nivel que outro baseline tambem entrega.",
+        "consequence_for_the_g2_claim": "O G2 continua valido como foi definido: o champion supera `climatology_municipal` com IC95 inteiramente negativo. Mas a leitura cientifica e mais modesta do que 'o fator regional de intensidade e o que importa' -- uma climatologia de janela recente, sem fator regional nenhum, chega perto. Qualquer G2 futuro precisa incluir um baseline com janela recente, nao so a climatologia de longo prazo."
       }
     },
     "uncertainty_status": "not_validated",

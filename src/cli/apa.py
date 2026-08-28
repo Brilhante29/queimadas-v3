@@ -50,6 +50,8 @@ AUDIT_STEPS = [
     ("auditoria: semantica de zero", ["scripts/audit_zero_semantics.py"]),
     ("auditoria: quebra estrutural do alvo", ["scripts/screen_target_structural_break.py"]),
     ("auditoria: decomposicao alpha x metodo no G5", ["scripts/decompose_g5_improvement.py"]),
+    ("auditoria: champion x baselines competentes", ["scripts/benchmark_competent_baselines.py"]),
+    ("auditoria: incerteza do ganho pontual de 2025", ["scripts/quantify_2025_point_gain.py"]),
     ("auditoria: equivalencia entre caminhos da fonte (usa rede na 1a vez)",
      ["scripts/validate_source_path_equivalence.py"]),
     ("summary publico + blocos de metricas", ["scripts/build_public_results_summary.py"]),

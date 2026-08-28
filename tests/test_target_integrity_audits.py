@@ -271,3 +271,66 @@ def test_next_round_requires_rewriting_the_gate_first():
     text = sealed_doc()
     assert "Reescrever o gate antes de qualquer coisa" in text
     assert "2025 está queimado" in text
+
+
+# --------------------------------------------------------------------------
+# M5 / M7 -- forca da afirmacao, nao so o numero
+# --------------------------------------------------------------------------
+
+
+def test_baseline_comparison_includes_a_recent_window_model():
+    """O G2 sozinho compara contra um baseline fraco; isso precisa estar medido.
+
+    Climatologia de longo prazo nao corrige nivel. Numa serie com degrau em
+    2012, vencer esse baseline nao prova que o fator regional importa."""
+    audit = load_audit("competent_baselines.json")
+    models = set(audit["metrics"])
+    assert "climatology_recent_60" in models, (
+        "a comparacao precisa incluir um baseline de janela recente"
+    )
+    assert "seasonal_naive_12" in models
+
+
+def test_baseline_result_is_published_not_buried(): 
+    """Se o champion nao vence algum baseline, o README tem que dizer.
+
+    Achado desfavoravel escondido em arquivo de auditoria e o mesmo vicio que a
+    auditoria veio corrigir."""
+    audit = load_audit("competent_baselines.json")
+    losers = audit["champion_does_not_beat_significantly"]
+    if not losers:
+        pytest.skip("champion vence todos; a asserção nao se aplica")
+
+    for doc in ("README.md", "PRODUCTION_READINESS.md"):
+        text = (PROJECT_ROOT / doc).read_text(encoding="utf-8")
+        for model in losers:
+            assert model in text, (
+                f"{doc} nao publica que o champion nao supera {model} com "
+                "significancia"
+            )
+
+
+def test_2025_point_gain_carries_an_interval():
+    """O ganho de 2025 nao pode voltar a ser publicado como numero seco."""
+    audit = load_audit("point_gain_2025_uncertainty.json")
+    lo, hi = audit["delta_wape_ci95"]
+    assert lo < hi, "intervalo degenerado"
+    assert audit["n_months"] <= 12, "2025 tem no maximo 12 meses"
+
+    text = sealed_doc()
+    assert "IC95" in text.split("## Acurácia pontual")[1].split("##")[0], (
+        "a secao de acuracia pontual precisa publicar o intervalo"
+    )
+
+
+def test_sealed_record_does_not_call_2025_robust():
+    """Um ano nao sustenta 'robusta'; a frase nao pode voltar."""
+    audit = load_audit("point_gain_2025_uncertainty.json")
+    if audit["significant_at_95"]:
+        pytest.skip("ganho de 2025 significativo; a asserção nao se aplica")
+
+    text = sealed_doc()
+    body = text[: text.find("## Correções aplicadas")]
+    assert "A previsão pontual é robusta" not in body, (
+        "afirmacao de robustez voltou, mas o IC95 do ganho de 2025 cruza o zero"
+    )

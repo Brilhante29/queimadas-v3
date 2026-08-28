@@ -144,6 +144,38 @@ def ceiling_diagnostics(sealed: dict) -> dict:
     }
 
 
+def baseline_strength_diagnostics() -> dict:
+    """Le o benchmark contra baselines que tambem corrigem nivel.
+
+    O gate G2 compara o champion so contra climatologia de longo prazo. Se um
+    baseline mais simples com janela recente empata, a afirmacao do G2 e
+    verdadeira mas mais fraca do que parece, e isso precisa estar publicado."""
+    path = (
+        PROJECT_ROOT / "outputs" / "apa_araripe" / "audit" / "competent_baselines.json"
+    )
+    if not path.exists():
+        raise FileNotFoundError(
+            "ausente: outputs/apa_araripe/audit/competent_baselines.json -- rode "
+            "scripts/benchmark_competent_baselines.py"
+        )
+    d = json.loads(path.read_text(encoding="utf-8"))
+    return {
+        "wape_by_model": {k: v["wape_all"] for k, v in d["metrics"].items()},
+        "champion_beats_significantly": d["champion_beats_significantly"],
+        "champion_does_not_beat_significantly": d["champion_does_not_beat_significantly"],
+        "comparisons": d["comparisons"],
+        "interpretation": d["verdict"],
+        "consequence_for_the_g2_claim": (
+            "O G2 continua valido como foi definido: o champion supera "
+            "`climatology_municipal` com IC95 inteiramente negativo. Mas a leitura "
+            "cientifica e mais modesta do que 'o fator regional de intensidade e o "
+            "que importa' -- uma climatologia de janela recente, sem fator regional "
+            "nenhum, chega perto. Qualquer G2 futuro precisa incluir um baseline "
+            "com janela recente, nao so a climatologia de longo prazo."
+        ),
+    }
+
+
 MARK_START = "<!-- FIRECAST:METRICS:START -->"
 MARK_END = "<!-- FIRECAST:METRICS:END -->"
 
@@ -162,6 +194,7 @@ def render_markdown(summary: dict) -> str:
     lim = cur["known_limitations"]
     one_sided = lim["intervals_effectively_one_sided"]
     ceiling = lim["gate_ceiling_collides_with_nominal_level"]
+    strength = lim["gain_over_a_recent_window_baseline_is_not_significant"]
 
     uf_txt = ", ".join(f"{k} {v}" for k, v in sorted(cur["by_uf"].items()))
 
@@ -235,6 +268,27 @@ def render_markdown(summary: dict) -> str:
         "   que o metodo nao foi validado **e** que o gate, como especificado, tambem nao",
         "   serve. Nova tentativa exige gate reescrito e pre-registrado antes de tocar em",
         "   outro ano.",
+        "",
+        "",
+        "3. **O ganho sobre um baseline de janela recente nao e significativo.** O",
+        "   gate G2 compara o champion so contra climatologia de longo prazo. Contra",
+        "   uma climatologia dos ultimos 60 meses -- sem fator regional, sem",
+        "   encolhimento, sem clip -- o IC95 do delta cruza o zero:",
+        "",
+        "| modelo | WAPE | IC95 do delta vs champion | champion vence? |",
+        "|---|---:|---|:--:|",
+    ]
+    wapes = strength["wape_by_model"]
+    lines.append(f"| champion | `{wapes['champion']:.4f}` | -- | -- |")
+    for model, comp in strength["comparisons"].items():
+        ci = comp["bootstrap_delta_ci95"]
+        mark = "sim" if comp["champion_significantly_better"] else "**nao**"
+        lines.append(
+            f"| {model} | `{wapes[model]:.4f}` | `[{ci[0]:.4f}, {ci[1]:.4f}]` | {mark} |"
+        )
+    lines += [
+        "",
+        f"   {strength['consequence_for_the_g2_claim']}",
         "",
         "### Escopo legado: Cariri/CE -- NAO SE APLICA A APA",
         "",
@@ -352,6 +406,9 @@ def build() -> dict:
             "known_limitations": {
                 "intervals_effectively_one_sided": interval_diagnostics(),
                 "gate_ceiling_collides_with_nominal_level": ceiling_diagnostics(g5_sealed),
+                "gain_over_a_recent_window_baseline_is_not_significant": (
+                    baseline_strength_diagnostics()
+                ),
             },
             "uncertainty_status": pluck(serving, "uncertainty.status", "serving/model.json"),
             "uncertainty_reason": pluck(serving, "uncertainty.reason", "serving/model.json"),

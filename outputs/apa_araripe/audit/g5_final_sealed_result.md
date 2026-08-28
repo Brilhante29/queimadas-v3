@@ -1,7 +1,11 @@
 # G5 final — teste selado em 2025, execução única
 
-Data da execução: 2026-08-14
+Congelamento da configuração: `2026-08-28T18:13:39.576971+00:00`
+Execução selada: `2026-08-28T18:25:03.004355+00:00` (lido de `generated_at` do gate, não digitado)
 Revisado em 2026-08-28 após auditoria independente (ver "Correções" no fim).
+
+A ordem importa e é verificável nos artefatos: a configuração foi congelada
+**antes** de qualquer acesso a 2025.
 Código: `src/experiments/g5_final_sealed_2025.py`
 Gate: `outputs/apa_araripe/gates/G5_final_sealed_2025.json`
 
@@ -132,22 +136,39 @@ O serving permanece devolvendo `interval: null` e
 
 ## Acurácia pontual em 2025 (registro, não é critério do G5)
 
-Confirmação fora da amostra, em dado que o modelo nunca viu:
-
 | métrica | baseline | champion |
 |---|---:|---:|
-| WAPE 2025 | 0,6485 | **0,5611** |
+| WAPE 2025 | 0.6485 | **0.5611** |
 
-Ganho de **−13,5%**, maior que os −9,9% do período de desenvolvimento.
+Ganho pontual de **-13.5%**. Mas com intervalo, que a versão
+anterior deste documento omitia:
 
 ```text
-observado 2025 : 1.441 focos
-previsto  2025 : 1.236 focos
-MAE municipal  : 1,87
+delta de WAPE   : -0.0873   IC95 [-0.1872; +0.2881]
+ganho relativo  : -13.5%     IC95 [-29.7%; +39.7%]
+P(champion melhor) : 0.7738
 ```
 
-O EXP-10 se sustenta em dado novo. A previsão pontual é robusta; o que não
-passou é o contrato de cobertura dos intervalos.
+**O IC95 cruza o zero.** Um ano são 12 meses e 36 séries correlacionadas; o
+bootstrap reamostra o mês, que é o cluster honesto. Com esse n, 2025 **não
+confirma nem refuta** o ganho — apenas é consistente com ele.
+
+Dizer que "a previsão pontual é robusta" com base em 2025 era mais forte do que
+o dado permite. O que sustenta o EXP-10 continua sendo o walk-forward de 120
+cortes, cujo IC95 é [-0,1315; -0,0307] e não cruza o zero. 2025 é confirmação
+qualitativa, não evidência estatística independente.
+
+Viés do total, que também não estava reportado:
+
+```text
+observado 2025 : 1441 focos
+previsto  2025 : 1236 focos
+viés relativo  : -14.2%
+```
+
+O champion subestimou o total de 2025 em 14.2%. Subestimar em contexto de risco de fogo e o lado errado do erro.
+
+Artefato: `outputs/apa_araripe/audit/point_gain_2025_uncertainty.json`.
 
 ## Caminho registrado para a próxima rodada (não executado)
 
@@ -177,3 +198,5 @@ versão anterior deste documento. Registradas aqui em vez de apagadas:
 | "Uma única violação, e ela é de teto, não de piso" | **falsa** — out-nov 0,8889 está abaixo do piso; o gate não a avalia |
 | "O método corrigido resolveu o problema" / "a subcobertura sistemática acabou" | **não sustentada** — α, método e ano mudaram juntos; α responde por 85% |
 | "O mecanismo de deslocamento temporal foi tratado com sucesso pela janela deslizante" | **não sustentada** — efeito do método isolado é +0,0185, contra +0,0573 de α |
+| "A previsão pontual é robusta" (a partir de 2025) | **não sustentada** — IC95 do ganho de 2025 é [-29.7%; +39.7%], cruza o zero |
+| "Ganho de −13,5%" sem intervalo | **incompleta** — o número está certo, faltava a incerteza |

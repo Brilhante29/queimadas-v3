@@ -1,0 +1,30 @@
+{
+  "check": "incerteza do ganho pontual de 2025",
+  "why": "O ganho de -13,5% foi publicado como numero seco, a partir de um unico ano com 36 series correlacionadas, e acompanhado de 'a previsao pontual e robusta' -- adjetivo mais forte do que n = 1 ano sustenta.",
+  "resampling_unit": "mes (municipios do mesmo mes nao sao independentes)",
+  "n_rows": 432,
+  "n_months": 12,
+  "bootstrap_n": 5000,
+  "wape_baseline": 0.6485,
+  "wape_champion": 0.5611,
+  "delta_wape": -0.0873,
+  "relative_gain": -0.1347,
+  "delta_wape_ci95": [
+    -0.1872,
+    0.2881
+  ],
+  "relative_gain_ci95": [
+    -0.2969,
+    0.3973
+  ],
+  "prob_champion_better": 0.7738,
+  "significant_at_95": false,
+  "total_bias": {
+    "observed": 1441.0,
+    "predicted": 1236.4,
+    "relative_bias": -0.142,
+    "reading": "O champion subestimou o total de 2025 em 14.2%. Subestimar em contexto de risco de fogo e o lado errado do erro."
+  },
+  "verdict": "O ganho NAO e significativo ao nivel de 95%: o IC95 do delta [-0.1872, 0.2881] cruza o zero. Um ano nao sustenta a afirmacao de que 'a previsao pontual e robusta'.",
+  "generated_at": "2026-08-28T23:27:07.088389+00:00"
+}

@@ -67,6 +67,22 @@ ficam aqui porque mudam a leitura do resultado de 2025.
    serve. Nova tentativa exige gate reescrito e pre-registrado antes de tocar em
    outro ano.
 
+
+3. **O ganho sobre um baseline de janela recente nao e significativo.** O
+   gate G2 compara o champion so contra climatologia de longo prazo. Contra
+   uma climatologia dos ultimos 60 meses -- sem fator regional, sem
+   encolhimento, sem clip -- o IC95 do delta cruza o zero:
+
+| modelo | WAPE | IC95 do delta vs champion | champion vence? |
+|---|---:|---|:--:|
+| champion | `0.7074` | -- | -- |
+| climatology_municipal | `0.7976` | `[-0.1545, -0.0380]` | sim |
+| climatology_recent_60 | `0.7375` | `[-0.0643, 0.0088]` | **nao** |
+| seasonal_naive_12 | `0.8456` | `[-0.1978, -0.0858]` | sim |
+| climatology_x_municipal_r12 | `0.7725` | `[-0.1135, -0.0274]` | sim |
+
+   O G2 continua valido como foi definido: o champion supera `climatology_municipal` com IC95 inteiramente negativo. Mas a leitura cientifica e mais modesta do que 'o fator regional de intensidade e o que importa' -- uma climatologia de janela recente, sem fator regional nenhum, chega perto. Qualquer G2 futuro precisa incluir um baseline com janela recente, nao so a climatologia de longo prazo.
+
 ### Escopo legado: Cariri/CE -- NAO SE APLICA A APA
 
 Preservado para rastreabilidade historica do projeto. Foi produzido sobre outro escopo, outro snapshot e outro recorte de avaliacao. Escopo: municipios do Ceara apenas; recorte 'chapada' interno de 50 celulas avaliadas; 31 municipios no artefato de treino.

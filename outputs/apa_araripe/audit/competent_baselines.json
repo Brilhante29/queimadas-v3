@@ -1,0 +1,80 @@
+{
+  "check": "champion contra baselines que tambem corrigem nivel",
+  "why": "O G2 so comparou contra climatologia de longo prazo. Como a serie tem degrau em 2012 e tendencia, parte do ganho poderia ser correcao de nivel que qualquer baseline com janela recente tambem faria.",
+  "status": "DIAGNOSTICO -- nao altera o EXP-10, que esta congelado",
+  "protocol": "walk-forward 2015-2024, 120 cortes, treino estritamente no passado",
+  "scope": "apa_chapada_araripe (36 municipios)",
+  "n_predictions": 4320,
+  "bootstrap_n": 2000,
+  "bootstrap_estimand": "WAPE global recalculado por reamostra de cortes",
+  "metrics": {
+    "champion": {
+      "wape_all": 0.7074,
+      "wape_critical_out_nov": 0.5761
+    },
+    "climatology_municipal": {
+      "wape_all": 0.7976,
+      "wape_critical_out_nov": 0.6922
+    },
+    "climatology_recent_60": {
+      "wape_all": 0.7375,
+      "wape_critical_out_nov": 0.6161
+    },
+    "seasonal_naive_12": {
+      "wape_all": 0.8456,
+      "wape_critical_out_nov": 0.6931
+    },
+    "climatology_x_municipal_r12": {
+      "wape_all": 0.7725,
+      "wape_critical_out_nov": 0.6572
+    }
+  },
+  "comparisons": {
+    "climatology_municipal": {
+      "delta_wape_champion_minus_baseline": -0.0902,
+      "bootstrap_delta_ci95": [
+        -0.1545,
+        -0.038
+      ],
+      "prob_champion_better": 1.0,
+      "champion_significantly_better": true
+    },
+    "climatology_recent_60": {
+      "delta_wape_champion_minus_baseline": -0.0301,
+      "bootstrap_delta_ci95": [
+        -0.0643,
+        0.0088
+      ],
+      "prob_champion_better": 0.9425,
+      "champion_significantly_better": false
+    },
+    "seasonal_naive_12": {
+      "delta_wape_champion_minus_baseline": -0.1382,
+      "bootstrap_delta_ci95": [
+        -0.1978,
+        -0.0858
+      ],
+      "prob_champion_better": 1.0,
+      "champion_significantly_better": true
+    },
+    "climatology_x_municipal_r12": {
+      "delta_wape_champion_minus_baseline": -0.0651,
+      "bootstrap_delta_ci95": [
+        -0.1135,
+        -0.0274
+      ],
+      "prob_champion_better": 0.9995,
+      "champion_significantly_better": true
+    }
+  },
+  "champion_beats_significantly": [
+    "climatology_municipal",
+    "climatology_x_municipal_r12",
+    "seasonal_naive_12"
+  ],
+  "champion_does_not_beat_significantly": [
+    "climatology_recent_60"
+  ],
+  "verdict": "O champion NAO supera com significancia: climatology_recent_60. A afirmacao do G2 e mais fraca do que parecia -- parte do ganho sobre a climatologia de longo prazo e correcao de nivel que outro baseline tambem entrega.",
+  "generated_at": "2026-08-28T23:25:13.267427+00:00"
+}
